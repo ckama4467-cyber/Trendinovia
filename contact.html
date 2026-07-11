@@ -49,10 +49,9 @@
                 </div>
             </div>
 
-            <!-- Multi-Division Submission Form -->
             <div class="bg-white p-10 rounded-3xl shadow-sm border border-gray-100">
                 <h3 class="font-semibold text-2xl mb-8">Engagement Registry</h3>
-                <form id="bookingForm" action="https://formspree.io/f/mqevgbgq" method="POST">
+                <form id="bookingForm" action="https://formspree.io/f/mqevgbgq" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="_subject" value="New Enterprise Inquiry - Trendinovia">
                     <div class="space-y-6">
                         <div>
@@ -62,16 +61,20 @@
                         <div>
                             <label class="block mb-2 font-medium text-sm text-gray-700">Target Business Arm</label>
                             <select name="business_division" class="w-full px-5 py-4 border border-gray-200 rounded-2xl focus:outline-teal-600">
-                                <option value="Mepel Facilitation Solution">Mepel Facility(Cleaning &amp; Maintenance)</option>
-                                <option value="Tech Gadgets Supply">Kripa Tech Gadgets</option>
-                                <option value="Latest Fashion Apparels">Curi Apparels</option>
-                                <option value="Innovative Agriculture">AgriVance Express &amp; Downstream Processing</option>
-                                <option value="Health Care Products">OmniCare</option>
+                                <option value="Mepel Facility Solution">Mepel Facility Solution</option>
+                                <option value="Kripa Tech Gadgets">Kripa Tech Gadgets</option>
+                                <option value="Curi Apparels">Curi Apparels</option>
+                                <option value="AgriVance Express">AgriVance Express</option>
+                                <option value="OmniCare">OmniCare</option>
                             </select>
                         </div>
                         <div>
+                            <label class="block mb-2 font-medium text-sm text-gray-700">Upload Documents or Photographs</label>
+                            <input type="file" name="attachment" accept=".jpg, .jpeg, .png, .pdf, .doc, .docx" class="w-full px-5 py-3 border border-gray-200 rounded-2xl text-sm file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-teal-50 file:text-teal-700 hover:file:bg-teal-100">
+                        </div>
+                        <div>
                             <label class="block mb-2 font-medium text-sm text-gray-700">Detailed Scope of Request</label>
-                            <textarea name="message" class="w-full px-5 py-4 border border-gray-200 rounded-3xl h-32 focus:outline-teal-600" placeholder="Outline procurement volume, cleaning square footage, or agricultural supply metrics..."></textarea>
+                            <textarea name="message" class="w-full px-5 py-4 border border-gray-200 rounded-3xl h-32 focus:outline-teal-600" placeholder="Outline procurement metrics or requirements..."></textarea>
                         </div>
                         <button type="submit" class="w-full bg-emerald-600 text-white py-5 rounded-3xl font-semibold hover:bg-emerald-700 transition shadow-sm">Submit Request</button>
                     </div>
