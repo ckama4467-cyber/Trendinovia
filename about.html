@@ -36,7 +36,7 @@
         <div class="grid md:grid-cols-12 gap-12 items-center">
             <div class="md:col-span-7">
                 <h2 class="text-4xl font-semibold mb-8">Corporate Integrity &amp; Capability</h2>
-                <p class="text-lg leading-relaxed text-gray-600 mb-8">We operate with structural versatility—managing critical infrastructure and facilities through specialized arms like Mepel Facilitation Solution, while simultaneously fueling trade, down-stream local agricultural supply chains, and health resources.</p>
+                <p class="text-lg leading-relaxed text-gray-600 mb-8">We operate with structural versatility—managing critical infrastructure and facilities through specialized arms like Mepel Facility Solution, while simultaneously fueling trade with Kripa Tech Gadgets, Curi Apparels, AgriVance Express, and OmniCare health systems.</p>
                 <ul class="space-y-6">
                     <li class="flex gap-4"><span class="text-emerald-600 text-2xl">✓</span> Sole Director &amp; Shareholder: Charlie Kama</li>
                     <li class="flex gap-4"><span class="text-emerald-600 text-2xl">✓</span> Registered under Companies Act 1997 (No. 1-143543684)</li>
@@ -48,7 +48,7 @@
             </div>
         </div>
     </div>
-<!-- Dedicated About Page Upload & Inquiry Section -->
+
     <section class="bg-white py-16 border-t border-gray-100">
         <div class="max-w-3xl mx-auto px-6">
             <div class="text-center mb-12">
@@ -56,7 +56,6 @@
                 <p class="text-gray-600 mt-2">Submit your project tenders, specifications, or reference images directly to our team.</p>
             </div>
 
-            <!-- Form Tag with enctype enabled for file attachments -->
             <form id="aboutUploadForm" action="https://formspree.io/f/mqevgbgq" method="POST" enctype="multipart/form-data" class="bg-gray-50 p-8 md:p-10 rounded-3xl border border-gray-100 shadow-sm">
                 <input type="hidden" name="_subject" value="New Document/Photo Submission from About Page">
                 
@@ -69,13 +68,30 @@
                     <div>
                         <label class="block mb-2 font-medium text-sm text-gray-700">Select Business Division</label>
                         <select name="business_division" class="w-full px-5 py-4 border border-gray-200 bg-white rounded-2xl focus:outline-emerald-600">
-                            <option value="Mepel Facility Solution">Mepel Facility Solution (Cleaning &amp; Maintenance)</option>
-                            <option value="Kripa Gadgets Supply">Kripa Tech Gadgets</option>
+                            <option value="Mepel Facility Solution">Mepel Facility Solution</option>
+                            <option value="Kripa Tech Gadgets">Kripa Tech Gadgets</option>
                             <option value="Curi Apparels">Curi Apparels</option>
-                            <option value="AgriVance Express">AgriVance Express &amp; Downstream Processing</option>
+                            <option value="AgriVance Express">AgriVance Express</option>
                             <option value="OmniCare">OmniCare</option>
                         </select>
                     </div>
+
+                    <div>
+                        <label class="block mb-2 font-medium text-sm text-gray-700">Upload Project Photos or Documents</label>
+                        <input type="file" name="uploaded_file" accept=".jpg, .jpeg, .png, .pdf, .doc, .docx" class="w-full px-5 py-3 border border-gray-200 bg-white rounded-2xl text-sm file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-emerald-50 file:text-emerald-700 hover:file:bg-emerald-100">
+                    </div>
+
+                    <div>
+                        <label class="block mb-2 font-medium text-sm text-gray-700">Message / Requirements</label>
+                        <textarea name="message" class="w-full px-5 py-4 border border-gray-200 bg-white rounded-3xl h-32 focus:outline-emerald-600" placeholder="Provide extra details..."></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-emerald-600 text-white py-5 rounded-3xl font-semibold hover:bg-emerald-700 transition shadow-sm">Upload &amp; Submit Inquiry</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
     <footer class="bg-gray-900 text-gray-400 py-16 text-center">
         <p class="mb-2">trendinoviainvestmentlimited@gmail.com</p>
         <p class="text-xs">© 2026 TRENDINOVIA Investment Limited. All rights reserved.</p>
