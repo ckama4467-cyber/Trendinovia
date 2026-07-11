@@ -28,8 +28,8 @@
     <div class="max-w-7xl mx-auto px-6 py-20">
         <div class="grid md:grid-cols-2 gap-20">
             <div>
-                <h1 class="text-5xl font-bold mb-8">Let's Get Started</h1>
-                <p class="text-xl mb-10">Reach out for a free consultation or quote.</p>
+                <h1 class="text-5xl font-bold mb-8">Corporate Procurement &amp; Inquiries</h1>
+                <p class="text-xl mb-10">Connect with our specialized division managers for project tenders or orders.</p>
                 
                 <div class="space-y-10">
                     <div class="flex items-start gap-6">
@@ -42,39 +42,38 @@
                     <div class="flex items-start gap-6">
                         <i class="fas fa-map-marker-alt text-3xl text-emerald-600 mt-1"></i>
                         <div>
-                            <div class="font-semibold">Address</div>
+                            <div class="font-semibold">Main Office</div>
                             <div>Allotment 13 Section 15 Gerehu Stage 2,<br>Port Moresby, NCD, Papua New Guinea</div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="bg-white p-10 rounded-3xl shadow">
-                <h3 class="font-semibold text-2xl mb-8">Book an Appointment</h3>
+            <!-- Multi-Division Submission Form -->
+            <div class="bg-white p-10 rounded-3xl shadow-sm border border-gray-100">
+                <h3 class="font-semibold text-2xl mb-8">Engagement Registry</h3>
                 <form id="bookingForm" action="https://formspree.io/f/mqevgbgq" method="POST">
-                    <input type="hidden" name="_subject" value="New Booking Request from Trendinovia Website">
+                    <input type="hidden" name="_subject" value="New Enterprise Inquiry - Trendinovia">
                     <div class="space-y-6">
                         <div>
-                            <label class="block mb-2 font-medium">Your Email Address</label>
-                            <input type="email" name="email" class="w-full px-5 py-4 border rounded-2xl" placeholder="name@company.com" required>
+                            <label class="block mb-2 font-medium text-sm text-gray-700">Your Email Address</label>
+                            <input type="email" name="email" class="w-full px-5 py-4 border border-gray-200 rounded-2xl focus:outline-teal-600" placeholder="corporate@domain.com" required>
                         </div>
                         <div>
-                            <label class="block mb-2 font-medium">Preferred Date</label>
-                            <input type="date" id="date" name="date" class="w-full px-5 py-4 border rounded-2xl" required>
-                        </div>
-                        <div>
-                            <label class="block mb-2 font-medium">Service</label>
-                            <select name="service" class="w-full px-5 py-4 border rounded-2xl">
-                                <option>Cleaning Service</option>
-                                <option>Renovation Consultation</option>
-                                <option>Maintenance Contract</option>
+                            <label class="block mb-2 font-medium text-sm text-gray-700">Target Business Arm</label>
+                            <select name="business_division" class="w-full px-5 py-4 border border-gray-200 rounded-2xl focus:outline-teal-600">
+                                <option value="Mepel Facilitation Solution">Mepel Facilitation Solution (Cleaning &amp; Maintenance)</option>
+                                <option value="Tech Gadgets Supply">Supply of Tech Gadgets</option>
+                                <option value="Latest Fashion Apparels">Latest Fashion Apparels</option>
+                                <option value="Innovative Agriculture">Innovative Agriculture &amp; Downstream Processing</option>
+                                <option value="Health Care Products">Health Care Products</option>
                             </select>
                         </div>
                         <div>
-                            <label class="block mb-2 font-medium">Message</label>
-                            <textarea name="message" class="w-full px-5 py-4 border rounded-3xl h-32" placeholder="Tell us more..."></textarea>
+                            <label class="block mb-2 font-medium text-sm text-gray-700">Detailed Scope of Request</label>
+                            <textarea name="message" class="w-full px-5 py-4 border border-gray-200 rounded-3xl h-32 focus:outline-teal-600" placeholder="Outline procurement volume, cleaning square footage, or agricultural supply metrics..."></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-emerald-600 text-white py-5 rounded-3xl font-semibold">Request Booking</button>
+                        <button type="submit" class="w-full bg-emerald-600 text-white py-5 rounded-3xl font-semibold hover:bg-emerald-700 transition shadow-sm">Submit Request</button>
                     </div>
                 </form>
             </div>
