@@ -26,32 +26,47 @@
     </nav>
 
     <div class="max-w-7xl mx-auto px-6 py-20">
-        <div class="grid md:grid-cols-2 gap-20">
+        <div class="grid md:grid-cols-2 gap-16 items-start">
             <div>
                 <h1 class="text-5xl font-bold mb-8">Corporate Procurement &amp; Inquiries</h1>
-                <p class="text-xl mb-10">Connect with our specialized division managers for project tenders or orders.</p>
+                <p class="text-xl mb-10 text-gray-600">Connect with our specialized division managers for project tenders, procurement agreements, or localized distribution orders.</p>
                 <div class="space-y-10">
                     <div class="flex items-start gap-6">
                         <i class="fas fa-envelope text-3xl text-emerald-600 mt-1"></i>
                         <div>
-                            <div class="font-semibold">Email</div>
-                            <a href="mailto:trendinoviainvestmentlimited@gmail.com" class="text-emerald-600">trendinoviainvestmentlimited@gmail.com</a>
+                            <div class="font-semibold text-gray-900">Email</div>
+                            <a href="mailto:trendinoviainvestmentlimited@gmail.com" class="text-emerald-600 hover:underline">trendinoviainvestmentlimited@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-6">
+                        <i class="fas fa-map-marker-alt text-3xl text-emerald-600 mt-1"></i>
+                        <div>
+                            <div class="font-semibold text-gray-900">Main Office</div>
+                            <div class="text-gray-600">Allotment 13 Section 15 Gerehu Stage 2,<br>Port Moresby, NCD, Papua New Guinea</div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="bg-white p-10 rounded-3xl shadow-sm border border-gray-100">
-                <h3 class="font-semibold text-2xl mb-8">Engagement Registry</h3>
-                <form id="bookingForm" action="https://formspree.io/f/mqevgbgq" method="POST" enctype="multipart/form-data">
+            <!-- Moved & Upgraded Form Component -->
+            <div class="bg-white p-8 md:p-10 rounded-3xl border border-gray-100 shadow-sm">
+                <div class="text-center mb-8">
+                    <h3 class="text-3xl font-bold text-gray-900">Partner With Us</h3>
+                    <p class="text-gray-600 text-sm mt-2">Submit your project tenders, specifications, or reference images directly to our team.</p>
+                </div>
+
+                <form id="contactPartnerForm" action="https://formspree.io/f/mqevgbgq" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="_subject" value="New Document/Photo Submission via Contact Page">
+                    
                     <div class="space-y-6">
                         <div>
                             <label class="block mb-2 font-medium text-sm text-gray-700">Your Email Address</label>
-                            <input type="email" name="email" class="w-full px-5 py-4 border border-gray-200 rounded-2xl focus:outline-teal-600" required>
+                            <input type="email" name="email" class="w-full px-5 py-4 border border-gray-200 bg-gray-50 rounded-2xl focus:outline-emerald-600" placeholder="yourname@domain.com" required>
                         </div>
+
                         <div>
-                            <label class="block mb-2 font-medium text-sm text-gray-700">Target Business Arm</label>
-                            <select name="business_division" class="w-full px-5 py-4 border border-gray-200 rounded-2xl focus:outline-teal-600">
+                            <label class="block mb-2 font-medium text-sm text-gray-700">Select Business Division</label>
+                            <select name="business_division" class="w-full px-5 py-4 border border-gray-200 bg-gray-50 rounded-2xl focus:outline-emerald-600">
                                 <option value="Mepel Facility Solution">Mepel Facility Solution</option>
                                 <option value="Kraipa Tech Gadgets">Kraipa Tech Gadgets</option>
                                 <option value="Curi Apparels">Curi Apparels</option>
@@ -59,15 +74,27 @@
                                 <option value="OmniCare">OmniCare</option>
                             </select>
                         </div>
+
                         <div>
-                            <label class="block mb-2 font-medium text-sm text-gray-700">Upload Documents or Photographs</label>
-                            <input type="file" name="attachment" accept=".jpg, .jpeg, .png, .pdf, .doc, .docx" class="w-full px-5 py-3 border border-gray-200 rounded-2xl text-sm">
+                            <label class="block mb-2 font-medium text-sm text-gray-700">Upload Project Photos or Documents</label>
+                            <input type="file" name="uploaded_file" accept=".jpg, .jpeg, .png, .pdf, .doc, .docx" class="w-full px-5 py-3 border border-gray-200 bg-gray-50 rounded-2xl text-sm file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-emerald-50 file:text-emerald-700 hover:file:bg-emerald-100">
                         </div>
-                        <button type="submit" class="w-full bg-emerald-600 text-white py-5 rounded-3xl font-semibold hover:bg-emerald-700 transition">Submit Request</button>
+
+                        <div>
+                            <label class="block mb-2 font-medium text-sm text-gray-700">Message / Requirements</label>
+                            <textarea name="message" class="w-full px-5 py-4 border border-gray-200 bg-gray-50 rounded-3xl h-32 focus:outline-emerald-600" placeholder="Provide extra details..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-emerald-600 text-white py-5 rounded-3xl font-semibold hover:bg-emerald-700 transition shadow-sm">Upload &amp; Submit Inquiry</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+
+    <footer class="bg-gray-900 text-gray-400 py-16 text-center mt-20">
+        <p class="mb-2">trendinoviainvestmentlimited@gmail.com</p>
+        <p class="text-xs">© 2026 TRENDINOVIA Investment Limited. All rights reserved.</p>
+    </footer>
 </body>
 </html>
