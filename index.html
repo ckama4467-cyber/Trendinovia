@@ -9,6 +9,8 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
         body { font-family: 'Poppins', sans-serif; }
+        .slide { display: none; }
+        .slide.active { display: flex; }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -29,29 +31,39 @@
         </div>
     </nav>
 
-    <!-- Fully Optimized Video Hero Canvas Container -->
-    <header class="relative h-screen w-full flex items-center justify-center overflow-hidden bg-slate-900">
-        <!-- Absolute Video Layout Frame -->
-        <div class="absolute inset-0 w-full h-full z-10 overflow-hidden">
-            <!-- Strict cross-platform native browser attributes to guarantee instant rendering and loop execution -->
-            <video autoplay loop muted playsinline webkit-playsinline preload="auto" class="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover">
-                <source src="asset/hero-bg.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
+    <!-- Interactive Hero Slider Canvas Container -->
+    <header class="relative h-screen w-full overflow-hidden bg-slate-900">
         
-        <!-- Deep Color Gradient Protective Shadow Mask (Ensures readability across high-exposure frames) -->
-        <div class="absolute z-20 inset-0 bg-gradient-to-b from-slate-950/75 via-slate-900/60 to-slate-950/80 backdrop-blur-[0.5px]"></div>
-
-        <!-- Typography Messaging Grid Stack -->
-        <div class="relative z-30 max-w-5xl mx-auto px-6 text-center text-white">
-            <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6 tracking-tight">
-                Innovative Solutions.<br>Divergent Growth.
-            </h1>
-            <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-4 text-gray-200 font-light leading-relaxed">
-                From facility management to agriculture, tech, fashion, and healthcare—driving excellence across Papua New Guinea.
-            </p>
+        <!-- SLIDE 1: Video Slide Integration Frame -->
+        <div class="slide active absolute inset-0 w-full h-full items-center justify-center">
+            <div class="absolute inset-0 w-full h-full z-10 overflow-hidden">
+                <video autoplay loop muted playsinline webkit-playsinline preload="auto" class="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover">
+                    <source src="hero-bg.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="absolute z-20 inset-0 bg-gradient-to-b from-slate-950/75 via-slate-900/60 to-slate-950/80 backdrop-blur-[0.5px]"></div>
+            <div class="relative z-30 max-w-5xl mx-auto px-6 text-center text-white">
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6 tracking-tight">Innovative Solutions.<br>Divergent Growth.</h1>
+                <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-4 text-gray-200 font-light leading-relaxed">From facility management to agriculture, tech, fashion, and healthcare—driving excellence across Papua New Guinea.</p>
+            </div>
         </div>
+
+        <!-- SLIDE 2: Secondary Content Sequence Slide -->
+        <div class="slide absolute inset-0 w-full h-full items-center justify-center bg-gradient-to-tr from-slate-900 to-emerald-950">
+            <div class="relative z-30 max-w-5xl mx-auto px-6 text-center text-white">
+                <h2 class="text-5xl md:text-7xl font-bold leading-tight mb-6 tracking-tight">Mepel Facility Solutions</h2>
+                <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-4 text-gray-200 font-light leading-relaxed">Delivering engineering maintenance, structural office overhauls, and commercial cleaning transformations.</p>
+            </div>
+        </div>
+
+        <!-- Manual Slider Navigation Controls -->
+        <button onclick="prevSlide()" class="absolute left-6 top-1/2 -translate-y-1/2 z-40 bg-white/10 hover:bg-white/20 text-white w-12 h-12 rounded-full flex items-center justify-center transition backdrop-blur-sm">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button onclick="nextSlide()" class="absolute right-6 top-1/2 -translate-y-1/2 z-40 bg-white/10 hover:bg-white/20 text-white w-12 h-12 rounded-full flex items-center justify-center transition backdrop-blur-sm">
+            <i class="fas fa-chevron-right"></i>
+        </button>
     </header>
 
     <!-- Multi-Sector Capacity Capabilities Matrix Section -->
@@ -89,5 +101,23 @@
         <p class="mb-2 text-white">trendinoviainvestmentlimited@gmail.com</p>
         <p class="text-xs text-gray-600">© 2026 TRENDINOVIA Investment Limited. All rights reserved.</p>
     </footer>
+
+    <!-- Slider Engine JavaScript Linkage -->
+    <script>
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            currentSlideIndex = (index + slides.length) % slides.length;
+            slides[currentSlideIndex].classList.add('active');
+        }
+
+        function nextSlide() { showSlide(currentSlideIndex + 1); }
+        function prevSlide() { showSlide(currentSlideIndex - 1); }
+
+        // Automatically rotate sequence slides every 8 seconds
+        setInterval(nextSlide, 8000);
+    </script>
 </body>
 </html>
