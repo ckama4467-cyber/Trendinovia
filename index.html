@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trendinovia Investment Limited</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Alternative CSS Fallback Link -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
         body { font-family: 'Poppins', sans-serif; }
+        .bg-custom-green { background-color: #4A6B63; }
     </style>
 </head>
 <body class="bg-gray-50 flex flex-col min-h-screen">
@@ -16,42 +18,38 @@
     <!-- Navigation Bar -->
     <nav class="bg-white shadow sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-            <div onclick="window.location.href='index.html'" class="cursor-pointer flex items-center gap-x-3">
-                <div class="w-11 h-11 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-2xl flex items-center justify-center text-white font-bold text-3xl">T</div>
+            <div onclick="window.location.href='index.html'" class="cursor-pointer flex items-center space-x-3">
+                <div class="w-11 h-11 bg-gradient-to-br from-green-600 to-teal-600 rounded-2xl flex items-center justify-center text-white font-bold text-3xl">T</div>
                 <div class="font-bold text-2xl tracking-tighter text-gray-900">TRENDINOVIA</div>
             </div>
-            <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
-                <a href="index.html" class="text-emerald-600 font-semibold">Home</a>
-                <a href="about.html" class="text-gray-700 hover:text-emerald-600">About</a>
-                <a href="services.html" class="text-gray-700 hover:text-emerald-600">Services</a>
-                <a href="contact.html" class="text-gray-700 hover:text-emerald-600">Contact</a>
+            <div class="hidden md:flex items-center space-x-9 text-sm font-medium">
+                <a href="index.html" class="text-green-600 font-semibold">Home</a>
+                <a href="about.html" class="text-gray-700 hover:text-green-600">About</a>
+                <a href="services.html" class="text-gray-700 hover:text-green-600">Services</a>
+                <a href="contact.html" class="text-gray-700 hover:text-green-600">Contact</a>
             </div>
-            <a href="contact.html" class="bg-emerald-600 hover:bg-emerald-700 px-7 py-3 rounded-3xl text-white font-semibold text-sm transition">Book Now</a>
+            <a href="contact.html" class="bg-green-600 hover:bg-green-700 px-7 py-3 rounded-full text-white font-semibold text-sm transition">Book Now</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative bg-[#4A6B63] flex-grow flex items-center justify-center text-center px-6 py-32 overflow-hidden">
-        <!-- Subtle Pattern Overlay -->
-        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 40px 40px;"></div>
-        <div class="absolute inset-0 bg-radial-gradient from-transparent to-black/30"></div>
-        
+    <section class="relative bg-custom-green flex-grow flex items-center justify-center text-center px-6 py-32 overflow-hidden text-white">
         <div class="relative z-10 max-w-4xl mx-auto">
-            <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-8 tracking-tight">
+            <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-8 tracking-tight">
                 Innovative Solutions.<br>Divergent Growth.
             </h1>
-            <p class="text-lg md:text-2xl text-emerald-50/90 max-w-3xl mx-auto font-light leading-relaxed mb-12">
+            <p class="text-lg md:text-2xl opacity-90 max-w-3xl mx-auto font-light leading-relaxed mb-12">
                 From facility management to agriculture, tech, fashion, and healthcare—driving excellence across Papua New Guinea.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="services.html" class="bg-white text-emerald-800 hover:bg-gray-100 px-8 py-4 rounded-2xl font-semibold shadow-md transition">Explore Our Services</a>
-                <a href="contact.html" class="bg-emerald-700 text-white hover:bg-emerald-800 px-8 py-4 rounded-2xl font-semibold shadow-md transition border border-emerald-500/30">Get in Touch</a>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="services.html" class="bg-white text-green-900 hover:bg-gray-100 px-8 py-4 rounded-2xl font-semibold shadow-md transition inline-block">Explore Our Services</a>
+                <a href="contact.html" class="bg-transparent text-white hover:bg-black hover:bg-opacity-20 px-8 py-4 rounded-2xl font-semibold shadow-md transition border border-white inline-block">Get in Touch</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-12 text-center">
+    <footer class="bg-gray-900 text-gray-400 py-12 text-center mt-auto">
         <p class="mb-2 text-sm">trendinoviainvestmentlimited@gmail.com</p>
         <p class="text-xs">© 2026 TRENDINOVIA Investment Limited. All rights reserved.</p>
     </footer>
