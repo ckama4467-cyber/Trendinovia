@@ -28,54 +28,35 @@
         </div>
     </nav>
 
-    <!-- Slider Sequence Hero Container -->
-    <header class="relative h-[85vh] md:h-screen flex items-center justify-center overflow-hidden text-white bg-black">
-        <!-- Interactive Slide Track Component -->
+    <!-- Hero Background Section -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden bg-slate-900">
+        <!-- Background Video Canvas Layout -->
         <div class="absolute inset-0 w-full h-full z-10">
-            
-            <!-- Slide 1: High-Definition Background Video Sequence -->
-            <div id="slide-1" class="absolute inset-0 w-full h-full opacity-100 transition-opacity duration-1000 ease-in-out">
-                <video autoplay loop muted playsinline class="w-full h-full object-cover">
-                    <source src="My Video.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-
-            <!-- Slide 2: Backup Static Sequence Frame (Can add extra video/images here if creating a multi-element carousel carousel) -->
-            <div id="slide-2" class="absolute inset-0 w-full h-full opacity-0 transition-opacity duration-1000 ease-in-out bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070')] bg-cover bg-center"></div>
+            <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                <!-- Adjust file path asset here if uploaded to an assets/video folder -->
+                <source src="My Video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
         
-        <!-- High-Contrast Typography Shadow Mask Layer -->
-        <div class="absolute z-20 inset-0 bg-gradient-to-r from-teal-950/85 to-black/60"></div>
+        <!-- High Contrast Content Protective Dark Layer (Ensures readable typography) -->
+        <div class="absolute z-20 inset-0 bg-slate-950/65 backdrop-blur-[1px]"></div>
 
-        <!-- Hero Branding Content Stack -->
-        <div class="relative z-30 max-w-5xl mx-auto px-6 text-center md:text-left md:flex md:items-center md:justify-between w-full">
-            <div class="max-w-2xl">
-                <span class="inline-block bg-emerald-600/20 text-emerald-400 text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full border border-emerald-500/30 mb-6">Welcome to Trendinovia</span>
-                <h1 class="text-4xl md:text-7xl font-bold leading-tight mb-6 tracking-tight">Innovative Solutions.<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">Divergent Growth.</span></h1>
-                <p class="text-lg md:text-xl text-gray-300 max-w-xl mb-10 leading-relaxed">From comprehensive corporate facility architecture to structural technology, apparel deployment, logistics infrastructure, and clinical systems across Papua New Guinea.</p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                    <a href="services.html" class="bg-emerald-600 hover:bg-emerald-700 text-center px-8 py-4 rounded-2xl font-semibold shadow-lg shadow-emerald-900/20 transition-all transform hover:-translate-y-0.5">Explore Services</a>
-                    <a href="contact.html" class="border border-white/20 bg-white/5 hover:bg-white/10 text-center px-8 py-4 rounded-2xl font-semibold backdrop-blur-sm transition-all">Partner With Us</a>
-                </div>
-            </div>
-            
-            <!-- Carousel Navigation Controller Interface Indicators -->
-            <div class="hidden md:flex flex-col gap-3 z-40">
-                <button onclick="switchSlide(1)" id="dot-1" class="w-3 h-3 rounded-full bg-emerald-500 transition-all duration-300"></button>
-                <button onclick="switchSlide(2)" id="dot-2" class="w-3 h-3 rounded-full bg-white/40 hover:bg-white/80 transition-all duration-300"></button>
-            </div>
+        <!-- Typography Branding Grid Interface -->
+        <div class="relative z-30 max-w-5xl mx-auto px-6 text-center text-white">
+            <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6 tracking-tight">
+                Innovative Solutions.<br>Divergent Growth.
+            </h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-4 text-gray-200 font-light leading-relaxed">
+                From facility management to agriculture, tech, fashion, and healthcare—driving excellence across Papua New Guinea.
+            </p>
         </div>
     </header>
 
-    <!-- Multi-Sector Capability Section Matrix -->
-    <section class="py-24 max-w-7xl mx-auto px-6 relative">
-        <div class="text-center md:text-left mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <div>
-                <h2 class="text-xs uppercase tracking-widest font-bold text-emerald-600 mb-2">Operational Framework</h2>
-                <p class="text-4xl font-bold text-gray-900 tracking-tight">Our Multi-Sector Enterprise Divisions</p>
-            </div>
-            <p class="text-gray-500 max-w-md">Engineered with specialized logistical focus architectures to serve structural commercial demands flawlessly.</p>
+    <!-- Multi-Sector Capability Cards Section -->
+    <section class="py-24 max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-gray-900 tracking-tight">Our Multi-Sector Enterprise Divisions</h2>
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:border-emerald-500/20 transition group">
@@ -106,40 +87,5 @@
         <p class="mb-2 text-white">trendinoviainvestmentlimited@gmail.com</p>
         <p class="text-xs text-gray-600">© 2026 TRENDINOVIA Investment Limited. All rights reserved.</p>
     </footer>
-
-    <!-- Carousel Automation Logic Scripts -->
-    <script>
-        let currentSlide = 1;
-        const totalSlides = 2;
-
-        function switchSlide(slideNumber) {
-            currentSlide = slideNumber;
-            for(let i = 1; i <= totalSlides; i++) {
-                const slide = document.getElementById(`slide-${i}`);
-                const dot = document.getElementById(`dot-${i}`);
-                if(i === slideNumber) {
-                    slide.classList.remove('opacity-0');
-                    slide.classList.add('opacity-100');
-                    if(dot) {
-                        dot.classList.remove('bg-white/40');
-                        dot.classList.add('bg-emerald-500');
-                    }
-                } else {
-                    slide.classList.remove('opacity-100');
-                    slide.classList.add('opacity-0');
-                    if(dot) {
-                        dot.classList.remove('bg-emerald-500');
-                        dot.classList.add('bg-white/40');
-                    }
-                }
-            }
-        }
-
-        // Automatic rotational timing sequence trigger framework (Switches every 12 seconds)
-        setInterval(() => {
-            let next = currentSlide + 1 > totalSlides ? 1 : currentSlide + 1;
-            switchSlide(next);
-        }, 12000);
-    </script>
 </body>
 </html>
