@@ -4,99 +4,139 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - TRENDINOVIA</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-        body { font-family: 'Poppins', sans-serif; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f9fafb; color: #1f2937; display: flex; flex-direction: column; min-height: 100vh; }
+        .navbar { background-color: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 50; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; }
+        .brand { display: flex; align-items: center; gap: 12px; cursor: pointer; text-decoration: none; }
+        .brand-logo { width: 44px; height: 44px; background: linear-gradient(135deg, #059669, #0d9488); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 24px; }
+        .brand-name { font-weight: 700; font-size: 24px; letter-spacing: -0.05em; color: #111827; }
+        .nav-links { display: flex; gap: 36px; align-items: center; }
+        .nav-links a { text-decoration: none; font-size: 14px; font-weight: 500; color: #374151; }
+        .nav-links a:hover { color: #059669; }
+        .nav-links a.active { color: #059669; font-weight: 600; }
+        .btn-book { background-color: #059669; color: white !important; padding: 12px 28px; border-radius: 24px; font-weight: 600; text-decoration: none; }
+
+        .wrapper { max-width: 1200px; margin: 0 auto; padding: 80px 24px; flex-grow: 1; width: 100%; }
+        .grid-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+        
+        .info-side h1 { font-size: 48px; font-weight: 700; color: #111827; margin-bottom: 32px; }
+        .info-side p { font-size: 20px; color: #4b5563; line-height: 1.6; margin-bottom: 40px; }
+        .info-block { display: flex; gap: 24px; margin-bottom: 40px; align-items: start; }
+        .info-block-icon { font-size: 24px; color: #059669; font-weight: bold; padding-top: 4px; }
+        .info-block-label { font-weight: 600; color: #111827; margin-bottom: 4px; }
+        .info-block-details { color: #4b5563; line-height: 1.5; }
+        .info-block-details a { color: #059669; text-decoration: none; }
+        .info-block-details a:hover { text-decoration: underline; }
+
+        .form-side { background-color: white; padding: 40px; border-radius: 24px; border: 1px solid #f3f4f6; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .form-header { text-align: center; margin-bottom: 32px; }
+        .form-header h3 { font-size: 30px; font-weight: 700; color: #111827; }
+        .form-header p { color: #4b5563; font-size: 14px; margin-top: 8px; }
+        
+        .form-group { margin-bottom: 24px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; font-size: 14px; color: #374151; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 16px 20px; border: 1px solid #e5e7eb; background-color: #f9fafb; border-radius: 16px; font-size: 15px; color: #111827; outline: none; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #059669; background-color: #ffffff; }
+        .form-group textarea { height: 128px; resize: vertical; border-radius: 24px; }
+        
+        .btn-submit { width: 100%; background-color: #059669; color: white; padding: 20px; border: none; border-radius: 24px; font-weight: 600; font-size: 16px; cursor: pointer; transition: background 0.2s; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+        .btn-submit:hover { background-color: #047857; }
+
+        footer { background-color: #111827; color: #9ca3af; padding: 48px 24px; text-align: center; font-size: 14px; }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .grid-layout { grid-template-columns: 1fr; gap: 48px; }
+            .info-side h1 { font-size: 36px; }
+            .form-side { padding: 24px; }
+        }
     </style>
 </head>
-<body class="bg-gray-50 flex flex-col min-h-screen">
+<body>
 
-    <!-- Navigation Bar -->
-    <nav class="bg-white shadow sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-            <div onclick="window.location.href='index.html'" class="cursor-pointer flex items-center gap-x-3">
-                <div class="w-11 h-11 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-2xl flex items-center justify-center text-white font-bold text-3xl">T</div>
-                <div class="font-bold text-2xl tracking-tighter text-gray-900">TRENDINOVIA</div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand">
+                <div class="brand-logo">T</div>
+                <div class="brand-name">TRENDINOVIA</div>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html" class="active">Contact</a>
+                <a href="contact.html" class="btn-book">Book Now</a>
             </div>
-            <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
-                <a href="index.html" class="text-gray-700 hover:text-emerald-600">Home</a>
-                <a href="about.html" class="text-gray-700 hover:text-emerald-600">About</a>
-                <a href="services.html" class="text-gray-700 hover:text-emerald-600">Services</a>
-                <a href="contact.html" class="text-emerald-600 font-semibold">Contact</a>
-            </div>
-            <a href="contact.html" class="bg-emerald-600 hover:bg-emerald-700 px-7 py-3 rounded-3xl text-white font-semibold text-sm transition">Book Now</a>
         </div>
     </nav>
 
-    <!-- Main Content Grid -->
-    <div class="max-w-7xl mx-auto px-6 py-20 flex-grow w-full">
-        <div class="grid md:grid-cols-2 gap-16 items-start">
-            <div>
-                <h1 class="text-5xl font-bold mb-8 text-gray-900">Corporate Procurement &amp; Inquiries</h1>
-                <p class="text-xl mb-10 text-gray-600 leading-relaxed">Connect with our specialized division managers for project tenders, procurement agreements, or localized distribution orders.</p>
-                <div class="space-y-10">
-                    <div class="flex items-start gap-6">
-                        <i class="fas fa-envelope text-3xl text-emerald-600 mt-1"></i>
-                        <div>
-                            <div class="font-semibold text-gray-900">Email</div>
-                            <a href="mailto:trendinoviainvestmentlimited@gmail.com" class="text-emerald-600 hover:underline">trendinoviainvestmentlimited@gmail.com</a>
+    <div class="wrapper">
+        <div class="grid-layout">
+            <div class="info-side">
+                <h1>Corporate Procurement &amp; Inquiries</h1>
+                <p>Connect with our specialized division managers for project tenders, procurement agreements, or localized distribution orders.</p>
+                
+                <div class="info-block">
+                    <div class="info-block-icon">✉</div>
+                    <div>
+                        <div class="info-block-label">Email</div>
+                        <div class="info-block-details">
+                            <a href="mailto:trendinoviainvestmentlimited@gmail.com">trendinoviainvestmentlimited@gmail.com</a>
                         </div>
                     </div>
-                    <div class="flex items-start gap-6">
-                        <i class="fas fa-map-marker-alt text-3xl text-emerald-600 mt-1"></i>
-                        <div>
-                            <div class="font-semibold text-gray-900">Main Office</div>
-                            <div class="text-gray-600">Allotment 13 Section 15 Gerehu Stage 2,<br>Port Moresby, NCD, Papua New Guinea</div>
+                </div>
+                
+                <div class="info-block">
+                    <div class="info-block-icon">⚲</div>
+                    <div>
+                        <div class="info-block-label">Main Office</div>
+                        <div class="info-block-details">
+                            Allotment 13 Section 15 Gerehu Stage 2,<br>Port Moresby, NCD, Papua New Guinea
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Form Block without Attachment Option -->
-            <div class="bg-white p-8 md:p-10 rounded-3xl border border-gray-100 shadow-sm">
-                <div class="text-center mb-8">
-                    <h3 class="text-3xl font-bold text-gray-900">Partner With Us</h3>
-                    <p class="text-gray-600 text-sm mt-2">Submit your project tenders, specifications, or business inquiries directly to our team.</p>
+            <div class="form-side">
+                <div class="form-header">
+                    <h3>Partner With Us</h3>
+                    <p>Submit your project tenders, specifications, or business inquiries directly to our team.</p>
                 </div>
 
                 <form id="contactPartnerForm" action="https://formspree.io/f/mqevgbgq" method="POST">
                     <input type="hidden" name="_subject" value="New Submission via Contact Page">
                     
-                    <div class="space-y-6">
-                        <div>
-                            <label class="block mb-2 font-medium text-sm text-gray-700">Your Email Address</label>
-                            <input type="email" name="email" class="w-full px-5 py-4 border border-gray-200 bg-gray-50 rounded-2xl focus:outline-emerald-600 text-gray-900 shadow-sm" placeholder="yourname@domain.com" required>
-                        </div>
-
-                        <div>
-                            <label class="block mb-2 font-medium text-sm text-gray-700">Select Business Division</label>
-                            <select name="business_division" class="w-full px-5 py-4 border border-gray-200 bg-gray-50 rounded-2xl focus:outline-emerald-600 text-gray-900 shadow-sm bg-white">
-                                <option value="Mepel Facility Solution">Mepel Facility Solution</option>
-                                <option value="Kraipa Tech Gadgets">Kraipa Tech Gadgets</option>
-                                <option value="Curi Apparels">Curi Apparels</option>
-                                <option value="AgriVance Express">AgriVance Express</option>
-                                <option value="OmniCare">OmniCare</option>
-                            </select>
-                        </div>
-
-                        <div>
-                            <label class="block mb-2 font-medium text-sm text-gray-700">Message / Requirements</label>
-                            <textarea name="message" class="w-full px-5 py-4 border border-gray-200 bg-gray-50 rounded-3xl h-32 focus:outline-emerald-600 text-gray-900 shadow-sm" placeholder="Provide extra details..."></textarea>
-                        </div>
-
-                        <button type="submit" class="w-full bg-emerald-600 text-white py-5 rounded-3xl font-semibold hover:bg-emerald-700 transition shadow-sm">Submit Inquiry</button>
+                    <div class="form-group">
+                        <label>Your Email Address</label>
+                        <input type="email" name="email" placeholder="yourname@domain.com" required>
                     </div>
+
+                    <div class="form-group">
+                        <label>Select Business Division</label>
+                        <select name="business_division">
+                            <option value="Mepel Facility Solution">Mepel Facility Solution</option>
+                            <option value="Kraipa Tech Gadgets">Kraipa Tech Gadgets</option>
+                            <option value="Curi Apparels">Curi Apparels</option>
+                            <option value="AgriVance Express">AgriVance Express</option>
+                            <option value="OmniCare">OmniCare</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Message / Requirements</label>
+                        <textarea name="message" placeholder="Provide extra details..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Submit Inquiry</button>
                 </form>
             </div>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-12 text-center">
-        <p class="mb-2 text-sm">trendinoviainvestmentlimited@gmail.com</p>
-        <p class="text-xs">© 2026 TRENDINOVIA Investment Limited. All rights reserved.</p>
+    <footer>
+        <p>trendinoviainvestmentlimited@gmail.com</p>
+        <p style="font-size: 12px;">&copy; 2026 TRENDINOVIA Investment Limited. All rights reserved.</p>
     </footer>
 
 </body>
