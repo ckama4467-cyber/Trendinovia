@@ -28,21 +28,24 @@
         </div>
     </nav>
 
-    <!-- Hero Background Section -->
+    <!-- Hero Background Section Matrix -->
     <header class="relative h-screen flex items-center justify-center overflow-hidden bg-slate-900">
-        <!-- Background Video Canvas Layout -->
+        <!-- Background Video Track Container -->
         <div class="absolute inset-0 w-full h-full z-10">
-            <video autoplay loop muted playsinline class="w-full h-full object-cover">
-                <!-- Adjust file path asset here if uploaded to an assets/video folder -->
-                <source src="My Video.mp4" type="video/mp4">
+            <!-- 
+              Web-safe attributes forcing inline playback on Safari iOS / Android 
+              and prioritizing the new lowercase space-free filename
+            -->
+            <video autoplay loop muted playsinline webkit-playsinline class="w-full h-full object-cover">
+                <source src="hero-bg.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
         
-        <!-- High Contrast Content Protective Dark Layer (Ensures readable typography) -->
-        <div class="absolute z-20 inset-0 bg-slate-950/65 backdrop-blur-[1px]"></div>
+        <!-- Protective Visual Mask Layer -->
+        <div class="absolute z-20 inset-0 bg-gradient-to-b from-slate-950/70 via-slate-900/60 to-slate-950/75 backdrop-blur-[0.5px]"></div>
 
-        <!-- Typography Branding Grid Interface -->
+        <!-- Hero Copy Stack Elements -->
         <div class="relative z-30 max-w-5xl mx-auto px-6 text-center text-white">
             <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6 tracking-tight">
                 Innovative Solutions.<br>Divergent Growth.
@@ -53,7 +56,7 @@
         </div>
     </header>
 
-    <!-- Multi-Sector Capability Cards Section -->
+    <!-- Operational Multi-Sector Enterprise Grid -->
     <section class="py-24 max-w-7xl mx-auto px-6">
         <div class="text-center mb-16">
             <h2 class="text-4xl font-bold text-gray-900 tracking-tight">Our Multi-Sector Enterprise Divisions</h2>
