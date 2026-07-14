@@ -4,54 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trendinovia Investment Limited</title>
-    <!-- Alternative CSS Fallback Link -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
-        body { font-family: 'Poppins', sans-serif; }
-        .bg-custom-green { background-color: #4A6B63; }
+        /* Standalone Structural Base Styles */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f9fafb; color: #1f2937; display: flex; flex-direction: column; min-height: 100vh; }
+        
+        /* Navigation styling */
+        .navbar { background-color: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 50; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; }
+        .brand { display: flex; align-items: center; gap: 12px; cursor: pointer; text-decoration: none; }
+        .brand-logo { width: 44px; height: 44px; background: linear-gradient(135deg, #059669, #0d9488); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 24px; }
+        .brand-name { font-weight: 700; font-size: 24px; letter-spacing: -0.05em; color: #111827; }
+        .nav-links { display: flex; gap: 36px; align-items: center; }
+        .nav-links a { text-decoration: none; font-size: 14px; font-weight: 500; color: #374151; transition: color 0.2s; }
+        .nav-links a:hover { color: #059669; }
+        .nav-links a.active { color: #059669; font-weight: 600; }
+        .btn-book { background-color: #059669; color: white !important; padding: 12px 28px; border-radius: 24px; font-weight: 600; transition: background 0.2s; }
+        .btn-book:hover { background-color: #047857; }
+
+        /* Hero styling */
+        .hero { background-color: #4A6B63; flex-grow: 1; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 24px; position: relative; color: white; }
+        .hero-content { max-width: 800px; margin: 0 auto; }
+        .hero h1 { font-size: 64px; font-weight: 800; line-height: 1.1; margin-bottom: 32px; letter-spacing: -0.02em; }
+        .hero p { font-size: 22px; color: #f0fdf4; font-weight: 300; line-height: 1.6; margin-bottom: 48px; }
+        .hero-btns { display: flex; gap: 16px; justify-content: center; }
+        .btn-primary { background-color: #ffffff; color: #065f46; padding: 16px 32px; border-radius: 16px; font-weight: 600; text-decoration: none; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: background 0.2s; }
+        .btn-primary:hover { background-color: #f3f4f6; }
+        .btn-secondary { background-color: transparent; color: #ffffff; padding: 16px 32px; border-radius: 16px; font-weight: 600; text-decoration: none; border: 1px solid rgba(255,255,255,0.4); transition: background 0.2s; }
+        .btn-secondary:hover { background-color: rgba(255,255,255,0.1); }
+
+        /* Footer styling */
+        footer { background-color: #111827; color: #9ca3af; padding: 48px 24px; text-align: center; font-size: 14px; }
+        footer p { margin-bottom: 8px; }
+
+        /* Mobile adaptation */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 40px; }
+            .hero p { font-size: 18px; }
+            .hero-btns { flex-direction: column; gap: 12px; }
+        }
     </style>
 </head>
-<body class="bg-gray-50 flex flex-col min-h-screen">
+<body>
 
-    <!-- Navigation Bar -->
-    <nav class="bg-white shadow sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-            <div onclick="window.location.href='index.html'" class="cursor-pointer flex items-center space-x-3">
-                <div class="w-11 h-11 bg-gradient-to-br from-green-600 to-teal-600 rounded-2xl flex items-center justify-center text-white font-bold text-3xl">T</div>
-                <div class="font-bold text-2xl tracking-tighter text-gray-900">TRENDINOVIA</div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand">
+                <div class="brand-logo">T</div>
+                <div class="brand-name">TRENDINOVIA</div>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+                <a href="contact.html" class="btn-book">Book Now</a>
             </div>
-            <div class="hidden md:flex items-center space-x-9 text-sm font-medium">
-                <a href="index.html" class="text-green-600 font-semibold">Home</a>
-                <a href="about.html" class="text-gray-700 hover:text-green-600">About</a>
-                <a href="services.html" class="text-gray-700 hover:text-green-600">Services</a>
-                <a href="contact.html" class="text-gray-700 hover:text-green-600">Contact</a>
-            </div>
-            <a href="contact.html" class="bg-green-600 hover:bg-green-700 px-7 py-3 rounded-full text-white font-semibold text-sm transition">Book Now</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative bg-custom-green flex-grow flex items-center justify-center text-center px-6 py-32 overflow-hidden text-white">
-        <div class="relative z-10 max-w-4xl mx-auto">
-            <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-8 tracking-tight">
-                Innovative Solutions.<br>Divergent Growth.
-            </h1>
-            <p class="text-lg md:text-2xl opacity-90 max-w-3xl mx-auto font-light leading-relaxed mb-12">
-                From facility management to agriculture, tech, fashion, and healthcare—driving excellence across Papua New Guinea.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="services.html" class="bg-white text-green-900 hover:bg-gray-100 px-8 py-4 rounded-2xl font-semibold shadow-md transition inline-block">Explore Our Services</a>
-                <a href="contact.html" class="bg-transparent text-white hover:bg-black hover:bg-opacity-20 px-8 py-4 rounded-2xl font-semibold shadow-md transition border border-white inline-block">Get in Touch</a>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Innovative Solutions.<br>Divergent Growth.</h1>
+            <p>From facility management to agriculture, tech, fashion, and healthcare—driving excellence across Papua New Guinea.</p>
+            <div class="hero-btns">
+                <a href="services.html" class="btn-primary">Explore Our Services</a>
+                <a href="contact.html" class="btn-secondary">Get in Touch</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-12 text-center mt-auto">
-        <p class="mb-2 text-sm">trendinoviainvestmentlimited@gmail.com</p>
-        <p class="text-xs">© 2026 TRENDINOVIA Investment Limited. All rights reserved.</p>
+    <footer>
+        <p>trendinoviainvestmentlimited@gmail.com</p>
+        <p style="font-size: 12px;">&copy; 2026 TRENDINOVIA Investment Limited. All rights reserved.</p>
     </footer>
 
 </body>
