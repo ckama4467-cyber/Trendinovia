@@ -3,84 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OmniCare Healthcare - TRENDINOVIA</title>
+    <title>Procurement Channels - TRENDINOVIA</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: #f9fafb; color: #1f2937; display: flex; flex-direction: column; min-height: 100vh; }
-        
         .navbar { background-color: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 50; }
         .nav-container { max-width: 1200px; margin: 0 auto; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; }
         .brand { display: flex; align-items: center; gap: 12px; cursor: pointer; text-decoration: none; }
         .brand-logo { width: 44px; height: 44px; background: linear-gradient(135deg, #059669, #0d9488); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 24px; }
         .brand-name { font-weight: 700; font-size: 24px; letter-spacing: -0.05em; color: #111827; }
         .nav-links a { text-decoration: none; font-size: 14px; font-weight: 500; color: #374151; margin-left: 24px; }
-        .nav-links a:hover { color: #059669; }
-
         .main-content { max-width: 1200px; margin: 0 auto; padding: 60px 24px; flex-grow: 1; width: 100%; }
         .page-title { margin-bottom: 40px; text-align: center; }
         .page-title h1 { font-size: 36px; color: #111827; margin-bottom: 12px; }
-        .page-title p { color: #4b5563; font-size: 16px; }
-        
-        .btn-back { text-decoration: none; font-size: 14px; font-weight: 600; color: #4b5563; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; transition: color 0.2s; }
+        .btn-back { text-decoration: none; font-size: 14px; font-weight: 600; color: #4b5563; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; }
         .btn-back:hover { color: #059669; }
-
         .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; }
         .product-card { background: white; border-radius: 20px; border: 1px solid #e5e7eb; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; }
         .product-card:hover { transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05); }
-        
-        .product-image-placeholder { height: 220px; background-color: #e6f4ea; display: flex; align-items: center; justify-content: center; color: #4b5563; font-size: 16px; text-align: center; padding: 16px; font-weight: 600; }
+        .product-image-placeholder { height: 220px; display: flex; align-items: center; justify-content: center; color: #4b5563; font-size: 16px; text-align: center; padding: 16px; font-weight: 600; }
         .product-info { padding: 24px; flex-grow: 1; display: flex; flex-direction: column; }
         .product-title { font-size: 18px; font-weight: 700; color: #111827; margin-bottom: 8px; }
         .product-desc { font-size: 13px; color: #6b7280; line-height: 1.5; margin-bottom: 16px; flex-grow: 1; }
         .product-price { font-size: 18px; font-weight: 700; color: #111827; margin-bottom: 16px; }
-        
-        .btn-action { text-align: center; padding: 14px; border-radius: 12px; font-weight: 600; text-decoration: none; display: block; border: none; width: 100%; font-size: 14px; margin-top: 8px; transition: background 0.2s; }
-        .btn-buy { background-color: #059669; color: white !important; }
-        .btn-buy:hover { background-color: #047857; }
-        
+        .order-actions { display: flex; flex-direction: column; gap: 8px; margin-top: auto; }
+        .btn-action { text-align: center; padding: 12px; border-radius: 12px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 14px; transition: background 0.2s; border: none; cursor: pointer; }
+        .btn-wa { background-color: #25d366; color: white !important; }
+        .btn-wa:hover { background-color: #20ba5a; }
+        .btn-email { background-color: #111827; color: white !important; }
+        .btn-email:hover { background-color: #1f2937; }
         footer { background-color: #111827; color: #9ca3af; padding: 48px 24px; text-align: center; font-size: 14px; margin-top: auto; }
     </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="brand">
-                <div class="brand-logo">T</div>
-                <div class="brand-name">TRENDINOVIA</div>
-            </a>
+            <a href="index.html" class="brand"><div class="brand-logo">T</div><div class="brand-name">TRENDINOVIA</div></a>
             <div class="nav-links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="contact.html">Contact</a></div>
         </div>
     </nav>
     <main class="main-content">
         <a href="services.html" class="btn-back">&larr; Back to Divisions</a>
-        <div class="page-title">
-            <h1>OmniCare Distribution Line</h1>
-            <p>Premium healthcare supplement complexes and systemic wellness configurations.</p>
-        </div>
-        <div class="product-grid">
-            <div class="product-card">
-                <div class="product-image-placeholder">🎨 Hydrating Skin Serum</div>
-                <div class="product-info">
-                    <h3 class="product-title">Hydrating Skin Serum</h3>
-                    <p class="product-desc">Premium distribution wellness lines supplied securely via local logistics networks.</p>
-                    <p class="product-price">K85.00</p>
-                    <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Order Inquiry: Hydrating Skin Serum" class="btn-action btn-buy">Order via Email</a>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-image-placeholder">💊 Premium Multi-Vitamins</div>
-                <div class="product-info">
-                    <h3 class="product-title">Premium Multi-Vitamins</h3>
-                    <p class="product-desc">Clinical grade supplement complexes distributed across local clinical hubs.</p>
-                    <p class="product-price">K120.00</p>
-                    <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Order Inquiry: Premium Multi-Vitamins" class="btn-action btn-buy">Order via Email</a>
-                </div>
-            </div>
-        </div>
+        <div class="page-title"><h1 id="page-header">Procurement Portal</h1><p id="page-subheader">Select your infrastructure array or product supply configuration to submit an instant order.</p></div>
+        <div class="product-grid" id="catalog-target"></div>
     </main>
     <footer>
-        <p>trendinoviainvestmentlimited@gmail.com</p>
+        <p>trendinoviainvestmentlimited@gmail.com | WhatsApp: +675 78887967</p>
         <p style="font-size: 12px;">&copy; 2026 TRENDINOVIA Investment Limited. All rights reserved.</p>
     </footer>
+
+    <script>
+        const database = {
+            "curi.html": {
+                title: "Curi Apparels Supply Portal", sub: "Premium uniform distributions paths.",
+                items: [
+                    { title: "Tailored Corporate Attire Bulk Packs", desc: "High-grade textiles allocation and logistics fulfillment optimized for corporate team alignment.", price: "Price Upon Specification", bg: "#fbeefe", label: "👔 Corporate Uniforms" },
+                    { title: "Heavy-Duty Field & Utility Uniforms", desc: "Reinforced stitch fabrics designed for rugged operations and local distribution pathways.", price: "Price Upon Specification", bg: "#fbeefe", label: "👕 Industrial Safety Workwear" }
+                ]
+            },
+            "kraipa.html": {
+                title: "Kraipa Tech Infrastructure Nodes", sub: "Enterprise hardware component pathways and computing system acquisitions.",
+                items: [
+                    { title: "Hardware Electronics Sourcing Package", desc: "Complete core setup, modular framework interfaces, and peripheral computing instrumentation assets.", price: "K1,450.00 / Unit", bg: "#e0f2fe", label: "💻 IT Infrastructure Node" },
+                    { title: "High-Speed Hubs & Interconnects", desc: "Advanced data handling architectures for dynamic infrastructure arrays and systemic expansion bridges.", price: "K380.00", bg: "#e0f2fe", label: "🔌 System Network Components" }
+                ]
+            },
+            "omnicare.html": {
+                title: "OmniCare Distribution Line", sub: "Premium healthcare supplement complexes and systemic wellness configurations.",
+                items: [
+                    { title: "Hydrating Skin Serum", desc: "Premium distribution wellness lines supplied securely via local logistics networks.", price: "K85.00", bg: "#e6f4ea", label: "🎨 Hydrating Serum" },
+                    { title: "Premium Multi-Vitamins", desc: "Clinical grade supplement complexes distributed across local clinical hubs.", price: "K120.00", bg: "#e6f4ea", label: "💊 Multi-Vitamins" }
+                ]
+            }
+        };
+
+        const currentFile = window.location.pathname.split("/").pop() || "curi.html";
+        const config = database[currentFile] || database["curi.html"];
+        
+        document.getElementById("page-header").innerText = config.title;
+        document.getElementById("page-subheader").innerText = config.sub;
+        
+        const grid = document.getElementById("catalog-target");
+        config.items.forEach(item => {
+            const waLink = `https://wa.me/67578887967?text=Hello%20Trendinovia,%20I%20want%20to%20place%20an%20order%20for:%20${encodeURIComponent(item.title)}`;
+            const mailLink = `mailto:trendinoviainvestmentlimited@gmail.com?subject=Order Request: ${encodeURIComponent(item.title)}&body=Hello,%20I%20would%20like%20to%20place%20a%20formal%20order%20for%20the%20following:%20${encodeURIComponent(item.title)}.`;
+            
+            grid.innerHTML += `
+                <div class="product-card">
+                    <div class="product-image-placeholder" style="background-color: ${item.bg}">${item.label}</div>
+                    <div class="product-info">
+                        <h3 class="product-title">${item.title}</h3>
+                        <p class="product-desc">${item.desc}</p>
+                        <p class="product-price">${item.price}</p>
+                        <div class="order-actions">
+                            <a href="${waLink}" target="_blank" class="btn-action btn-wa">💬 Order via WhatsApp</a>
+                            <a href="${mailLink}" class="btn-action btn-email">📧 Order via Email</a>
+                        </div>
+                    </div>
+                </div>`;
+        });
+    </script>
 </body>
 </html>
