@@ -4,83 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - TRENDINOVIA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f9fafb; color: #1f2937; display: flex; flex-direction: column; min-height: 100vh; }
-        .navbar { background-color: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 50; }
-        .nav-container { max-width: 1200px; margin: 0 auto; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; }
-        .brand { display: flex; align-items: center; gap: 12px; cursor: pointer; text-decoration: none; }
-        .brand-logo { width: 44px; height: 44px; background: linear-gradient(135deg, #059669, #0d9488); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 24px; }
-        .brand-name { font-weight: 700; font-size: 24px; letter-spacing: -0.05em; color: #111827; }
-        .nav-links { display: flex; gap: 36px; align-items: center; }
-        .nav-links a { text-decoration: none; font-size: 14px; font-weight: 500; color: #374151; }
-        .nav-links a.active { color: #059669; font-weight: 600; }
-
-        .main-content { max-width: 1200px; margin: 0 auto; padding: 80px 24px; flex-grow: 1; }
-        .header-block { max-width: 768px; margin: 0 auto 64px auto; text-align: center; }
-        .header-block h1 { font-size: 48px; font-weight: 700; color: #111827; margin-bottom: 24px; }
-        .header-block p { font-size: 20px; color: #4b5563; line-height: 1.6; }
-        
-        .grid-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
-        .story-side h2 { font-size: 30px; color: #111827; margin-bottom: 24px; }
-        .story-side p { color: #4b5563; line-height: 1.7; margin-bottom: 24px; font-size: 16px; }
-        
-        .pillars-side { background-color: #f0fdf4; border: 1px solid #d1fae5; border-radius: 24px; padding: 40px; }
-        .pillars-side h3 { font-size: 20px; color: #065f46; margin-bottom: 24px; font-weight: 700; }
-        .pillar-item { margin-bottom: 20px; }
-        .pillar-item strong { color: #111827; display: inline-block; margin-bottom: 4px; }
-        .pillar-item p { color: #374151; font-size: 15px; line-height: 1.5; }
-
-        footer { background-color: #111827; color: #9ca3af; padding: 48px 24px; text-align: center; font-size: 14px; }
-        @media (max-width: 768px) { .nav-links { display: none; } .grid-layout { grid-template-columns: 1fr; } }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+        body { font-family: 'Poppins', sans-serif; }
     </style>
 </head>
-<body>
+<body class="bg-gray-50 flex flex-col min-h-screen">
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="brand">
-                <div class="brand-logo">T</div>
-                <div class="brand-name">TRENDINOVIA</div>
-            </a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="about.html" class="active">About</a>
-                <a href="services.html">Services</a>
-                <a href="shop.html">Shop</a>
-                <a href="contact.html">Contact</a>
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <div onclick="window.location.href='index.html'" class="cursor-pointer flex items-center gap-x-3">
+                <div class="w-11 h-11 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-2xl flex items-center justify-center text-white font-bold text-3xl">T</div>
+                <div class="font-bold text-2xl tracking-tighter text-gray-900">TRENDINOVIA</div>
             </div>
+            <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
+                <a href="index.html" class="text-gray-700 hover:text-emerald-600">Home</a>
+                <a href="about.html" class="text-emerald-600 font-semibold">About</a>
+                <a href="services.html" class="text-gray-700 hover:text-emerald-600">Services</a>
+                <a href="contact.html" class="text-gray-700 hover:text-emerald-600">Contact</a>
+            </div>
+            <a href="contact.html" class="bg-emerald-600 hover:bg-emerald-700 px-7 py-3 rounded-3xl text-white font-semibold text-sm transition">Book Now</a>
         </div>
     </nav>
 
-    <main class="main-content">
-        <div class="header-block">
-            <h1>Our Story &amp; Mission</h1>
-            <p>Trendinovia Investment Limited delivers world-class solutions across hardware procurement networks, apparel manufacturing, and technical project logistics.</p>
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-6 py-20 flex-grow">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+            <h1 class="text-5xl font-bold text-gray-900 mb-6">Our Story & Mission</h1>
+            <p class="text-xl text-gray-600 leading-relaxed">
+                Trendinovia Investment Limited is a multi-sector enterprise dedicated to delivering world-class solutions tailored to the growing ecosystem of Papua New Guinea.
+            </p>
         </div>
 
-        <div class="grid-layout">
-            <div class="story-side">
-                <h2>Why Trendinovia?</h2>
-                <p>We leverage multi-sector diversity to build dependable supply systems within Papua New Guinea. Operating directly out of Port Moresby, our integrated network bridges the gap between raw hardware components, tailored attire production, and public facility management pipelines.</p>
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+            <div class="space-y-6">
+                <h2 class="text-3xl font-bold text-gray-900">Why Trendinovia?</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    We believe in divergent growth—expanding our mastery across distinct industries to shield our operations from market volatility while maximizing shared value for partners, corporate clients, and communities alike.
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    Operating out of our central office in Port Moresby, our dedicated branch divisions are equipped with specialized teams focused heavily on quality infrastructure delivery, technical asset procurement, and responsive public utility management.
+                </p>
             </div>
-            <div class="pillars-side">
-                <h3>Corporate Pillars</h3>
-                <div class="pillar-item">
-                    <strong>Technical Precision</strong>
-                    <p>Securing high-grade tech hardware assets and electronics configuration protocols.</p>
-                </div>
-                <div class="pillar-item">
-                    <strong>Supply Resilience</strong>
-                    <p>Ensuring end-to-end reliability across textile management pipelines and logistical pathways.</p>
-                </div>
+            <div class="bg-emerald-50 border border-emerald-100 rounded-3xl p-8 md:p-10 space-y-6">
+                <h3 class="text-xl font-bold text-emerald-900">Corporate Pillars</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-emerald-600 mt-1"></i>
+                        <span class="text-gray-700"><strong>Integrity:</strong> Upholding structural accountability across all multi-layered procurement tenders.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-emerald-600 mt-1"></i>
+                        <span class="text-gray-700"><strong>Innovation:</strong> Implementing state-of-the-art technological tools and methodologies.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-emerald-600 mt-1"></i>
+                        <span class="text-gray-700"><strong>Localization:</strong> Committed to building internal institutional capabilities right here in PNG.</span>
+                    </li>
+                </ul>
             </div>
         </div>
     </main>
 
-    <footer>
-        <p>trendinoviainvestmentlimited@gmail.com</p>
-        <p style="font-size: 12px;">&copy; 2026 TRENDINOVIA Investment Limited. All rights reserved.</p>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12 text-center">
+        <p class="mb-2 text-sm">trendinoviainvestmentlimited@gmail.com</p>
+        <p class="text-xs">© 2026 TRENDINOVIA Investment Limited. All rights reserved.</p>
     </footer>
 
 </body>
