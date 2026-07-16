@@ -3,57 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trendinovia Investment Limited</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>TRENDINOVIA Investment Limited - Multi-Sector Enterprise Portal</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
-        body { font-family: 'Poppins', sans-serif; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f8fafc; color: #0f172a; display: flex; flex-direction: column; min-height: 100vh; }
+        
+        /* Top Navigation Header */
+        .navbar { background-color: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #e2e8f0; }
+        .nav-container { max-width: 1280px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; }
+        .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .brand-logo { width: 40px; height: 40px; background: linear-gradient(135deg, #0f172a, #334155); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 20px; }
+        .brand-name { font-weight: 800; font-size: 22px; color: #0f172a; tracking: -0.5px; }
+        .nav-links a { text-decoration: none; font-size: 14px; font-weight: 600; color: #475569; margin-left: 24px; transition: color 0.2s; }
+        .nav-links a:hover { color: #0284c7; }
+
+        /* Hero Showcase */
+        .hero-banner { background: linear-gradient(135deg, #0f172a, #1e293b); color: white; padding: 80px 24px; text-align: center; }
+        .hero-banner h1 { font-size: 42px; font-weight: 800; margin-bottom: 16px; letter-spacing: -1px; }
+        .hero-banner p { color: #94a3b8; font-size: 18px; max-width: 600px; margin: 0 auto; line-height: 1.6; }
+
+        .main-container { max-width: 1280px; margin: 0 auto; padding: 60px 24px; width: 100%; flex-grow: 1; }
+        .section-divider { font-size: 26px; font-weight: 800; color: #0f172a; margin: 40px 0 24px; border-left: 5px solid #0284c7; padding-left: 14px; letter-spacing: -0.5px; }
+        
+        /* Layout Grids */
+        .portal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 32px; margin-bottom: 60px; }
+        .division-card { background: white; border-radius: 20px; border: 1px solid #e2e8f0; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; }
+        .division-card:hover { transform: translateY(-4px); box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.05); }
+        
+        .card-header-pic { height: 180px; display: flex; align-items: center; justify-content: center; font-size: 40px; font-weight: bold; color: white; }
+        .card-body { padding: 28px; flex-grow: 1; display: flex; flex-direction: column; }
+        .card-title { font-size: 20px; font-weight: 800; color: #0f172a; margin-bottom: 10px; }
+        .card-desc { font-size: 14px; color: #475569; line-height: 1.6; margin-bottom: 24px; flex-grow: 1; }
+        
+        /* Secure Backend Media Matrix */
+        .secure-media-matrix { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin: 16px 0 24px 0; }
+        .secure-media-box { background: #f1f5f9; border-radius: 12px; overflow: hidden; height: 160px; border: 1px solid #cbd5e1; }
+        .secure-media-box img, .secure-media-box video { width: 100%; height: 100%; object-fit: cover; border: none; }
+
+        /* Action Buttons */
+        .action-block { display: flex; flex-direction: column; gap: 8px; margin-top: auto; }
+        .btn-order { text-align: center; padding: 12px; border-radius: 12px; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 14px; transition: background 0.2s; border: none; cursor: pointer; }
+        .btn-whatsapp { background-color: #25d366; color: white !important; }
+        .btn-whatsapp:hover { background-color: #1ebd56; }
+        .btn-email-link { background-color: #0f172a; color: white !important; }
+        .btn-email-link:hover { background-color: #1e293b; }
+        
+        footer { background-color: #0f172a; color: #94a3b8; padding: 48px 24px; text-align: center; font-size: 14px; border-top: 1px solid #1e293b; margin-top: auto; }
     </style>
 </head>
-<body class="bg-gray-50 flex flex-col min-h-screen">
+<body>
 
-    <!-- Navigation Bar -->
-    <nav class="bg-white shadow sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-            <div onclick="window.location.href='index.html'" class="cursor-pointer flex items-center gap-x-3">
-                <div class="w-11 h-11 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-2xl flex items-center justify-center text-white font-bold text-3xl">T</div>
-                <div class="font-bold text-2xl tracking-tighter text-gray-900">TRENDINOVIA</div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="brand">
+                <div class="brand-logo">T</div>
+                <div class="brand-name">TRENDINOVIA</div>
+            </a>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#divisions">Enterprises</a>
+                <a href="shop.html" style="color: #0284c7; font-weight: 700;">🛍️ Go to Shop</a>
+                <a href="mailto:trendinoviainvestmentlimited@gmail.com">Corporate Contact</a>
             </div>
-            <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
-                <a href="index.html" class="text-emerald-600 font-semibold">Home</a>
-                <a href="about.html" class="text-gray-700 hover:text-emerald-600">About</a>
-                <a href="services.html" class="text-gray-700 hover:text-emerald-600">Services</a>
-                <a href="contact.html" class="text-gray-700 hover:text-emerald-600">Contact</a>
-            </div>
-            <a href="contact.html" class="bg-emerald-600 hover:bg-emerald-700 px-7 py-3 rounded-3xl text-white font-semibold text-sm transition">Book Now</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative bg-[#4A6B63] flex-grow flex items-center justify-center text-center px-6 py-32 overflow-hidden">
-        <!-- Subtle Pattern Overlay -->
-        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 40px 40px;"></div>
-        <div class="absolute inset-0 bg-radial-gradient from-transparent to-black/30"></div>
-        
-        <div class="relative z-10 max-w-4xl mx-auto">
-            <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-8 tracking-tight">
-                Innovative Solutions.<br>Divergent Growth.
-            </h1>
-            <p class="text-lg md:text-2xl text-emerald-50/90 max-w-3xl mx-auto font-light leading-relaxed mb-12">
-                From facility management to agriculture, tech, fashion, and healthcare—driving excellence across Papua New Guinea.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="services.html" class="bg-white text-emerald-800 hover:bg-gray-100 px-8 py-4 rounded-2xl font-semibold shadow-md transition">Explore Our Services</a>
-                <a href="contact.html" class="bg-emerald-700 text-white hover:bg-emerald-800 px-8 py-4 rounded-2xl font-semibold shadow-md transition border border-emerald-500/30">Get in Touch</a>
-            </div>
-        </div>
-    </section>
+    <header class="hero-banner">
+        <h1>TRENDINOVIA Investment Limited</h1>
+        <p>A multi-sector corporate entity driving high-performance solutions across commercial logistics, wholesale supply chains, property maintenance, technology infrastructure, and agricultural development.</p>
+    </header>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-12 text-center">
-        <p class="mb-2 text-sm">trendinoviainvestmentlimited@gmail.com</p>
-        <p class="text-xs">© 2026 TRENDINOVIA Investment Limited. All rights reserved.</p>
+    <main class="main-container" id="divisions">
+        <h2 class="section-divider">Corporate Enterprise Portfolios</h2>
+        <div class="portal-grid">
+
+            <!-- 1. AGRIVENCE -->
+            <div class="division-card">
+                <div class="card-header-pic" style="background: linear-gradient(135deg, #15803d, #166534);">🌾</div>
+                <div class="card-body">
+                    <h3 class="card-title">AgriVence</h3>
+                    <p class="card-desc">Commercial agricultural deployment specializing in vanilla logistics, sustainable crop development, local cultivation networks, and global trading frameworks.</p>
+                    
+                    <div class="secure-media-matrix">
+                        <div class="secure-media-box">
+                            <video controls><source src="media/agri_video.mp4" type="video/mp4"></video>
+                        </div>
+                        <div class="secure-media-box">
+                            <img src="media/agri_1.jpg" alt="AgriVence Logistics">
+                        </div>
+                    </div>
+
+                    <div class="action-block">
+                        <a href="https://wa.me/67578887968?text=Hello%20Trendinovia,%20I%20am%20interested%20in%20ordering%20from%20AgriVence." target="_blank" class="btn-order btn-whatsapp">💬 Buy / Order via WhatsApp</a>
+                        <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=AgriVence Order Inquiry" class="btn-order btn-email-link">📧 Buy / Order via Email</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. MEPEL PROFESSIONAL CLEANING, DEMOLITION & MAINTENANCE -->
+            <div class="division-card">
+                <div class="card-header-pic" style="background: linear-gradient(135deg, #0369a1, #075985);">🏗️</div>
+                <div class="card-body">
+                    <h3 class="card-title">Mepel Professional Cleaning, Demolition &amp; Maintenance</h3>
+                    <p class="card-desc">Integrated heavy sanitation systems, industrial site cleanup, systematic commercial waste management, structural office partition deconstruction, internal breakdown, and asset maintenance refurbishments.</p>
+                    
+                    <div class="secure-media-matrix">
+                        <div class="secure-media-box">
+                            <img src="media/clean_1.jpg" alt="Sanitation Operations">
+                        </div>
+                        <div class="secure-media-box">
+                            <img src="media/demo_1.jpg" alt="Structural Maintenance">
+                        </div>
+                    </div>
+
+                    <div class="action-block">
+                        <a href="https://wa.me/67578887968?text=Hello%20Trendinovia,%20I%20am%20interested%20in%20ordering%20Mepel%20Cleaning,%20Demolition%20%26%20Maintenance%20services." target="_blank" class="btn-order btn-whatsapp">💬 Buy / Order via WhatsApp</a>
+                        <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Mepel Services Inquiry" class="btn-order btn-email-link">📧 Buy / Order via Email</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. OMNICARE -->
+            <div class="division-card">
+                <div class="card-header-pic" style="background: linear-gradient(135deg, #be123c, #9f1239);">🩺</div>
+                <div class="card-body">
+                    <h3 class="card-title">Omnicare</h3>
+                    <p class="card-desc">Comprehensive supply line for high-quality pharmaceutical goods, certified healthcare equipment, medical consumables, and reliable institutional facility supplies.</p>
+                    <div class="action-block">
+                        <a href="https://wa.me/67578887968?text=Hello%20Trendinovia,%20I%20am%20interested%20in%20ordering%20medical%20supplies%20from%20Omnicare." target="_blank" class="btn-order btn-whatsapp">💬 Buy / Order via WhatsApp</a>
+                        <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Omnicare Medical Purchase Order" class="btn-order btn-email-link">📧 Buy / Order via Email</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. CURI APPARELS -->
+            <div class="division-card">
+                <div class="card-header-pic" style="background: linear-gradient(135deg, #6d28d9, #5b21b6);">👕</div>
+                <div class="card-body">
+                    <h3 class="card-title">Curi Apparels</h3>
+                    <p class="card-desc">Bulk commercial textile distribution, custom high-grade corporate identity uniforms, industrial safety wear protective gear, and custom apparel prints.</p>
+                    <div class="action-block">
+                        <a href="https://wa.me/67578887968?text=Hello%20Trendinovia,%20I%20am%20interested%20in%20ordering%20textiles/apparel%20from%20Curi%20Apparels." target="_blank" class="btn-order btn-whatsapp">💬 Buy / Order via WhatsApp</a>
+                        <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Curi Apparels Production Order" class="btn-order btn-email-link">📧 Buy / Order via Email</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. KRAIPA TECH -->
+            <div class="division-card">
+                <div class="card-header-pic" style="background: linear-gradient(135deg, #334155, #1e293b);">💻</div>
+                <div class="card-body">
+                    <h3 class="card-title">Kraipa Tech</h3>
+                    <p class="card-desc">Advanced systems integrator providing network architecture setups, specialized computational hardware deployment, structured tech equipment distribution, and digital workplace solutions.</p>
+                    <div class="action-block">
+                        <a href="https://wa.me/67578887968?text=Hello%20Trendinovia,%20I%20am%20interested%20in%20ordering%20hardware/tech%20services%20from%20Kraipa%20Tech." target="_blank" class="btn-order btn-whatsapp">💬 Buy / Order via WhatsApp</a>
+                        <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Kraipa Tech Hardware Order" class="btn-order btn-email-link">📧 Buy / Order via Email</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>Corporate Contact: trendinoviainvestmentlimited@gmail.com | WhatsApp Hotline: +675 78887968</p>
+        <p style="font-size: 12px; color: #64748b;">&copy; 2026 TRENDINOVIA Investment Limited. All rights reserved.</p>
     </footer>
 
 </body>
