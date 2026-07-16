@@ -4,81 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services - TRENDINOVIA</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-        body { font-family: 'Poppins', sans-serif; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f9fafb; color: #1f2937; display: flex; flex-direction: column; min-height: 100vh; }
+        .navbar { background-color: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 50; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; }
+        .brand { display: flex; align-items: center; gap: 12px; cursor: pointer; text-decoration: none; }
+        .brand-logo { width: 44px; height: 44px; background: linear-gradient(135deg, #059669, #0d9488); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 24px; }
+        .brand-name { font-weight: 700; font-size: 24px; letter-spacing: -0.05em; color: #111827; }
+        .nav-links { display: flex; gap: 36px; align-items: center; }
+        .nav-links a { text-decoration: none; font-size: 14px; font-weight: 500; color: #374151; }
+        .nav-links a:hover { color: #059669; }
+        .nav-links a.active { color: #059669; font-weight: 600; }
+        .btn-book { background-color: #059669; color: white !important; padding: 12px 28px; border-radius: 24px; font-weight: 600; text-decoration: none; }
+
+        .main-content { max-width: 1200px; margin: 0 auto; padding: 80px 24px; flex-grow: 1; w-full; }
+        .header-block { max-width: 768px; margin: 0 auto 64px auto; text-align: center; }
+        .header-block h1 { font-size: 48px; font-weight: 700; color: #111827; margin-bottom: 24px; }
+        .header-block p { font-size: 20px; color: #4b5563; }
+
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; }
+        .card { background-color: white; padding: 32px; border-radius: 24px; border: 1px solid #f3f4f6; box-shadow: 0 1px 2px rgba(0,0,0,0.05); transition: transform 0.2s, box-shadow 0.2s; }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05); }
+        .card-icon { width: 48px; height: 48px; background-color: #e6f4ea; color: #059669; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 20px; margin-bottom: 24px; }
+        .card h3 { font-size: 22px; font-weight: 700; color: #111827; margin-bottom: 12px; }
+        .card p { color: #4b5563; font-size: 14px; line-height: 1.6; }
+
+        footer { background-color: #111827; color: #9ca3af; padding: 48px 24px; text-align: center; font-size: 14px; }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+        }
     </style>
 </head>
-<body class="bg-gray-50 flex flex-col min-h-screen">
+<body>
 
-    <!-- Navigation Bar -->
-    <nav class="bg-white shadow sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-            <div onclick="window.location.href='index.html'" class="cursor-pointer flex items-center gap-x-3">
-                <div class="w-11 h-11 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-2xl flex items-center justify-center text-white font-bold text-3xl">T</div>
-                <div class="font-bold text-2xl tracking-tighter text-gray-900">TRENDINOVIA</div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand">
+                <div class="brand-logo">T</div>
+                <div class="brand-name">TRENDINOVIA</div>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html" class="active">Services</a>
+                <a href="contact.html">Contact</a>
+                <a href="contact.html" class="btn-book">Book Now</a>
             </div>
-            <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
-                <a href="index.html" class="text-gray-700 hover:text-emerald-600">Home</a>
-                <a href="about.html" class="text-gray-700 hover:text-emerald-600">About</a>
-                <a href="services.html" class="text-emerald-600 font-semibold">Services</a>
-                <a href="contact.html" class="text-gray-700 hover:text-emerald-600">Contact</a>
-            </div>
-            <a href="contact.html" class="bg-emerald-600 hover:bg-emerald-700 px-7 py-3 rounded-3xl text-white font-semibold text-sm transition">Book Now</a>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-6 py-20 flex-grow">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <h1 class="text-5xl font-bold text-gray-900 mb-6">Our Core Divisions</h1>
-            <p class="text-xl text-gray-600">Explore our comprehensive array of commercial capabilities operating seamlessly across PNG.</p>
+    <main class="main-content">
+        <div class="header-block">
+            <h1>Our Core Divisions</h1>
+            <p>Explore our comprehensive array of commercial capabilities operating seamlessly across PNG.</p>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Mepel Facility Solution -->
-            <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition">
-                <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center text-xl font-bold mb-6"><i class="fas fa-building"></i></div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-3">Mepel Facility Solution</h3>
-                <p class="text-gray-600 text-sm leading-relaxed">Corporate maintenance, spatial layout modifications, partition assembly installations, and commercial site asset management.</p>
+        <div class="services-grid">
+            <div class="card">
+                <div class="card-icon">■</div>
+                <h3>Mepel Facility Solution</h3>
+                <p>Corporate maintenance, spatial layout modifications, partition assembly installations, and commercial site asset management.</p>
             </div>
-
-            <!-- Kraipa Tech Gadgets -->
-            <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition">
-                <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center text-xl font-bold mb-6"><i class="fas fa-laptop-code"></i></div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-3">Kraipa Tech Gadgets</h3>
-                <p class="text-gray-600 text-sm leading-relaxed">Provisioning of hardware electronics, IT framework solutions, components sourcing, and peripheral operational equipment supply.</p>
+            <div class="card">
+                <div class="card-icon">■</div>
+                <h3>Kraipa Tech Gadgets</h3>
+                <p>Provisioning of hardware electronics, IT framework solutions, components sourcing, and peripheral operational equipment supply.</p>
             </div>
-
-            <!-- Curi Apparels -->
-            <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition">
-                <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center text-xl font-bold mb-6"><i class="fas fa-tshirt"></i></div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-3">Curi Apparels</h3>
-                <p class="text-gray-600 text-sm leading-relaxed">High-grade textiles allocation, tailored business uniform fulfillment logistics, design conceptualization, and local distribution.</p>
+            <div class="card">
+                <div class="card-icon">■</div>
+                <h3>Curi Apparels</h3>
+                <p>High-grade textiles allocation, tailored business uniform fulfillment logistics, design conceptualization, and local distribution.</p>
             </div>
-
-            <!-- AgriVance Express -->
-            <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition">
-                <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center text-xl font-bold mb-6"><i class="fas fa-seedling"></i></div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-3">AgriVance Express</h3>
-                <p class="text-gray-600 text-sm leading-relaxed">Agricultural supply logistics management, cold chain transportation pipelines, and crop optimization provisioning maps.</p>
+            <div class="card">
+                <div class="card-icon">■</div>
+                <h3>AgriVance Express</h3>
+                <p>Agricultural supply logistics management, cold chain transportation pipelines, and crop optimization provisioning maps.</p>
             </div>
-
-            <!-- OmniCare -->
-            <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition">
-                <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center text-xl font-bold mb-6"><i class="fas fa-heartbeat"></i></div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-3">OmniCare</h3>
-                <p class="text-gray-600 text-sm leading-relaxed">Specialized logistics networks handling essential wellness and clinical equipment distributions securely nationwide.</p>
+            <div class="card">
+                <div class="card-icon">■</div>
+                <h3>OmniCare</h3>
+                <p>Specialized logistics networks handling essential wellness and clinical equipment distributions securely nationwide.</p>
             </div>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-12 text-center">
-        <p class="mb-2 text-sm">trendinoviainvestmentlimited@gmail.com</p>
-        <p class="text-xs">© 2026 TRENDINOVIA Investment Limited. All rights reserved.</p>
+    <footer>
+        <p>trendinoviainvestmentlimited@gmail.com</p>
+        <p style="font-size: 12px;">&copy; 2026 TRENDINOVIA Investment Limited. All rights reserved.</p>
     </footer>
 
 </body>
