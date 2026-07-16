@@ -1,1 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - TRENDINOVIA</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f9fafb; color: #1f2937; display: flex; flex-direction: column; min-height: 100vh; }
+        
+        /* Navigation Bar */
+        .navbar { background-color: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 50; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; }
+        .brand { display: flex; align-items: center; gap: 12px; cursor: pointer; text-decoration: none; }
+        .brand-logo { width: 44px; height: 44px; background: linear-gradient(135deg, #059669, #0d9488); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 24px; }
+        .brand-name { font-weight: 700; font-size: 24px; letter-spacing: -0.05em; color: #111827; }
+        .nav-links { display: flex; gap: 36px; align-items: center; }
+        .nav-links a { text-decoration: none; font-size: 14px; font-weight: 500; color: #374151; }
+        .nav-links a:hover { color: #059669; }
+        .nav-links a.active { color: #059669; font-weight: 600; }
 
+        /* Main Catalog Layout */
+        .main-content { max-width: 1200px; margin: 0 auto; padding: 60px 24px; flex-grow: 1; width: 100%; }
+        .page-title { margin-bottom: 40px; text-align: center; }
+        .page-title h1 { font-size: 40px; color: #111827; margin-bottom: 12px; }
+        .page-title p { color: #4b5563; font-size: 16px; }
+        
+        /* Product Grid */
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; }
+        .product-card { background: white; border-radius: 20px; border: 1px solid #e5e7eb; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s; }
+        .product-card:hover { transform: translateY(-4px); }
+        .product-image-placeholder { height: 220px; background-color: #f3f4f6; display: flex; align-items: center; justify-content: center; color: #9ca3af; font-size: 14px; }
+        .product-info { padding: 24px; flex-grow: 1; display: flex; flex-direction: column; }
+        .product-category { font-size: 12px; color: #059669; font-weight: 600; text-transform: uppercase; margin-bottom: 8px; }
+        .product-title { font-size: 18px; font-weight: 700; color: #111827; margin-bottom: 8px; }
+        .product-price { font-size: 20px; font-weight: 700; color: #111827; margin-top: auto; margin-bottom: 16px; }
+        
+        /* Interactive Action Button */
+        .btn-buy { background-color: #059669; color: white !important; text-align: center; padding: 14px; border-radius: 12px; font-weight: 600; text-decoration: none; display: block; border: none; cursor: pointer; width: 100%; transition: background 0.2s; }
+        .btn-buy:hover { background-color: #047857; }
+
+        /* Footer */
+        footer { background-color: #111827; color: #9ca3af; padding: 48px 24px; text-align: center; font-size: 14px; margin-top: auto; }
+        @media (max-width: 768px) { .nav-links { display: none; } }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand">
+                <div class="brand-logo">T</div>
+                <div class="brand-name">TRENDINOVIA</div>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="shop.html" class="active">Shop</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Catalog -->
+    <main class="main-content">
+        <div class="page-title">
+            <h1>Healthcare &amp; Beauty Catalog</h1>
+            <p>Premium distribution and retail products by OmniCare.</p>
+        </div>
+
+        <div class="product-grid">
+            <!-- Product Item 1 -->
+            <div class="product-card">
+                <div class="product-image-placeholder">🎨 [Product Image]</div>
+                <div class="product-info">
+                    <span class="product-category">Beauty / Skincare</span>
+                    <h3 class="product-title">Hydrating Skin Serum</h3>
+                    <p class="product-price">K85.00</p>
+                    <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Order Inquiry: Hydrating Skin Serum" class="btn-buy">Order via Email</a>
+                </div>
+            </div>
+
+            <!-- Product Item 2 -->
+            <div class="product-card">
+                <div class="product-image-placeholder">💊 [Product Image]</div>
+                <div class="product-info">
+                    <span class="product-category">Healthcare</span>
+                    <h3 class="product-title">Premium Multi-Vitamins</h3>
+                    <p class="product-price">K120.00</p>
+                    <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Order Inquiry: Premium Multi-Vitamins" class="btn-buy">Order via Email</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>trendinoviainvestmentlimited@gmail.com</p>
+        <p style="font-size: 12px;">&copy; 2026 TRENDINOVIA Investment Limited. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
