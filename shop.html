@@ -1,1 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - TRENDINOVIA</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f9fafb; color: #1f2937; display: flex; flex-direction: column; min-height: 100vh; }
+        
+        /* Navigation Bar */
+        .navbar { background-color: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 50; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; }
+        .brand { display: flex; align-items: center; gap: 12px; cursor: pointer; text-decoration: none; }
+        .brand-logo { width: 44px; height: 44px; background: linear-gradient(135deg, #059669, #0d9488); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 24px; }
+        .brand-name { font-weight: 700; font-size: 24px; letter-spacing: -0.05em; color: #111827; }
+        .nav-links { display: flex; gap: 36px; align-items: center; }
+        .nav-links a { text-decoration: none; font-size: 14px; font-weight: 500; color: #374151; }
+        .nav-links a:hover { color: #059669; }
+        .nav-links a.active { color: #059669; font-weight: 600; }
 
+        /* Main Catalog Layout */
+        .main-content { max-width: 1200px; margin: 0 auto; padding: 60px 24px; flex-grow: 1; width: 100%; }
+        .page-title { margin-bottom: 32px; text-align: center; }
+        .page-title h1 { font-size: 40px; color: #111827; margin-bottom: 12px; }
+        .page-title p { color: #4b5563; font-size: 16px; }
+        
+        /* Filter Controls */
+        .filter-container { display: flex; justify-content: center; gap: 12px; margin-bottom: 40px; flex-wrap: wrap; }
+        .filter-btn { background-color: white; border: 1px solid #e5e7eb; padding: 10px 20px; border-radius: 20px; font-weight: 600; font-size: 14px; cursor: pointer; transition: all 0.2s; color: #4b5563; }
+        .filter-btn:hover, .filter-btn.active { background-color: #059669; color: white; border-color: #059669; }
+
+        /* Product Grid */
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; }
+        .product-card { background: white; border-radius: 20px; border: 1px solid #e5e7eb; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; }
+        .product-card:hover { transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05); }
+        .product-image-placeholder { height: 220px; background-color: #f3f4f6; display: flex; align-items: center; justify-content: center; color: #4b5563; font-size: 15px; text-align: center; padding: 16px; font-weight: 500; }
+        .product-info { padding: 24px; flex-grow: 1; display: flex; flex-direction: column; }
+        .product-category { font-size: 11px; color: #0d9488; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 0.05em; }
+        .product-title { font-size: 18px; font-weight: 700; color: #111827; margin-bottom: 8px; }
+        .product-desc { font-size: 13px; color: #6b7280; line-height: 1.5; margin-bottom: 16px; }
+        .product-price { font-size: 20px; font-weight: 700; color: #111827; margin-top: auto; margin-bottom: 16px; }
+        
+        /* Action Buttons */
+        .btn-action { text-align: center; padding: 14px; border-radius: 12px; font-weight: 600; text-decoration: none; display: block; border: none; cursor: pointer; width: 100%; transition: background 0.2s; font-size: 14px; }
+        .btn-buy { background-color: #059669; color: white !important; }
+        .btn-buy:hover { background-color: #047857; }
+        .btn-sell { background-color: #111827; color: white !important; margin-top: 8px; }
+        .btn-sell:hover { background-color: #1f2937; }
+
+        /* Footer */
+        footer { background-color: #111827; color: #9ca3af; padding: 48px 24px; text-align: center; font-size: 14px; margin-top: auto; }
+        @media (max-width: 768px) { .nav-links { display: none; } }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand">
+                <div class="brand-logo">T</div>
+                <div class="brand-name">TRENDINOVIA</div>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="shop.html" class="active">Shop</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Catalog -->
+    <main class="main-content">
+        <div class="page-title">
+            <h1>Multi-Sector Trade Marketplace</h1>
+            <p>Displaying premium apparel supply setups and hardware electronics configurations.</p>
+        </div>
+
+        <!-- Division Filters -->
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterCatalog('all')">Show All</button>
+            <button class="filter-btn" onclick="filterCatalog('apparels')">Curi Apparels</button>
+            <button class="filter-btn" onclick="filterCatalog('tech')">Kraipa Tech Gadgets</button>
+            <button class="filter-btn" onclick="filterCatalog('healthcare')">OmniCare Healthcare</button>
+        </div>
+
+        <div class="product-grid" id="catalog-grid">
+            <!-- Curi Apparels Item 1 -->
+            <div class="product-card" data-category="apparels">
+                <div class="product-image-placeholder" style="background-color: #fbeefe;">👔 Premium Corporate Uniforms</div>
+                <div class="product-info">
+                    <span class="product-category">Curi Apparels</span>
+                    <h3 class="product-title">Tailored Corporate Attire Bulk Packs</h3>
+                    <p class="product-desc">High-grade textiles allocation and logistics fulfillment optimized for corporate team alignment.</p>
+                    <p class="product-price">Price Upon Specification</p>
+                    <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Buy Inquiry: Curi Corporate Uniforms Bulk" class="btn-action btn-buy">Order / Buy Bulk Setup</a>
+                    <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Sell Inquiry: Supply Textiles to Curi Apparels" class="btn-action btn-sell">Sell Materials to Us</a>
+                </div>
+            </div>
+
+            <!-- Curi Apparels Item 2 -->
+            <div class="product-card" data-category="apparels">
+                <div class="product-image-placeholder" style="background-color: #fbeefe;">👕 Industrial Safety &amp; Workwear</div>
+                <div class="product-info">
+                    <span class="product-category">Curi Apparels</span>
+                    <h3 class="product-title">Heavy-Duty Field &amp; Utility Uniforms</h3>
+                    <p class="product-desc">Reinforced stitch fabrics designed for rugged operations and local distribution pathways.</p>
+                    <p class="product-price">Price Upon Specification</p>
+                    <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Buy Inquiry: Curi Industrial Safety Workwear" class="btn-action btn-buy">Order / Buy Bulk Setup</a>
+                    <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Sell Inquiry: Supply Canvas/Reflective Assets to Curi" class="btn-action btn-sell">Sell Materials to Us</a>
+                </div>
+            </div>
+
+            <!-- Kraipa Tech Gadgets Item 1 -->
+            <div class="product-card" data-category="tech">
+                <div class="product-image-placeholder" style="background-color: #e0f2fe;">💻 Enterprise IT Infrastructure Node</div>
+                <div class="product-info">
+                    <span class="product-category">Kraipa Tech Gadgets</span>
+                    <h3 class="product-title">Hardware Electronics Sourcing Package</h3>
+                    <p class="product-desc">Complete core setup, modular framework interfaces, and peripheral computing instrumentation assets.</p>
+                    <p class="product-price">K1,450.00 / Unit</p>
+                    <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Buy Inquiry: Kraipa Enterprise IT Hardware Pack" class="btn-action btn-buy">Buy Hardware Setup</a>
+                    <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Sell Inquiry: Supply Electronic Parts to Kraipa Tech" class="btn-action btn-sell">Sell Hardware Components</a>
+                </div>
+            </div>
+
+            <!-- Kraipa Tech Gadgets Item 2 -->
+            <div class="product-card" data-category="tech">
+                <div class="product-image-placeholder" style="background-color: #e0f2fe;">🔌 Pro System Network Components</div>
+                <div class="product-info">
+                    <span class="product-category">Kraipa Tech Gadgets</span>
+                    <h3 class="product-title">High-Speed Hubs &amp; Interconnects</h3>
+                    <p class="product-desc">Advanced data handling architectures for dynamic infrastructure arrays and systemic expansion bridges.</p>
+                    <p class="product-price">K380.00</p>
+                    <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Buy Inquiry: Kraipa Network Component Hub" class="btn-action btn-buy">Buy Hardware Setup</a>
+                    <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Sell Inquiry: Supply Networking Frameworks to Kraipa" class="btn-action btn-sell">Sell Hardware Components</a>
+                </div>
+            </div>
+
+            <!-- OmniCare Item 1 -->
+            <div class="product-card" data-category="healthcare">
+                <div class="product-image-placeholder" style="background-color: #e6f4ea;">🎨 Hydrating Skin Serum</div>
+                <div class="product-info">
+                    <span class="product-category">Beauty / Skincare</span>
+                    <h3 class="product-title">Hydrating Skin Serum</h3>
+                    <p class="product-desc">Premium distribution wellness lines supplied securely via local logistics networks.</p>
+                    <p class="product-price">K85.00</p>
+                    <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Order Inquiry: Hydrating Skin Serum" class="btn-action btn-buy">Order via Email</a>
+                </div>
+            </div>
+
+            <!-- OmniCare Item 2 -->
+            <div class="product-card" data-category="healthcare">
+                <div class="product-image-placeholder" style="background-color: #e6f4ea;">💊 Premium Multi-Vitamins</div>
+                <div class="product-info">
+                    <span class="product-category">Healthcare</span>
+                    <h3 class="product-title">Premium Multi-Vitamins</h3>
+                    <p class="product-desc">Clinical grade supplement complexes distributed across local clinical hubs.</p>
+                    <p class="product-price">K120.00</p>
+                    <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Order Inquiry: Premium Multi-Vitamins" class="btn-action btn-buy">Order via Email</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Filter Script Logic -->
+    <script>
+        function filterCatalog(category) {
+            const cards = document.querySelectorAll('.product-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <p>trendinoviainvestmentlimited@gmail.com</p>
+        <p style="font-size: 12px;">&copy; 2026 TRENDINOVIA Investment Limited. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
