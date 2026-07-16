@@ -7,7 +7,6 @@
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: #f9fafb; color: #1f2937; display: flex; flex-direction: column; min-height: 100vh; }
-        
         .navbar { background-color: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 50; }
         .nav-container { max-width: 1200px; margin: 0 auto; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; }
         .brand { display: flex; align-items: center; gap: 12px; cursor: pointer; text-decoration: none; }
@@ -17,28 +16,19 @@
         .nav-links a { text-decoration: none; font-size: 14px; font-weight: 500; color: #374151; transition: color 0.2s; }
         .nav-links a:hover { color: #059669; }
         .nav-links a.active { color: #059669; font-weight: 600; }
-        .btn-book { background-color: #059669; color: white !important; padding: 12px 28px; border-radius: 24px; font-weight: 600; transition: background 0.2s; }
-        .btn-book:hover { background-color: #047857; }
 
-        .hero { background-color: #4A6B63; flex-grow: 1; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 24px; position: relative; color: white; }
+        .hero { background-color: #4A6B63; flex-grow: 1; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 24px; color: white; }
         .hero-content { max-width: 800px; margin: 0 auto; }
         .hero h1 { font-size: 64px; font-weight: 800; line-height: 1.1; margin-bottom: 32px; letter-spacing: -0.02em; }
         .hero p { font-size: 22px; color: #f0fdf4; font-weight: 300; line-height: 1.6; margin-bottom: 48px; }
         .hero-btns { display: flex; gap: 16px; justify-content: center; }
-        .btn-primary { background-color: #ffffff; color: #065f46; padding: 16px 32px; border-radius: 16px; font-weight: 600; text-decoration: none; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: background 0.2s; }
+        .btn-primary { background-color: #ffffff; color: #065f46; padding: 16px 32px; border-radius: 16px; font-weight: 600; text-decoration: none; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
         .btn-primary:hover { background-color: #f3f4f6; }
-        .btn-secondary { background-color: transparent; color: #ffffff; padding: 16px 32px; border-radius: 16px; font-weight: 600; text-decoration: none; border: 1px solid rgba(255,255,255,0.4); transition: background 0.2s; }
+        .btn-secondary { background-color: transparent; color: #ffffff; padding: 16px 32px; border-radius: 16px; font-weight: 600; text-decoration: none; border: 1px solid rgba(255,255,255,0.4); }
         .btn-secondary:hover { background-color: rgba(255,255,255,0.1); }
 
         footer { background-color: #111827; color: #9ca3af; padding: 48px 24px; text-align: center; font-size: 14px; }
-        footer p { margin-bottom: 8px; }
-
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero h1 { font-size: 40px; }
-            .hero p { font-size: 18px; }
-            .hero-btns { flex-direction: column; gap: 12px; }
-        }
+        @media (max-width: 768px) { .nav-links { display: none; } .hero h1 { font-size: 40px; } }
     </style>
 </head>
 <body>
@@ -55,7 +45,6 @@
                 <a href="services.html">Services</a>
                 <a href="shop.html">Shop</a>
                 <a href="contact.html">Contact</a>
-                <a href="contact.html" class="btn-book">Book Now</a>
             </div>
         </div>
     </nav>
@@ -63,10 +52,10 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Innovative Solutions.<br>Divergent Growth.</h1>
-            <p>From facility management to agriculture, tech, fashion, and healthcare—driving excellence across Papua New Guinea.</p>
+            <p>From facility construction modules to tech sourcing, dynamic apparel systems, logistics pipelines, and medical lines across PNG.</p>
             <div class="hero-btns">
-                <a href="services.html" class="btn-primary">Explore Our Services</a>
-                <a href="contact.html" class="btn-secondary">Get in Touch</a>
+                <a href="shop.html" class="btn-primary">Browse Multi-Sector Shop</a>
+                <a href="services.html" class="btn-secondary">Our Divisions</a>
             </div>
         </div>
     </section>
