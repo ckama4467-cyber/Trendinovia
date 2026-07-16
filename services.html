@@ -8,7 +8,7 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: #f9fafb; color: #1f2937; display: flex; flex-direction: column; min-height: 100vh; }
         
-        /* Navigation Bar */
+        /* Navbar */
         .navbar { background-color: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 50; }
         .nav-container { max-width: 1200px; margin: 0 auto; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; }
         .brand { display: flex; align-items: center; gap: 12px; cursor: pointer; text-decoration: none; }
@@ -19,13 +19,13 @@
         .nav-links a:hover { color: #059669; }
         .nav-links a.active { color: #059669; font-weight: 600; }
 
-        /* Main Content Layout */
+        /* Main Content */
         .main-content { max-width: 1200px; margin: 0 auto; padding: 60px 24px; flex-grow: 1; width: 100%; }
         .page-title { margin-bottom: 48px; text-align: center; }
         .page-title h1 { font-size: 40px; color: #111827; margin-bottom: 12px; }
         .page-title p { color: #4b5563; font-size: 16px; }
         
-        /* Services Division Grid */
+        /* Grid */
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; }
         .service-card { background: white; border-radius: 20px; border: 1px solid #e5e7eb; overflow: hidden; display: flex; flex-direction: column; padding: 32px; transition: transform 0.2s, box-shadow 0.2s; }
         .service-card:hover { transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05); }
@@ -34,14 +34,16 @@
         .icon-curi { background-color: #fbeefe; }
         .icon-kraipa { background-color: #e0f2fe; }
         .icon-omnicare { background-color: #e6f4ea; }
+        .icon-agri { background-color: #fef3c7; }
+        .icon-mepel { background-color: #fae8ff; }
+        .icon-demo { background-color: #fee2e2; }
 
         .service-title { font-size: 22px; font-weight: 700; color: #111827; margin-bottom: 12px; }
         .service-desc { font-size: 14px; color: #6b7280; line-height: 1.6; margin-bottom: 24px; flex-grow: 1; }
         
-        .btn-portal { text-align: center; padding: 14px; border-radius: 12px; font-weight: 600; text-decoration: none; display: block; border: none; cursor: pointer; width: 100%; transition: background 0.2s; font-size: 14px; background-color: #111827; color: white; }
+        .btn-portal { text-align: center; padding: 14px; border-radius: 12px; font-weight: 600; text-decoration: none; display: block; border: none; width: 100%; transition: background 0.2s; font-size: 14px; background-color: #111827; color: white; }
         .btn-portal:hover { background-color: #1f2937; }
 
-        /* Footer */
         footer { background-color: #111827; color: #9ca3af; padding: 48px 24px; text-align: center; font-size: 14px; margin-top: auto; }
         @media (max-width: 768px) { .nav-links { display: none; } }
     </style>
@@ -65,36 +67,63 @@
 
     <main class="main-content">
         <div class="page-title">
-            <h1>Our Specialized Trade Divisions</h1>
-            <p>Select a business unit below to browse configurations, order bulk infrastructure setups, or supply raw logistics materials.</p>
+            <h1>Our Enterprise Service Divisions</h1>
+            <p>Select an operational business division below to place order requests, configure project deployments, or book multi-sector services.</p>
         </div>
 
         <div class="services-grid">
+            <!-- Curi Apparels -->
             <div class="service-card">
                 <div class="icon-box icon-curi">👔</div>
                 <h3 class="service-title">Curi Apparels</h3>
-                <p class="service-desc">High-grade corporate textile allocation, tailored field safety uniforms, and distribution pathways optimized for regional organizational deployment.</p>
-                <a href="curi.html" class="btn-portal">Enter Apparel Marketplace</a>
+                <p class="service-desc">High-grade corporate textile allocation, tailored commercial uniform structures, and organizational field safety wear distribution.</p>
+                <a href="curi.html" class="btn-portal">Order Apparel Systems</a>
             </div>
 
+            <!-- Kraipa Tech -->
             <div class="service-card">
                 <div class="icon-box icon-kraipa">💻</div>
                 <h3 class="service-title">Kraipa Tech Gadgets</h3>
-                <p class="service-desc">Enterprise hardware sourcing, core data infrastructure nodes, modular layout arrays, and systematic network computing components.</p>
-                <a href="kraipa.html" class="btn-portal">Enter Tech Portal</a>
+                <p class="service-desc">Enterprise hardware provisioning, network infrastructure layout options, computing instrumentation nodes, and equipment arrays.</p>
+                <a href="kraipa.html" class="btn-portal">Order Tech Infrastructure</a>
             </div>
 
+            <!-- OmniCare Healthcare -->
             <div class="service-card">
                 <div class="icon-box icon-omnicare">💊</div>
                 <h3 class="service-title">OmniCare Healthcare</h3>
-                <p class="service-desc">Premium clinical supplement complexes, hydration wellness distributions lines, and secure medical hub fulfillment logistics.</p>
-                <a href="omnicare.html" class="btn-portal">Enter Healthcare Catalog</a>
+                <p class="service-desc">Premium clinical supplement complexes, hydration wellness distribution lines, and systemic care pathways.</p>
+                <a href="omnicare.html" class="btn-portal">Order Healthcare Lines</a>
+            </div>
+
+            <!-- AgriVence -->
+            <div class="service-card">
+                <div class="icon-box icon-agri">🌱</div>
+                <h3 class="service-title">AgriVence Portfolio</h3>
+                <p class="service-desc">Sustainable agricultural management projects, layout optimization setups, food crop supply framework, and agro-logistics execution.</p>
+                <a href="agrivence.html" class="btn-portal">Explore AgriVence Systems</a>
+            </div>
+
+            <!-- Mepel Cleaning & Waste -->
+            <div class="service-card">
+                <div class="icon-box icon-mepel">🧹</div>
+                <h3 class="service-title">Mepel Professional Cleaning</h3>
+                <p class="service-desc">Deep industrial property sanitation treatments, commercial estate waste management structures, and tailored environment upkeep solutions.</p>
+                <a href="mepel.html" class="btn-portal">Book Mepel Operations</a>
+            </div>
+
+            <!-- Demolition & Upkeep Operations -->
+            <div class="service-card">
+                <div class="icon-box icon-demo">🏗️</div>
+                <h3 class="service-title">Demolition & Maintenance</h3>
+                <p class="service-desc">Comprehensive commercial office and heavy industrial asset deconstructions, structural partition teardowns, and ongoing facility refurbishments.</p>
+                <a href="demolition.html" class="btn-portal">Request Structural Upkeep</a>
             </div>
         </div>
     </main>
 
     <footer>
-        <p>trendinoviainvestmentlimited@gmail.com</p>
+        <p>trendinoviainvestmentlimited@gmail.com | WhatsApp: +675 78887967</p>
         <p style="font-size: 12px;">&copy; 2026 TRENDINOVIA Investment Limited. All rights reserved.</p>
     </footer>
 
