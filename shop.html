@@ -166,14 +166,16 @@
         </div>
     </main>
 
-    <!-- Filter Script Logic -->
+    <!-- Corrected Filter Script Logic -->
     <script>
         function filterCatalog(category) {
+            const currentButton = window.event ? window.event.currentTarget : null;
+            
             const cards = document.querySelectorAll('.product-card');
             const buttons = document.querySelectorAll('.filter-btn');
             
             buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            if (currentButton) currentButton.classList.add('active');
 
             cards.forEach(card => {
                 if (category === 'all' || card.getAttribute('data-category') === category) {
