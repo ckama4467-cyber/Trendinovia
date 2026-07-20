@@ -18,17 +18,70 @@
         .nav-links a.active { color: #059669; font-weight: 600; }
         .btn-book { background-color: #059669; color: white !important; padding: 12px 28px; border-radius: 24px; font-weight: 600; text-decoration: none; }
 
-        .main-content { max-width: 1200px; margin: 0 auto; padding: 80px 24px; flex-grow: 1; w-full; }
+        .main-content { max-width: 1200px; margin: 0 auto; padding: 80px 24px; flex-grow: 1; width: 100%; }
         .header-block { max-width: 768px; margin: 0 auto 64px auto; text-align: center; }
         .header-block h1 { font-size: 48px; font-weight: 700; color: #111827; margin-bottom: 24px; }
         .header-block p { font-size: 20px; color: #4b5563; }
 
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; }
-        .card { background-color: white; padding: 32px; border-radius: 24px; border: 1px solid #f3f4f6; box-shadow: 0 1px 2px rgba(0,0,0,0.05); transition: transform 0.2s, box-shadow 0.2s; }
+        
+        /* Updated Card Container to push buttons to bottom */
+        .card { 
+            background-color: white; 
+            padding: 32px; 
+            border-radius: 24px; 
+            border: 1px solid #f3f4f6; 
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05); 
+            transition: transform 0.2s, box-shadow 0.2s; 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
         .card:hover { transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05); }
         .card-icon { width: 48px; height: 48px; background-color: #e6f4ea; color: #059669; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 20px; margin-bottom: 24px; }
         .card h3 { font-size: 22px; font-weight: 700; color: #111827; margin-bottom: 12px; }
         .card p { color: #4b5563; font-size: 14px; line-height: 1.6; }
+
+        /* Added Card Action Buttons Layout */
+        .card-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+
+        /* Base Button Styling */
+        .btn {
+            display: inline-block;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.2s ease;
+        }
+
+        /* WhatsApp Order Button */
+        .btn-order {
+            background-color: #25D366;
+            color: #ffffff;
+        }
+
+        .btn-order:hover {
+            background-color: #1ebc57;
+        }
+
+        /* Email Button */
+        .btn-email {
+            background-color: #f0f2f5;
+            color: #1c1e21;
+            border: 1px solid #dcdfe4;
+        }
+
+        .btn-email:hover {
+            background-color: #e4e6eb;
+        }
 
         footer { background-color: #111827; color: #9ca3af; padding: 48px 24px; text-align: center; font-size: 14px; }
         @media (max-width: 768px) {
@@ -61,37 +114,78 @@
         </div>
 
         <div class="services-grid">
+            
+            <!-- Mepel Facility Solution -->
             <div class="card">
-                <div class="card-icon">■</div>
-                <h3>Mepel Facility Solution</h3>
-                <p>Corporate maintenance, spatial layout modifications, partition assembly installations, and commercial site asset management.</p>
+                <div>
+                    <div class="card-icon">■</div>
+                    <h3>Mepel Facility Solution</h3>
+                    <p>Corporate maintenance, spatial layout modifications, partition assembly installations, and commercial site asset management.</p>
+                </div>
+                <div class="card-actions">
+                    <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20place%20an%20order%20for%20Mepel%20Facility%20Solution." class="btn btn-order" target="_blank">Order via WhatsApp</a>
+                    <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Order%20Inquiry%20-%20Mepel%20Facility%20Solution&body=Hi,%20I%20would%20like%20to%20order/inquire%20about%20your%20Mepel%20Facility%20Solution%20services." class="btn btn-email">Order via Email</a>
+                </div>
             </div>
+
+            <!-- Kraipa Tech Gadgets -->
             <div class="card">
-                <div class="card-icon">■</div>
-                <h3>Kraipa Tech Gadgets</h3>
-                <p>Provisioning of hardware electronics, IT framework solutions, components sourcing, and peripheral operational equipment supply.</p>
+                <div>
+                    <div class="card-icon">■</div>
+                    <h3>Kraipa Tech Gadgets</h3>
+                    <p>Provisioning of hardware electronics, IT framework solutions, components sourcing, and peripheral operational equipment supply.</p>
+                </div>
+                <div class="card-actions">
+                    <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20place%20an%20order%20for%20Kraipa%20Tech%20Gadgets." class="btn btn-order" target="_blank">Order via WhatsApp</a>
+                    <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Order%20Inquiry%20-%20Kraipa%20Tech%20Gadgets&body=Hi,%20I%20would%20like%20to%20order/inquire%20about%20your%20Kraipa%20Tech%20Gadgets%20services." class="btn btn-email">Order via Email</a>
+                </div>
             </div>
+
+            <!-- Curi Apparels -->
             <div class="card">
-                <div class="card-icon">■</div>
-                <h3>Curi Apparels</h3>
-                <p>High-grade textiles allocation, tailored business uniform fulfillment logistics, design conceptualization, and local distribution.</p>
+                <div>
+                    <div class="card-icon">■</div>
+                    <h3>Curi Apparels</h3>
+                    <p>High-grade textiles allocation, tailored business uniform fulfillment logistics, design conceptualization, and local distribution.</p>
+                </div>
+                <div class="card-actions">
+                    <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20place%20an%20order%20for%20Curi%20Apparels." class="btn btn-order" target="_blank">Order via WhatsApp</a>
+                    <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Order%20Inquiry%20-%20Curi%20Apparels&body=Hi,%20I%20would%20like%20to%20order/inquire%20about%20your%20Curi%20Apparels%20services." class="btn btn-email">Order via Email</a>
+                </div>
             </div>
+
+            <!-- AgriVance Express -->
             <div class="card">
-                <div class="card-icon">■</div>
-                <h3>AgriVance Express</h3>
-                <p>Agricultural supply logistics management, cold chain transportation pipelines, and crop optimization provisioning maps.</p>
+                <div>
+                    <div class="card-icon">■</div>
+                    <h3>AgriVance Express</h3>
+                    <p>Agricultural supply logistics management, cold chain transportation pipelines, and crop optimization provisioning maps.</p>
+                </div>
+                <div class="card-actions">
+                    <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20place%20an%20order%20for%20AgriVance%20Express." class="btn btn-order" target="_blank">Order via WhatsApp</a>
+                    <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Order%20Inquiry%20-%20AgriVance%20Express&body=Hi,%20I%20would%20like%20to%20order/inquire%20about%20your%20AgriVance%20Express%20services." class="btn btn-email">Order via Email</a>
+                </div>
             </div>
+
+            <!-- OmniCare -->
             <div class="card">
-                <div class="card-icon">■</div>
-                <h3>OmniCare</h3>
-                <p>Specialized logistics networks handling essential wellness and clinical equipment distributions securely nationwide.</p>
+                <div>
+                    <div class="card-icon">■</div>
+                    <h3>OmniCare</h3>
+                    <p>Specialized logistics networks handling essential wellness and clinical equipment distributions securely nationwide.</p>
+                </div>
+                <div class="card-actions">
+                    <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20place%20an%20order%20for%20OmniCare." class="btn btn-order" target="_blank">Order via WhatsApp</a>
+                    <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Order%20Inquiry%20-%20OmniCare&body=Hi,%20I%20would%20like%20to%20order/inquire%20about%20your%20OmniCare%20services." class="btn btn-email">Order via Email</a>
+                </div>
             </div>
+
         </div>
     </main>
 
     <footer>
         <p>trendinoviainvestmentlimited@gmail.com</p>
-        <p style="font-size: 12px;">&copy; 2026 TRENDINOVIA Investment Limited. All rights reserved.</p>
+        <p style="font-size: 12px; margin-top: 8px;">&copy; 2026 TRENDINOVIA Investment Limited. All rights reserved.</p>
     </footer>
 
 </body>
