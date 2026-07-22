@@ -80,15 +80,58 @@
 
         .product-card:hover { transform: translateY(-4px); box-shadow: 0 12px 20px -4px rgba(0, 0, 0, 0.08); }
 
+        /* SLIDER / CAROUSEL STYLES */
         .image-container {
             position: relative;
             width: 100%;
-            height: 220px;
+            height: 240px;
             background-color: #f3f4f6;
             overflow: hidden;
         }
 
-        .image-container img { width: 100%; height: 100%; object-fit: cover; }
+        .slider-wrapper {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(17, 24, 39, 0.5);
+            color: #ffffff;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 5;
+            transition: background 0.2s ease;
+        }
+
+        .slider-btn:hover { background: rgba(17, 24, 39, 0.85); }
+        .prev-btn { left: 10px; }
+        .next-btn { right: 10px; }
 
         .badge {
             position: absolute;
@@ -101,6 +144,7 @@
             text-transform: uppercase;
             padding: 4px 10px;
             border-radius: 12px;
+            z-index: 6;
         }
 
         .product-content { padding: 20px; flex-grow: 1; }
@@ -144,7 +188,7 @@
 
         <div class="services-grid">
             
-            <!-- Mepel Facility Solution (No Product Catalog Button) -->
+            <!-- Mepel Facility Solution -->
             <div class="card">
                 <div>
                     <div class="card-icon">■</div>
@@ -179,7 +223,7 @@
                 </div>
             </div>
 
-            <!-- AgriVance Express (No Product Catalog Button) -->
+            <!-- AgriVance Express -->
             <div class="card">
                 <div>
                     <div class="card-icon">■</div>
@@ -204,7 +248,7 @@
         </div>
 
 
-        <!-- SECTION 2: DROPSHIPPED FEATURED PRODUCTS (Filterable) -->
+        <!-- SECTION 2: DROPSHIPPED FEATURED PRODUCTS WITH SLIDERS -->
         <div id="product-section" style="margin-top: 60px;">
             
             <div class="header-block" style="display: flex; justify-content: space-between; align-items: flex-end;">
@@ -217,13 +261,19 @@
 
             <div class="product-grid">
 
-                <!-- ITEM 1: Curi Apparels - Vintage Pilot Sunglasses -->
+                <!-- ITEM 1: Curi Apparels - Vintage Sunglasses (3 Angles) -->
                 <div class="product-card" data-category="curi">
                     <div>
                         <div class="image-container">
                             <span class="badge">Trendy</span>
-                            <!-- Replace with actual saved image path or full AliExpress image address -->
-                            <img src=""C:\Users\Nentz\OneDrive\Desktop\My Company\Ali Express Product\Vintage Pilot Sunglasses.avif"">
+                            <div class="slider-wrapper">
+                                <!-- Replace image paths with your local saved files -->
+                                <img class="slide active" src="images/sunglasses-front.jpg" alt="Front View">
+                                <img class="slide" src="images/sunglasses-side.jpg" alt="Side View">
+                                <img class="slide" src="images/sunglasses-model.jpg" alt="Model Wearing View">
+                            </div>
+                            <button class="slider-btn prev-btn" onclick="moveSlide(this, -1)">&#10094;</button>
+                            <button class="slider-btn next-btn" onclick="moveSlide(this, 1)">&#10095;</button>
                         </div>
                         <div class="product-content">
                             <h3 class="product-title">Vintage Pilot Sun Glasses</h3>
@@ -241,12 +291,17 @@
                     </div>
                 </div>
 
-                <!-- ITEM 2: Kraipa Tech - Smart Fitness Watch -->
+                <!-- ITEM 2: Kraipa Tech - Smart Fitness Watch (2 Angles) -->
                 <div class="product-card" data-category="kraipa">
                     <div>
                         <div class="image-container">
                             <span class="badge">New</span>
-                            <img src="https://via.placeholder.com/400x300?text=Kraipa+Smart+Watch" alt="Smart Fitness Watch">
+                            <div class="slider-wrapper">
+                                <img class="slide active" src="images/smartwatch-front.jpg" alt="Watch Screen">
+                                <img class="slide" src="images/smartwatch-strap.jpg" alt="Watch Strap Angle">
+                            </div>
+                            <button class="slider-btn prev-btn" onclick="moveSlide(this, -1)">&#10094;</button>
+                            <button class="slider-btn next-btn" onclick="moveSlide(this, 1)">&#10095;</button>
                         </div>
                         <div class="product-content">
                             <h3 class="product-title">Smart Fitness Watch</h3>
@@ -264,16 +319,21 @@
                     </div>
                 </div>
 
-                <!-- ITEM 3: Curi Apparels - Executive Business Polo -->
+                <!-- ITEM 3: Curi Apparels - Executive Polo (2 Angles) -->
                 <div class="product-card" data-category="curi">
                     <div>
                         <div class="image-container">
                             <span class="badge">Popular</span>
-                            <img src="https://via.placeholder.com/400x300?text=Executive+Polo+Shirt" alt="Executive Business Polo">
+                            <div class="slider-wrapper">
+                                <img class="slide active" src="images/polo-front.jpg" alt="Polo Front">
+                                <img class="slide" src="images/polo-back.jpg" alt="Polo Back">
+                            </div>
+                            <button class="slider-btn prev-btn" onclick="moveSlide(this, -1)">&#10094;</button>
+                            <button class="slider-btn next-btn" onclick="moveSlide(this, 1)">&#10095;</button>
                         </div>
                         <div class="product-content">
                             <h3 class="product-title">Executive Business Polo</h3>
-                            <p class="product-description">Breathable cotton-blend corporate polo shirt. Ideal for corporate branding and custom company embroidery.</p>
+                            <p class="product-description">Breathable cotton-blend corporate polo shirt. Ideal for corporate branding and custom embroidery.</p>
                             <div class="price-row">
                                 <span class="current-price">K85.00</span>
                             </div>
@@ -286,41 +346,38 @@
                     </div>
                 </div>
 
-                <!-- ITEM 4: OmniCare - Digital Pulse Monitor Kit -->
-                <div class="product-card" data-category="omnicare">
-                    <div>
-                        <div class="image-container">
-                            <span class="badge">Essential</span>
-                            <img src="https://via.placeholder.com/400x300?text=Digital+Pulse+Monitor" alt="Digital Pulse Monitor Kit">
-                        </div>
-                        <div class="product-content">
-                            <h3 class="product-title">Digital Pulse Monitor Kit</h3>
-                            <p class="product-description">Compact, clinical-grade fingertip oximeter and pulse monitor for personal or office wellness tracking.</p>
-                            <div class="price-row">
-                                <span class="current-price">K95.00</span>
-                                <span class="original-price">K110.00</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="padding: 0 20px 20px 20px;">
-                        <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Digital%20Pulse%20Monitor%20Kit%20(K95.00)." class="btn-whatsapp" target="_blank">
-                            Order via WhatsApp
-                        </a>
-                    </div>
-                </div>
-
             </div>
         </div>
 
     </main>
 
-    <!-- Category Filter Script -->
+    <!-- Scripts for Category Filtering & Image Slider -->
     <script>
+        // Image Slider Function
+        function moveSlide(button, direction) {
+            const container = button.closest('.image-container');
+            const slides = container.querySelectorAll('.slide');
+            let activeIndex = 0;
+
+            slides.forEach((slide, index) => {
+                if (slide.classList.contains('active')) {
+                    activeIndex = index;
+                    slide.classList.remove('active');
+                }
+            });
+
+            let newIndex = activeIndex + direction;
+            if (newIndex >= slides.length) newIndex = 0;
+            if (newIndex < 0) newIndex = slides.length - 1;
+
+            slides[newIndex].classList.add('active');
+        }
+
+        // Category Filter Function
         function showCategory(category) {
             const productSection = document.getElementById('product-section');
             const allProducts = document.querySelectorAll('.product-card');
             
-            // Show only items matching category
             allProducts.forEach(product => {
                 if (product.getAttribute('data-category') === category) {
                     product.style.display = 'flex';
@@ -329,7 +386,6 @@
                 }
             });
 
-            // Update titles dynamically
             const titles = {
                 'curi': 'Curi Apparels & Accessories',
                 'kraipa': 'Kraipa Tech Gadgets Catalog',
@@ -339,7 +395,6 @@
             document.getElementById('selected-division-title').innerText = titles[category] || 'Featured Products';
             document.getElementById('selected-division-subtitle').innerText = 'Showing items under ' + (titles[category] || 'selected division') + '.';
 
-            // Smooth scroll down to products
             productSection.scrollIntoView({ behavior: 'smooth' });
         }
 
