@@ -3,106 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - TRENDINOVIA</title>
+    <title>Services & Products - TRENDINOVIA</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f9fafb; color: #1f2937; display: flex; flex-direction: column; min-height: 100vh; }
-        .navbar { background-color: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 50; }
-        .nav-container { max-width: 1200px; margin: 0 auto; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; }
-        .brand { display: flex; align-items: center; gap: 12px; cursor: pointer; text-decoration: none; }
-        .brand-logo { width: 44px; height: 44px; background: linear-gradient(135deg, #059669, #0d9488); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 24px; }
-        .brand-name { font-weight: 700; font-size: 24px; letter-spacing: -0.05em; color: #111827; }
-        .nav-links { display: flex; gap: 36px; align-items: center; }
-        .nav-links a { text-decoration: none; font-size: 14px; font-weight: 500; color: #374151; }
-        .nav-links a:hover { color: #059669; }
-        .nav-links a.active { color: #059669; font-weight: 600; }
-        .btn-book { background-color: #059669; color: white !important; padding: 12px 28px; border-radius: 24px; font-weight: 600; text-decoration: none; }
+        body { background-color: #f9fafb; color: #1f2937; padding: 40px 24px; }
 
-        .main-content { max-width: 1200px; margin: 0 auto; padding: 80px 24px; flex-grow: 1; width: 100%; }
-        .header-block { max-width: 768px; margin: 0 auto 64px auto; text-align: center; }
-        .header-block h1 { font-size: 48px; font-weight: 700; color: #111827; margin-bottom: 24px; }
-        .header-block p { font-size: 20px; color: #4b5563; }
+        .main-content { max-width: 1200px; margin: 0 auto; }
 
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; }
-        
-        .card { 
-            background-color: white; 
-            padding: 32px; 
-            border-radius: 24px; 
-            border: 1px solid #f3f4f6; 
-            box-shadow: 0 1px 2px rgba(0,0,0,0.05); 
-            transition: transform 0.2s, box-shadow 0.2s; 
+        /* Header Block */
+        .header-block { margin-bottom: 32px; text-align: left; }
+        .header-block h1 { font-size: 28px; font-weight: 800; color: #111827; margin-bottom: 8px; }
+        .header-block p { font-size: 15px; color: #4b5563; }
+
+        /* Core Divisions Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 16px;
+            border: 1px solid #e5e7eb;
+            padding: 24px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
+
         .card:hover { transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05); }
-        .card-icon { width: 48px; height: 48px; background-color: #e6f4ea; color: #059669; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 20px; margin-bottom: 24px; }
-        .card h3 { font-size: 22px; font-weight: 700; color: #111827; margin-bottom: 12px; }
-        .card p { color: #4b5563; font-size: 14px; line-height: 1.6; }
+        .card-icon { font-size: 20px; color: #059669; margin-bottom: 12px; }
+        .card h3 { font-size: 20px; font-weight: 700; color: #111827; margin-bottom: 12px; }
+        .card p { font-size: 14px; color: #4b5563; line-height: 1.6; margin-bottom: 20px; }
 
-        .card-actions {
-            display: flex;
-            gap: 10px;
-            margin-top: 24px;
-            flex-wrap: wrap;
-        }
-
+        /* Core Card Buttons */
+        .card-actions { display: flex; flex-direction: column; gap: 10px; }
         .btn {
             display: inline-block;
-            padding: 8px 14px;
-            border-radius: 6px;
+            text-align: center;
+            padding: 10px 16px;
+            border-radius: 8px;
             font-size: 13px;
             font-weight: 600;
             text-decoration: none;
-            text-align: center;
-            transition: background-color 0.2s ease;
+            cursor: pointer;
+            border: none;
+            transition: background 0.2s ease;
+        }
+        .btn-order { background-color: #059669; color: #ffffff; }
+        .btn-order:hover { background-color: #047857; }
+        .btn-email { background-color: #f3f4f6; color: #374151; }
+        .btn-email:hover { background-color: #e5e7eb; }
+
+        /* Dropshipped Product Showcase Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
         }
 
-        .btn-order {
+        .product-card {
+            background-color: #ffffff;
+            border-radius: 16px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .product-card:hover { transform: translateY(-4px); box-shadow: 0 12px 20px -4px rgba(0, 0, 0, 0.08); }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            background-color: #f3f4f6;
+            overflow: hidden;
+        }
+
+        .image-container img { width: 100%; height: 100%; object-fit: cover; }
+
+        .badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background-color: #111827;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 12px;
+        }
+
+        .product-content { padding: 20px; flex-grow: 1; }
+        .product-title { font-size: 17px; font-weight: 700; color: #111827; margin-bottom: 8px; }
+        .product-description { font-size: 13px; color: #4b5563; line-height: 1.5; margin-bottom: 16px; }
+
+        .price-row { display: flex; align-items: baseline; gap: 8px; }
+        .current-price { font-size: 20px; font-weight: 800; color: #059669; }
+        .original-price { font-size: 13px; color: #9ca3af; text-decoration: line-through; }
+
+        .btn-whatsapp {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
             background-color: #25D366;
             color: #ffffff;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background-color 0.2s ease;
         }
+        .btn-whatsapp:hover { background-color: #1ebc57; }
 
-        .btn-order:hover {
-            background-color: #1ebc57;
-        }
-
-        .btn-email {
-            background-color: #f0f2f5;
-            color: #1c1e21;
-            border: 1px solid #dcdfe4;
-        }
-
-        .btn-email:hover {
-            background-color: #e4e6eb;
-        }
-
-        footer { background-color: #111827; color: #9ca3af; padding: 48px 24px; text-align: center; font-size: 14px; }
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
+        @media (max-width: 600px) {
+            .services-grid, .product-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="brand">
-                <div class="brand-logo">T</div>
-                <div class="brand-name">TRENDINOVIA</div>
-            </a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="services.html" class="active">Services</a>
-                <a href="contact.html">Contact</a>
-                <a href="contact.html" class="btn-book">Book Now</a>
-            </div>
-        </div>
-    </nav>
-
     <main class="main-content">
+
+        <!-- SECTION 1: CORE DIVISIONS -->
         <div class="header-block">
             <h1>Our Core Divisions</h1>
             <p>Explore our comprehensive array of commercial capabilities operating seamlessly across PNG.</p>
@@ -110,7 +144,7 @@
 
         <div class="services-grid">
             
-            <!-- Mepel Facility Solution (No Buttons) -->
+            <!-- Mepel Facility Solution (No Product Catalog Button) -->
             <div class="card">
                 <div>
                     <div class="card-icon">■</div>
@@ -127,7 +161,7 @@
                     <p>Provisioning of hardware electronics, IT framework solutions, components sourcing, and peripheral operational equipment supply.</p>
                 </div>
                 <div class="card-actions">
-                    <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20place%20an%20order%20for%20Kraipa%20Tech%20Gadgets." class="btn btn-order" target="_blank">Order via WhatsApp</a>
+                    <button onclick="showCategory('kraipa')" class="btn btn-order">View Tech Products</button>
                     <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Order%20Inquiry%20-%20Kraipa%20Tech%20Gadgets&body=Hi,%20I%20would%20like%20to%20order/inquire%20about%20your%20Kraipa%20Tech%20Gadgets%20services." class="btn btn-email">Order via Email</a>
                 </div>
             </div>
@@ -140,12 +174,12 @@
                     <p>High-grade textiles allocation, tailored business uniform fulfillment logistics, design conceptualization, and local distribution.</p>
                 </div>
                 <div class="card-actions">
-                    <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20place%20an%20order%20for%20Curi%20Apparels." class="btn btn-order" target="_blank">Order via WhatsApp</a>
+                    <button onclick="showCategory('curi')" class="btn btn-order">View Apparels & Accessories</button>
                     <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Order%20Inquiry%20-%20Curi%20Apparels&body=Hi,%20I%20would%20like%20to%20order/inquire%20about%20your%20Curi%20Apparels%20services." class="btn btn-email">Order via Email</a>
                 </div>
             </div>
 
-            <!-- AgriVance Express (No Buttons) -->
+            <!-- AgriVance Express (No Product Catalog Button) -->
             <div class="card">
                 <div>
                     <div class="card-icon">■</div>
@@ -162,48 +196,160 @@
                     <p>Specialized logistics networks handling essential wellness and clinical equipment distributions securely nationwide.</p>
                 </div>
                 <div class="card-actions">
-                    <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20place%20an%20order%20for%20OmniCare." class="btn btn-order" target="_blank">Order via WhatsApp</a>
+                    <button onclick="showCategory('omnicare')" class="btn btn-order">View Health Products</button>
                     <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Order%20Inquiry%20-%20OmniCare&body=Hi,%20I%20would%20like%20to%20order/inquire%20about%20your%20OmniCare%20services." class="btn btn-email">Order via Email</a>
                 </div>
             </div>
 
         </div>
-        <div class="header-block" style="margin-top: 60px;">
-            <h1>Featured Products</h1>
-            <p>Direct dropshipping items available for quick ordering.</p>
-        </div>
-        
-        <div class="product-grid">
-         
-            <div class="product-card">
+
+
+        <!-- SECTION 2: DROPSHIPPED FEATURED PRODUCTS (Filterable) -->
+        <div id="product-section" style="margin-top: 60px;">
+            
+            <div class="header-block" style="display: flex; justify-content: space-between; align-items: flex-end;">
                 <div>
-                    <div class="image-container">
-                        <span class="badge">Trendy</span>
-                        <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1ef9...jpg" alt="Vintage Pilot Sunglasses">
-                    </div>
-                    <div class="product-content">
-                        <h3 class="product-title">Vintage Pilot Sun Glasses</h3>
-                        <p class="product-description">Unisex retro circular pilot sunglasses with gradient tint lenses and durable lightweight frame.</p>
-                        <div class="price-row">
-                            <span class="current-price">K35.00</span>
-                            <span class="original-price">K50.00</span>
-                        </div>
-                    </div>
+                    <h1 id="selected-division-title">Featured Products</h1>
+                    <p id="selected-division-subtitle">Direct dropshipping items available for quick ordering across PNG.</p>
                 </div>
-                <div style="padding: 0 20px 20px 20px;">
-                    <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Vintage%20Pilot%20Sunglasses%20(K35.00)." class="btn-whatsapp" target="_blank">
-                        Order via WhatsApp
-                    </a>
-                </div>
+                <button onclick="showAllProducts()" style="background:none; border:none; color:#059669; cursor:pointer; font-weight:bold; font-size:14px; padding-bottom: 4px;">Show All Products</button>
             </div>
 
-        </div> 
+            <div class="product-grid">
+
+                <!-- ITEM 1: Curi Apparels - Vintage Pilot Sunglasses -->
+                <div class="product-card" data-category="curi">
+                    <div>
+                        <div class="image-container">
+                            <span class="badge">Trendy</span>
+                            <!-- Replace with actual saved image path or full AliExpress image address -->
+                            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S1ef9...jpg" alt="Vintage Pilot Sunglasses">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">Vintage Pilot Sun Glasses</h3>
+                            <p class="product-description">Unisex retro circular pilot sunglasses with gradient tint lenses and durable lightweight frame.</p>
+                            <div class="price-row">
+                                <span class="current-price">K35.00</span>
+                                <span class="original-price">K50.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="padding: 0 20px 20px 20px;">
+                        <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Vintage%20Pilot%20Sunglasses%20(K35.00)." class="btn-whatsapp" target="_blank">
+                            Order via WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ITEM 2: Kraipa Tech - Smart Fitness Watch -->
+                <div class="product-card" data-category="kraipa">
+                    <div>
+                        <div class="image-container">
+                            <span class="badge">New</span>
+                            <img src="https://via.placeholder.com/400x300?text=Kraipa+Smart+Watch" alt="Smart Fitness Watch">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">Smart Fitness Watch</h3>
+                            <p class="product-description">Waterproof health tracking, heart rate monitor, and 14-day battery life.</p>
+                            <div class="price-row">
+                                <span class="current-price">K110.00</span>
+                                <span class="original-price">K140.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="padding: 0 20px 20px 20px;">
+                        <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Smart%20Fitness%20Watch%20(K110.00)." class="btn-whatsapp" target="_blank">
+                            Order via WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ITEM 3: Curi Apparels - Executive Business Polo -->
+                <div class="product-card" data-category="curi">
+                    <div>
+                        <div class="image-container">
+                            <span class="badge">Popular</span>
+                            <img src="https://via.placeholder.com/400x300?text=Executive+Polo+Shirt" alt="Executive Business Polo">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">Executive Business Polo</h3>
+                            <p class="product-description">Breathable cotton-blend corporate polo shirt. Ideal for corporate branding and custom company embroidery.</p>
+                            <div class="price-row">
+                                <span class="current-price">K85.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="padding: 0 20px 20px 20px;">
+                        <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Executive%20Business%20Polo%20(K85.00)." class="btn-whatsapp" target="_blank">
+                            Order via WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ITEM 4: OmniCare - Digital Pulse Monitor Kit -->
+                <div class="product-card" data-category="omnicare">
+                    <div>
+                        <div class="image-container">
+                            <span class="badge">Essential</span>
+                            <img src="https://via.placeholder.com/400x300?text=Digital+Pulse+Monitor" alt="Digital Pulse Monitor Kit">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">Digital Pulse Monitor Kit</h3>
+                            <p class="product-description">Compact, clinical-grade fingertip oximeter and pulse monitor for personal or office wellness tracking.</p>
+                            <div class="price-row">
+                                <span class="current-price">K95.00</span>
+                                <span class="original-price">K110.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="padding: 0 20px 20px 20px;">
+                        <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Digital%20Pulse%20Monitor%20Kit%20(K95.00)." class="btn-whatsapp" target="_blank">
+                            Order via WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </main>
 
-    <footer>
-        <p>trendinoviainvestmentlimited@gmail.com</p>
-        <p style="font-size: 12px; margin-top: 8px;">&copy; 2026 TRENDINOVIA Investment Limited. All rights reserved.</p>
-    </footer>
+    <!-- Category Filter Script -->
+    <script>
+        function showCategory(category) {
+            const productSection = document.getElementById('product-section');
+            const allProducts = document.querySelectorAll('.product-card');
+            
+            // Show only items matching category
+            allProducts.forEach(product => {
+                if (product.getAttribute('data-category') === category) {
+                    product.style.display = 'flex';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+
+            // Update titles dynamically
+            const titles = {
+                'curi': 'Curi Apparels & Accessories',
+                'kraipa': 'Kraipa Tech Gadgets Catalog',
+                'omnicare': 'OmniCare Health & Wellness Catalog'
+            };
+            
+            document.getElementById('selected-division-title').innerText = titles[category] || 'Featured Products';
+            document.getElementById('selected-division-subtitle').innerText = 'Showing items under ' + (titles[category] || 'selected division') + '.';
+
+            // Smooth scroll down to products
+            productSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showAllProducts() {
+            const allProducts = document.querySelectorAll('.product-card');
+            allProducts.forEach(product => product.style.display = 'flex');
+            document.getElementById('selected-division-title').innerText = 'Featured Products';
+            document.getElementById('selected-division-subtitle').innerText = 'Direct dropshipping items available for quick ordering across PNG.';
+        }
+    </script>
 
 </body>
 </html>
