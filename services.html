@@ -103,10 +103,14 @@
             object-fit: contain;
             background-color: #f9fafb;
             opacity: 0;
+            pointer-events: none;
             transition: opacity 0.3s ease-in-out;
         }
 
-        .slide.active { opacity: 1; }
+        .slide.active { 
+            opacity: 1; 
+            pointer-events: auto;
+        }
 
         .slider-btn {
             position: absolute;
@@ -294,13 +298,18 @@
                     </div>
                 </div>
 
-                <!-- 2. KRAIPA TECH GADGETS PRODUCT -->
+                <!-- 2. KRAIPA TECH GADGETS PRODUCT (WITH VIDEO EXAMPLE) -->
                 <div class="product-card" data-category="kraipa">
                     <div>
                         <div class="image-container">
                             <span class="badge">Mini Security Camera</span>
                             <div class="slider-wrapper">
-                                <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/S67d51ca10bbe4ca4bcdac4ec38ac353bn.png" alt="view">
+                                <!-- Video Slide Example -->
+                                <video class="slide active" controls muted playsinline poster="https://ae-pic-a1.aliexpress-media.com/kf/S67d51ca10bbe4ca4bcdac4ec38ac353bn.png">
+                                    <source src="YOUR_VIDEO_URL_HERE.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S67d51ca10bbe4ca4bcdac4ec38ac353bn.png" alt="view">
                                 <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Sb8fd0054736c47a4992803d56aba9ecbu.png" alt="view">
                                 <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S2681645c3aa64e27bf8c1f785f2525bft.png" alt="view">
                                 <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S6bdf7028974f403aa9759f4180c0b567k.png" alt="view"> 
@@ -386,7 +395,7 @@
             if (view === 'omnicare') titleElement.innerText = "OmniCare Health & Beauty Catalog";
         }
 
-        // Image Carousel Functionality
+        // Image & Video Carousel Functionality
         function moveSlide(button, direction) {
             const container = button.closest('.image-container');
             const slides = container.querySelectorAll('.slide');
@@ -396,6 +405,12 @@
                 if (slide.classList.contains('active')) {
                     activeIndex = index;
                     slide.classList.remove('active');
+                    
+                    // If the active slide was a playing video, pause and reset it
+                    if (slide.tagName.toLowerCase() === 'video') {
+                        slide.pause();
+                        slide.currentTime = 0;
+                    }
                 }
             });
 
@@ -403,7 +418,8 @@
             if (newIndex >= slides.length) newIndex = 0;
             if (newIndex < 0) newIndex = slides.length - 1;
 
-            slides[newIndex].classList.add('active');
+            const newActiveSlide = slides[newIndex];
+            newActiveSlide.classList.add('active');
         }
     </script>
 
