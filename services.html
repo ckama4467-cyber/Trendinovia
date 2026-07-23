@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services & Divisions - TRENDINOVIA</title>
+    <title>Services & Products - TRENDINOVIA</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: #f9fafb; color: #1f2937; padding: 40px 24px; }
@@ -39,7 +39,7 @@
         .card h3 { font-size: 20px; font-weight: 700; color: #111827; margin-bottom: 12px; }
         .card p { font-size: 14px; color: #4b5563; line-height: 1.6; margin-bottom: 20px; }
 
-        /* Action Buttons */
+        /* Core Card Buttons */
         .card-actions { display: flex; flex-direction: column; gap: 10px; }
         .btn {
             display: inline-block;
@@ -58,8 +58,122 @@
         .btn-email { background-color: #f3f4f6; color: #374151; }
         .btn-email:hover { background-color: #e5e7eb; }
 
+        /* Product Showcase Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .product-card {
+            background-color: #ffffff;
+            border-radius: 16px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .product-card:hover { transform: translateY(-4px); box-shadow: 0 12px 20px -4px rgba(0, 0, 0, 0.08); }
+
+        /* SLIDER STYLES */
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 180px;
+            background-color: #f3f4f6;
+            overflow: hidden;
+        }
+
+        .slider-wrapper {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background-color: #f9fafb;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .slide.active { opacity: 1; }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(17, 24, 39, 0.5);
+            color: #ffffff;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 5;
+            transition: background 0.2s ease;
+        }
+
+        .slider-btn:hover { background: rgba(17, 24, 39, 0.85); }
+        .prev-btn { left: 10px; }
+        .next-btn { right: 10px; }
+
+        .badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background-color: #111827;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 12px;
+            z-index: 6;
+        }
+
+        .product-content { padding: 20px; flex-grow: 1; }
+        .product-title { font-size: 17px; font-weight: 700; color: #111827; margin-bottom: 8px; }
+        .product-description { font-size: 13px; color: #4b5563; line-height: 1.5; margin-bottom: 16px; }
+
+        .price-row { display: flex; align-items: baseline; gap: 8px; }
+        .current-price { font-size: 20px; font-weight: 800; color: #059669; }
+        .original-price { font-size: 13px; color: #9ca3af; text-decoration: line-through; }
+
+        .btn-whatsapp {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            background-color: #25D366;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background-color 0.2s ease;
+        }
+        .btn-whatsapp:hover { background-color: #1ebc57; }
+
+        /* HIDE PRODUCTS BY DEFAULT ON MAIN VIEW */
+        #products-view-container { display: none; }
+
         @media (max-width: 600px) {
-            .services-grid { grid-template-columns: 1fr; }
+            .services-grid, .product-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -67,75 +181,151 @@
 
     <main class="main-content">
 
-        <!-- HEADER -->
-        <div class="header-block">
-            <h1>Our Core Divisions</h1>
-            <p>Explore our comprehensive array of commercial capabilities operating seamlessly across PNG.</p>
+        <!-- SECTION 1: DIVISIONS (Shown on main page) -->
+        <div id="divisions-view-container">
+            <div class="header-block">
+                <h1>Our Core Divisions</h1>
+                <p>Explore our comprehensive array of commercial capabilities operating seamlessly across PNG.</p>
+            </div>
+
+            <div class="services-grid">
+                
+                <!-- Mepel Facility Solution -->
+                <div class="card">
+                    <div>
+                        <div class="card-icon">■</div>
+                        <h3>Mepel Facility Solution</h3>
+                        <p>Corporate maintenance, spatial layout modifications, partition assembly installations, and commercial site asset management.</p>
+                    </div>
+                </div>
+
+                <!-- Kraipa Tech Gadgets -->
+                <div class="card">
+                    <div>
+                        <div class="card-icon">■</div>
+                        <h3>Kraipa Tech Gadgets</h3>
+                        <p>Provisioning of hardware electronics, IT framework solutions, components sourcing, and peripheral operational equipment supply.</p>
+                    </div>
+                    <div class="card-actions">
+                        <a href="services.html?view=products" target="_blank" class="btn btn-order">View Tech Products ↗</a>
+                        <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Order%20Inquiry%20-%20Kraipa%20Tech%20Gadgets" class="btn btn-email">Order via Email</a>
+                    </div>
+                </div>
+
+                <!-- Curi Apparels -->
+                <div class="card">
+                    <div>
+                        <div class="card-icon">■</div>
+                        <h3>Curi Apparels</h3>
+                        <p>High-grade textiles allocation, tailored business uniform fulfillment logistics, design conceptualization, and local distribution.</p>
+                    </div>
+                    <div class="card-actions">
+                        <a href="services.html?view=products" target="_blank" class="btn btn-order">View Apparels & Accessories ↗</a>
+                        <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Order%20Inquiry%20-%20Curi%20Apparels" class="btn btn-email">Order via Email</a>
+                    </div>
+                </div>
+
+                <!-- AgriVance Express -->
+                <div class="card">
+                    <div>
+                        <div class="card-icon">■</div>
+                        <h3>AgriVance Express</h3>
+                        <p>Agricultural supply logistics management, cold chain transportation pipelines, and crop optimization provisioning maps.</p>
+                    </div>
+                </div>
+
+                <!-- OmniCare -->
+                <div class="card">
+                    <div>
+                        <div class="card-icon">■</div>
+                        <h3>OmniCare</h3>
+                        <p>Specialized logistics networks handling essential wellness and clinical equipment distributions securely nationwide.</p>
+                    </div>
+                    <div class="card-actions">
+                        <a href="services.html?view=products" target="_blank" class="btn btn-order">View Health Products ↗</a>
+                        <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Order%20Inquiry%20-%20OmniCare" class="btn btn-email">Order via Email</a>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
-        <!-- DIVISIONS GRID -->
-        <div class="services-grid">
-            
-            <!-- Mepel Facility Solution -->
-            <div class="card">
-                <div>
-                    <div class="card-icon">■</div>
-                    <h3>Mepel Facility Solution</h3>
-                    <p>Corporate maintenance, spatial layout modifications, partition assembly installations, and commercial site asset management.</p>
-                </div>
+        <!-- SECTION 2: PRODUCTS (Shown ONLY when opened in new tab via View button) -->
+        <div id="products-view-container">
+            <div class="header-block">
+                <h1>Featured Products Catalog</h1>
+                <p>Direct dropshipping items available for quick ordering across PNG.</p>
             </div>
 
-            <!-- Kraipa Tech Gadgets -->
-            <div class="card">
-                <div>
-                    <div class="card-icon">■</div>
-                    <h3>Kraipa Tech Gadgets</h3>
-                    <p>Provisioning of hardware electronics, IT framework solutions, components sourcing, and peripheral operational equipment supply.</p>
-                </div>
-                <div class="card-actions">
-                    <a href="featured-products.html" target="_blank" class="btn btn-order">View Tech Products ↗</a>
-                    <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Order%20Inquiry%20-%20Kraipa%20Tech%20Gadgets" class="btn btn-email">Order via Email</a>
-                </div>
-            </div>
+            <div class="product-grid">
 
-            <!-- Curi Apparels -->
-            <div class="card">
-                <div>
-                    <div class="card-icon">■</div>
-                    <h3>Curi Apparels</h3>
-                    <p>High-grade textiles allocation, tailored business uniform fulfillment logistics, design conceptualization, and local distribution.</p>
+                <!-- ITEM 1: Vintage Sunglasses -->
+                <div class="product-card">
+                    <div>
+                        <div class="image-container">
+                            <span class="badge">Trendy</span>
+                            <div class="slider-wrapper">
+                                <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/S5c92b65dac4c4024a3e3554ea9f13f62k.jpg" alt="Model wearing sunglasses">
+                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S8fb938204c544fba917b2084358b3230i.jpg" alt="Product dimensions chart">
+                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S725dec26e51b45bd9a767b578349215cT.jpg" alt="Black sunglasses side view">
+                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S278d8c9e13474507b66ee6e043884f0e8.jpg" alt="Model wearing black sunglasses">
+                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Sa0d557d267bb46f7ac391be2278c4aa0S.jpg" alt="Leopard print sunglasses side view">
+                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S92b8e7ad33af47b491daaa829d8983feh.jpg" alt="Leopard print sunglasses front view">
+                            </div>
+                            <button class="slider-btn prev-btn" onclick="moveSlide(this, -1)">&#10094;</button>
+                            <button class="slider-btn next-btn" onclick="moveSlide(this, 1)">&#10095;</button>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">Vintage Pilot Sun Glasses</h3>
+                            <p class="product-description">Unisex retro circular pilot sunglasses with gradient tint lenses and durable lightweight frame.</p>
+                            <div class="price-row">
+                                <span class="current-price">K35.00</span>
+                                <span class="original-price">K50.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="padding: 0 20px 20px 20px;">
+                        <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Vintage%20Pilot%20Sunglasses%20(K35.00)." class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                            Order via WhatsApp
+                        </a>
+                    </div>
                 </div>
-                <div class="card-actions">
-                    <a href="featured-products.html" target="_blank" class="btn btn-order">View Apparels & Accessories ↗</a>
-                    <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Order%20Inquiry%20-%20Curi%20Apparels" class="btn btn-email">Order via Email</a>
-                </div>
-            </div>
 
-            <!-- AgriVance Express -->
-            <div class="card">
-                <div>
-                    <div class="card-icon">■</div>
-                    <h3>AgriVance Express</h3>
-                    <p>Agricultural supply logistics management, cold chain transportation pipelines, and crop optimization provisioning maps.</p>
-                </div>
             </div>
-
-            <!-- OmniCare -->
-            <div class="card">
-                <div>
-                    <div class="card-icon">■</div>
-                    <h3>OmniCare</h3>
-                    <p>Specialized logistics networks handling essential wellness and clinical equipment distributions securely nationwide.</p>
-                </div>
-                <div class="card-actions">
-                    <a href="featured-products.html" target="_blank" class="btn btn-order">View Health Products ↗</a>
-                    <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Order%20Inquiry%20-%20OmniCare" class="btn btn-email">Order via Email</a>
-                </div>
-            </div>
-
         </div>
 
     </main>
+
+    <script>
+        // Check if URL contains "?view=products"
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('view') === 'products') {
+            // Hide divisions & show ONLY products in new tab
+            document.getElementById('divisions-view-container').style.display = 'none';
+            document.getElementById('products-view-container').style.display = 'block';
+            document.title = "Featured Products - TRENDINOVIA";
+        }
+
+        // Image Slider Functionality
+        function moveSlide(button, direction) {
+            const container = button.closest('.image-container');
+            const slides = container.querySelectorAll('.slide');
+            let activeIndex = 0;
+
+            slides.forEach((slide, index) => {
+                if (slide.classList.contains('active')) {
+                    activeIndex = index;
+                    slide.classList.remove('active');
+                }
+            });
+
+            let newIndex = activeIndex + direction;
+            if (newIndex >= slides.length) newIndex = 0;
+            if (newIndex < 0) newIndex = slides.length - 1;
+
+            slides[newIndex].classList.add('active');
+        }
+    </script>
 
 </body>
 </html>
