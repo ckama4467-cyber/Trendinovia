@@ -169,7 +169,7 @@
         }
         .btn-whatsapp:hover { background-color: #1ebc57; }
 
-        /* HIDE PRODUCTS BY DEFAULT ON MAIN VIEW */
+        /* HIDE PRODUCTS VIEW CONTAINER BY DEFAULT */
         #products-view-container { display: none; }
 
         @media (max-width: 600px) {
@@ -181,7 +181,7 @@
 
     <main class="main-content">
 
-        <!-- SECTION 1: DIVISIONS (Shown on main page) -->
+        <!-- SECTION 1: DIVISIONS HUB -->
         <div id="divisions-view-container">
             <div class="header-block">
                 <h1>Our Core Divisions</h1>
@@ -207,7 +207,8 @@
                         <p>Provisioning of hardware electronics, IT framework solutions, components sourcing, and peripheral operational equipment supply.</p>
                     </div>
                     <div class="card-actions">
-                        <a href="services.html?view=products" target="_blank" class="btn btn-order">View Tech Products ↗</a>
+                        <!-- LINK TO KRAIPA PRODUCTS -->
+                        <a href="services.html?view=kraipa" target="_blank" class="btn btn-order">View Tech & Cameras ↗</a>
                         <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Order%20Inquiry%20-%20Kraipa%20Tech%20Gadgets" class="btn btn-email">Order via Email</a>
                     </div>
                 </div>
@@ -220,7 +221,8 @@
                         <p>High-grade textiles allocation, tailored business uniform fulfillment logistics, design conceptualization, and local distribution.</p>
                     </div>
                     <div class="card-actions">
-                        <a href="services.html?view=products" target="_blank" class="btn btn-order">View Apparels & Accessories ↗</a>
+                        <!-- LINK TO CURI PRODUCTS -->
+                        <a href="services.html?view=curi" target="_blank" class="btn btn-order">View Apparels & Accessories ↗</a>
                         <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Order%20Inquiry%20-%20Curi%20Apparels" class="btn btn-email">Order via Email</a>
                     </div>
                 </div>
@@ -239,10 +241,11 @@
                     <div>
                         <div class="card-icon">■</div>
                         <h3>OmniCare</h3>
-                        <p>Specialized logistics networks handling essential wellness and clinical equipment distributions securely nationwide.</p>
+                        <p>Specialized logistics networks handling essential wellness, personal care, and clinical equipment distributions nationwide.</p>
                     </div>
                     <div class="card-actions">
-                        <a href="services.html?view=products" target="_blank" class="btn btn-order">View Health Products ↗</a>
+                        <!-- LINK TO OMNICARE PRODUCTS -->
+                        <a href="services.html?view=omnicare" target="_blank" class="btn btn-order">View Skincare & Health Products ↗</a>
                         <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Order%20Inquiry%20-%20OmniCare" class="btn btn-email">Order via Email</a>
                     </div>
                 </div>
@@ -250,27 +253,24 @@
             </div>
         </div>
 
-        <!-- SECTION 2: PRODUCTS (Shown ONLY when opened in new tab via View button) -->
+        <!-- SECTION 2: DIVISION SPECIFIC PRODUCT CATALOGS -->
         <div id="products-view-container">
             <div class="header-block">
-                <h1>Featured Products Catalog</h1>
-                <p>Direct dropshipping items available for quick ordering across PNG.</p>
+                <h1 id="catalog-title">Products Catalog</h1>
+                <p id="catalog-subtitle">Direct dropshipping items available for quick ordering across PNG.</p>
             </div>
 
             <div class="product-grid">
 
-                <!-- ITEM 1: Vintage Sunglasses -->
-                <div class="product-card">
+                <!-- 1. CURI APPARELS PRODUCT -->
+                <div class="product-card" data-category="curi">
                     <div>
                         <div class="image-container">
-                            <span class="badge">Trendy</span>
+                            <span class="badge">Apparels</span>
                             <div class="slider-wrapper">
-                                <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/S5c92b65dac4c4024a3e3554ea9f13f62k.jpg" alt="Model wearing sunglasses">
-                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S8fb938204c544fba917b2084358b3230i.jpg" alt="Product dimensions chart">
-                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S725dec26e51b45bd9a767b578349215cT.jpg" alt="Black sunglasses side view">
-                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S278d8c9e13474507b66ee6e043884f0e8.jpg" alt="Model wearing black sunglasses">
-                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Sa0d557d267bb46f7ac391be2278c4aa0S.jpg" alt="Leopard print sunglasses side view">
-                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S92b8e7ad33af47b491daaa829d8983feh.jpg" alt="Leopard print sunglasses front view">
+                                <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/S5c92b65dac4c4024a3e3554ea9f13f62k.jpg" alt="Vintage Pilot Sunglasses">
+                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S8fb938204c544fba917b2084358b3230i.jpg" alt="Sunglasses chart">
+                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S725dec26e51b45bd9a767b578349215cT.jpg" alt="Sunglasses view">
                             </div>
                             <button class="slider-btn prev-btn" onclick="moveSlide(this, -1)">&#10094;</button>
                             <button class="slider-btn next-btn" onclick="moveSlide(this, 1)">&#10095;</button>
@@ -291,22 +291,89 @@
                     </div>
                 </div>
 
+                <!-- 2. KRAIPA TECH GADGETS PRODUCT -->
+                <div class="product-card" data-category="kraipa">
+                    <div>
+                        <div class="image-container">
+                            <span class="badge">Tech Gadget</span>
+                            <div class="slider-wrapper">
+                                <img class="slide active" src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80" alt="Smartphone">
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">Smart Mobile Phone & Action Cam Accessories</h3>
+                            <p class="product-description">High-performance smartphones, cameras, and peripheral equipment for commercial and personal logistics.</p>
+                            <div class="price-row">
+                                <span class="current-price">K450.00</span>
+                                <span class="original-price">K600.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="padding: 0 20px 20px 20px;">
+                        <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20inquire%20about%20Kraipa%20Tech%20Products." class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                            Order via WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 3. OMNICARE PRODUCT -->
+                <div class="product-card" data-category="omnicare">
+                    <div>
+                        <div class="image-container">
+                            <span class="badge">Health & Care</span>
+                            <div class="slider-wrapper">
+                                <img class="slide active" src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=80" alt="Body Lotion">
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">Body Whitening & Nourishing Lotion</h3>
+                            <p class="product-description">Premium dermatological body moisturizing lotion for essential skin brightening and daily care routines.</p>
+                            <div class="price-row">
+                                <span class="current-price">K65.00</span>
+                                <span class="original-price">K85.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="padding: 0 20px 20px 20px;">
+                        <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Body%20Whitening%20Lotion%20(K65.00)." class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                            Order via WhatsApp
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </div>
 
     </main>
 
     <script>
-        // Check if URL contains "?view=products"
+        // Read URL query parameter
         const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.get('view') === 'products') {
-            // Hide divisions & show ONLY products in new tab
+        const view = urlParams.get('view');
+
+        if (view) {
+            // Hide divisions and reveal products catalog section
             document.getElementById('divisions-view-container').style.display = 'none';
             document.getElementById('products-view-container').style.display = 'block';
-            document.title = "Featured Products - TRENDINOVIA";
+
+            // Filter products based on category
+            const productCards = document.querySelectorAll('.product-card');
+            productCards.forEach(card => {
+                if (card.getAttribute('data-category') === view) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Update title based on requested division
+            const titleElement = document.getElementById('catalog-title');
+            if (view === 'kraipa') titleElement.innerText = "Kraipa Tech Gadgets Catalog";
+            if (view === 'curi') titleElement.innerText = "Curi Apparels Catalog";
+            if (view === 'omnicare') titleElement.innerText = "OmniCare Health & Beauty Catalog";
         }
 
-        // Image Slider Functionality
+        // Image Carousel Functionality
         function moveSlide(button, direction) {
             const container = button.closest('.image-container');
             const slides = container.querySelectorAll('.slide');
