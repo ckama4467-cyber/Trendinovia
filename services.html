@@ -80,11 +80,11 @@
 
         .product-card:hover { transform: translateY(-4px); box-shadow: 0 12px 20px -4px rgba(0, 0, 0, 0.08); }
 
-        /* SLIDER / CAROUSEL STYLES */
+        /* SLIDER / CAROUSEL STYLES (RESIZED TO 180px & CONTAINED FIT) */
         .image-container {
             position: relative;
             width: 100%;
-            height: 240px;
+            height: 180px; /* Reduced height so image fits neatly */
             background-color: #f3f4f6;
             overflow: hidden;
         }
@@ -101,7 +101,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain; /* Prevents zooming/cropping so image stays clear */
+            background-color: #f9fafb;
             opacity: 0;
             transition: opacity 0.3s ease-in-out;
         }
@@ -205,7 +206,8 @@
                     <p>Provisioning of hardware electronics, IT framework solutions, components sourcing, and peripheral operational equipment supply.</p>
                 </div>
                 <div class="card-actions">
-                    <button onclick="showCategory('kraipa')" class="btn btn-order">View Tech Products</button>
+                    <!-- Opens in a new tab -->
+                    <a href="kraipa-products.html" target="_blank" class="btn btn-order">View Tech Products</a>
                     <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Order%20Inquiry%20-%20Kraipa%20Tech%20Gadgets&body=Hi,%20I%20would%20like%20to%20order/inquire%20about%20your%20Kraipa%20Tech%20Gadgets%20services." class="btn btn-email">Order via Email</a>
                 </div>
             </div>
@@ -218,7 +220,8 @@
                     <p>High-grade textiles allocation, tailored business uniform fulfillment logistics, design conceptualization, and local distribution.</p>
                 </div>
                 <div class="card-actions">
-                    <button onclick="showCategory('curi')" class="btn btn-order">View Apparels & Accessories</button>
+                    <!-- Opens in a new tab -->
+                    <a href="curi-products.html" target="_blank" class="btn btn-order">View Apparels & Accessories</a>
                     <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Order%20Inquiry%20-%20Curi%20Apparels&body=Hi,%20I%20would%20like%20to%20order/inquire%20about%20your%20Curi%20Apparels%20services." class="btn btn-email">Order via Email</a>
                 </div>
             </div>
@@ -240,7 +243,8 @@
                     <p>Specialized logistics networks handling essential wellness and clinical equipment distributions securely nationwide.</p>
                 </div>
                 <div class="card-actions">
-                    <button onclick="showCategory('omnicare')" class="btn btn-order">View Health Products</button>
+                    <!-- Opens in a new tab -->
+                    <a href="omnicare-products.html" target="_blank" class="btn btn-order">View Health Products</a>
                     <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Order%20Inquiry%20-%20OmniCare&body=Hi,%20I%20would%20like%20to%20order/inquire%20about%20your%20OmniCare%20services." class="btn btn-email">Order via Email</a>
                 </div>
             </div>
@@ -256,19 +260,17 @@
                     <h1 id="selected-division-title">Featured Products</h1>
                     <p id="selected-division-subtitle">Direct dropshipping items available for quick ordering across PNG.</p>
                 </div>
-                <button onclick="showAllProducts()" style="background:none; border:none; color:#059669; cursor:pointer; font-weight:bold; font-size:14px; padding-bottom: 4px;">Show All Products</button>
             </div>
 
             <div class="product-grid">
 
-                <!-- ITEM 1: Curi Apparels - Vintage Sunglasses (3 Angles) -->
+                <!-- ITEM 1: Curi Apparels - Vintage Sunglasses (3 Angles Slider) -->
                 <div class="product-card" data-category="curi">
                     <div>
                         <div class="image-container">
                             <span class="badge">Trendy</span>
                             <div class="slider-wrapper">
-                                <!-- Replace image paths with your local saved files -->
-                                <img src="https://ae-pic-a1.aliexpress-media.com/kf/S5c92b65dac4c4024a3e3554ea9f13f62k.jpg" alt="Product Image">
+                                <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/S5c92b65dac4c4024a3e3554ea9f13f62k.jpg" alt="Front View">
                                 <img class="slide" src="images/sunglasses-side.jpg" alt="Side View">
                                 <img class="slide" src="images/sunglasses-model.jpg" alt="Model Wearing View">
                             </div>
@@ -291,7 +293,7 @@
                     </div>
                 </div>
 
-                <!-- ITEM 2: Kraipa Tech - Smart Fitness Watch (2 Angles) -->
+                <!-- ITEM 2: Kraipa Tech - Smart Fitness Watch -->
                 <div class="product-card" data-category="kraipa">
                     <div>
                         <div class="image-container">
@@ -319,7 +321,7 @@
                     </div>
                 </div>
 
-                <!-- ITEM 3: Curi Apparels - Executive Polo (2 Angles) -->
+                <!-- ITEM 3: Curi Apparels - Executive Polo -->
                 <div class="product-card" data-category="curi">
                     <div>
                         <div class="image-container">
@@ -351,9 +353,8 @@
 
     </main>
 
-    <!-- Scripts for Category Filtering & Image Slider -->
+    <!-- Script for Image Carousel Controls -->
     <script>
-        // Image Slider Function
         function moveSlide(button, direction) {
             const container = button.closest('.image-container');
             const slides = container.querySelectorAll('.slide');
@@ -371,38 +372,6 @@
             if (newIndex < 0) newIndex = slides.length - 1;
 
             slides[newIndex].classList.add('active');
-        }
-
-        // Category Filter Function
-        function showCategory(category) {
-            const productSection = document.getElementById('product-section');
-            const allProducts = document.querySelectorAll('.product-card');
-            
-            allProducts.forEach(product => {
-                if (product.getAttribute('data-category') === category) {
-                    product.style.display = 'flex';
-                } else {
-                    product.style.display = 'none';
-                }
-            });
-
-            const titles = {
-                'curi': 'Curi Apparels & Accessories',
-                'kraipa': 'Kraipa Tech Gadgets Catalog',
-                'omnicare': 'OmniCare Health & Wellness Catalog'
-            };
-            
-            document.getElementById('selected-division-title').innerText = titles[category] || 'Featured Products';
-            document.getElementById('selected-division-subtitle').innerText = 'Showing items under ' + (titles[category] || 'selected division') + '.';
-
-            productSection.scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function showAllProducts() {
-            const allProducts = document.querySelectorAll('.product-card');
-            allProducts.forEach(product => product.style.display = 'flex');
-            document.getElementById('selected-division-title').innerText = 'Featured Products';
-            document.getElementById('selected-division-subtitle').innerText = 'Direct dropshipping items available for quick ordering across PNG.';
         }
     </script>
 
