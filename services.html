@@ -80,11 +80,11 @@
 
         .product-card:hover { transform: translateY(-4px); box-shadow: 0 12px 20px -4px rgba(0, 0, 0, 0.08); }
 
-        /* SLIDER / CAROUSEL STYLES (RESIZED TO 180px & CONTAINED FIT) */
+        /* SLIDER / CAROUSEL STYLES */
         .image-container {
             position: relative;
             width: 100%;
-            height: 180px; /* Reduced height so image fits neatly */
+            height: 180px;
             background-color: #f3f4f6;
             overflow: hidden;
         }
@@ -101,7 +101,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Prevents zooming/cropping so image stays clear */
+            object-fit: contain;
             background-color: #f9fafb;
             opacity: 0;
             transition: opacity 0.3s ease-in-out;
@@ -206,8 +206,7 @@
                     <p>Provisioning of hardware electronics, IT framework solutions, components sourcing, and peripheral operational equipment supply.</p>
                 </div>
                 <div class="card-actions">
-                    <!-- Opens in a new tab -->
-                    <a href="kraipa-products.html" target="_blank" class="btn btn-order">View Tech Products</a>
+                    <a href="#product-section" target="_blank" class="btn btn-order">View Tech Products</a>
                     <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Order%20Inquiry%20-%20Kraipa%20Tech%20Gadgets&body=Hi,%20I%20would%20like%20to%20order/inquire%20about%20your%20Kraipa%20Tech%20Gadgets%20services." class="btn btn-email">Order via Email</a>
                 </div>
             </div>
@@ -220,8 +219,7 @@
                     <p>High-grade textiles allocation, tailored business uniform fulfillment logistics, design conceptualization, and local distribution.</p>
                 </div>
                 <div class="card-actions">
-                    <!-- Opens in a new tab -->
-                    <a href="curi-products.html" target="_blank" class="btn btn-order">View Apparels & Accessories</a>
+                    <a href="#product-section" target="_blank" class="btn btn-order">View Apparels & Accessories</a>
                     <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Order%20Inquiry%20-%20Curi%20Apparels&body=Hi,%20I%20would%20like%20to%20order/inquire%20about%20your%20Curi%20Apparels%20services." class="btn btn-email">Order via Email</a>
                 </div>
             </div>
@@ -243,8 +241,7 @@
                     <p>Specialized logistics networks handling essential wellness and clinical equipment distributions securely nationwide.</p>
                 </div>
                 <div class="card-actions">
-                    <!-- Opens in a new tab -->
-                    <a href="omnicare-products.html" target="_blank" class="btn btn-order">View Health Products</a>
+                    <a href="#product-section" target="_blank" class="btn btn-order">View Health Products</a>
                     <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Order%20Inquiry%20-%20OmniCare&body=Hi,%20I%20would%20like%20to%20order/inquire%20about%20your%20OmniCare%20services." class="btn btn-email">Order via Email</a>
                 </div>
             </div>
@@ -255,27 +252,26 @@
         <!-- SECTION 2: DROPSHIPPED FEATURED PRODUCTS WITH SLIDERS -->
         <div id="product-section" style="margin-top: 60px;">
             
-            <div class="header-block" style="display: flex; justify-content: space-between; align-items: flex-end;">
-                <div>
-                    <h1 id="selected-division-title">Featured Products</h1>
-                    <p id="selected-division-subtitle">Direct dropshipping items available for quick ordering across PNG.</p>
-                </div>
+            <div class="header-block">
+                <h1>Featured Products</h1>
+                <p>Direct dropshipping items available for quick ordering across PNG.</p>
             </div>
 
             <div class="product-grid">
 
-                <!-- ITEM 1: Curi Apparels - Vintage Sunglasses (3 Angles Slider) -->
+                <!-- ITEM 1: Curi Apparels - Vintage Sunglasses (6 Images Slider) -->
                 <div class="product-card" data-category="curi">
                     <div>
                         <div class="image-container">
                             <span class="badge">Trendy</span>
                             <div class="slider-wrapper">
-                                <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/S5c92b65dac4c4024a3e3554ea9f13f62k.jpg" alt="View">
-                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S8fb938204c544fba917b2084358b3230i.jpg" alt="View">
-                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S725dec26e51b45bd9a767b578349215cT.jpg" alt="View">
-                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S278d8c9e13474507b66ee6e043884f0e8.jpg" alt="View">
-                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Sa0d557d267bb46f7ac391be2278c4aa0S.jpg" alt="View">
-                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S92b8e7ad33af47b491daaa829d8983feh.jpg" alt="View">
+                                <!-- ONLY 1ST IMAGE GETS "ACTIVE" CLASS -->
+                                <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/S5c92b65dac4c4024a3e3554ea9f13f62k.jpg" alt="Model wearing sunglasses">
+                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S8fb938204c544fba917b2084358b3230i.jpg" alt="Product dimensions chart">
+                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S725dec26e51b45bd9a767b578349215cT.jpg" alt="Black sunglasses side view">
+                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S278d8c9e13474507b66ee6e043884f0e8.jpg" alt="Model wearing black sunglasses">
+                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Sa0d557d267bb46f7ac391be2278c4aa0S.jpg" alt="Leopard print sunglasses side view">
+                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S92b8e7ad33af47b491daaa829d8983feh.jpg" alt="Leopard print sunglasses front view">
                             </div>
                             <button class="slider-btn prev-btn" onclick="moveSlide(this, -1)">&#10094;</button>
                             <button class="slider-btn next-btn" onclick="moveSlide(this, 1)">&#10095;</button>
@@ -284,90 +280,13 @@
                             <h3 class="product-title">Vintage Pilot Sun Glasses</h3>
                             <p class="product-description">Unisex retro circular pilot sunglasses with gradient tint lenses and durable lightweight frame.</p>
                             <div class="price-row">
-                                <span class="current-price">K12.00</span>
-                                <span class="original-price">K14.44</span>
-                            </div>
-                        </div>
-                             <div class="image-container">
-                                 <span class="badge">Beauty</span>
-                                 <div class="slider-wrapper">
-                                     <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/Aa4795477070246d68a11e3b042388793N.jpg" alt="View">
-                                     <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Aa4795477070246d68a11e3b042388793N.jpg" alt="View">
-                                     <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S1223bf58569c4be38e21baac0dff11dfy.jpg" alt="View">
-                                     <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Sc3ec4f079d3d40feb9076442763352b72.jpg" alt="View">
-                                     <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S463ae88351354235a5d5de2352950156V.jpg" alt="View">
-                                     <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S2535957c94664295a4b6a53790edc21bu.jpg" alt="View">
-                            </div>
-                            <button class="slider-btn prev-btn" onclick="moveSlide(this, -1)">&#10094;</button>
-                            <button class="slider-btn next-btn" onclick="moveSlide(this, 1)">&#10095;</button>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="product-title">Chocolate Brown Burmese Curly Wig</h3>
-                            <p class="product-description">Chocolate Brown Burmese Curly Half Wig Human Hair Wigs For Black Women Invisible Clip In Headband Wig 0 Skill Needed.</p>
-                            <div class="price-row">
-                                <span class="current-price">K350.00</span>
-                                <span class="original-price">K441.99</span>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                    <div style="padding: 0 20px 20px 20px;">
-                        <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Vintage%20Pilot%20Sunglasses%20(K35.00)." class="btn-whatsapp" target="_blank">
-                            Order via WhatsApp
-                        </a>
-                    </div>
-                </div>
-
-                <!-- ITEM 2: Kraipa Tech - Smart Fitness Watch -->
-                <div class="product-card" data-category="kraipa">
-                    <div>
-                        <div class="image-container">
-                            <span class="badge">New</span>
-                            <div class="slider-wrapper">
-                                <img class="slide active" src="images/smartwatch-front.jpg" alt="Watch Screen">
-                                <img class="slide" src="images/smartwatch-strap.jpg" alt="Watch Strap Angle">
-                            </div>
-                            <button class="slider-btn prev-btn" onclick="moveSlide(this, -1)">&#10094;</button>
-                            <button class="slider-btn next-btn" onclick="moveSlide(this, 1)">&#10095;</button>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="product-title">Smart Fitness Watch</h3>
-                            <p class="product-description">Waterproof health tracking, heart rate monitor, and 14-day battery life.</p>
-                            <div class="price-row">
-                                <span class="current-price">K110.00</span>
-                                <span class="original-price">K140.00</span>
+                                <span class="current-price">K35.00</span>
+                                <span class="original-price">K50.00</span>
                             </div>
                         </div>
                     </div>
                     <div style="padding: 0 20px 20px 20px;">
-                        <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Smart%20Fitness%20Watch%20(K110.00)." class="btn-whatsapp" target="_blank">
-                            Order via WhatsApp
-                        </a>
-                    </div>
-                </div>
-
-                <!-- ITEM 3: OmniCare - Health and Beauty -->
-                <div class="product-card" data-category="omnicare">
-                    <div>
-                        <div class="image-container">
-                            <span class="badge">Popular</span>
-                            <div class="slider-wrapper">
-                                <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/Aa4795477070246d68a11e3b042388793N.jpg" alt="View">
-                                <img class="slide" src="images/polo-back.jpg" alt="Polo Back">
-                            </div>
-                            <button class="slider-btn prev-btn" onclick="moveSlide(this, -1)">&#10094;</button>
-                            <button class="slider-btn next-btn" onclick="moveSlide(this, 1)">&#10095;</button>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="product-title">Executive Business Polo</h3>
-                            <p class="product-description">Breathable cotton-blend corporate polo shirt. Ideal for corporate branding and custom embroidery.</p>
-                            <div class="price-row">
-                                <span class="current-price">K85.00</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="padding: 0 20px 20px 20px;">
-                        <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Executive%20Business%20Polo%20(K85.00)." class="btn-whatsapp" target="_blank">
+                        <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Vintage%20Pilot%20Sunglasses%20(K35.00)." class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
                             Order via WhatsApp
                         </a>
                     </div>
@@ -378,7 +297,7 @@
 
     </main>
 
-    <!-- Script for Image Carousel Controls -->
+    <!-- JavaScript Carousel Controller -->
     <script>
         function moveSlide(button, direction) {
             const container = button.closest('.image-container');
