@@ -3,89 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services & Products - TRENDINOVIA</title>
+    <title>Our Services & Products - TRENDINOVIA</title>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f9fafb; color: #1f2937; padding: 40px 24px; }
-
-        .main-content { max-width: 1200px; margin: 0 auto; }
-
-        /* Header Block */
-        .header-block { margin-bottom: 32px; text-align: left; }
-        .header-block h1 { font-size: 28px; font-weight: 800; color: #111827; margin-bottom: 8px; }
-        .header-block p { font-size: 15px; color: #4b5563; }
-
-        /* Core Divisions Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        .card {
-            background-color: #ffffff;
-            border-radius: 16px;
-            border: 1px solid #e5e7eb;
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        body {
+            background-color: #f4f6f8;
+            color: #333;
+            padding: 20px;
         }
 
-        .card:hover { transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05); }
-        .card-icon { font-size: 20px; color: #059669; margin-bottom: 12px; }
-        .card h3 { font-size: 20px; font-weight: 700; color: #111827; margin-bottom: 12px; }
-        .card p { font-size: 14px; color: #4b5563; line-height: 1.6; margin-bottom: 20px; }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
 
-        /* Core Card Buttons */
-        .card-actions { display: flex; flex-direction: column; gap: 10px; }
-        .btn {
-            display: inline-block;
+        h1 {
             text-align: center;
-            padding: 10px 16px;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-            border: none;
-            transition: background 0.2s ease;
-        }
-        .btn-order { background-color: #059669; color: #ffffff; }
-        .btn-order:hover { background-color: #047857; }
-        .btn-email { background-color: #f3f4f6; color: #374151; }
-        .btn-email:hover { background-color: #e5e7eb; }
-
-        /* Product Showcase Grid */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
+            margin-bottom: 30px;
+            color: #111827;
         }
 
+        /* Product Card Flexbox Layout */
         .product-card {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
             background-color: #ffffff;
             border-radius: 16px;
+            padding: 20px;
             border: 1px solid #e5e7eb;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-bottom: 25px;
+            align-items: flex-start;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
-        .product-card:hover { transform: translateY(-4px); box-shadow: 0 12px 20px -4px rgba(0, 0, 0, 0.08); }
+        /* Media Column keeps image slider and button aligned together */
+        .media-column {
+            width: 320px;
+            max-width: 100%;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-        /* SLIDER STYLES */
+        /* Image/Video Container */
         .image-container {
             position: relative;
             width: 100%;
-            height: 220px;
-            background-color: #f3f4f6;
+            height: 300px;
+            background-color: #000000;
+            border-radius: 12px;
             overflow: hidden;
+        }
+
+        .badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background-color: rgba(17, 24, 39, 0.85);
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            z-index: 10;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .slider-wrapper {
@@ -95,69 +85,44 @@
         }
 
         .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
+            display: none;
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
             border: none;
-            background-color: #f9fafb;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease-in-out;
         }
 
-        .slide.active { 
-            opacity: 1; 
-            pointer-events: auto;
+        .slide.active {
+            display: block;
         }
 
+        /* Slider Controls */
         .slider-btn {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(17, 24, 39, 0.6);
-            color: #ffffff;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
             border: none;
             width: 32px;
             height: 32px;
             border-radius: 50%;
             cursor: pointer;
-            font-size: 14px;
+            z-index: 10;
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 5;
-            transition: background 0.2s ease;
+            transition: background-color 0.2s ease;
         }
 
-        .slider-btn:hover { background: rgba(17, 24, 39, 0.9); }
+        .slider-btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
         .prev-btn { left: 10px; }
         .next-btn { right: 10px; }
 
-        .badge {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            background-color: #111827;
-            color: #ffffff;
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            padding: 4px 10px;
-            border-radius: 12px;
-            z-index: 6;
-        }
-
-        .product-content { padding: 20px; flex-grow: 1; }
-        .product-title { font-size: 17px; font-weight: 700; color: #111827; margin-bottom: 8px; }
-        .product-description { font-size: 13px; color: #4b5563; line-height: 1.5; margin-bottom: 16px; }
-
-        .price-row { display: flex; align-items: baseline; gap: 8px; }
-        .current-price { font-size: 20px; font-weight: 800; color: #059669; }
-        .original-price { font-size: 13px; color: #9ca3af; text-decoration: line-through; }
-
+        /* Button styled strictly to fit underneath image container */
         .btn-whatsapp {
             display: flex;
             align-items: center;
@@ -166,339 +131,254 @@
             background-color: #25D366;
             color: #ffffff;
             text-decoration: none;
-            padding: 12px;
+            padding: 12px 16px;
             border-radius: 10px;
             font-size: 14px;
             font-weight: 600;
+            box-sizing: border-box;
             transition: background-color 0.2s ease;
         }
-        .btn-whatsapp:hover { background-color: #1ebc57; }
 
-        /* HIDE PRODUCTS VIEW CONTAINER BY DEFAULT */
-        #products-view-container { display: none; }
+        .btn-whatsapp:hover {
+            background-color: #1ebc57;
+        }
 
-        @media (max-width: 600px) {
-            .services-grid, .product-grid { grid-template-columns: 1fr; }
+        /* Product Details Column */
+        .product-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 10px;
+        }
+
+        .product-description {
+            font-size: 14px;
+            color: #4b5563;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .price-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .current-price {
+            font-size: 22px;
+            font-weight: 800;
+            color: #059669;
+        }
+
+        .original-price {
+            font-size: 16px;
+            color: #9ca3af;
+            text-decoration: line-through;
+        }
+
+        /* Responsive Layout for Mobile Devices */
+        @media (max-width: 650px) {
+            .product-card {
+                flex-direction: column;
+            }
+            .media-column {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
 
-    <main class="main-content">
+<div class="container">
+    <h1>Featured Products & Services</h1>
 
-        <!-- SECTION 1: DIVISIONS HUB -->
-        <div id="divisions-view-container">
-            <div class="header-block">
-                <h1>Our Core Divisions</h1>
-                <p>Explore our comprehensive array of commercial capabilities operating seamlessly across PNG.</p>
+    <!-- 1. KRAIPA TECH GADGETS PRODUCT -->
+    <div class="product-card" data-category="kraipa">
+        <div class="media-column">
+            <div class="image-container">
+                <span class="badge">Mini Security Camera</span>
+                <div class="slider-wrapper">
+                    <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/S67d51ca10bbe4ca4bcdac4ec38ac353bn.png" alt="view">
+                    <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Sb8fd0054736c47a4992803d56aba9ecbu.png" alt="view">
+                    <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S2681645c3aa64e27bf8c1f785f2525bft.png" alt="view">
+                    
+                    <!-- YouTube Video Embed -->
+                    <iframe class="slide" 
+                            src="https://www.youtube.com/embed/rOB_rxp6cQE?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=rOB_rxp6cQE" 
+                            title="Vidcastive 4K Mini Spy Camera - Secret Surveillance" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <button class="slider-btn prev-btn" onclick="moveSlide(this, -1)">&#10094;</button>
+                <button class="slider-btn next-btn" onclick="moveSlide(this, 1)">&#10095;</button>
             </div>
-
-            <div class="services-grid">
-                
-                <!-- Mepel Facility Solution -->
-                <div class="card">
-                    <div>
-                        <div class="card-icon">■</div>
-                        <h3>Mepel Facility Solution</h3>
-                        <p>Corporate maintenance, spatial layout modifications, partition assembly installations, and commercial site asset management.</p>
-                    </div>
-                </div>
-
-                <!-- Kraipa Tech Gadgets -->
-                <div class="card">
-                    <div>
-                        <div class="card-icon">■</div>
-                        <h3>Kraipa Tech Gadgets</h3>
-                        <p>Provisioning of hardware electronics, IT framework solutions, components sourcing, and peripheral operational equipment supply.</p>
-                    </div>
-                    <div class="card-actions">
-                        <a href="services.html?view=kraipa" class="btn btn-order">View Tech & Cameras ↗</a>
-                        <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Order%20Inquiry%20-%20Kraipa%20Tech%20Gadgets" class="btn btn-email">Order via Email</a>
-                    </div>
-                </div>
-
-                <!-- Curi Apparels -->
-                <div class="card">
-                    <div>
-                        <div class="card-icon">■</div>
-                        <h3>Curi Apparels</h3>
-                        <p>High-grade textiles allocation, tailored business uniform fulfillment logistics, design conceptualization, and local distribution.</p>
-                    </div>
-                    <div class="card-actions">
-                        <a href="services.html?view=curi" class="btn btn-order">View Apparels & Accessories ↗</a>
-                        <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Order%20Inquiry%20-%20Curi%20Apparels" class="btn btn-email">Order via Email</a>
-                    </div>
-                </div>
-
-                <!-- AgriVance Express -->
-                <div class="card">
-                    <div>
-                        <div class="card-icon">■</div>
-                        <h3>AgriVance Express</h3>
-                        <p>Agricultural supply logistics management, cold chain transportation pipelines, and crop optimization provisioning maps.</p>
-                    </div>
-                </div>
-
-                <!-- OmniCare -->
-                <div class="card">
-                    <div>
-                        <div class="card-icon">■</div>
-                        <h3>OmniCare</h3>
-                        <p>Specialized logistics networks handling essential wellness, personal beauty and health care, and clinical equipment distributions nationwide.</p>
-                    </div>
-                    <div class="card-actions">
-                        <a href="services.html?view=omnicare" class="btn btn-order">View Skincare, Health & Beauty Products ↗</a>
-                        <a href="mailto:trendinoviainvestmentlimited@gmail.com?subject=Order%20Inquiry%20-%20OmniCare" class="btn btn-email">Order via Email</a>
-                    </div>
-                </div>
-
+            <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20inquire%20about%20Kraipa%20Tech%20Products." class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                Order via WhatsApp
+            </a>
+        </div>
+        <div class="product-content">
+            <div>
+                <h3 class="product-title">Mini Wifi Nanny Camera Wireless 4K</h3>
+                <p class="product-description">Mini Wifi Nanny Camera Wireless 4K Security Camera WiFi/No WiFi Use Cloud & SD Storage Nanny Pet Baby Monitor with Magnetic Base.</p>
+            </div>
+            <div class="price-row">
+                <span class="current-price">K390.00</span>
+                <span class="original-price">K450.00</span>
             </div>
         </div>
+    </div>
 
-        <!-- SECTION 2: DIVISION SPECIFIC PRODUCT CATALOGS -->
-        <div id="products-view-container">
-            <div class="header-block">
-                <h1 id="catalog-title">Products Catalog</h1>
-                <p id="catalog-subtitle">Direct dropshipping items available for quick ordering across PNG.</p>
-            </div>
 
-            <div class="product-grid">
-
-                <!-- 1. CURI APPARELS PRODUCT (Animated GIF / WebP Demo) -->
-                <div class="product-card" data-category="curi">
-                    <div>
-                        <div class="image-container">
-                            <span class="badge">Sunglasses</span>
-                            <div class="slider-wrapper">
-                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S5c92b65dac4c4024a3e3554ea9f13f62k.jpg" alt="view">
-                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S278d8c9e13474507b66ee6e043884f0e8.jpg" alt="view">
-                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Sa0d557d267bb46f7ac391be2278c4aa0S.jpg" alt="view">
-                            </div>
-                            <button class="slider-btn prev-btn" onclick="moveSlide(this, -1)">&#10094;</button>
-                            <button class="slider-btn next-btn" onclick="moveSlide(this, 1)">&#10095;</button>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="product-title">Vintage Pilot Sun Glasses</h3>
-                            <p class="product-description">Unisex retro circular pilot sunglasses with gradient tint lenses and durable lightweight frame.</p>
-                            <div class="price-row">
-                                <span class="current-price">K11.00</span>
-                                <span class="original-price">K14.44</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="padding: 0 20px 20px 20px;">
-                        <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Vintage%20Pilot%20Sunglasses%20(K11.00)." class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
-                            Order via WhatsApp
-                        </a>
-                    </div>
+    <!-- 2. OMNICARE - Curly Bob Wig -->
+    <div class="product-card" data-category="omnicare">
+        <div class="media-column">
+            <div class="image-container">
+                <span class="badge">Hair</span>
+                <div class="slider-wrapper">
+                    <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/Abf46df26d17e425b8a39a9fcb7ea2c3dj.png" alt="view">
+                    <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S940841e156d249f8a200db771804ef54b.jpg" alt="view">
+                    
+                    <!-- Direct MP4 Video Embed -->
+                    <iframe class="slide" 
+                            src="https://video.aliexpress-media.com/play/u/ae_sg_item/3000912434018/p/1/e/6/t/10301/5000212144994.mp4" 
+                            title="Curly Bob Wig Demo Video" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
                 </div>
-              <!-- 2. KRAIPA TECH GADGETS PRODUCT -->
-                <div class="product-card" data-category="kraipa">
-                    <div>
-                        <div class="image-container">
-                            <span class="badge">Mini Security Camera</span>
-                            <div class="slider-wrapper">
-                                <!-- 1st Image (Active on load) -->
-                                <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/S67d51ca10bbe4ca4bcdac4ec38ac353bn.png" alt="view">
-                                
-                                <!-- 2nd Image -->
-                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Sb8fd0054736c47a4992803d56aba9ecbu.png" alt="view">
-                                
-                                <!-- 3rd Image -->
-                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S2681645c3aa64e27bf8c1f785f2525bft.png" alt="view">
-                                
-                                <!-- YouTube Video (Placed last in the slider order) -->
-                                <iframe class="slide" 
-                                        src="https://www.youtube.com/embed/rOB_rxp6cQE?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=rOB_rxp6cQE" 
-                                        title="Vidcastive 4K Mini Spy Camera - Secret Surveillance" 
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                        allowfullscreen>
-                                </iframe>
-                            </div>
-                            <button class="slider-btn prev-btn" onclick="moveSlide(this, -1)">&#10094;</button>
-                            <button class="slider-btn next-btn" onclick="moveSlide(this, 1)">&#10095;</button>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="product-title">Mini Wifi Nanny Camera Wireless 4K</h3>
-                            <p class="product-description">Mini Wifi Nanny Camera Wireless 4K Security Camera WiFi/No WiFi Use Cloud & SD Storage Nanny Pet Baby Monitor with Magnetic Base.</p>
-                            <div class="price-row">
-                                <span class="current-price">K390.00</span>
-                                <span class="original-price">K450.00</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="padding: 0 20px 20px 20px;">
-                        <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20inquire%20about%20Kraipa%20Tech%20Products." class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
-                            Order via WhatsApp       
-                    </a>
-                </div>
+                <button class="slider-btn prev-btn" onclick="moveSlide(this, -1)">&#10094;</button>
+                <button class="slider-btn next-btn" onclick="moveSlide(this, 1)">&#10095;</button>
             </div>
+            <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Curly%20Bob%20Wig%20(K400.00)." class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                Order via WhatsApp
+            </a>
+        </div>
+        <div class="product-content">
+            <div>
+                <h3 class="product-title">Curly Bob Wig Brazilian Hair</h3>
+                <p class="product-description">Ombre Highlight P4/27 Color Short Bob Wigs Curly 13x4 Lace Frontal Wigs Human Hair Deep Curly Bob Wig Brazilian Hair.</p>
+            </div>
+            <div class="price-row">
+                <span class="current-price">K400.00</span>
+                <span class="original-price">K500.00</span>
+            </div>
+        </div>
+    </div>
 
-                <!-- 3. OMNICARE PRODUCT (YouTube Shorts / YouTube Video Embed Demo) -->
-                <div class="product-card" data-category="omnicare">
-                    <div>
-                        <div class="image-container">
-                            <span class="badge">Hair</span>
-                            <div class="slider-wrapper">
-                                <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/Abf46df26d17e425b8a39a9fcb7ea2c3dj.png" alt="view">
-                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S940841e156d249f8a200db771804ef54b.jpg" alt="view">
-                           <!-- YouTube Embed via Iframe -->
-                                <iframe class="slide" 
-                                        src="https://video.aliexpress-media.com/play/u/ae_sg_item/3000912434018/p/1/e/6/t/10301/5000212144994.mp4" 
-                                        title="Curly Bob Wig Demo Video" 
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                        allowfullscreen>
-                                </iframe>
-                            </div>
-                            <button class="slider-btn prev-btn" onclick="moveSlide(this, -1)">&#10094;</button>
-                            <button class="slider-btn next-btn" onclick="moveSlide(this, 1)">&#10095;</button>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="product-title">Curly Bob Wig Brazilian Hair</h3>
-                            <p class="product-description">Ombre Highlight P4/27 Color Short Bob Wigs Curly 13x4 Lace Frontal Wigs Human Hair Deep Curly Bob Wig Brazilian Hair.</p>
-                            <div class="price-row">
-                                <span class="current-price">K400.00</span>
-                                <span class="original-price">K500.00</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="padding: 0 20px 20px 20px;">
-                        <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Curly%20Bob%20Wig%20(K400.00)." class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
-                            Order via WhatsApp
-                        </a>
-                    </div>
-                       <div class="image-container">
-                            <span class="badge">Hair</span>
-                            <div class="slider-wrapper">
-                                <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/H402a12ad86534904942db9ac0cc25ac13.jpg" alt="view">
-                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Hf0fb5685282a43ff9b224ee58ead8549y.jpg" alt="view">
-                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Ha4d41e0098cb4ce6a9f7997050f61f96C.jpg" alt="view">
-                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Hb6174553a15048ceb17ea51d38e8534aX.jpg" alt="view">
-                           <!-- YouTube Embed via Iframe -->
-                                <iframe class="slide" 
-                                        src="https://www.youtube.com/embed/3KmA6dBEcVQ?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=MJhLtnjbR64" 
-                                        title="Debut Ombre Short Curly Wigs Remy Demo Video" 
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                        allowfullscreen>
-                                </iframe>
-                            </div>
-                            <button class="slider-btn prev-btn" onclick="moveSlide(this, -1)">&#10094;</button>
-                            <button class="slider-btn next-btn" onclick="moveSlide(this, 1)">&#10095;</button>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="product-title">Debut Ombre Short Curly Human Hair Wigs Remy</h3>
-                            <p class="product-description">Debut Ombre Short Curly Human Hair Wigs Remy Short Bob Wigs 100% Human Hair Cheap Pixie.</p>
-                            <div class="price-row">
-                                <span class="current-price">K290.00</span>
-                                <span class="original-price">K350.00</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="padding: 0 20px 20px 20px;">
-                        <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Curly%20Bob%20Wig%20(K400.00)." class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
-                            Order via WhatsApp
-                        </a>
-                    </div>
-                      <div class="image-container">
-                            <span class="badge">Hair</span>
-                            <div class="slider-wrapper">
-                                <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/H32d29a09915f41deaac2529b8d5ba3b7Y.jpg" alt="view">
-                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Hac9ff3eca6664b85aad8c57a74be9063C.jpg" alt="view">
-                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/H67ba55f68b814be0ba4762c3960d6b5ek.jpg" alt="view">
-                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/H217f9145906b4c99a911d218663d7b0bf.jpg" alt="view">
-                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Hd2ffc73de71c44b3b58096bbc80f484bN.jpg" alt="view">
-                           <!-- YouTube Embed via Iframe -->
-                                <iframe class="slide" 
-                                        src="https://video.aliexpress-media.com/play/u/ae_sg_item/3981944817/p/1/e/6/t/10301/1100164580615.mp4?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=MJhLtnjbR64" 
-                                        title=" 22inch Dreadlocks Crochet Hair Braids Demo Video" 
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                        allowfullscreen>
-                                </iframe>
-                            </div>
-                            <button class="slider-btn prev-btn" onclick="moveSlide(this, -1)">&#10094;</button>
-                            <button class="slider-btn next-btn" onclick="moveSlide(this, 1)">&#10095;</button>
-                        </div>
-                        <div class="product-content">
-                            <h3 class="product-title">22inch Dreadlocks Crochet Hair Braids</h3>
-                            <p class="product-description">22inch Dreadlocks Crochet Hair Braids Synthetic Omber Braiding Wigs Extension Reggae Hip Hop For Black Women/Men Hair Expo City.</p>
-                            <div class="price-row">
-                                <span class="current-price">K200.00</span>
-                                <span class="original-price">K250</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="padding: 0 20px 20px 20px;">
-                        <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Curly%20Bob%20Wig%20(K400.00)." class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
-                            Order via WhatsApp
-                        </a>
-                    </div>
-    </main>
 
-    <script>
-        // Read URL query parameter
-        const urlParams = new URLSearchParams(window.location.search);
-        const view = urlParams.get('view');
+    <!-- 3. OMNICARE - Debut Ombre Wig -->
+    <div class="product-card" data-category="omnicare">
+        <div class="media-column">
+            <div class="image-container">
+                <span class="badge">Hair</span>
+                <div class="slider-wrapper">
+                    <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/H402a12ad86534904942db9ac0cc25ac13.jpg" alt="view">
+                    <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Hf0fb5685282a43ff9b224ee58ead8549y.jpg" alt="view">
+                    <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Ha4d41e0098cb4ce6a9f7997050f61f96C.jpg" alt="view">
+                    <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Hb6174553a15048ceb17ea51d38e8534aX.jpg" alt="view">
+                    
+                    <!-- YouTube Embed via Iframe -->
+                    <iframe class="slide" 
+                            src="https://www.youtube.com/embed/3KmA6dBEcVQ?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=3KmA6dBEcVQ" 
+                            title="Debut Ombre Short Curly Wigs Remy Demo Video" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <button class="slider-btn prev-btn" onclick="moveSlide(this, -1)">&#10094;</button>
+                <button class="slider-btn next-btn" onclick="moveSlide(this, 1)">&#10095;</button>
+            </div>
+            <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Debut%20Ombre%20Short%20Curly%20Human%20Hair%20Wigs%20Remy%20(K290.00)." class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                Order via WhatsApp
+            </a>
+        </div>
+        <div class="product-content">
+            <div>
+                <h3 class="product-title">Debut Ombre Short Curly Human Hair Wigs Remy</h3>
+                <p class="product-description">Debut Ombre Short Curly Human Hair Wigs Remy Short Bob Wigs 100% Human Hair Cheap Pixie.</p>
+            </div>
+            <div class="price-row">
+                <span class="current-price">K290.00</span>
+                <span class="original-price">K350.00</span>
+            </div>
+        </div>
+    </div>
 
-        if (view) {
-            // Hide divisions and reveal products catalog section
-            document.getElementById('divisions-view-container').style.display = 'none';
-            document.getElementById('products-view-container').style.display = 'block';
 
-            // Filter products based on category
-            const productCards = document.querySelectorAll('.product-card');
-            productCards.forEach(card => {
-                if (card.getAttribute('data-category') === view) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
+    <!-- 4. OMNICARE - 22inch Dreadlocks -->
+    <div class="product-card" data-category="omnicare">
+        <div class="media-column">
+            <div class="image-container">
+                <span class="badge">Hair</span>
+                <div class="slider-wrapper">
+                    <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/H32d29a09915f41deaac2529b8d5ba3b7Y.jpg" alt="view">
+                    <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Hac9ff3eca6664b85aad8c57a74be9063C.jpg" alt="view">
+                    <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/H67ba55f68b814be0ba4762c3960d6b5ek.jpg" alt="view">
+                    <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/H217f9145906b4c99a911d218663d7b0bf.jpg" alt="view">
+                    <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Hd2ffc73de71c44b3b58096bbc80f484bN.jpg" alt="view">
+                    
+                    <!-- Direct MP4 Video Embed -->
+                    <iframe class="slide" 
+                            src="https://video.aliexpress-media.com/play/u/ae_sg_item/3981944817/p/1/e/6/t/10301/1100164580615.mp4" 
+                            title="22inch Dreadlocks Crochet Hair Braids Demo Video" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <button class="slider-btn prev-btn" onclick="moveSlide(this, -1)">&#10094;</button>
+                <button class="slider-btn next-btn" onclick="moveSlide(this, 1)">&#10095;</button>
+            </div>
+            <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%2022inch%20Dreadlocks%20Crochet%20Hair%20Braids%20(K200.00)." class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                Order via WhatsApp
+            </a>
+        </div>
+        <div class="product-content">
+            <div>
+                <h3 class="product-title">22inch Dreadlocks Crochet Hair Braids</h3>
+                <p class="product-description">22inch Dreadlocks Crochet Hair Braids Synthetic Omber Braiding Wigs Extension Reggae Hip Hop For Black Women/Men Hair Expo City.</p>
+            </div>
+            <div class="price-row">
+                <span class="current-price">K200.00</span>
+                <span class="original-price">K250.00</span>
+            </div>
+        </div>
+    </div>
 
-            // Update title based on requested division
-            const titleElement = document.getElementById('catalog-title');
-            if (view === 'kraipa') titleElement.innerText = "Kraipa Tech Gadgets Catalog";
-            if (view === 'curi') titleElement.innerText = "Curi Apparels Catalog";
-            if (view === 'omnicare') titleElement.innerText = "OmniCare Health & Beauty Catalog";
+</div>
+
+<script>
+    function moveSlide(button, direction) {
+        const container = button.closest('.image-container');
+        const slides = container.querySelectorAll('.slide');
+        let activeIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+
+        // Pause playing iframe video if sliding away from it
+        if (slides[activeIndex].tagName === 'IFRAME') {
+            const iframe = slides[activeIndex];
+            const src = iframe.src;
+            iframe.src = src; // Reset iframe src to stop video audio/playback
         }
 
-        // Image & Video Carousel Functionality
-        function moveSlide(button, direction) {
-            const container = button.closest('.image-container');
-            const slides = container.querySelectorAll('.slide');
-            let activeIndex = 0;
+        slides[activeIndex].classList.remove('active');
 
-            slides.forEach((slide, index) => {
-                if (slide.classList.contains('active')) {
-                    activeIndex = index;
-                    slide.classList.remove('active');
-                    
-                    // Pause HTML5 Videos when sliding away
-                    if (slide.tagName.toLowerCase() === 'video') {
-                        slide.pause();
-                        slide.currentTime = 0;
-                    }
-                    
-                    // Reset YouTube iframe playback state when sliding away
-                    if (slide.tagName.toLowerCase() === 'iframe') {
-                        const iframeSrc = slide.src;
-                        slide.src = iframeSrc;
-                    }
-                }
-            });
-
-            let newIndex = activeIndex + direction;
-            if (newIndex >= slides.length) newIndex = 0;
-            if (newIndex < 0) newIndex = slides.length - 1;
-
-            const newActiveSlide = slides[newIndex];
-            newActiveSlide.classList.add('active');
-
-            // Play HTML5 Video automatically if navigating onto a video slide
-            if (newActiveSlide.tagName.toLowerCase() === 'video') {
-                newActiveSlide.play().catch(e => console.log('Autoplay prevented by browser:', e));
-            }
+        activeIndex += direction;
+        if (activeIndex >= slides.length) {
+            activeIndex = 0;
+        } else if (activeIndex < 0) {
+            activeIndex = slides.length - 1;
         }
-    </script>
+
+        slides[activeIndex].classList.add('active');
+    }
+</script>
 
 </body>
 </html>
