@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services & Divisions - TRENDINOVIA</title>
+    <title>Our Services & Products - TRENDINOVIA</title>
     <style>
         * {
             box-sizing: border-box;
@@ -19,7 +19,7 @@
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
@@ -27,125 +27,38 @@
             text-align: center;
             font-size: 28px;
             font-weight: 800;
-            margin-bottom: 8px;
+            margin-bottom: 30px;
             color: #111827;
         }
 
-        .page-subtitle {
-            text-align: center;
-            font-size: 15px;
-            color: #6b7280;
-            margin-bottom: 35px;
-        }
-
-        /* 5 DIVISIONS GRID VIEW */
-        .divisions-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+        /* Category Section Headers */
+        .category-section {
             margin-bottom: 40px;
         }
 
-        .division-card {
-            background-color: #ffffff;
-            border-radius: 16px;
-            padding: 28px 20px;
-            border: 1px solid #e5e7eb;
-            text-align: center;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            cursor: pointer;
+        .category-header {
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .division-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-
-        .division-icon {
-            font-size: 38px;
-            margin-bottom: 12px;
-            display: inline-block;
-        }
-
-        .division-title {
+            align-items: center;
+            gap: 10px;
             font-size: 20px;
             font-weight: 700;
-            color: #111827;
-            margin-bottom: 8px;
-        }
-
-        .division-desc {
-            font-size: 14px;
-            color: #6b7280;
-            line-height: 1.5;
+            color: #1f2937;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e5e7eb;
             margin-bottom: 20px;
         }
 
-        .btn-division {
-            display: inline-block;
+        .category-header span {
             background-color: #2563eb;
             color: #ffffff;
-            padding: 10px 18px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            width: 100%;
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .btn-division:hover {
-            background-color: #1d4ed8;
-        }
-
-        /* NAVIGATION BACK BUTTON */
-        .back-nav {
-            display: none;
-            margin-bottom: 25px;
-        }
-
-        .btn-back {
-            background-color: #e5e7eb;
-            color: #374151;
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .btn-back:hover {
-            background-color: #d1d5db;
-        }
-
-        /* CATALOG / DIVISION DETAIL SECTION STYLES */
-        .catalog-section {
-            display: none; /* Hidden until a division is clicked */
-        }
-
-        .catalog-section.active {
-            display: block;
-        }
-
-        .catalog-header {
-            font-size: 22px;
-            font-weight: 700;
-            color: #111827;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #e5e7eb;
-            margin-bottom: 25px;
-        }
-
-        /* PRODUCT CARD LAYOUT */
+        /* Product Card Layout */
         .product-card {
             display: flex;
             flex-direction: row;
@@ -159,6 +72,7 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
+        /* Fixed Media Column */
         .media-column {
             width: 320px;
             max-width: 100%;
@@ -168,6 +82,7 @@
             gap: 12px;
         }
 
+        /* Image/Slider Container */
         .image-container {
             position: relative;
             width: 100%;
@@ -197,6 +112,7 @@
             position: relative;
         }
 
+        /* Absolute positioning prevents slides from stacking/overflowing */
         .slide {
             position: absolute;
             top: 0;
@@ -215,6 +131,7 @@
             visibility: visible;
         }
 
+        /* Slider Controls */
         .slider-btn {
             position: absolute;
             top: 50%;
@@ -230,11 +147,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: background-color 0.2s ease;
+        }
+
+        .slider-btn:hover {
+            background-color: rgba(0, 0, 0, 0.9);
         }
 
         .prev-btn { left: 10px; }
         .next-btn { right: 10px; }
 
+        /* Order Button strictly matching column width */
         .btn-whatsapp {
             display: flex;
             align-items: center;
@@ -247,8 +170,14 @@
             border-radius: 10px;
             font-size: 14px;
             font-weight: 600;
+            transition: background-color 0.2s ease;
         }
 
+        .btn-whatsapp:hover {
+            background-color: #1ebc57;
+        }
+
+        /* Product Details Column */
         .product-content {
             flex-grow: 1;
             display: flex;
@@ -290,27 +219,7 @@
             text-decoration: line-through;
         }
 
-        .service-info-card {
-            background-color: #ffffff;
-            border-radius: 16px;
-            padding: 30px;
-            border: 1px solid #e5e7eb;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-
-        .service-info-card h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
-            color: #111827;
-        }
-
-        .service-info-card p {
-            font-size: 15px;
-            color: #4b5563;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
+        /* Mobile View Adjustment */
         @media (max-width: 650px) {
             .product-card {
                 flex-direction: column;
@@ -318,80 +227,23 @@
             .media-column {
                 width: 100%;
             }
+            .product-content {
+                min-height: auto;
+            }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1 class="page-title">Our Business Divisions</h1>
-    <p class="page-subtitle" id="subtitle-text">Select a division below to explore specialized services and product catalogs.</p>
+    <h1 class="page-title">Featured Products & Services</h1>
 
-    <!-- BACK TO ALL DIVISIONS NAVIGATION BUTTON -->
-    <div class="back-nav" id="back-nav">
-        <button class="btn-back" onclick="showDivisions()">&#8592; Back to All Divisions</button>
-    </div>
-
-    <!-- MAIN VIEW: 5 DIVISIONS GRID -->
-    <div class="divisions-grid" id="divisions-grid">
-        
-        <!-- Division 1: Kraipa Tech -->
-        <div class="division-card" onclick="openCatalog('kraipa-tech')">
-            <div>
-                <div class="division-icon">📷</div>
-                <h2 class="division-title">Kraipa Tech</h2>
-                <p class="division-desc">Smart security gadgets, wireless 4K cameras, and innovative electronic products.</p>
-            </div>
-            <button class="btn-division">View Kraipa Tech Catalog</button>
+    <!-- SECTION 1: TECH & GADGETS -->
+    <div class="category-section">
+        <div class="category-header">
+            <h2>Tech & Gadgets</h2>
+            <span>Kraipa Tech</span>
         </div>
-
-        <!-- Division 2: Omnicare -->
-        <div class="division-card" onclick="openCatalog('omnicare-hair')">
-            <div>
-                <div class="division-icon">💇‍♀️</div>
-                <h2 class="division-title">Omnicare Hair & Beauty</h2>
-                <p class="division-desc">Premium Brazilian wigs, crochet dreadlocks, human hair extensions, and beauty care.</p>
-            </div>
-            <button class="btn-division">View Omnicare Catalog</button>
-        </div>
-
-        <!-- Division 3: Kraipa Logistics -->
-        <div class="division-card" onclick="openCatalog('kraipa-logistics')">
-            <div>
-                <div class="division-icon">🚚</div>
-                <h2 class="division-title">Kraipa Logistics</h2>
-                <p class="division-desc">Freight forwarding, courier services, local delivery, and cargo handling solutions.</p>
-            </div>
-            <button class="btn-division">Explore Logistics Services</button>
-        </div>
-
-        <!-- Division 4: Kraipa Real Estate -->
-        <div class="division-card" onclick="openCatalog('kraipa-realestate')">
-            <div>
-                <div class="division-icon">🏢</div>
-                <h2 class="division-title">Kraipa Real Estate</h2>
-                <p class="division-desc">Property management, residential listings, office space leasing, and consultations.</p>
-            </div>
-            <button class="btn-division">Explore Real Estate Services</button>
-        </div>
-
-        <!-- Division 5: Trendinovia Creative -->
-        <div class="division-card" onclick="openCatalog('trendinovia-creative')">
-            <div>
-                <div class="division-icon">🎨</div>
-                <h2 class="division-title">Trendinovia Creative</h2>
-                <p class="division-desc">Digital content creation, media publishing, branding, and video production services.</p>
-            </div>
-            <button class="btn-division">Explore Creative Services</button>
-        </div>
-
-    </div>
-
-    <!-- SUB-PAGES / CATALOGS FOR EACH DIVISION -->
-
-    <!-- DIVISION 1: KRAIPA TECH -->
-    <div class="catalog-section" id="kraipa-tech">
-        <h2 class="catalog-header">Kraipa Tech - Product Catalog</h2>
 
         <div class="product-card">
             <div class="media-column">
@@ -429,11 +281,14 @@
         </div>
     </div>
 
-    <!-- DIVISION 2: OMNICARE HAIR & BEAUTY -->
-    <div class="catalog-section" id="omnicare-hair">
-        <h2 class="catalog-header">Omnicare - Hair & Beauty Catalog</h2>
+    <!-- SECTION 2: HAIR & BEAUTY CARE -->
+    <div class="category-section">
+        <div class="category-header">
+            <h2>Hair & Beauty Care</h2>
+            <span>Omnicare</span>
+        </div>
 
-        <!-- Product 1 -->
+        <!-- Product 1: Curly Bob Wig -->
         <div class="product-card">
             <div class="media-column">
                 <div class="image-container">
@@ -468,7 +323,7 @@
             </div>
         </div>
 
-        <!-- Product 2 -->
+        <!-- Product 2: Debut Ombre Wig -->
         <div class="product-card">
             <div class="media-column">
                 <div class="image-container">
@@ -505,7 +360,7 @@
             </div>
         </div>
 
-        <!-- Product 3 -->
+        <!-- Product 3: 22inch Dreadlocks -->
         <div class="product-card">
             <div class="media-column">
                 <div class="image-container">
@@ -542,77 +397,17 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- DIVISION 3: KRAIPA LOGISTICS -->
-    <div class="catalog-section" id="kraipa-logistics">
-        <h2 class="catalog-header">Kraipa Logistics Services</h2>
-        <div class="service-info-card">
-            <h3>Reliable Express Delivery & Cargo Logistics</h3>
-            <p>Kraipa Logistics offers freight forwarding, local door-to-door courier deliveries, and customized supply chain operations. Contact our team directly via WhatsApp to request quotes or schedule shipments.</p>
-            <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20inquire%20about%20Kraipa%20Logistics%20Services." class="btn-whatsapp" style="max-width: 300px;" target="_blank" rel="noopener noreferrer">
-                Inquire via WhatsApp
-            </a>
-        </div>
     </div>
-
-    <!-- DIVISION 4: KRAIPA REAL ESTATE -->
-    <div class="catalog-section" id="kraipa-realestate">
-        <h2 class="catalog-header">Kraipa Real Estate</h2>
-        <div class="service-info-card">
-            <h3>Property Listings & Real Estate Management</h3>
-            <p>Kraipa Real Estate manages commercial and residential property rentals, land consultations, and real estate management solutions. Get in touch with us to view available properties.</p>
-            <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20inquire%20about%20Kraipa%20Real%20Estate%20Listings." class="btn-whatsapp" style="max-width: 300px;" target="_blank" rel="noopener noreferrer">
-                Inquire via WhatsApp
-            </a>
-        </div>
-    </div>
-
-    <!-- DIVISION 5: TRENDINOVIA CREATIVE -->
-    <div class="catalog-section" id="trendinovia-creative">
-        <h2 class="catalog-header">Trendinovia Creative</h2>
-        <div class="service-info-card">
-            <h3>Media Production & Digital Services</h3>
-            <p>Trendinovia Creative specializes in digital content creation, video production, graphic design, cultural/traditional story archiving, and brand development services.</p>
-            <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20inquire%20about%20Trendinovia%20Creative%20Services." class="btn-whatsapp" style="max-width: 300px;" target="_blank" rel="noopener noreferrer">
-                Inquire via WhatsApp
-            </a>
-        </div>
-    </div>
-
 </div>
 
 <script>
-    // Show selected division section, hide main divisions grid
-    function openCatalog(catalogId) {
-        document.getElementById('divisions-grid').style.display = 'none';
-        document.getElementById('subtitle-text').style.display = 'none';
-        document.getElementById('back-nav').style.display = 'block';
-
-        const catalogs = document.querySelectorAll('.catalog-section');
-        catalogs.forEach(cat => cat.classList.remove('active'));
-
-        document.getElementById(catalogId).classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // Return to main 5 divisions view
-    function showDivisions() {
-        const catalogs = document.querySelectorAll('.catalog-section');
-        catalogs.forEach(cat => cat.classList.remove('active'));
-
-        document.getElementById('divisions-grid').style.display = 'grid';
-        document.getElementById('subtitle-text').style.display = 'block';
-        document.getElementById('back-nav').style.display = 'none';
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // Media Slider Controls
     function moveSlide(button, direction) {
         const container = button.closest('.image-container');
         const slides = container.querySelectorAll('.slide');
         let activeIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
 
+        // Reset video iframe if switching away from video
         if (slides[activeIndex].tagName === 'IFRAME') {
             const iframe = slides[activeIndex];
             const src = iframe.src;
