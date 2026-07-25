@@ -3,7 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Divisions & Services - TRENDINOVIA</title>
+    <title>Our Business Divisions - TRENDINOVIA</title>
+
+    <!-- ====================================================
+         OPEN GRAPH META TAGS FOR FACEBOOK & WHATSAPP SHARING
+    ==================================================== -->
+    <meta property="og:site_name" content="TRENDINOVIA PNG">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="TRENDINOVIA - Online Store & Local Business Divisions">
+    <meta property="og:description" content="Shop tech gadgets, custom apparel, local PNG products, Brazilian hair wigs, and local services in PNG with fast delivery!">
+    <meta property="og:image" content="https://img.youtube.com/vi/4vrHH4LPTPE/hqdefault.jpg">
+    <meta property="og:url" content="https://yourdomain.com/services.html">
+
     <style>
         * {
             box-sizing: border-box;
@@ -210,6 +221,10 @@
             text-transform: uppercase;
         }
 
+        .badge-local {
+            background-color: #d97706 !important;
+        }
+
         .slider-wrapper {
             width: 100%;
             height: 100%;
@@ -357,7 +372,7 @@
 
 <div class="container">
     <h1 class="page-title">Our Business Divisions</h1>
-    <p class="page-subtitle" id="subtitle-text">Select a division below to explore specialized services and products.</p>
+    <p class="page-subtitle" id="subtitle-text">Select a division below to explore specialized services, dropshipped goods, and local PNG products.</p>
 
     <!-- BACK TO DIVISIONS BUTTON -->
     <div class="back-nav" id="back-nav">
@@ -415,6 +430,16 @@
                 <p class="division-desc">Brazilian wigs, crochet dreadlocks, human hair extensions, and beauty products.</p>
             </div>
             <button class="btn-division">View OmniCare Catalog</button>
+        </div>
+
+        <!-- 6. Local PNG Products (NEW DEDICATED DIVISION) -->
+        <div class="division-card" onclick="openCatalog('local-png')">
+            <div>
+                <div class="division-icon">🇵🇬</div>
+                <h2 class="division-title">Local PNG Products</h2>
+                <p class="division-desc">Handcrafted bilums, local apparel, organic coffee, and PNG authentic items.</p>
+            </div>
+            <button class="btn-division">Explore PNG Handcrafts & Produce</button>
         </div>
 
     </div>
@@ -497,7 +522,7 @@
                 <div class="image-container">
                     <span class="badge">Sunglasses</span>
                     <div class="slider-wrapper">
-                        <!-- Corrected Sunglasses Image Thumbnail -->
+                        <!-- Sunglasses Image Thumbnail -->
                         <img class="slide active" src="https://img.youtube.com/vi/4vrHH4LPTPE/hqdefault.jpg" alt="Punk Vintage Sunglasses Preview">
                         
                         <!-- Embedded Sunglasses Video Showcase -->
@@ -665,6 +690,41 @@
         </div>
     </div>
 
+    <!-- ====================================================
+         CATALOG SECTION 6: LOCAL PNG PRODUCTS
+    ==================================================== -->
+    <div class="catalog-section" id="local-png">
+        <div class="category-header">
+            <h2>Local PNG Handcrafts & Products</h2>
+            <span>Local PNG Products</span>
+        </div>
+
+        <!-- Sample PNG Item: Authentic Handcrafted Bilum -->
+        <div class="product-card">
+            <div class="media-column">
+                <div class="image-container">
+                    <span class="badge badge-local">Local Stock</span>
+                    <div class="slider-wrapper">
+                        <img class="slide active" src="https://images.unsplash.com/photo-1590736704728-f4730bb30770?q=80&w=800&auto=format&fit=crop" alt="PNG Handcrafted Bilum">
+                    </div>
+                </div>
+                <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order/inquire%20about%20the%20Authentic%20PNG%20Handcrafted%20Bilum." class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                    Order via WhatsApp
+                </a>
+            </div>
+            <div class="product-content">
+                <div>
+                    <h3 class="product-title">Authentic PNG Handcrafted Bilum</h3>
+                    <p class="product-description">Handwoven Papua New Guinean bilum featuring durable local fiber patterns. Direct local delivery in Port Moresby or express freight across PNG provinces.</p>
+                </div>
+                <div class="price-row">
+                    <span class="current-price">K150.00</span>
+                    <span class="original-price">K180.00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 <script>
@@ -676,7 +736,11 @@
         const catalogs = document.querySelectorAll('.catalog-section');
         catalogs.forEach(cat => cat.classList.remove('active'));
 
-        document.getElementById(catalogId).classList.add('active');
+        const targetCatalog = document.getElementById(catalogId);
+        if (targetCatalog) {
+            targetCatalog.classList.add('active');
+            window.location.hash = catalogId; // Updates the browser URL bar so links can be shared easily
+        }
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -687,6 +751,9 @@
         document.getElementById('divisions-grid').style.display = 'grid';
         document.getElementById('subtitle-text').style.display = 'block';
         document.getElementById('back-nav').style.display = 'none';
+        
+        // Remove hash from URL when returning home
+        history.pushState("", document.title, window.location.pathname + window.location.search);
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -712,6 +779,14 @@
 
         slides[activeIndex].classList.add('active');
     }
+
+    // AUTOMATIC DIRECT LINKING (For sharing links on Facebook and WhatsApp)
+    window.addEventListener('DOMContentLoaded', () => {
+        const hash = window.location.hash.replace('#', '');
+        if (hash) {
+            openCatalog(hash);
+        }
+    });
 </script>
 
 </body>
