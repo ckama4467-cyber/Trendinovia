@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Business Divisions - TRENDINOVIA</title>
 
-    <!-- ====================================================
-         OPEN GRAPH META TAGS FOR FACEBOOK & WHATSAPP SHARING
-    ==================================================== -->
+    <!-- OPEN GRAPH META TAGS FOR FACEBOOK & WHATSAPP SHARING -->
     <meta property="og:site_name" content="TRENDINOVIA PNG">
     <meta property="og:type" content="website">
     <meta property="og:title" content="TRENDINOVIA - Online Store & Local Business Divisions">
@@ -49,9 +47,7 @@
             margin-bottom: 35px;
         }
 
-        /* --------------------------------------------------
-           DIVISIONS GRID VIEW (LANDING VIEW)
-        -------------------------------------------------- */
+        /* DIVISIONS GRID VIEW */
         .divisions-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -116,9 +112,7 @@
             background-color: #1d4ed8;
         }
 
-        /* --------------------------------------------------
-           NAVIGATION BACK BUTTON
-        -------------------------------------------------- */
+        /* NAVIGATION BACK BUTTON */
         .back-nav {
             display: none;
             margin-bottom: 25px;
@@ -142,9 +136,7 @@
             background-color: #d1d5db;
         }
 
-        /* --------------------------------------------------
-           INDIVIDUAL DIVISION CATALOG SECTIONS
-        -------------------------------------------------- */
+        /* CATALOG SECTIONS */
         .catalog-section {
             display: none;
         }
@@ -175,7 +167,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* Product Card Layout */
+        /* PRODUCT CARD LAYOUT */
         .product-card {
             display: flex;
             flex-direction: row;
@@ -382,7 +374,6 @@
     <!-- MAIN DIVISIONS GRID -->
     <div class="divisions-grid" id="divisions-grid">
         
-        <!-- 1. Mepel Facility Solution -->
         <div class="division-card" onclick="openCatalog('mepel-facility')">
             <div>
                 <div class="division-icon">🛠️</div>
@@ -392,7 +383,6 @@
             <button class="btn-division">View Mepel Services</button>
         </div>
 
-        <!-- 2. Kraipa Tech Gadgets -->
         <div class="division-card" onclick="openCatalog('kraipa-tech')">
             <div>
                 <div class="division-icon">📷</div>
@@ -402,7 +392,6 @@
             <button class="btn-division">View Kraipa Tech Catalog</button>
         </div>
 
-        <!-- 3. Curi Apparels -->
         <div class="division-card" onclick="openCatalog('curi-apparels')">
             <div>
                 <div class="division-icon">🕶️</div>
@@ -412,7 +401,6 @@
             <button class="btn-division">View Curi Apparels</button>
         </div>
 
-        <!-- 4. AgriVance Express -->
         <div class="division-card" onclick="openCatalog('agrivance-express')">
             <div>
                 <div class="division-icon">🌾</div>
@@ -422,7 +410,6 @@
             <button class="btn-division">View AgriVance Services</button>
         </div>
 
-        <!-- 5. OmniCare -->
         <div class="division-card" onclick="openCatalog('omnicare')">
             <div>
                 <div class="division-icon">💇‍♀️</div>
@@ -432,7 +419,6 @@
             <button class="btn-division">View OmniCare Catalog</button>
         </div>
 
-        <!-- 6. Local PNG Products (NEW DEDICATED DIVISION) -->
         <div class="division-card" onclick="openCatalog('local-png')">
             <div>
                 <div class="division-icon">🇵🇬</div>
@@ -444,9 +430,7 @@
 
     </div>
 
-    <!-- ====================================================
-         CATALOG SECTION 1: MEPEL FACILITY SOLUTION
-    ==================================================== -->
+    <!-- CATALOG SECTIONS 1 to 5 (Mepel, Kraipa, Curi, AgriVance, OmniCare) -->
     <div class="catalog-section" id="mepel-facility">
         <div class="category-header">
             <h2>Facility Management</h2>
@@ -455,22 +439,15 @@
         <div class="service-info-card">
             <h3>Facility & Property Maintenance Services</h3>
             <p>Mepel Facility Solution offers comprehensive facility management, building maintenance, and property services tailored for office spaces and residential estates.</p>
-            <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20inquire%20about%20Mepel%20Facility%20Solution%20services." class="btn-whatsapp" style="max-width: 280px;" target="_blank" rel="noopener noreferrer">
-                Inquire via WhatsApp
-            </a>
+            <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20inquire%20about%20Mepel%20Facility%20Solution%20services." class="btn-whatsapp" style="max-width: 280px;" target="_blank" rel="noopener noreferrer">Inquire via WhatsApp</a>
         </div>
     </div>
 
-    <!-- ====================================================
-         CATALOG SECTION 2: KRAIPA TECH GADGETS
-    ==================================================== -->
     <div class="catalog-section" id="kraipa-tech">
         <div class="category-header">
             <h2>Tech & Security Gadgets</h2>
             <span>Kraipa Tech Gadgets</span>
         </div>
-
-        <!-- Product: Mini Nanny Cam -->
         <div class="product-card">
             <div class="media-column">
                 <div class="image-container">
@@ -479,20 +456,12 @@
                         <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/S67d51ca10bbe4ca4bcdac4ec38ac353bn.png" alt="Mini Wifi Camera View 1">
                         <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Sb8fd0054736c47a4992803d56aba9ecbu.png" alt="Mini Wifi Camera View 2">
                         <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S2681645c3aa64e27bf8c1f785f2525bft.png" alt="Mini Wifi Camera View 3">
-                        
-                        <iframe class="slide" 
-                                src="https://www.youtube.com/embed/rOB_rxp6cQE?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=rOB_rxp6cQE" 
-                                title="Vidcastive 4K Mini Spy Camera" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen>
-                        </iframe>
+                        <iframe class="slide" src="https://www.youtube.com/embed/rOB_rxp6cQE?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=rOB_rxp6cQE" title="4K Mini Spy Camera" allowfullscreen></iframe>
                     </div>
                     <button class="slider-btn prev-btn" onclick="moveSlide(this, -1)">&#10094;</button>
                     <button class="slider-btn next-btn" onclick="moveSlide(this, 1)">&#10095;</button>
                 </div>
-                <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Mini%20Wifi%20Nanny%20Camera%20(K390.00)." class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
-                    Order via WhatsApp
-                </a>
+                <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Mini%20Wifi%20Nanny%20Camera%20(K390.00)." class="btn-whatsapp" target="_blank" rel="noopener noreferrer">Order via WhatsApp</a>
             </div>
             <div class="product-content">
                 <div>
@@ -507,38 +476,23 @@
         </div>
     </div>
 
-    <!-- ====================================================
-         CATALOG SECTION 3: CURI APPARELS
-    ==================================================== -->
     <div class="catalog-section" id="curi-apparels">
         <div class="category-header">
             <h2>Apparel & Eyewear</h2>
             <span>Curi Apparels</span>
         </div>
-
-        <!-- Product: Punk Sunglasses -->
         <div class="product-card">
             <div class="media-column">
                 <div class="image-container">
                     <span class="badge">Sunglasses</span>
                     <div class="slider-wrapper">
-                        <!-- Sunglasses Image Thumbnail -->
                         <img class="slide active" src="https://img.youtube.com/vi/4vrHH4LPTPE/hqdefault.jpg" alt="Punk Vintage Sunglasses Preview">
-                        
-                        <!-- Embedded Sunglasses Video Showcase -->
-                        <iframe class="slide" 
-                                src="https://www.youtube.com/embed/4vrHH4LPTPE?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=4vrHH4LPTPE" 
-                                title="Vintage Punk Flat Top Pilot Sunglasses" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen>
-                        </iframe>
+                        <iframe class="slide" src="https://www.youtube.com/embed/4vrHH4LPTPE?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=4vrHH4LPTPE" title="Vintage Punk Sunglasses" allowfullscreen></iframe>
                     </div>
                     <button class="slider-btn prev-btn" onclick="moveSlide(this, -1)">&#10094;</button>
                     <button class="slider-btn next-btn" onclick="moveSlide(this, 1)">&#10095;</button>
                 </div>
-                <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Punk%20Sunglasses%20Women%20Vintage%20Designer%20(K250.00)." class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
-                    Order via WhatsApp
-                </a>
+                <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Punk%20Sunglasses%20Women%20Vintage%20Designer%20(K250.00)." class="btn-whatsapp" target="_blank" rel="noopener noreferrer">Order via WhatsApp</a>
             </div>
             <div class="product-content">
                 <div>
@@ -553,9 +507,6 @@
         </div>
     </div>
 
-    <!-- ====================================================
-         CATALOG SECTION 4: AGRIVANCE EXPRESS
-    ==================================================== -->
     <div class="catalog-section" id="agrivance-express">
         <div class="category-header">
             <h2>Agricultural Logistics</h2>
@@ -564,22 +515,15 @@
         <div class="service-info-card">
             <h3>Agricultural Produce & Logistics</h3>
             <p>AgriVance Express bridges the gap between local farming produce, express bulk distribution, and supply chain management.</p>
-            <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20inquire%20about%20AgriVance%20Express%20services." class="btn-whatsapp" style="max-width: 280px;" target="_blank" rel="noopener noreferrer">
-                Inquire via WhatsApp
-            </a>
+            <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20inquire%20about%20AgriVance%20Express%20services." class="btn-whatsapp" style="max-width: 280px;" target="_blank" rel="noopener noreferrer">Inquire via WhatsApp</a>
         </div>
     </div>
 
-    <!-- ====================================================
-         CATALOG SECTION 5: OMNICARE
-    ==================================================== -->
     <div class="catalog-section" id="omnicare">
         <div class="category-header">
             <h2>Hair & Beauty Care</h2>
             <span>OmniCare</span>
         </div>
-
-        <!-- Product 1: Curly Bob Wig -->
         <div class="product-card">
             <div class="media-column">
                 <div class="image-container">
@@ -587,20 +531,12 @@
                     <div class="slider-wrapper">
                         <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/Abf46df26d17e425b8a39a9fcb7ea2c3dj.png" alt="Curly Bob Wig View 1">
                         <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S940841e156d249f8a200db771804ef54b.jpg" alt="Curly Bob Wig View 2">
-                        
-                        <iframe class="slide" 
-                                src="https://video.aliexpress-media.com/play/u/ae_sg_item/3000912434018/p/1/e/6/t/10301/5000212144994.mp4" 
-                                title="Curly Bob Wig Demo Video" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen>
-                        </iframe>
+                        <iframe class="slide" src="https://video.aliexpress-media.com/play/u/ae_sg_item/3000912434018/p/1/e/6/t/10301/5000212144994.mp4" title="Curly Bob Wig Demo" allowfullscreen></iframe>
                     </div>
                     <button class="slider-btn prev-btn" onclick="moveSlide(this, -1)">&#10094;</button>
                     <button class="slider-btn next-btn" onclick="moveSlide(this, 1)">&#10095;</button>
                 </div>
-                <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Curly%20Bob%20Wig%20(K400.00)." class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
-                    Order via WhatsApp
-                </a>
+                <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Curly%20Bob%20Wig%20(K400.00)." class="btn-whatsapp" target="_blank" rel="noopener noreferrer">Order via WhatsApp</a>
             </div>
             <div class="product-content">
                 <div>
@@ -610,81 +546,6 @@
                 <div class="price-row">
                     <span class="current-price">K400.00</span>
                     <span class="original-price">K500.00</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Product 2: Debut Ombre Wig -->
-        <div class="product-card">
-            <div class="media-column">
-                <div class="image-container">
-                    <span class="badge">Hair</span>
-                    <div class="slider-wrapper">
-                        <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/H402a12ad86534904942db9ac0cc25ac13.jpg" alt="Debut Ombre Wig View 1">
-                        <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Hf0fb5685282a43ff9b224ee58ead8549y.jpg" alt="Debut Ombre Wig View 2">
-                        <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Ha4d41e0098cb4ce6a9f7997050f61f96C.jpg" alt="Debut Ombre Wig View 3">
-                        <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Hb6174553a15048ceb17ea51d38e8534aX.jpg" alt="Debut Ombre Wig View 4">
-                        
-                        <iframe class="slide" 
-                                src="https://www.youtube.com/embed/3KmA6dBEcVQ?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=3KmA6dBEcVQ" 
-                                title="Debut Ombre Short Curly Wigs Remy Demo Video" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen>
-                        </iframe>
-                    </div>
-                    <button class="slider-btn prev-btn" onclick="moveSlide(this, -1)">&#10094;</button>
-                    <button class="slider-btn next-btn" onclick="moveSlide(this, 1)">&#10095;</button>
-                </div>
-                <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Debut%20Ombre%20Short%20Curly%20Human%20Hair%20Wigs%20Remy%20(K290.00)." class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
-                    Order via WhatsApp
-                </a>
-            </div>
-            <div class="product-content">
-                <div>
-                    <h3 class="product-title">Debut Ombre Short Curly Human Hair Wigs Remy</h3>
-                    <p class="product-description">Debut Ombre Short Curly Human Hair Wigs Remy Short Bob Wigs 100% Human Hair Cheap Pixie.</p>
-                </div>
-                <div class="price-row">
-                    <span class="current-price">K290.00</span>
-                    <span class="original-price">K350.00</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Product 3: 22inch Dreadlocks -->
-        <div class="product-card">
-            <div class="media-column">
-                <div class="image-container">
-                    <span class="badge">Hair</span>
-                    <div class="slider-wrapper">
-                        <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/H32d29a09915f41deaac2529b8d5ba3b7Y.jpg" alt="Dreadlocks View 1">
-                        <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Hac9ff3eca6664b85aad8c57a74be9063C.jpg" alt="Dreadlocks View 2">
-                        <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/H67ba55f68b814be0ba4762c3960d6b5ek.jpg" alt="Dreadlocks View 3">
-                        <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/H217f9145906b4c99a911d218663d7b0bf.jpg" alt="Dreadlocks View 4">
-                        <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Hd2ffc73de71c44b3b58096bbc80f484bN.jpg" alt="Dreadlocks View 5">
-                        
-                        <iframe class="slide" 
-                                src="https://video.aliexpress-media.com/play/u/ae_sg_item/3981944817/p/1/e/6/t/10301/1100164580615.mp4" 
-                                title="22inch Dreadlocks Crochet Hair Braids Demo Video" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen>
-                        </iframe>
-                    </div>
-                    <button class="slider-btn prev-btn" onclick="moveSlide(this, -1)">&#10094;</button>
-                    <button class="slider-btn next-btn" onclick="moveSlide(this, 1)">&#10095;</button>
-                </div>
-                <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%2022inch%20Dreadlocks%20Crochet%20Hair%20Braids%20(K200.00)." class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
-                    Order via WhatsApp
-                </a>
-            </div>
-            <div class="product-content">
-                <div>
-                    <h3 class="product-title">22inch Dreadlocks Crochet Hair Braids</h3>
-                    <p class="product-description">22inch Dreadlocks Crochet Hair Braids Synthetic Ombre Braiding Wigs Extension Reggae Hip Hop Style.</p>
-                </div>
-                <div class="price-row">
-                    <span class="current-price">K200.00</span>
-                    <span class="original-price">K250.00</span>
                 </div>
             </div>
         </div>
@@ -699,16 +560,32 @@
             <span>Local PNG Products</span>
         </div>
 
-        <!-- Sample PNG Item: Authentic Handcrafted Bilum -->
+        <!-- =========================================================================
+             EASY PRODUCT TEMPLATE (COPY AND PASTE THIS ENTIRE BLOCK TO ADD NEW ITEMS)
+             - For local pictures saved on your PC: src="images/my-photo.jpg"
+             - For local MP4 videos saved on your PC: <video class="slide" src="videos/my-video.mp4" controls></video>
+             - For web images: src="https://..."
+        ========================================================================= -->
+
+        <!-- Local Product Example 1: Handcrafted Bilum -->
         <div class="product-card">
             <div class="media-column">
                 <div class="image-container">
                     <span class="badge badge-local">Local Stock</span>
                     <div class="slider-wrapper">
-                        <img class="slide active" src="https://images.unsplash.com/photo-1590736704728-f4730bb30770?q=80&w=800&auto=format&fit=crop" alt="PNG Handcrafted Bilum">
+                        <!-- Slide 1: Local Image from your images folder -->
+                        <img class="slide active" src="images/bilum-photo1.jpg" alt="PNG Handcrafted Bilum" onerror="this.src='https://images.unsplash.com/photo-1590736704728-f4730bb30770?q=80&w=800&auto=format&fit=crop'">
+                        
+                        <!-- Slide 2: Second Local Image (Optional) -->
+                        <img class="slide" src="images/bilum-photo2.jpg" alt="PNG Bilum Detail" onerror="this.src='https://images.unsplash.com/photo-1590736704728-f4730bb30770?q=80&w=800&auto=format&fit=crop'">
+
+                        <!-- Slide 3: Local MP4 Video recorded on your phone/PC (Optional) -->
+                        <video class="slide" src="videos/bilum-video.mp4" controls preload="metadata"></video>
                     </div>
+                    <button class="slider-btn prev-btn" onclick="moveSlide(this, -1)">&#10094;</button>
+                    <button class="slider-btn next-btn" onclick="moveSlide(this, 1)">&#10095;</button>
                 </div>
-                <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order/inquire%20about%20the%20Authentic%20PNG%20Handcrafted%20Bilum." class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Authentic%20PNG%20Handcrafted%20Bilum." class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
                     Order via WhatsApp
                 </a>
             </div>
@@ -723,6 +600,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 
 </div>
@@ -739,7 +617,7 @@
         const targetCatalog = document.getElementById(catalogId);
         if (targetCatalog) {
             targetCatalog.classList.add('active');
-            window.location.hash = catalogId; // Updates the browser URL bar so links can be shared easily
+            window.location.hash = catalogId;
         }
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -752,7 +630,6 @@
         document.getElementById('subtitle-text').style.display = 'block';
         document.getElementById('back-nav').style.display = 'none';
         
-        // Remove hash from URL when returning home
         history.pushState("", document.title, window.location.pathname + window.location.search);
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -762,10 +639,12 @@
         const slides = container.querySelectorAll('.slide');
         let activeIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
 
+        // Pause/reset media when leaving a slide
         if (slides[activeIndex].tagName === 'IFRAME') {
             const iframe = slides[activeIndex];
-            const src = iframe.src;
-            iframe.src = src;
+            iframe.src = iframe.src;
+        } else if (slides[activeIndex].tagName === 'VIDEO') {
+            slides[activeIndex].pause();
         }
 
         slides[activeIndex].classList.remove('active');
