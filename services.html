@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Business Divisions - TRENDINOVIA</title>
 
-    <!-- These will be overwritten by Edge Middleware when a product is specified -->
+    <!-- Default Open Graph (used by Facebook/WhatsApp) -->
     <meta id="og-title" property="og:title" content="TRENDINOVIA - Online Store & Local Business Divisions">
     <meta id="og-desc" property="og:description" content="Shop tech gadgets, custom apparel, local PNG products, Brazilian hair wigs, and local services in PNG with fast delivery!">
     <meta id="og-image" property="og:image" content="https://ae-pic-a1.aliexpress-media.com/kf/Abf46df26d17e425b8a39a9fcb7ea2c3dj.png">
@@ -14,49 +14,48 @@
     <meta property="og:site_name" content="TRENDINOVIA PNG">
 
     <style>
-        /* ... keep all your existing CSS exactly the same ... */
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: #f4f6f8; color: #333; padding: 30px 20px; }
         .container { max-width: 1000px; margin: 0 auto; }
         .page-title { text-align: center; font-size: 28px; font-weight: 800; margin-bottom: 8px; color: #111827; }
         .page-subtitle { text-align: center; font-size: 15px; color: #6b7280; margin-bottom: 35px; }
         .divisions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 40px; }
-        .division-card { background-color: #ffffff; border-radius: 16px; padding: 28px 20px; border: 1px solid #e5e7eb; text-align: center; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); transition: transform 0.2s ease, box-shadow 0.2s ease; cursor: pointer; display: flex; flex-direction: column; justify-content: space-between; }
+        .division-card { background: #fff; border-radius: 16px; padding: 28px 20px; border: 1px solid #e5e7eb; text-align: center; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); transition: 0.2s; cursor: pointer; display: flex; flex-direction: column; justify-content: space-between; }
         .division-card:hover { transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
-        .division-icon { font-size: 38px; margin-bottom: 12px; display: inline-block; }
+        .division-icon { font-size: 38px; margin-bottom: 12px; }
         .division-title { font-size: 20px; font-weight: 700; color: #111827; margin-bottom: 8px; }
         .division-desc { font-size: 14px; color: #6b7280; line-height: 1.5; margin-bottom: 20px; }
-        .btn-division { display: inline-block; background-color: #2563eb; color: #ffffff; padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; border: none; cursor: pointer; width: 100%; }
-        .btn-division:hover { background-color: #1d4ed8; }
+        .btn-division { background: #2563eb; color: #fff; padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; border: none; cursor: pointer; width: 100%; }
+        .btn-division:hover { background: #1d4ed8; }
         .back-nav { display: none; margin-bottom: 25px; }
-        .btn-back { background-color: #e5e7eb; color: #374151; padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
-        .btn-back:hover { background-color: #d1d5db; }
+        .btn-back { background: #e5e7eb; color: #374151; padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+        .btn-back:hover { background: #d1d5db; }
         .catalog-section { display: none; }
         .catalog-section.active { display: block; }
         .category-header { display: flex; align-items: center; gap: 10px; font-size: 20px; font-weight: 700; color: #1f2937; padding-bottom: 10px; border-bottom: 2px solid #e5e7eb; margin-bottom: 25px; }
-        .category-header span { background-color: #2563eb; color: #ffffff; font-size: 12px; padding: 4px 10px; border-radius: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .product-card { display: flex; flex-direction: row; gap: 24px; background-color: #ffffff; border-radius: 16px; padding: 20px; border: 1px solid #e5e7eb; margin-bottom: 20px; align-items: flex-start; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); scroll-margin-top: 20px; }
+        .category-header span { background: #2563eb; color: #fff; font-size: 12px; padding: 4px 10px; border-radius: 12px; text-transform: uppercase; }
+        .product-card { display: flex; gap: 24px; background: #fff; border-radius: 16px; padding: 20px; border: 1px solid #e5e7eb; margin-bottom: 20px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); scroll-margin-top: 20px; }
         .product-card.highlight { border: 2px solid #2563eb; box-shadow: 0 0 0 4px rgba(37,99,235,0.15); }
         .media-column { width: 320px; max-width: 100%; flex-shrink: 0; display: flex; flex-direction: column; gap: 12px; }
-        .image-container { position: relative; width: 100%; height: 280px; background-color: #000000; border-radius: 12px; overflow: hidden; }
-        .badge { position: absolute; top: 12px; left: 12px; background-color: rgba(17,24,39,0.85); color: #ffffff; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 20px; z-index: 10; text-transform: uppercase; }
-        .badge-local { background-color: #d97706 !important; }
+        .image-container { position: relative; width: 100%; height: 280px; background: #000; border-radius: 12px; overflow: hidden; }
+        .badge { position: absolute; top: 12px; left: 12px; background: rgba(17,24,39,0.85); color: #fff; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 20px; z-index: 10; text-transform: uppercase; }
+        .badge-local { background: #d97706 !important; }
         .slider-wrapper { width: 100%; height: 100%; position: relative; }
-        .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border: none; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
+        .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; visibility: hidden; transition: 0.3s; }
         .slide.active { opacity: 1; visibility: visible; }
-        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background-color: rgba(0,0,0,0.6); color: white; border: none; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center; transition: background-color 0.2s ease; }
-        .slider-btn:hover { background-color: rgba(0,0,0,0.9); }
+        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.6); color: white; border: none; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center; }
+        .slider-btn:hover { background: rgba(0,0,0,0.9); }
         .prev-btn { left: 10px; }
         .next-btn { right: 10px; }
-        .btn-whatsapp { display: flex; align-items: center; justify-content: center; width: 100%; background-color: #25D366; color: #ffffff; text-decoration: none; padding: 12px 16px; border-radius: 10px; font-size: 14px; font-weight: 600; transition: background-color 0.2s ease; }
-        .btn-whatsapp:hover { background-color: #1ebc57; }
+        .btn-whatsapp { display: flex; align-items: center; justify-content: center; width: 100%; background: #25D366; color: #fff; text-decoration: none; padding: 12px 16px; border-radius: 10px; font-size: 14px; font-weight: 600; }
+        .btn-whatsapp:hover { background: #1ebc57; }
         .product-content { flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 280px; }
         .product-title { font-size: 20px; font-weight: 700; color: #111827; margin-bottom: 10px; }
         .product-description { font-size: 14px; color: #4b5563; line-height: 1.6; margin-bottom: 20px; }
         .price-row { display: flex; align-items: center; gap: 12px; margin-top: auto; }
         .current-price { font-size: 22px; font-weight: 800; color: #059669; }
         .original-price { font-size: 16px; color: #9ca3af; text-decoration: line-through; }
-        .service-info-card { background-color: #ffffff; border-radius: 16px; padding: 30px; border: 1px solid #e5e7eb; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+        .service-info-card { background: #fff; border-radius: 16px; padding: 30px; border: 1px solid #e5e7eb; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
         .service-info-card h3 { font-size: 20px; margin-bottom: 12px; color: #111827; }
         .service-info-card p { font-size: 15px; color: #4b5563; line-height: 1.6; margin-bottom: 20px; }
         @media (max-width: 650px) {
@@ -75,90 +74,365 @@
         <button class="btn-back" onclick="showDivisions()">← Back to All Divisions</button>
     </div>
 
+    <!-- DIVISIONS GRID -->
     <div class="divisions-grid" id="divisions-grid">
-        <!-- same division cards as before -->
-        <div class="division-card" onclick="openCatalog('mepel-facility')"><div><div class="division-icon">🛠️</div><h2 class="division-title">Mepel Facility Solution</h2><p class="division-desc">Property maintenance, facility management, and commercial support services.</p></div><button class="btn-division">View Mepel Services</button></div>
-        <div class="division-card" onclick="openCatalog('kraipa-tech')"><div><div class="division-icon">📷</div><h2 class="division-title">Kraipa Tech Gadgets</h2><p class="division-desc">Smart security gadgets, 4K wireless cameras, and electronic accessories.</p></div><button class="btn-division">View Kraipa Tech Catalog</button></div>
-        <div class="division-card" onclick="openCatalog('curi-apparels')"><div><div class="division-icon">🕶️</div><h2 class="division-title">Curi Apparels</h2><p class="division-desc">Custom clothing, urban fashion wear, designer sunglasses, and lifestyle gear.</p></div><button class="btn-division">View Curi Apparels</button></div>
-        <div class="division-card" onclick="openCatalog('agrivance-express')"><div><div class="division-icon">🌾</div><h2 class="division-title">AgriVance Express</h2><p class="division-desc">Agricultural supply chain logistics, produce delivery, and farming solutions.</p></div><button class="btn-division">View AgriVance Services</button></div>
-        <div class="division-card" onclick="openCatalog('omnicare')"><div><div class="division-icon">💇‍♀️</div><h2 class="division-title">OmniCare</h2><p class="division-desc">Brazilian wigs, crochet dreadlocks, human hair extensions, and beauty products.</p></div><button class="btn-division">View OmniCare Catalog</button></div>
-        <div class="division-card" onclick="openCatalog('local-png')"><div><div class="division-icon">🇵🇬</div><h2 class="division-title">Local PNG Products</h2><p class="division-desc">Handcrafted bilums, local apparel, organic coffee, and PNG authentic items.</p></div><button class="btn-division">Explore PNG Handcrafts & Produce</button></div>
+        <div class="division-card" onclick="openCatalog('mepel-facility')">
+            <div>
+                <div class="division-icon">🛠️</div>
+                <h2 class="division-title">Mepel Facility Solution</h2>
+                <p class="division-desc">Property maintenance, facility management, and commercial support services.</p>
+            </div>
+            <button class="btn-division">View Mepel Services</button>
+        </div>
+        <div class="division-card" onclick="openCatalog('kraipa-tech')">
+            <div>
+                <div class="division-icon">📷</div>
+                <h2 class="division-title">Kraipa Tech Gadgets</h2>
+                <p class="division-desc">Smart security gadgets, 4K wireless cameras, and electronic accessories.</p>
+            </div>
+            <button class="btn-division">View Kraipa Tech Catalog</button>
+        </div>
+        <div class="division-card" onclick="openCatalog('curi-apparels')">
+            <div>
+                <div class="division-icon">🕶️</div>
+                <h2 class="division-title">Curi Apparels</h2>
+                <p class="division-desc">Custom clothing, urban fashion wear, designer sunglasses, and lifestyle gear.</p>
+            </div>
+            <button class="btn-division">View Curi Apparels</button>
+        </div>
+        <div class="division-card" onclick="openCatalog('agrivance-express')">
+            <div>
+                <div class="division-icon">🌾</div>
+                <h2 class="division-title">AgriVance Express</h2>
+                <p class="division-desc">Agricultural supply chain logistics, produce delivery, and farming solutions.</p>
+            </div>
+            <button class="btn-division">View AgriVance Services</button>
+        </div>
+        <div class="division-card" onclick="openCatalog('omnicare')">
+            <div>
+                <div class="division-icon">💇‍♀️</div>
+                <h2 class="division-title">OmniCare</h2>
+                <p class="division-desc">Brazilian wigs, crochet dreadlocks, human hair extensions, and beauty products.</p>
+            </div>
+            <button class="btn-division">View OmniCare Catalog</button>
+        </div>
+        <div class="division-card" onclick="openCatalog('local-png')">
+            <div>
+                <div class="division-icon">🇵🇬</div>
+                <h2 class="division-title">Local PNG Products</h2>
+                <p class="division-desc">Handcrafted bilums, local apparel, organic coffee, and PNG authentic items.</p>
+            </div>
+            <button class="btn-division">Explore PNG Handcrafts & Produce</button>
+        </div>
     </div>
 
-    <!-- Keep all your existing catalog sections exactly the same -->
-    <!-- (mepel-facility, kraipa-tech, curi-apparels, agrivance-express, omnicare, local-png) -->
-    <!-- Just make sure the dreadlocks product still has: data-product="22inch-dreadlocks-crochet-hair-braids" -->
+    <!-- CATALOG: MEPEL -->
+    <div class="catalog-section" id="mepel-facility">
+        <div class="category-header"><h2>Facility Management</h2><span>Mepel Facility Solution</span></div>
+        <div class="service-info-card">
+            <h3>Facility & Property Maintenance Services</h3>
+            <p>Mepel Facility Solution offers comprehensive facility management, building maintenance, and property services tailored for office spaces and residential estates.</p>
+            <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20inquire%20about%20Mepel%20Facility%20Solution%20services." class="btn-whatsapp" style="max-width:280px" target="_blank">Inquire via WhatsApp</a>
+        </div>
+    </div>
 
-    <!-- ... paste the rest of your catalog HTML here (unchanged) ... -->
+    <!-- CATALOG: KRAIPA TECH -->
+    <div class="catalog-section" id="kraipa-tech">
+        <div class="category-header"><h2>Tech & Security Gadgets</h2><span>Kraipa Tech Gadgets</span></div>
+        <div class="product-card" data-product="mini-wifi-nanny-camera">
+            <div class="media-column">
+                <div class="image-container">
+                    <span class="badge">Security Camera</span>
+                    <div class="slider-wrapper">
+                        <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/S67d51ca10bbe4ca4bcdac4ec38ac353bn.png" alt="Camera 1">
+                        <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Sb8fd0054736c47a4992803d56aba9ecbu.png" alt="Camera 2">
+                        <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S2681645c3aa64e27bf8c1f785f2525bft.png" alt="Camera 3">
+                        <iframe class="slide" src="https://www.youtube.com/embed/rOB_rxp6cQE?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=rOB_rxp6cQE" allowfullscreen></iframe>
+                    </div>
+                    <button class="slider-btn prev-btn" onclick="moveSlide(this,-1)">❮</button>
+                    <button class="slider-btn next-btn" onclick="moveSlide(this,1)">❯</button>
+                </div>
+                <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Mini%20Wifi%20Nanny%20Camera%20(K390.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+            </div>
+            <div class="product-content">
+                <div>
+                    <h3 class="product-title">Mini Wifi Nanny Camera Wireless 4K</h3>
+                    <p class="product-description">Mini Wifi Nanny Camera Wireless 4K Security Camera with WiFi/No WiFi dual mode, Cloud & SD storage support, and magnetic mounting base.</p>
+                </div>
+                <div class="price-row">
+                    <span class="current-price">K390.00</span>
+                    <span class="original-price">K450.00</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- CATALOG: CURI APPARELS -->
+    <div class="catalog-section" id="curi-apparels">
+        <div class="category-header"><h2>Apparel & Eyewear</h2><span>Curi Apparels</span></div>
+        <div class="product-card" data-product="punk-sunglasses">
+            <div class="media-column">
+                <div class="image-container">
+                    <span class="badge">Sunglasses</span>
+                    <div class="slider-wrapper">
+                        <img class="slide active" src="https://img.youtube.com/vi/4vrHH4LPTPE/hqdefault.jpg" alt="Sunglasses">
+                        <iframe class="slide" src="https://www.youtube.com/embed/4vrHH4LPTPE?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=4vrHH4LPTPE" allowfullscreen></iframe>
+                    </div>
+                    <button class="slider-btn prev-btn" onclick="moveSlide(this,-1)">❮</button>
+                    <button class="slider-btn next-btn" onclick="moveSlide(this,1)">❯</button>
+                </div>
+                <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Punk%20Sunglasses%20Women%20Vintage%20Designer%20(K250.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+            </div>
+            <div class="product-content">
+                <div>
+                    <h3 class="product-title">Punk Sunglasses Women Vintage Designer</h3>
+                    <p class="product-description">Vintage flat-top pilot sunglasses featuring a bronze metal frame, brown lenses, and comfortable silicone nose pads.</p>
+                </div>
+                <div class="price-row">
+                    <span class="current-price">K250.00</span>
+                    <span class="original-price">K320.00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CATALOG: AGRIVANCE -->
+    <div class="catalog-section" id="agrivance-express">
+        <div class="category-header"><h2>Agricultural Logistics</h2><span>AgriVance Express</span></div>
+        <div class="service-info-card">
+            <h3>Agricultural Produce & Logistics</h3>
+            <p>AgriVance Express bridges the gap between local farming produce, express bulk distribution, and supply chain management.</p>
+            <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20inquire%20about%20AgriVance%20Express%20services." class="btn-whatsapp" style="max-width:280px" target="_blank">Inquire via WhatsApp</a>
+        </div>
+    </div>
+
+    <!-- CATALOG: OMNICARE -->
+    <div class="catalog-section" id="omnicare">
+        <div class="category-header"><h2>Hair & Beauty Care</h2><span>OmniCare</span></div>
+
+        <!-- Curly Bob Wig -->
+        <div class="product-card" data-product="curly-bob-wig">
+            <div class="media-column">
+                <div class="image-container">
+                    <span class="badge">Wigs</span>
+                    <div class="slider-wrapper">
+                        <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/Abf46df26d17e425b8a39a9fcb7ea2c3dj.png" alt="Curly Bob 1">
+                        <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S940841e156d249f8a200db771804ef54b.jpg" alt="Curly Bob 2">
+                        <iframe class="slide" src="https://video.aliexpress-media.com/play/u/ae_sg_item/3000912434018/p/1/e/6/t/10301/5000212144994.mp4" allowfullscreen></iframe>
+                    </div>
+                    <button class="slider-btn prev-btn" onclick="moveSlide(this,-1)">❮</button>
+                    <button class="slider-btn next-btn" onclick="moveSlide(this,1)">❯</button>
+                </div>
+                <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Curly%20Bob%20Wig%20(K400.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+            </div>
+            <div class="product-content">
+                <div>
+                    <h3 class="product-title">Curly Bob Wig Brazilian Hair</h3>
+                    <p class="product-description">Ombre Highlight P4/27 Color Short Bob Wigs Curly 13x4 Lace Frontal Wigs Human Hair Deep Curly Bob Wig Brazilian Hair.</p>
+                </div>
+                <div class="price-row">
+                    <span class="current-price">K400.00</span>
+                    <span class="original-price">K500.00</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Debut Ombre Wig -->
+        <div class="product-card" data-product="debut-ombre-wig">
+            <div class="media-column">
+                <div class="image-container">
+                    <span class="badge">Wigs</span>
+                    <div class="slider-wrapper">
+                        <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/H402a12ad86534904942db9ac0cc25ac13.jpg" alt="Debut 1">
+                        <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Hf0fb5685282a43ff9b224ee58ead8549y.jpg" alt="Debut 2">
+                        <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Ha4d41e0098cb4ce6a9f7997050f61f96C.jpg" alt="Debut 3">
+                        <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Hb6174553a15048ceb17ea51d38e8534aX.jpg" alt="Debut 4">
+                        <iframe class="slide" src="https://www.youtube.com/embed/3KmA6dBEcVQ?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=3KmA6dBEcVQ" allowfullscreen></iframe>
+                    </div>
+                    <button class="slider-btn prev-btn" onclick="moveSlide(this,-1)">❮</button>
+                    <button class="slider-btn next-btn" onclick="moveSlide(this,1)">❯</button>
+                </div>
+                <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Debut%20Ombre%20Short%20Curly%20Human%20Hair%20Wigs%20Remy%20(K290.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+            </div>
+            <div class="product-content">
+                <div>
+                    <h3 class="product-title">Debut Ombre Short Curly Human Hair Wigs Remy</h3>
+                    <p class="product-description">Debut Ombre Short Curly Human Hair Wigs Remy Short Bob Wigs 100% Human Hair Cheap Pixie.</p>
+                </div>
+                <div class="price-row">
+                    <span class="current-price">K290.00</span>
+                    <span class="original-price">K350.00</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 22inch Dreadlocks (the important one) -->
+        <div class="product-card" data-product="22inch-dreadlocks-crochet-hair-braids">
+            <div class="media-column">
+                <div class="image-container">
+                    <span class="badge">Extensions</span>
+                    <div class="slider-wrapper">
+                        <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/H32d29a09915f41deaac2529b8d5ba3b7Y.jpg" alt="Dreadlocks 1">
+                        <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Hac9ff3eca6664b85aad8c57a74be9063C.jpg" alt="Dreadlocks 2">
+                        <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/H67ba55f68b814be0ba4762c3960d6b5ek.jpg" alt="Dreadlocks 3">
+                        <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/H217f9145906b4c99a911d218663d7b0bf.jpg" alt="Dreadlocks 4">
+                        <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Hd2ffc73de71c44b3b58096bbc80f484bN.jpg" alt="Dreadlocks 5">
+                        <iframe class="slide" src="https://video.aliexpress-media.com/play/u/ae_sg_item/3981944817/p/1/e/6/t/10301/1100164580615.mp4" allowfullscreen></iframe>
+                    </div>
+                    <button class="slider-btn prev-btn" onclick="moveSlide(this,-1)">❮</button>
+                    <button class="slider-btn next-btn" onclick="moveSlide(this,1)">❯</button>
+                </div>
+                <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%2022inch%20Dreadlocks%20Crochet%20Hair%20Braids%20(K200.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+            </div>
+            <div class="product-content">
+                <div>
+                    <h3 class="product-title">22inch Dreadlocks Crochet Hair Braids</h3>
+                    <p class="product-description">22inch Dreadlocks Crochet Hair Braids Synthetic Ombre Braiding Wigs Extension Reggae Hip Hop Style.</p>
+                </div>
+                <div class="price-row">
+                    <span class="current-price">K200.00</span>
+                    <span class="original-price">K250.00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CATALOG: LOCAL PNG -->
+    <div class="catalog-section" id="local-png">
+        <div class="category-header"><h2>Local PNG Handcrafts & Products</h2><span>Local PNG Products</span></div>
+        <div class="product-card" data-product="authentic-png-bilum">
+            <div class="media-column">
+                <div class="image-container">
+                    <span class="badge badge-local">Local Stock</span>
+                    <div class="slider-wrapper">
+                        <img class="slide active" src="images/bilum-photo1.jpg" alt="Bilum" onerror="this.src='https://images.unsplash.com/photo-1590736704728-f4730bb30770?q=80&w=800&auto=format&fit=crop'">
+                        <img class="slide" src="images/bilum-photo2.jpg" alt="Bilum Detail" onerror="this.src='https://images.unsplash.com/photo-1590736704728-f4730bb30770?q=80&w=800&auto=format&fit=crop'">
+                        <video class="slide" src="videos/bilum-video.mp4" controls preload="metadata"></video>
+                    </div>
+                    <button class="slider-btn prev-btn" onclick="moveSlide(this,-1)">❮</button>
+                    <button class="slider-btn next-btn" onclick="moveSlide(this,1)">❯</button>
+                </div>
+                <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Authentic%20PNG%20Handcrafted%20Bilum." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+            </div>
+            <div class="product-content">
+                <div>
+                    <h3 class="product-title">Authentic PNG Handcrafted Bilum</h3>
+                    <p class="product-description">Handwoven Papua New Guinean bilum featuring durable local fiber patterns. Direct local delivery in Port Moresby or express freight across PNG provinces.</p>
+                </div>
+                <div class="price-row">
+                    <span class="current-price">K150.00</span>
+                    <span class="original-price">K180.00</span>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script>
-    const sectionMetaMap = {
-        'omnicare': { title: 'OmniCare - Brazilian Hair Wigs & Extensions', desc: 'Shop Brazilian Wigs, Crochet Dreadlocks, and Hair Extensions at TRENDINOVIA PNG!', image: 'https://ae-pic-a1.aliexpress-media.com/kf/Abf46df26d17e425b8a39a9fcb7ea2c3dj.png' },
-        'curi-apparels': { title: 'Curi Apparels - Designer Eyewear & Fashion', desc: 'Vintage Punk Sunglasses and Custom Urban Fashion Wear.', image: 'https://img.youtube.com/vi/4vrHH4LPTPE/hqdefault.jpg' },
-        'kraipa-tech': { title: 'Kraipa Tech - Smart Security Gadgets', desc: 'Mini 4K Wireless Wifi Security Nanny Cameras.', image: 'https://ae-pic-a1.aliexpress-media.com/kf/S67d51ca10bbe4ca4bcdac4ec38ac353bn.png' },
-        'local-png': { title: 'Local PNG Products & Handcrafts', desc: 'Authentic PNG Bilums, Crafts, and Local Apparel.', image: 'https://images.unsplash.com/photo-1590736704728-f4730bb30770?q=80&w=800&auto=format&fit=crop' },
-        'curly-bob-wig': { title: 'Curly Bob Wig Brazilian Hair - TRENDINOVIA', desc: 'Ombre Highlight P4/27 Color Short Bob Wigs. Human Hair. K400.', image: 'https://ae-pic-a1.aliexpress-media.com/kf/Abf46df26d17e425b8a39a9fcb7ea2c3dj.png' },
-        'debut-ombre-wig': { title: 'Debut Ombre Short Curly Human Hair Wigs - TRENDINOVIA', desc: '100% Human Hair Remy Short Bob Wigs. K290.', image: 'https://ae-pic-a1.aliexpress-media.com/kf/H402a12ad86534904942db9ac0cc25ac13.jpg' },
-        '22inch-dreadlocks-crochet-hair-braids': { title: '22inch Dreadlocks Crochet Hair Braids - TRENDINOVIA', desc: 'Synthetic Ombre Braiding Extensions. Reggae / Hip Hop Style. K200.', image: 'https://ae-pic-a1.aliexpress-media.com/kf/H32d29a09915f41deaac2529b8d5ba3b7Y.jpg' },
-        'mini-wifi-nanny-camera': { title: 'Mini Wifi Nanny Camera 4K - TRENDINOVIA', desc: 'Wireless 4K Security Camera with dual mode. K390.', image: 'https://ae-pic-a1.aliexpress-media.com/kf/S67d51ca10bbe4ca4bcdac4ec38ac353bn.png' },
-        'punk-sunglasses': { title: 'Punk Sunglasses Women Vintage Designer - TRENDINOVIA', desc: 'Vintage flat-top pilot sunglasses. K250.', image: 'https://img.youtube.com/vi/4vrHH4LPTPE/hqdefault.jpg' },
-        'authentic-png-bilum': { title: 'Authentic PNG Handcrafted Bilum - TRENDINOVIA', desc: 'Handwoven Papua New Guinean bilum. Local delivery available.', image: 'https://images.unsplash.com/photo-1590736704728-f4730bb30770?q=80&w=800&auto=format&fit=crop' }
+    const META = {
+        'omnicare': {
+            title: 'OmniCare - Brazilian Hair Wigs & Extensions',
+            desc: 'Shop Brazilian Wigs, Crochet Dreadlocks, and Hair Extensions at TRENDINOVIA PNG!',
+            image: 'https://ae-pic-a1.aliexpress-media.com/kf/Abf46df26d17e425b8a39a9fcb7ea2c3dj.png'
+        },
+        'curi-apparels': {
+            title: 'Curi Apparels - Designer Eyewear & Fashion',
+            desc: 'Vintage Punk Sunglasses and Custom Urban Fashion Wear.',
+            image: 'https://img.youtube.com/vi/4vrHH4LPTPE/hqdefault.jpg'
+        },
+        'kraipa-tech': {
+            title: 'Kraipa Tech - Smart Security Gadgets',
+            desc: 'Mini 4K Wireless Wifi Security Nanny Cameras.',
+            image: 'https://ae-pic-a1.aliexpress-media.com/kf/S67d51ca10bbe4ca4bcdac4ec38ac353bn.png'
+        },
+        'local-png': {
+            title: 'Local PNG Products & Handcrafts',
+            desc: 'Authentic PNG Bilums, Crafts, and Local Apparel.',
+            image: 'https://images.unsplash.com/photo-1590736704728-f4730bb30770?q=80&w=800&auto=format&fit=crop'
+        },
+        'curly-bob-wig': {
+            title: 'Curly Bob Wig Brazilian Hair - TRENDINOVIA',
+            desc: 'Ombre Highlight P4/27 Color Short Bob Wigs. Human Hair. K400.',
+            image: 'https://ae-pic-a1.aliexpress-media.com/kf/Abf46df26d17e425b8a39a9fcb7ea2c3dj.png'
+        },
+        'debut-ombre-wig': {
+            title: 'Debut Ombre Short Curly Human Hair Wigs - TRENDINOVIA',
+            desc: '100% Human Hair Remy Short Bob Wigs. K290.',
+            image: 'https://ae-pic-a1.aliexpress-media.com/kf/H402a12ad86534904942db9ac0cc25ac13.jpg'
+        },
+        '22inch-dreadlocks-crochet-hair-braids': {
+            title: '22inch Dreadlocks Crochet Hair Braids - TRENDINOVIA',
+            desc: 'Synthetic Ombre Braiding Extensions. Reggae / Hip Hop Style. K200.',
+            image: 'https://ae-pic-a1.aliexpress-media.com/kf/H32d29a09915f41deaac2529b8d5ba3b7Y.jpg'
+        },
+        'mini-wifi-nanny-camera': {
+            title: 'Mini Wifi Nanny Camera 4K - TRENDINOVIA',
+            desc: 'Wireless 4K Security Camera with dual mode. K390.',
+            image: 'https://ae-pic-a1.aliexpress-media.com/kf/S67d51ca10bbe4ca4bcdac4ec38ac353bn.png'
+        },
+        'punk-sunglasses': {
+            title: 'Punk Sunglasses Women Vintage Designer - TRENDINOVIA',
+            desc: 'Vintage flat-top pilot sunglasses. K250.',
+            image: 'https://img.youtube.com/vi/4vrHH4LPTPE/hqdefault.jpg'
+        },
+        'authentic-png-bilum': {
+            title: 'Authentic PNG Handcrafted Bilum - TRENDINOVIA',
+            desc: 'Handwoven Papua New Guinean bilum. Local delivery available.',
+            image: 'https://images.unsplash.com/photo-1590736704728-f4730bb30770?q=80&w=800&auto=format&fit=crop'
+        }
     };
 
-    function updateMetaTags(key) {
-        if (sectionMetaMap[key]) {
-            const data = sectionMetaMap[key];
-            document.getElementById('og-title').setAttribute('content', data.title);
-            document.getElementById('og-desc').setAttribute('content', data.desc);
-            document.getElementById('og-image').setAttribute('content', data.image);
-            document.getElementById('og-url').setAttribute('content', window.location.href);
-            document.title = data.title;
-        }
+    function updateMeta(key) {
+        if (!META[key]) return;
+        const m = META[key];
+        document.getElementById('og-title').content = m.title;
+        document.getElementById('og-desc').content = m.desc;
+        document.getElementById('og-image').content = m.image;
+        document.getElementById('og-url').content = window.location.href;
+        document.title = m.title;
     }
 
-    function openCatalog(catalogId, productSlug = null) {
+    function openCatalog(division, product = null) {
         document.getElementById('divisions-grid').style.display = 'none';
         document.getElementById('subtitle-text').style.display = 'none';
         document.getElementById('back-nav').style.display = 'block';
 
-        document.querySelectorAll('.catalog-section').forEach(cat => cat.classList.remove('active'));
-        document.querySelectorAll('.product-card').forEach(card => card.classList.remove('highlight'));
+        document.querySelectorAll('.catalog-section').forEach(s => s.classList.remove('active'));
+        document.querySelectorAll('.product-card').forEach(c => c.classList.remove('highlight'));
 
-        const target = document.getElementById(catalogId);
-        if (!target) return;
+        const section = document.getElementById(division);
+        if (!section) return;
+        section.classList.add('active');
 
-        target.classList.add('active');
-
-        // Use query parameters instead of hash
+        // Update URL with query parameters
         const url = new URL(window.location);
-        url.searchParams.set('division', catalogId);
-        if (productSlug) {
-            url.searchParams.set('product', productSlug);
-            updateMetaTags(productSlug);
+        url.searchParams.set('division', division);
+        if (product) {
+            url.searchParams.set('product', product);
+            updateMeta(product);
         } else {
             url.searchParams.delete('product');
-            updateMetaTags(catalogId);
+            updateMeta(division);
         }
-        window.history.replaceState({}, '', url);
+        history.replaceState({}, '', url);
 
-        if (productSlug) {
+        // Scroll to product if specified
+        if (product) {
             setTimeout(() => {
-                const card = target.querySelector(`[data-product="${productSlug}"]`);
+                const card = section.querySelector(`[data-product="${product}"]`);
                 if (card) {
                     card.classList.add('highlight');
                     card.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }
-            }, 80);
+            }, 100);
         }
 
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function showDivisions() {
-        document.querySelectorAll('.catalog-section').forEach(cat => cat.classList.remove('active'));
-        document.querySelectorAll('.product-card').forEach(card => card.classList.remove('highlight'));
+        document.querySelectorAll('.catalog-section').forEach(s => s.classList.remove('active'));
+        document.querySelectorAll('.product-card').forEach(c => c.classList.remove('highlight'));
         document.getElementById('divisions-grid').style.display = 'grid';
         document.getElementById('subtitle-text').style.display = 'block';
         document.getElementById('back-nav').style.display = 'none';
@@ -166,27 +440,25 @@
         const url = new URL(window.location);
         url.searchParams.delete('division');
         url.searchParams.delete('product');
-        window.history.replaceState({}, '', url);
+        history.replaceState({}, '', url);
 
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function moveSlide(button, direction) {
-        const container = button.closest('.image-container');
+    function moveSlide(btn, dir) {
+        const container = btn.closest('.image-container');
         const slides = container.querySelectorAll('.slide');
-        let activeIndex = Array.from(slides).findIndex(s => s.classList.contains('active'));
+        let idx = [...slides].findIndex(s => s.classList.contains('active'));
 
-        if (slides[activeIndex].tagName === 'IFRAME') slides[activeIndex].src = slides[activeIndex].src;
-        else if (slides[activeIndex].tagName === 'VIDEO') slides[activeIndex].pause();
+        if (slides[idx].tagName === 'IFRAME') slides[idx].src = slides[idx].src;
+        else if (slides[idx].tagName === 'VIDEO') slides[idx].pause();
 
-        slides[activeIndex].classList.remove('active');
-        activeIndex += direction;
-        if (activeIndex >= slides.length) activeIndex = 0;
-        else if (activeIndex < 0) activeIndex = slides.length - 1;
-        slides[activeIndex].classList.add('active');
+        slides[idx].classList.remove('active');
+        idx = (idx + dir + slides.length) % slides.length;
+        slides[idx].classList.add('active');
     }
 
-    // Load from query parameters
+    // Load from URL on page open
     window.addEventListener('DOMContentLoaded', () => {
         const params = new URLSearchParams(window.location.search);
         const division = params.get('division');
