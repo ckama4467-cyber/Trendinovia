@@ -15,10 +15,12 @@
 
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f4f6f8; color: #333; padding: 30px 20px; }
+        body { background-color: #f4f6f8; color: #333; padding: 30px 15px; }
         .container { max-width: 1000px; margin: 0 auto; }
         .page-title { text-align: center; font-size: 28px; font-weight: 800; margin-bottom: 8px; color: #111827; }
         .page-subtitle { text-align: center; font-size: 15px; color: #6b7280; margin-bottom: 35px; }
+        
+        /* DIVISIONS GRID */
         .divisions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 40px; }
         .division-card { background: #fff; border-radius: 16px; padding: 28px 20px; border: 1px solid #e5e7eb; text-align: center; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); transition: 0.2s; cursor: pointer; display: flex; flex-direction: column; justify-content: space-between; }
         .division-card:hover { transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
@@ -27,41 +29,69 @@
         .division-desc { font-size: 14px; color: #6b7280; line-height: 1.5; margin-bottom: 20px; }
         .btn-division { background: #2563eb; color: #fff; padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; border: none; cursor: pointer; width: 100%; }
         .btn-division:hover { background: #1d4ed8; }
+        
+        /* NAVIGATION */
         .back-nav { display: none; margin-bottom: 25px; }
         .btn-back { background: #e5e7eb; color: #374151; padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
         .btn-back:hover { background: #d1d5db; }
+        
+        /* CATALOG SECTIONS */
         .catalog-section { display: none; }
         .catalog-section.active { display: block; }
-        .category-header { display: flex; align-items: center; gap: 10px; font-size: 20px; font-weight: 700; color: #1f2937; padding-bottom: 10px; border-bottom: 2px solid #e5e7eb; margin-bottom: 25px; }
+        .category-header { display: flex; align-items: center; justify-content: space-between; font-size: 20px; font-weight: 700; color: #1f2937; padding-bottom: 10px; border-bottom: 2px solid #e5e7eb; margin-bottom: 25px; flex-wrap: wrap; gap: 10px; }
         .category-header span { background: #2563eb; color: #fff; font-size: 12px; padding: 4px 10px; border-radius: 12px; text-transform: uppercase; }
-        .product-card { display: flex; gap: 24px; background: #fff; border-radius: 16px; padding: 20px; border: 1px solid #e5e7eb; margin-bottom: 20px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); scroll-margin-top: 20px; }
+        
+        /* RESPONSIVE PRODUCT CARD */
+        .product-card { display: flex; gap: 24px; background: #fff; border-radius: 16px; padding: 20px; border: 1px solid #e5e7eb; margin-bottom: 25px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); scroll-margin-top: 20px; transition: border 0.3s, box-shadow 0.3s; }
         .product-card.highlight { border: 2px solid #2563eb; box-shadow: 0 0 0 4px rgba(37,99,235,0.15); }
-        .media-column { width: 320px; max-width: 100%; flex-shrink: 0; display: flex; flex-direction: column; gap: 12px; }
-        .image-container { position: relative; width: 100%; height: 280px; background: #000; border-radius: 12px; overflow: hidden; }
+        
+        .media-column { width: 320px; max-width: 100%; flex-shrink: 0; display: flex; flex-direction: column; gap: 10px; }
+        .image-container { position: relative; width: 100%; height: 280px; background: #000; border-radius: 12px; overflow: hidden; cursor: pointer; }
+        .image-container::after { content: "Click image to get link"; position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.7); color: #fff; font-size: 10px; padding: 3px 8px; border-radius: 4px; pointer-events: none; opacity: 0.8; z-index: 5; }
+        
         .badge { position: absolute; top: 12px; left: 12px; background: rgba(17,24,39,0.85); color: #fff; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 20px; z-index: 10; text-transform: uppercase; }
         .badge-local { background: #d97706 !important; }
+        
         .slider-wrapper { width: 100%; height: 100%; position: relative; }
-        .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; visibility: hidden; transition: 0.3s; }
+        .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; visibility: hidden; transition: 0.3s; border: none; }
         .slide.active { opacity: 1; visibility: visible; }
-        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.6); color: white; border: none; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center; }
+        
+        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.6); color: white; border: none; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center; font-size: 14px; }
         .slider-btn:hover { background: rgba(0,0,0,0.9); }
         .prev-btn { left: 10px; }
         .next-btn { right: 10px; }
-        .btn-whatsapp { display: flex; align-items: center; justify-content: center; width: 100%; background: #25D366; color: #fff; text-decoration: none; padding: 12px 16px; border-radius: 10px; font-size: 14px; font-weight: 600; }
+        
+        /* ACTION BUTTONS */
+        .btn-whatsapp { display: flex; align-items: center; justify-content: center; width: 100%; background: #25D366; color: #fff; text-decoration: none; padding: 11px 16px; border-radius: 8px; font-size: 13px; font-weight: 600; transition: background 0.2s; }
         .btn-whatsapp:hover { background: #1ebc57; }
+        
+        .btn-copy-link { display: flex; align-items: center; justify-content: center; width: 100%; background: #f3f4f6; color: #374151; border: 1px solid #d1d5db; padding: 8px; border-radius: 8px; font-size: 12px; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+        .btn-copy-link:hover { background: #e5e7eb; }
+
         .product-content { flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 280px; }
         .product-title { font-size: 20px; font-weight: 700; color: #111827; margin-bottom: 10px; }
         .product-description { font-size: 14px; color: #4b5563; line-height: 1.6; margin-bottom: 20px; }
         .price-row { display: flex; align-items: center; gap: 12px; margin-top: auto; }
         .current-price { font-size: 22px; font-weight: 800; color: #059669; }
         .original-price { font-size: 16px; color: #9ca3af; text-decoration: line-through; }
+        
         .service-info-card { background: #fff; border-radius: 16px; padding: 30px; border: 1px solid #e5e7eb; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
         .service-info-card h3 { font-size: 20px; margin-bottom: 12px; color: #111827; }
         .service-info-card p { font-size: 15px; color: #4b5563; line-height: 1.6; margin-bottom: 20px; }
+
+        /* TOAST NOTIFICATION */
+        .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #111827; color: #fff; padding: 12px 24px; border-radius: 25px; font-size: 14px; font-weight: 600; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.2); display: none; z-index: 1000; animation: fadeIn 0.3s; }
+        @keyframes fadeIn { from { opacity: 0; transform: translate(-50%, 10px); } to { opacity: 1; transform: translate(-50%, 0); } }
+
+        /* MOBILE RESPONSIVE MEDIA QUERIES */
         @media (max-width: 650px) {
-            .product-card { flex-direction: column; }
+            body { padding: 15px 10px; }
+            .product-card { flex-direction: column; gap: 16px; padding: 16px; }
             .media-column { width: 100%; }
+            .image-container { height: 240px; }
             .product-content { min-height: auto; }
+            .product-title { font-size: 18px; }
+            .category-header { font-size: 18px; }
         }
     </style>
 </head>
@@ -141,7 +171,7 @@
         <div class="category-header"><h2>Tech & Security Gadgets</h2><span>Kraipa Tech Gadgets</span></div>
         <div class="product-card" data-product="mini-wifi-nanny-camera">
             <div class="media-column">
-                <div class="image-container">
+                <div class="image-container" onclick="copyProductLink('kraipa-tech', 'mini-wifi-nanny-camera')">
                     <span class="badge">Security Camera</span>
                     <div class="slider-wrapper">
                         <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/S67d51ca10bbe4ca4bcdac4ec38ac353bn.png" alt="Camera 1">
@@ -149,10 +179,11 @@
                         <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S2681645c3aa64e27bf8c1f785f2525bft.png" alt="Camera 3">
                         <iframe class="slide" src="https://www.youtube.com/embed/rOB_rxp6cQE?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=rOB_rxp6cQE" allowfullscreen></iframe>
                     </div>
-                    <button class="slider-btn prev-btn" onclick="moveSlide(this,-1)">❮</button>
-                    <button class="slider-btn next-btn" onclick="moveSlide(this,1)">❯</button>
+                    <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this,-1)">❮</button>
+                    <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this,1)">❯</button>
                 </div>
                 <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Mini%20Wifi%20Nanny%20Camera%20(K390.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+                <button class="btn-copy-link" onclick="copyProductLink('kraipa-tech', 'mini-wifi-nanny-camera')">🔗 Copy Item Link for Facebook</button>
             </div>
             <div class="product-content">
                 <div>
@@ -172,16 +203,17 @@
         <div class="category-header"><h2>Apparel & Eyewear</h2><span>Curi Apparels</span></div>
         <div class="product-card" data-product="punk-sunglasses">
             <div class="media-column">
-                <div class="image-container">
+                <div class="image-container" onclick="copyProductLink('curi-apparels', 'punk-sunglasses')">
                     <span class="badge">Sunglasses</span>
                     <div class="slider-wrapper">
                         <img class="slide active" src="https://img.youtube.com/vi/4vrHH4LPTPE/hqdefault.jpg" alt="Sunglasses">
                         <iframe class="slide" src="https://www.youtube.com/embed/4vrHH4LPTPE?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=4vrHH4LPTPE" allowfullscreen></iframe>
                     </div>
-                    <button class="slider-btn prev-btn" onclick="moveSlide(this,-1)">❮</button>
-                    <button class="slider-btn next-btn" onclick="moveSlide(this,1)">❯</button>
+                    <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this,-1)">❮</button>
+                    <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this,1)">❯</button>
                 </div>
                 <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Punk%20Sunglasses%20Women%20Vintage%20Designer%20(K250.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+                <button class="btn-copy-link" onclick="copyProductLink('curi-apparels', 'punk-sunglasses')">🔗 Copy Item Link for Facebook</button>
             </div>
             <div class="product-content">
                 <div>
@@ -213,17 +245,18 @@
         <!-- Curly Bob Wig -->
         <div class="product-card" data-product="curly-bob-wig">
             <div class="media-column">
-                <div class="image-container">
+                <div class="image-container" onclick="copyProductLink('omnicare', 'curly-bob-wig')">
                     <span class="badge">Wigs</span>
                     <div class="slider-wrapper">
                         <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/Abf46df26d17e425b8a39a9fcb7ea2c3dj.png" alt="Curly Bob 1">
                         <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S940841e156d249f8a200db771804ef54b.jpg" alt="Curly Bob 2">
                         <iframe class="slide" src="https://video.aliexpress-media.com/play/u/ae_sg_item/3000912434018/p/1/e/6/t/10301/5000212144994.mp4" allowfullscreen></iframe>
                     </div>
-                    <button class="slider-btn prev-btn" onclick="moveSlide(this,-1)">❮</button>
-                    <button class="slider-btn next-btn" onclick="moveSlide(this,1)">❯</button>
+                    <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this,-1)">❮</button>
+                    <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this,1)">❯</button>
                 </div>
                 <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Curly%20Bob%20Wig%20(K400.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+                <button class="btn-copy-link" onclick="copyProductLink('omnicare', 'curly-bob-wig')">🔗 Copy Item Link for Facebook</button>
             </div>
             <div class="product-content">
                 <div>
@@ -240,7 +273,7 @@
         <!-- Debut Ombre Wig -->
         <div class="product-card" data-product="debut-ombre-wig">
             <div class="media-column">
-                <div class="image-container">
+                <div class="image-container" onclick="copyProductLink('omnicare', 'debut-ombre-wig')">
                     <span class="badge">Wigs</span>
                     <div class="slider-wrapper">
                         <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/H402a12ad86534904942db9ac0cc25ac13.jpg" alt="Debut 1">
@@ -249,10 +282,11 @@
                         <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Hb6174553a15048ceb17ea51d38e8534aX.jpg" alt="Debut 4">
                         <iframe class="slide" src="https://www.youtube.com/embed/3KmA6dBEcVQ?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=3KmA6dBEcVQ" allowfullscreen></iframe>
                     </div>
-                    <button class="slider-btn prev-btn" onclick="moveSlide(this,-1)">❮</button>
-                    <button class="slider-btn next-btn" onclick="moveSlide(this,1)">❯</button>
+                    <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this,-1)">❮</button>
+                    <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this,1)">❯</button>
                 </div>
                 <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Debut%20Ombre%20Short%20Curly%20Human%20Hair%20Wigs%20Remy%20(K290.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+                <button class="btn-copy-link" onclick="copyProductLink('omnicare', 'debut-ombre-wig')">🔗 Copy Item Link for Facebook</button>
             </div>
             <div class="product-content">
                 <div>
@@ -266,10 +300,10 @@
             </div>
         </div>
 
-        <!-- 22inch Dreadlocks (the important one) -->
+        <!-- 22inch Dreadlocks -->
         <div class="product-card" data-product="22inch-dreadlocks-crochet-hair-braids">
             <div class="media-column">
-                <div class="image-container">
+                <div class="image-container" onclick="copyProductLink('omnicare', '22inch-dreadlocks-crochet-hair-braids')">
                     <span class="badge">Extensions</span>
                     <div class="slider-wrapper">
                         <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/H32d29a09915f41deaac2529b8d5ba3b7Y.jpg" alt="Dreadlocks 1">
@@ -279,10 +313,11 @@
                         <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Hd2ffc73de71c44b3b58096bbc80f484bN.jpg" alt="Dreadlocks 5">
                         <iframe class="slide" src="https://video.aliexpress-media.com/play/u/ae_sg_item/3981944817/p/1/e/6/t/10301/1100164580615.mp4" allowfullscreen></iframe>
                     </div>
-                    <button class="slider-btn prev-btn" onclick="moveSlide(this,-1)">❮</button>
-                    <button class="slider-btn next-btn" onclick="moveSlide(this,1)">❯</button>
+                    <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this,-1)">❮</button>
+                    <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this,1)">❯</button>
                 </div>
                 <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%2022inch%20Dreadlocks%20Crochet%20Hair%20Braids%20(K200.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+                <button class="btn-copy-link" onclick="copyProductLink('omnicare', '22inch-dreadlocks-crochet-hair-braids')">🔗 Copy Item Link for Facebook</button>
             </div>
             <div class="product-content">
                 <div>
@@ -302,17 +337,18 @@
         <div class="category-header"><h2>Local PNG Handcrafts & Products</h2><span>Local PNG Products</span></div>
         <div class="product-card" data-product="authentic-png-bilum">
             <div class="media-column">
-                <div class="image-container">
+                <div class="image-container" onclick="copyProductLink('local-png', 'authentic-png-bilum')">
                     <span class="badge badge-local">Local Stock</span>
                     <div class="slider-wrapper">
                         <img class="slide active" src="images/bilum-photo1.jpg" alt="Bilum" onerror="this.src='https://images.unsplash.com/photo-1590736704728-f4730bb30770?q=80&w=800&auto=format&fit=crop'">
                         <img class="slide" src="images/bilum-photo2.jpg" alt="Bilum Detail" onerror="this.src='https://images.unsplash.com/photo-1590736704728-f4730bb30770?q=80&w=800&auto=format&fit=crop'">
                         <video class="slide" src="videos/bilum-video.mp4" controls preload="metadata"></video>
                     </div>
-                    <button class="slider-btn prev-btn" onclick="moveSlide(this,-1)">❮</button>
-                    <button class="slider-btn next-btn" onclick="moveSlide(this,1)">❯</button>
+                    <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this,-1)">❮</button>
+                    <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this,1)">❯</button>
                 </div>
                 <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Authentic%20PNG%20Handcrafted%20Bilum." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+                <button class="btn-copy-link" onclick="copyProductLink('local-png', 'authentic-png-bilum')">🔗 Copy Item Link for Facebook</button>
             </div>
             <div class="product-content">
                 <div>
@@ -328,58 +364,21 @@
     </div>
 </div>
 
+<!-- TOAST NOTIFICATION -->
+<div id="toast" class="toast">Link copied! Paste it on your Facebook post.</div>
+
 <script>
     const META = {
-        'omnicare': {
-            title: 'OmniCare - Brazilian Hair Wigs & Extensions',
-            desc: 'Shop Brazilian Wigs, Crochet Dreadlocks, and Hair Extensions at TRENDINOVIA PNG!',
-            image: 'https://ae-pic-a1.aliexpress-media.com/kf/Abf46df26d17e425b8a39a9fcb7ea2c3dj.png'
-        },
-        'curi-apparels': {
-            title: 'Curi Apparels - Designer Eyewear & Fashion',
-            desc: 'Vintage Punk Sunglasses and Custom Urban Fashion Wear.',
-            image: 'https://img.youtube.com/vi/4vrHH4LPTPE/hqdefault.jpg'
-        },
-        'kraipa-tech': {
-            title: 'Kraipa Tech - Smart Security Gadgets',
-            desc: 'Mini 4K Wireless Wifi Security Nanny Cameras.',
-            image: 'https://ae-pic-a1.aliexpress-media.com/kf/S67d51ca10bbe4ca4bcdac4ec38ac353bn.png'
-        },
-        'local-png': {
-            title: 'Local PNG Products & Handcrafts',
-            desc: 'Authentic PNG Bilums, Crafts, and Local Apparel.',
-            image: 'https://images.unsplash.com/photo-1590736704728-f4730bb30770?q=80&w=800&auto=format&fit=crop'
-        },
-        'curly-bob-wig': {
-            title: 'Curly Bob Wig Brazilian Hair - TRENDINOVIA',
-            desc: 'Ombre Highlight P4/27 Color Short Bob Wigs. Human Hair. K400.',
-            image: 'https://ae-pic-a1.aliexpress-media.com/kf/Abf46df26d17e425b8a39a9fcb7ea2c3dj.png'
-        },
-        'debut-ombre-wig': {
-            title: 'Debut Ombre Short Curly Human Hair Wigs - TRENDINOVIA',
-            desc: '100% Human Hair Remy Short Bob Wigs. K290.',
-            image: 'https://ae-pic-a1.aliexpress-media.com/kf/H402a12ad86534904942db9ac0cc25ac13.jpg'
-        },
-        '22inch-dreadlocks-crochet-hair-braids': {
-            title: '22inch Dreadlocks Crochet Hair Braids - TRENDINOVIA',
-            desc: 'Synthetic Ombre Braiding Extensions. Reggae / Hip Hop Style. K200.',
-            image: 'https://ae-pic-a1.aliexpress-media.com/kf/H32d29a09915f41deaac2529b8d5ba3b7Y.jpg'
-        },
-        'mini-wifi-nanny-camera': {
-            title: 'Mini Wifi Nanny Camera 4K - TRENDINOVIA',
-            desc: 'Wireless 4K Security Camera with dual mode. K390.',
-            image: 'https://ae-pic-a1.aliexpress-media.com/kf/S67d51ca10bbe4ca4bcdac4ec38ac353bn.png'
-        },
-        'punk-sunglasses': {
-            title: 'Punk Sunglasses Women Vintage Designer - TRENDINOVIA',
-            desc: 'Vintage flat-top pilot sunglasses. K250.',
-            image: 'https://img.youtube.com/vi/4vrHH4LPTPE/hqdefault.jpg'
-        },
-        'authentic-png-bilum': {
-            title: 'Authentic PNG Handcrafted Bilum - TRENDINOVIA',
-            desc: 'Handwoven Papua New Guinean bilum. Local delivery available.',
-            image: 'https://images.unsplash.com/photo-1590736704728-f4730bb30770?q=80&w=800&auto=format&fit=crop'
-        }
+        'omnicare': { title: 'OmniCare - Brazilian Hair Wigs & Extensions', desc: 'Shop Brazilian Wigs, Crochet Dreadlocks, and Hair Extensions at TRENDINOVIA PNG!', image: 'https://ae-pic-a1.aliexpress-media.com/kf/Abf46df26d17e425b8a39a9fcb7ea2c3dj.png' },
+        'curi-apparels': { title: 'Curi Apparels - Designer Eyewear & Fashion', desc: 'Vintage Punk Sunglasses and Custom Urban Fashion Wear.', image: 'https://img.youtube.com/vi/4vrHH4LPTPE/hqdefault.jpg' },
+        'kraipa-tech': { title: 'Kraipa Tech - Smart Security Gadgets', desc: 'Mini 4K Wireless Wifi Security Nanny Cameras.', image: 'https://ae-pic-a1.aliexpress-media.com/kf/S67d51ca10bbe4ca4bcdac4ec38ac353bn.png' },
+        'local-png': { title: 'Local PNG Products & Handcrafts', desc: 'Authentic PNG Bilums, Crafts, and Local Apparel.', image: 'https://images.unsplash.com/photo-1590736704728-f4730bb30770?q=80&w=800&auto=format&fit=crop' },
+        'curly-bob-wig': { title: 'Curly Bob Wig Brazilian Hair - TRENDINOVIA', desc: 'Ombre Highlight P4/27 Color Short Bob Wigs. Human Hair. K400.', image: 'https://ae-pic-a1.aliexpress-media.com/kf/Abf46df26d17e425b8a39a9fcb7ea2c3dj.png' },
+        'debut-ombre-wig': { title: 'Debut Ombre Short Curly Human Hair Wigs - TRENDINOVIA', desc: '100% Human Hair Remy Short Bob Wigs. K290.', image: 'https://ae-pic-a1.aliexpress-media.com/kf/H402a12ad86534904942db9ac0cc25ac13.jpg' },
+        '22inch-dreadlocks-crochet-hair-braids': { title: '22inch Dreadlocks Crochet Hair Braids - TRENDINOVIA', desc: 'Synthetic Ombre Braiding Extensions. Reggae / Hip Hop Style. K200.', image: 'https://ae-pic-a1.aliexpress-media.com/kf/H32d29a09915f41deaac2529b8d5ba3b7Y.jpg' },
+        'mini-wifi-nanny-camera': { title: 'Mini Wifi Nanny Camera 4K - TRENDINOVIA', desc: 'Wireless 4K Security Camera with dual mode. K390.', image: 'https://ae-pic-a1.aliexpress-media.com/kf/S67d51ca10bbe4ca4bcdac4ec38ac353bn.png' },
+        'punk-sunglasses': { title: 'Punk Sunglasses Women Vintage Designer - TRENDINOVIA', desc: 'Vintage flat-top pilot sunglasses. K250.', image: 'https://img.youtube.com/vi/4vrHH4LPTPE/hqdefault.jpg' },
+        'authentic-png-bilum': { title: 'Authentic PNG Handcrafted Bilum - TRENDINOVIA', desc: 'Handwoven Papua New Guinean bilum. Local delivery available.', image: 'https://images.unsplash.com/photo-1590736704728-f4730bb30770?q=80&w=800&auto=format&fit=crop' }
     };
 
     function updateMeta(key) {
@@ -425,9 +424,9 @@
                     card.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }
             }, 100);
+        } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-
-        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function showDivisions() {
@@ -456,6 +455,38 @@
         slides[idx].classList.remove('active');
         idx = (idx + dir + slides.length) % slides.length;
         slides[idx].classList.add('active');
+    }
+
+    // COPY PRODUCT DIRECT LINK FOR FACEBOOK POSTS
+    function copyProductLink(division, product) {
+        const url = new URL(window.location.origin + window.location.pathname);
+        url.searchParams.set('division', division);
+        url.searchParams.set('product', product);
+        
+        // Update URL bar and metadata immediately
+        history.replaceState({}, '', url);
+        updateMeta(product);
+
+        // Copy URL to Clipboard
+        navigator.clipboard.writeText(url.toString()).then(() => {
+            showToast("🔗 Item link copied! Paste it on your Facebook post.");
+        }).catch(() => {
+            // Fallback for older devices
+            const dummy = document.createElement('input');
+            document.body.appendChild(dummy);
+            dummy.value = url.toString();
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
+            showToast("🔗 Item link copied! Paste it on your Facebook post.");
+        });
+    }
+
+    function showToast(message) {
+        const toast = document.getElementById('toast');
+        toast.innerText = message;
+        toast.style.display = 'block';
+        setTimeout(() => { toast.style.display = 'none'; }, 3000);
     }
 
     // Load from URL on page open
