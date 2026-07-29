@@ -50,7 +50,6 @@
         .image-container::after { content: "Click image to get link"; position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.7); color: #fff; font-size: 10px; padding: 3px 8px; border-radius: 4px; pointer-events: none; opacity: 0.8; z-index: 5; }
         
         .badge { position: absolute; top: 12px; left: 12px; background: rgba(17,24,39,0.85); color: #fff; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 20px; z-index: 10; text-transform: uppercase; }
-        .badge-local { background: #d97706 !important; }
         
         .slider-wrapper { width: 100%; height: 100%; position: relative; }
         .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; visibility: hidden; transition: 0.3s; border: none; }
@@ -83,13 +82,13 @@
         .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #111827; color: #fff; padding: 12px 24px; border-radius: 25px; font-size: 14px; font-weight: 600; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.2); display: none; z-index: 1000; animation: fadeIn 0.3s; }
         @keyframes fadeIn { from { opacity: 0; transform: translate(-50%, 10px); } to { opacity: 1; transform: translate(-50%, 0); } }
 
+        /* HIERARCHICAL EXPANDABLE GROUPS */
         .subcategory-group {
             border: 1px solid #e5e7eb;
             border-radius: 8px;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             background-color: #ffffff;
             overflow: hidden;
-            transition: all 0.2s ease-in-out;
         }
         
         .subcategory-heading {
@@ -101,16 +100,13 @@
             cursor: pointer;
             user-select: none;
             outline: none;
-            list-style: none; /* Removes default disclosure triangle in supported browsers */
+            list-style: none;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         
-        /* Custom arrow indicators */
-        .subcategory-heading::-webkit-details-marker {
-            display: none;
-        }
+        .subcategory-heading::-webkit-details-marker { display: none; }
         
         .subcategory-heading::after {
             content: '❯';
@@ -119,18 +115,33 @@
             transition: transform 0.2s ease;
         }
         
-        details[open] .subcategory-heading::after {
+        details[open] > .subcategory-heading::after {
             transform: rotate(90deg);
         }
         
-        details[open] .subcategory-heading {
-            border-bottom: 2px solid #2563eb;
+        details[open] > .subcategory-heading {
+            border-bottom: 1px solid #e5e7eb;
             background-color: #eff6ff;
             color: #1d4ed8;
         }
         
         .subcategory-content {
             padding: 20px 16px;
+        }
+
+        /* SUB-SUB CATEGORIES */
+        .subsubcategory-group {
+            border: 1px dashed #cbd5e1;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            background-color: #fafafa;
+        }
+        .subsubcategory-heading {
+            font-size: 14px;
+            font-weight: 600;
+            color: #334155;
+            padding: 10px 14px;
+            background-color: #f1f5f9;
         }
         
         /* MOBILE RESPONSIVE MEDIA QUERIES */
@@ -219,68 +230,97 @@
     <!-- CATALOG: KRAIPA TECH -->
     <div class="catalog-section" id="kraipa-tech">
         <div class="category-header"><h2>Tech & Security Gadgets</h2><span>Kraipa Tech Gadgets</span></div>
-        <div class="product-card" data-product="mini-wifi-nanny-camera">
-            <div class="media-column">
-                <div class="image-container" onclick="copyProductLink('kraipa-tech', 'mini-wifi-nanny-camera')">
-                    <span class="badge">Security Camera</span>
-                    <div class="slider-wrapper">
-                        <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/S67d51ca10bbe4ca4bcdac4ec38ac353bn.png" alt="Camera 1">
-                        <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Sb8fd0054736c47a4992803d56aba9ecbu.png" alt="Camera 2">
-                        <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S2681645c3aa64e27bf8c1f785f2525bft.png" alt="Camera 3">
-                        <iframe class="slide" src="https://www.youtube.com/embed/rOB_rxp6cQE?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=rOB_rxp6cQE" allowfullscreen></iframe>
+        
+        <details class="subcategory-group" open>
+            <summary class="subcategory-heading">Cameras</summary>
+            <div class="subcategory-content">
+                <div class="product-card" data-product="mini-wifi-nanny-camera">
+                    <div class="media-column">
+                        <div class="image-container" onclick="copyProductLink('kraipa-tech', 'mini-wifi-nanny-camera')">
+                            <span class="badge">Security Camera</span>
+                            <div class="slider-wrapper">
+                                <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/S67d51ca10bbe4ca4bcdac4ec38ac353bn.png" alt="Camera 1">
+                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Sb8fd0054736c47a4992803d56aba9ecbu.png" alt="Camera 2">
+                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S2681645c3aa64e27bf8c1f785f2525bft.png" alt="Camera 3">
+                                <iframe class="slide" src="https://www.youtube.com/embed/rOB_rxp6cQE?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=rOB_rxp6cQE" allowfullscreen></iframe>
+                            </div>
+                            <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this,-1)">❮</button>
+                            <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this,1)">❯</button>
+                        </div>
+                        <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Mini%20Wifi%20Nanny%20Camera%20(K390.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+                        <button class="btn-copy-link" onclick="copyProductLink('kraipa-tech', 'mini-wifi-nanny-camera')">🔗 Copy Item Link for Facebook</button>
                     </div>
-                    <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this,-1)">❮</button>
-                    <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this,1)">❯</button>
-                </div>
-                <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Mini%20Wifi%20Nanny%20Camera%20(K390.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
-                <button class="btn-copy-link" onclick="copyProductLink('kraipa-tech', 'mini-wifi-nanny-camera')">🔗 Copy Item Link for Facebook</button>
-            </div>
-            <div class="product-content">
-                <div>
-                    <h3 class="product-title">Mini Wifi Nanny Camera Wireless 4K</h3>
-                    <p class="product-description">Mini Wifi Nanny Camera Wireless 4K Security Camera with WiFi/No WiFi dual mode, Cloud & SD storage support, and magnetic mounting base.</p>
-                </div>
-                <div class="price-row">
-                    <span class="current-price">K390.00</span>
-                    <span class="original-price">K450.00</span>
+                    <div class="product-content">
+                        <div>
+                            <h3 class="product-title">Mini Wifi Nanny Camera Wireless 4K</h3>
+                            <p class="product-description">Mini Wifi Nanny Camera Wireless 4K Security Camera with WiFi/No WiFi dual mode, Cloud & SD storage support, and magnetic mounting base.</p>
+                        </div>
+                        <div class="price-row">
+                            <span class="current-price">K390.00</span>
+                            <span class="original-price">K450.00</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </details>
+
+        <details class="subcategory-group"><summary class="subcategory-heading">Phones</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
+        <details class="subcategory-group"><summary class="subcategory-heading">Trackers</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
+        <details class="subcategory-group"><summary class="subcategory-heading">Laptops</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
+        <details class="subcategory-group"><summary class="subcategory-heading">Desktops</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
+        <details class="subcategory-group"><summary class="subcategory-heading">Wrist Watches</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
+        <details class="subcategory-group"><summary class="subcategory-heading">Robotics</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
+        <details class="subcategory-group"><summary class="subcategory-heading">High-Tech Equipments</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
     </div>
 
     <!-- CATALOG: CURI APPARELS -->
     <div class="catalog-section" id="curi-apparels">
         <div class="category-header"><h2>Apparel & Eyewear</h2><span>Curi Apparels</span></div>
-        <div class="product-card" data-product="punk-sunglasses">
-            <div class="media-column">
-                <div class="image-container" onclick="copyProductLink('curi-apparels', 'punk-sunglasses')">
-                    <span class="badge">Sunglasses</span>
-                    <div class="slider-wrapper">
-                        <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/Sa9e3a69c5c80484797c8bdaf59d0926f6.jpg" alt="Punk Sunglasses 1">
-                        <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S879c0c7d99fe48f9b049f49b160353bd3.jpg" alt="Punk Sunglasses 2">
-                        <video class="slide" autoplay muted loop playsinline preload="auto">
-                            <source src="https://video.aliexpress-media.com/play/u/ae_sg_item/484979023/p/1/e/6/t/10301/5000458500554.mp4" type="video/mp4">  
-                        </video>
-                        <img class="slide" src="https://img.youtube.com/vi/4vrHH4LPTPE/hqdefault.jpg" alt="Sunglasses">
-                        <iframe class="slide" src="https://www.youtube.com/embed/4vrHH4LPTPE?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=4vrHH4LPTPE" allowfullscreen></iframe>
+
+        <details class="subcategory-group" open>
+            <summary class="subcategory-heading">Eye Ware</summary>
+            <div class="subcategory-content">
+                <div class="product-card" data-product="punk-sunglasses">
+                    <div class="media-column">
+                        <div class="image-container" onclick="copyProductLink('curi-apparels', 'punk-sunglasses')">
+                            <span class="badge">Sunglasses</span>
+                            <div class="slider-wrapper">
+                                <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/Sa9e3a69c5c80484797c8bdaf59d0926f6.jpg" alt="Punk Sunglasses 1">
+                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S879c0c7d99fe48f9b049f49b160353bd3.jpg" alt="Punk Sunglasses 2">
+                                <video class="slide" autoplay muted loop playsinline preload="auto">
+                                    <source src="https://video.aliexpress-media.com/play/u/ae_sg_item/484979023/p/1/e/6/t/10301/5000458500554.mp4" type="video/mp4">  
+                                </video>
+                                <img class="slide" src="https://img.youtube.com/vi/4vrHH4LPTPE/hqdefault.jpg" alt="Sunglasses">
+                                <iframe class="slide" src="https://www.youtube.com/embed/4vrHH4LPTPE?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=4vrHH4LPTPE" allowfullscreen></iframe>
+                            </div>
+                            <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this,-1)">❮</button>
+                            <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this,1)">❯</button>
+                        </div>
+                        <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Punk%20Sunglasses%20Women%20Vintage%20Designer%20(K250.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+                        <button class="btn-copy-link" onclick="copyProductLink('curi-apparels', 'punk-sunglasses')">🔗 Copy Item Link for Facebook</button>
                     </div>
-                    <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this,-1)">❮</button>
-                    <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this,1)">❯</button>
-                </div>
-                <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Punk%20Sunglasses%20Women%20Vintage%20Designer%20(K250.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
-                <button class="btn-copy-link" onclick="copyProductLink('curi-apparels', 'punk-sunglasses')">🔗 Copy Item Link for Facebook</button>
-            </div>
-            <div class="product-content">
-                <div>
-                    <h3 class="product-title">Punk Sunglasses Women Vintage Designer</h3>
-                    <p class="product-description">Vintage flat-top pilot sunglasses featuring a bronze metal frame, brown lenses, and comfortable silicone nose pads.</p>
-                </div>
-                <div class="price-row">
-                    <span class="current-price">K250.00</span>
-                    <span class="original-price">K320.00</span>
+                    <div class="product-content">
+                        <div>
+                            <h3 class="product-title">Punk Sunglasses Women Vintage Designer</h3>
+                            <p class="product-description">Vintage flat-top pilot sunglasses featuring a bronze metal frame, brown lenses, and comfortable silicone nose pads.</p>
+                        </div>
+                        <div class="price-row">
+                            <span class="current-price">K250.00</span>
+                            <span class="original-price">K320.00</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </details>
+
+        <details class="subcategory-group"><summary class="subcategory-heading">Office Ware</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
+        <details class="subcategory-group"><summary class="subcategory-heading">Beach Ware</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
+        <details class="subcategory-group"><summary class="subcategory-heading">Adventure Ware</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
+        <details class="subcategory-group"><summary class="subcategory-heading">Industrial Ware</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
+        <details class="subcategory-group"><summary class="subcategory-heading">Church Ware</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
+        <details class="subcategory-group"><summary class="subcategory-heading">Wedding Matchings</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
+        <details class="subcategory-group"><summary class="subcategory-heading">Sports Ware</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
+        <details class="subcategory-group"><summary class="subcategory-heading">Other Special Events Ware</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
     </div>
 
     <!-- CATALOG: AGRIVANCE -->
@@ -299,7 +339,7 @@
 
         <!-- SUB-CATEGORY 1: HAIR -->
         <details class="subcategory-group" id="hair" open>
-            <summary class="subcategory-heading">1. Hair (Extensions, Wigs & Dread Locks)</summary>
+            <summary class="subcategory-heading">Hair</summary>
             <div class="subcategory-content">
                 <!-- Curly Bob Wig -->
                 <div class="product-card" data-product="curly-bob-wig">
@@ -462,16 +502,73 @@
                 </div>
             </div>
         </details>
+
+        <details class="subcategory-group"><summary class="subcategory-heading">Skin Care</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
+        <details class="subcategory-group"><summary class="subcategory-heading">Hair Care</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
+        <details class="subcategory-group"><summary class="subcategory-heading">Make-up and Cosmetics</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
     </div>
 
     <!-- CATALOG: LOCAL PNG PRODUCTS -->
     <div class="catalog-section" id="local-png">
         <div class="category-header"><h2>Local PNG Handcrafts & Produce</h2><span>Local PNG Products</span></div>
-        <div class="service-info-card">
-            <h3>Authentic Papua New Guinea Handcrafts</h3>
-            <p>Explore traditional bilums, local apparel, organic coffee, and PNG authentic local handcrafts directly sourced from local artisans.</p>
-            <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20inquire%20about%20Local%20PNG%20Products." class="btn-whatsapp" style="max-width:280px" target="_blank">Inquire via WhatsApp</a>
-        </div>
+        
+        <!-- SUB-CATEGORY 1: ORGANIC PRODUCTS -->
+        <details class="subcategory-group" open>
+            <summary class="subcategory-heading">Organic Products</summary>
+            <div class="subcategory-content">
+                <details class="subsubcategory-group" open>
+                    <summary class="subsubcategory-heading">Coffee</summary>
+                    <div class="subcategory-content"><p>Locally sourced PNG Organic Coffee products coming soon.</p></div>
+                </details>
+                <details class="subsubcategory-group">
+                    <summary class="subsubcategory-heading">Cocoa</summary>
+                    <div class="subcategory-content"><p>PNG Cocoa products coming soon.</p></div>
+                </details>
+                <details class="subsubcategory-group">
+                    <summary class="subsubcategory-heading">Natural Honey</summary>
+                    <div class="subcategory-content"><p>Natural Honey products coming soon.</p></div>
+                </details>
+                <details class="subsubcategory-group">
+                    <summary class="subsubcategory-heading">Coconut</summary>
+                    <div class="subcategory-content"><p>Coconut products coming soon.</p></div>
+                </details>
+                <details class="subsubcategory-group">
+                    <summary class="subsubcategory-heading">Nuts</summary>
+                    <div class="subcategory-content"><p>Local Nuts coming soon.</p></div>
+                </details>
+                <details class="subsubcategory-group">
+                    <summary class="subsubcategory-heading">Tea</summary>
+                    <div class="subcategory-content"><p>PNG Tea products coming soon.</p></div>
+                </details>
+                <details class="subsubcategory-group">
+                    <summary class="subsubcategory-heading">Vanilla</summary>
+                    <div class="subcategory-content"><p>PNG Organic Vanilla beans coming soon.</p></div>
+                </details>
+            </div>
+        </details>
+
+        <!-- SUB-CATEGORY 2: ARTS AND CRAFTS -->
+        <details class="subcategory-group">
+            <summary class="subcategory-heading">Arts and Crafts</summary>
+            <div class="subcategory-content">
+                <details class="subsubcategory-group">
+                    <summary class="subsubcategory-heading">Bilums</summary>
+                    <div class="subcategory-content"><p>Traditional PNG Bilums coming soon.</p></div>
+                </details>
+                <details class="subsubcategory-group">
+                    <summary class="subsubcategory-heading">Blouse</summary>
+                    <div class="subcategory-content"><p>PNG Meri Blouses coming soon.</p></div>
+                </details>
+                <details class="subsubcategory-group">
+                    <summary class="subsubcategory-heading">Arts</summary>
+                    <div class="subcategory-content"><p>PNG Paintings & Artwork coming soon.</p></div>
+                </details>
+                <details class="subsubcategory-group">
+                    <summary class="subsubcategory-heading">Hand Craft</summary>
+                    <div class="subcategory-content"><p>Wood carvings & Hand crafts coming soon.</p></div>
+                </details>
+            </div>
+        </details>
     </div>
 </div>
 
@@ -512,7 +609,6 @@
         if (activeIndex !== -1) {
             slides[activeIndex].classList.remove('active');
             
-            // Pause HTML5 video if leaving
             if (slides[activeIndex].tagName === 'VIDEO') {
                 slides[activeIndex].pause();
             }
@@ -523,7 +619,6 @@
 
             slides[nextIndex].classList.add('active');
 
-            // Play HTML5 video if entering
             if (slides[nextIndex].tagName === 'VIDEO') {
                 slides[nextIndex].play();
             }
@@ -535,7 +630,6 @@
         navigator.clipboard.writeText(link).then(() => {
             showToast('Link copied to clipboard!');
         }).catch(() => {
-            // Fallback for clipboard API
             const dummy = document.createElement('input');
             document.body.appendChild(dummy);
             dummy.value = link;
@@ -555,7 +649,6 @@
         }, 3000);
     }
 
-    // Handle deep linking via URL parameters (e.g. ?cat=omnicare&prod=curly-bob-wig)
     window.addEventListener('DOMContentLoaded', () => {
         const urlParams = new URLSearchParams(window.location.search);
         const cat = urlParams.get('cat');
