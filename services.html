@@ -83,7 +83,7 @@
         .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #111827; color: #fff; padding: 12px 24px; border-radius: 25px; font-size: 14px; font-weight: 600; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.2); display: none; z-index: 1000; animation: fadeIn 0.3s; }
         @keyframes fadeIn { from { opacity: 0; transform: translate(-50%, 10px); } to { opacity: 1; transform: translate(-50%, 0); } }
 
-         .subcategory-group {
+        .subcategory-group {
             border: 1px solid #e5e7eb;
             border-radius: 8px;
             margin-bottom: 12px;
@@ -101,13 +101,12 @@
             cursor: pointer;
             user-select: none;
             outline: none;
-            list-style: none; /* Removes default disclosure triangle in supported browsers */
+            list-style: none;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         
-        /* Custom arrow indicators */
         .subcategory-heading::-webkit-details-marker {
             display: none;
         }
@@ -294,547 +293,294 @@
     </div>
 
     <!-- CATALOG: OMNICARE -->
-<div class="catalog-section" id="omnicare">
-    <div class="category-header"><h2>Hair & Beauty Care</h2><span>OmniCare</span></div>
+    <div class="catalog-section" id="omnicare">
+        <div class="category-header"><h2>Hair & Beauty Care</h2><span>OmniCare</span></div>
 
-    <!-- SUB-CATEGORY 1: HAIR -->
-    <details class="subcategory-group" id="hair">
-        <summary class="subcategory-heading">1. Hair (Extensions, Wigs & Dread Locks)</summary>
-        <div class="subcategory-content">
-            <!-- Curly Bob Wig -->
-            <div class="product-card" data-product="curly-bob-wig">
-                <div class="media-column">
-                    <div class="image-container" onclick="copyProductLink('omnicare', 'curly-bob-wig')">
-                        <span class="badge">Wigs</span>
-                        <div class="slider-wrapper">
-                            <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/Abf46df26d17e425b8a39a9fcb7ea2c3dj.png" alt="Curly Bob 1">
-                            <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S940841e156d249f8a200db771804ef54b.jpg" alt="Curly Bob 2">
-                            <video class="slide" autoplay muted loop playsinline preload="auto">
-                                <source src="https://video.aliexpress-media.com/play/u/ae_sg_item/3000912434018/p/1/e/6/t/10301/5000212144994.mp4" type="video/mp4">
-                            </video>
+        <!-- SUB-CATEGORY 1: HAIR -->
+        <details class="subcategory-group" id="hair" open>
+            <summary class="subcategory-heading">1. Hair (Extensions, Wigs & Dread Locks)</summary>
+            <div class="subcategory-content">
+                <!-- Curly Bob Wig -->
+                <div class="product-card" data-product="curly-bob-wig">
+                    <div class="media-column">
+                        <div class="image-container" onclick="copyProductLink('omnicare', 'curly-bob-wig')">
+                            <span class="badge">Wigs</span>
+                            <div class="slider-wrapper">
+                                <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/Abf46df26d17e425b8a39a9fcb7ea2c3dj.png" alt="Curly Bob 1">
+                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S940841e156d249f8a200db771804ef54b.jpg" alt="Curly Bob 2">
+                                <video class="slide" autoplay muted loop playsinline preload="auto">
+                                    <source src="https://video.aliexpress-media.com/play/u/ae_sg_item/3000912434018/p/1/e/6/t/10301/5000212144994.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this,-1)">❮</button>
+                            <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this,1)">❯</button>
                         </div>
-                        <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this,-1)">❮</button>
-                        <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this,1)">❯</button>
+                        <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Curly%20Bob%20Wig%20(K400.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+                        <button class="btn-copy-link" onclick="copyProductLink('omnicare', 'curly-bob-wig')">🔗 Copy Item Link for Facebook</button>
                     </div>
-                    <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Curly%20Bob%20Wig%20(K400.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
-                    <button class="btn-copy-link" onclick="copyProductLink('omnicare', 'curly-bob-wig')">🔗 Copy Item Link for Facebook</button>
-                </div>
-                <div class="product-content">
-                    <div>
-                        <h3 class="product-title">Curly Bob Wig Brazilian Hair</h3>
-                        <p class="product-description">Ombre Highlight P4/27 Color Short Bob Wigs Curly 13x4 Lace Frontal Wigs Human Hair Deep Curly Bob Wig Brazilian Hair.</p>
-                    </div>
-                    <div class="price-row">
-                        <span class="current-price">K400.00</span>
-                        <span class="original-price">K500.00</span>
+                    <div class="product-content">
+                        <div>
+                            <h3 class="product-title">Curly Bob Wig Brazilian Hair</h3>
+                            <p class="product-description">Ombre Highlight P4/27 Color Short Bob Wigs Curly 13x4 Lace Frontal Wigs Human Hair Deep Curly Bob Wig Brazilian Hair.</p>
+                        </div>
+                        <div class="price-row">
+                            <span class="current-price">K400.00</span>
+                            <span class="original-price">K500.00</span>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Debut Ombre Wig -->
-            <div class="product-card" data-product="debut-ombre-wig">
-                <div class="media-column">
-                    <div class="image-container" onclick="copyProductLink('omnicare', 'debut-ombre-wig')">
-                        <span class="badge">Wigs</span>
-                        <div class="slider-wrapper">
-                            <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/H402a12ad86534904942db9ac0cc25ac13.jpg" alt="Debut 1">
-                            <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Hf0fb5685282a43ff9b224ee58ead8549y.jpg" alt="Debut 2">
-                            <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Ha4d41e0098cb4ce6a9f7997050f61f96C.jpg" alt="Debut 3">
-                            <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Hb6174553a15048ceb17ea51d38e8534aX.jpg" alt="Debut 4">
-                            <iframe class="slide" src="https://www.youtube.com/embed/3KmA6dBEcVQ?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=3KmA6dBEcVQ" allowfullscreen></iframe>
+                <!-- Debut Ombre Wig -->
+                <div class="product-card" data-product="debut-ombre-wig">
+                    <div class="media-column">
+                        <div class="image-container" onclick="copyProductLink('omnicare', 'debut-ombre-wig')">
+                            <span class="badge">Wigs</span>
+                            <div class="slider-wrapper">
+                                <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/H402a12ad86534904942db9ac0cc25ac13.jpg" alt="Debut 1">
+                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Hf0fb5685282a43ff9b224ee58ead8549y.jpg" alt="Debut 2">
+                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Ha4d41e0098cb4ce6a9f7997050f61f96C.jpg" alt="Debut 3">
+                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Hb6174553a15048ceb17ea51d38e8534aX.jpg" alt="Debut 4">
+                                <iframe class="slide" src="https://www.youtube.com/embed/3KmA6dBEcVQ?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=3KmA6dBEcVQ" allowfullscreen></iframe>
+                            </div>
+                            <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this,-1)">❮</button>
+                            <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this,1)">❯</button>
                         </div>
-                        <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this,-1)">❮</button>
-                        <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this,1)">❯</button>
+                        <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Debut%20Ombre%20Short%20Curly%20Human%20Hair%20Wigs%20Remy%20(K290.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+                        <button class="btn-copy-link" onclick="copyProductLink('omnicare', 'debut-ombre-wig')">🔗 Copy Item Link for Facebook</button>
                     </div>
-                    <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Debut%20Ombre%20Short%20Curly%20Human%20Hair%20Wigs%20Remy%20(K290.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
-                    <button class="btn-copy-link" onclick="copyProductLink('omnicare', 'debut-ombre-wig')">🔗 Copy Item Link for Facebook</button>
+                    <div class="product-content">
+                        <div>
+                            <h3 class="product-title">Debut Ombre Short Curly Human Hair Wigs Remy</h3>
+                            <p class="product-description">Debut Ombre Short Curly Human Hair Wigs Remy Short Bob Wigs 100% Human Hair Cheap Pixie.</p>
+                        </div>
+                        <div class="price-row">
+                            <span class="current-price">K290.00</span>
+                            <span class="original-price">K350.00</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-content">
-                    <div>
-                        <h3 class="product-title">Debut Ombre Short Curly Human Hair Wigs Remy</h3>
-                        <p class="product-description">Debut Ombre Short Curly Human Hair Wigs Remy Short Bob Wigs 100% Human Hair Cheap Pixie.</p>
+                
+                <!-- Pixie Cut Wigs -->
+                <div class="product-card" data-product="CrazyPearl Colored Light Brown Pixie Cut Wigs">
+                    <div class="media-column">
+                        <div class="image-container" onclick="copyProductLink('omnicare', 'CrazyPearl Colored Light Brown Pixie Cut Wigs')">
+                            <span class="badge">Wigs</span>
+                            <div class="slider-wrapper">
+                                <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/S2f80643018854715b643f29ce8e7a16fx.jpg" alt="CrazyPearl 1">
+                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S8afee8caafa3419b81d0396c117050baC.jpg" alt="CrazyPearl 2">
+                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S553a5ec544c84a8493e498cb3aff969cL.jpg" alt="CrazyPearl 3">
+                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S98720bc2dcb14f1a970cb16e4223be64e.jpg" alt="CrazyPearl 4">
+                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Sf3190561a6e640b194396c29829d7a18C.jpg" alt="CrazyPearl 5">
+                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S89fc76e8547d4203b07c4ac095513006I.jpg" alt="CrazyPearl 6">
+                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Sfd5eddbb31d3455e9184a88472a07df4k.jpg" alt="CrazyPearl 7">
+                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S03e4eb91eae44aa0ba1ee3da3f493c48g.jpg" alt="CrazyPearl 8">
+                                <video class="slide" autoplay muted loop playsinline preload="auto">
+                                    <source src="https://video.aliexpress-media.com/play/u/ae_sg_item/3000929520148/p/1/e/6/t/10301/5000475008071.mp4" type="video/mp4">  
+                                </video>
+                                <iframe class="slide" src="https://www.youtube.com/embed/nyaItTT2OvY?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=nyaItTT2OvY" allowfullscreen></iframe>
+                            </div>
+                            <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this,-1)">❮</button>
+                            <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this,1)">❯</button>
+                        </div>
+                        <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20buy%20CrazyPearl%20Colored%20Light%20Brown%20Pixie%20Cut%20Wigs%20Human%20Hair%20(K220.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+                        <button class="btn-copy-link" onclick="copyProductLink('omnicare', 'CrazyPearl Colored Light Brown Pixie Cut Wigs')">🔗 Copy Item Link for Facebook</button>
                     </div>
-                    <div class="price-row">
-                        <span class="current-price">K290.00</span>
-                        <span class="original-price">K350.00</span>
+                    <div class="product-content">
+                        <div>
+                            <h3 class="product-title">CrazyPearl Colored Light Brown Pixie Cut Wigs</h3>
+                            <p class="product-description">CrazyPearl Colored Light Brown Pixie Cut Wigs Human Hair 100% Short Wigs Human Hair Full Machine Wigs Glueless Wigs Human Hair.</p>
+                        </div>
+                        <div class="price-row">
+                            <span class="current-price">K220.00</span>
+                            <span class="original-price">K410.14</span>
+                        </div>
+                    </div>
+                </div>
+                 
+                <!-- Brazilian Virgin Hair Extensions -->
+                <div class="product-card" data-product="Brazilian Virgin Hair Curly Black To Brown Hair Extensions">
+                    <div class="media-column">
+                        <div class="image-container" onclick="copyProductLink('omnicare', 'Brazilian Virgin Hair Curly Black To Brown Hair Extensions')">
+                            <span class="badge">Extensions</span>
+                            <div class="slider-wrapper">
+                                <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/S40b943317eda4b58a009501b0badafa8W.jpg" alt="Brazilian Virgin 1">
+                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Sa977c03b50034212909b978095331d047.jpg" alt="Brazilian Virgin 2">
+                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Sd3346b9e0c704678a892b1f055aa25fdo.jpg" alt="Brazilian Virgin 3">
+                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S6d7e48bf682f4fba84d5e1845bb39141o.jpg" alt="Brazilian Virgin 4">
+                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Sa305c206a0b4483b8e7b8981ca62e3997.jpg" alt="Brazilian Virgin 5">
+                                <video class="slide" autoplay muted loop playsinline preload="auto">
+                                    <source src="https://video.aliexpress-media.com/play/u/ae_sg_item/2467203743/p/1/e/6/t/10301/1100216324063.mp4" type="video/mp4">  
+                                </video>
+                                <iframe class="slide" src="https://www.youtube.com/embed/mk9fYHz7gu8?start=32&enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=mk9fYHz7gu8" allowfullscreen></iframe>
+                            </div>
+                            <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this,-1)">❮</button>
+                            <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this,1)">❯</button>
+                        </div>
+                        <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20Brazilian%20Virgin%20Hair%20Curly%20Black%20To%20Brown%20Hair%20Extensions%20(K220.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+                        <button class="btn-copy-link" onclick="copyProductLink('omnicare', 'Brazilian Virgin Hair Curly Black To Brown Hair Extensions')">🔗 Copy Item Link for Facebook</button>
+                    </div>
+                    <div class="product-content">
+                        <div>
+                            <h3 class="product-title">Brazilian Virgin Hair Curly Black To Brown Hair Extensions</h3>
+                            <p class="product-description">100% Brazilian Virgin Hair Ombre 1B 30 Kinky Curly Hair Bundles 12A Ombre Human Hair 1/3 Bundles Black To Brown Hair Extensions.</p>
+                        </div>
+                        <div class="price-row">
+                            <span class="current-price">K220.00</span>
+                            <span class="original-price">K300.00</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 22inch Dreadlocks -->
+                <div class="product-card" data-product="22inch-dreadlocks-crochet-hair-braids">
+                    <div class="media-column">
+                        <div class="image-container" onclick="copyProductLink('omnicare', '22inch-dreadlocks-crochet-hair-braids')">
+                            <span class="badge">Extensions</span>
+                            <div class="slider-wrapper">
+                                <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/H32d29a09915f41deaac2529b8d5ba3b7Y.jpg" alt="Dreadlocks 1">
+                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Hac9ff3eca6664b85aad8c57a74be9063C.jpg" alt="Dreadlocks 2">
+                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/H67ba55f68b814be0ba4762c3960d6b5ek.jpg" alt="Dreadlocks 3">
+                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/H217f9145906b4c99a911d218663d7b0bf.jpg" alt="Dreadlocks 4">
+                            </div>
+                            <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this,-1)">❮</button>
+                            <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this,1)">❯</button>
+                        </div>
+                        <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%2022inch%20Dreadlocks%20Crochet%20Hair%20Braids%20(K180.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+                        <button class="btn-copy-link" onclick="copyProductLink('omnicare', '22inch-dreadlocks-crochet-hair-braids')">🔗 Copy Item Link for Facebook</button>
+                    </div>
+                    <div class="product-content">
+                        <div>
+                            <h3 class="product-title">22inch Dreadlocks Crochet Hair Braids</h3>
+                            <p class="product-description">Synthetic soft dreadlocks extensions, lightweight and natural feeling, suitable for full head crochet installation.</p>
+                        </div>
+                        <div class="price-row">
+                            <span class="current-price">K180.00</span>
+                            <span class="original-price">K240.00</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Pixie Cut Wigs -->
-            <div class="product-card" data-product="CrazyPearl Colored Light Brown Pixie Cut Wigs">
-                <div class="media-column">
-                    <div class="image-container" onclick="copyProductLink('omnicare', 'CrazyPearl Colored Light Brown Pixie Cut Wigs')">
-                        <span class="badge">Wigs</span>
-                        <div class="slider-wrapper">
-                            <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/S2f80643018854715b643f29ce8e7a16fx.jpg" alt="CrazyPearl 1">
-                            <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S8afee8caafa3419b81d0396c117050baC.jpg" alt="CrazyPearl 2">
-                            <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S553a5ec544c84a8493e498cb3aff969cL.jpg" alt="CrazyPearl 3">
-                            <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S98720bc2dcb14f1a970cb16e4223be64e.jpg" alt="CrazyPearl 4">
-                            <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Sf3190561a6e640b194396c29829d7a18C.jpg" alt="CrazyPearl 5">
-                            <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S89fc76e8547d4203b07c4ac095513006I.jpg" alt="CrazyPearl 6">
-                            <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Sfd5eddbb31d3455e9184a88472a07df4k.jpg" alt="CrazyPearl 7">
-                            <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S03e4eb91eae44aa0ba1ee3da3f493c48g.jpg" alt="CrazyPearl 8">
-                            <video class="slide" autoplay muted loop playsinline preload="auto">
-                                <source src="https://video.aliexpress-media.com/play/u/ae_sg_item/3000929520148/p/1/e/6/t/10301/5000475008071.mp4" type="video/mp4">  
-                            </video>
-                            <iframe class="slide" src="https://www.youtube.com/embed/nyaItTT2OvY?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=nyaItTT2OvY" allowfullscreen></iframe>
-                        </div>
-                        <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this,-1)">❮</button>
-                        <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this,1)">❯</button>
-                    </div>
-                    <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20buy%20CrazyPearl%20Colored%20Light%20Brown%20Pixie%20Cut%20Wigs%20Human%20Hair%20(K220.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
-                    <button class="btn-copy-link" onclick="copyProductLink('omnicare', 'CrazyPearl Colored Light Brown Pixie Cut Wigs')">🔗 Copy Item Link for Facebook</button>
-                </div>
-                <div class="product-content">
-                    <div>
-                        <h3 class="product-title">CrazyPearl Colored Light Brown Pixie Cut Wigs</h3>
-                        <p class="product-description">CrazyPearl Colored Light Brown Pixie Cut Wigs Human Hair 100% Short Wigs Human Hair Full Machine Wigs Glueless Wigs Human Hair.</p>
-                    </div>
-                    <div class="price-row">
-                        <span class="current-price">K220.00</span>
-                        <span class="original-price">K410.14</span>
-                    </div>
-                </div>
-            </div>
-             
-            <!-- Brazilian Virgin Hair Extensions -->
-            <div class="product-card" data-product="Brazilian Virgin Hair Curly Black To Brown Hair Extensions">
-                <div class="media-column">
-                    <div class="image-container" onclick="copyProductLink('omnicare', 'Brazilian Virgin Hair Curly Black To Brown Hair Extensions')">
-                        <span class="badge">Extensions</span>
-                        <div class="slider-wrapper">
-                            <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/S40b943317eda4b58a009501b0badafa8W.jpg" alt="Brazilian Virgin 1">
-                            <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Sa977c03b50034212909b978095331d047.jpg" alt="Brazilian Virgin 2">
-                            <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Sd3346b9e0c704678a892b1f055aa25fdo.jpg" alt="Brazilian Virgin 3">
-                            <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S6d7e48bf682f4fba84d5e1845bb39141o.jpg" alt="Brazilian Virgin 4">
-                            <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Sa305c206a0b4483b8e7b8981ca62e3997.jpg" alt="Brazilian Virgin 5">
-                            <video class="slide" autoplay muted loop playsinline preload="auto">
-                                <source src="https://video.aliexpress-media.com/play/u/ae_sg_item/2467203743/p/1/e/6/t/10301/1100216324063.mp4" type="video/mp4">  
-                            </video>
-                            <iframe class="slide" src="https://www.youtube.com/embed/mk9fYHz7gu8?start=32&enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=mk9fYHz7gu8" allowfullscreen></iframe>
-                        </div>
-                        <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this,-1)">❮</button>
-                        <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this,1)">❯</button>
-                    </div>
-                    <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20Brazilian%20Virgin%20Hair%20Curly%20Black%20To%20Brown%20Hair%20Extensions%20(K220.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
-                    <button class="btn-copy-link" onclick="copyProductLink('omnicare', 'Brazilian Virgin Hair Curly Black To Brown Hair Extensions')">🔗 Copy Item Link for Facebook</button>
-                </div>
-                <div class="product-content">
-                    <div>
-                        <h3 class="product-title">Brazilian Virgin Hair Curly Black To Brown Hair Extensions</h3>
-                        <p class="product-description">100% Brazilian Virgin Hair Ombre 1B 30 Kinky Curly Hair Bundles 12A Ombre Human Hair 1/3 Bundles Black To Brown Hair Extensions.</p>
-                    </div>
-                    <div class="price-row">
-                        <span class="current-price">K220.00</span>
-                        <span class="original-price">K300.00</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 22inch Dreadlocks -->
-            <div class="product-card" data-product="22inch-dreadlocks-crochet-hair-braids">
-                <div class="media-column">
-                    <div class="image-container" onclick="copyProductLink('omnicare', '22inch-dreadlocks-crochet-hair-braids')">
-                        <span class="badge">Extensions</span>
-                        <div class="slider-wrapper">
-                            <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/H32d29a09915f41deaac2529b8d5ba3b7Y.jpg" alt="Dreadlocks 1">
-                            <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Hac9ff3eca6664b85aad8c57a74be9063C.jpg" alt="Dreadlocks 2">
-                            <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/H67ba55f68b814be0ba4762c3960d6b5ek.jpg" alt="Dreadlocks 3">
-                            <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/H217f9145906b4c99a911d218663d7b0bf.jpg" alt="Dreadlocks 4">
-                            <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Hd2ffc73de71c44b3b58096bbc80f484bN.jpg" alt="Dreadlocks 5">
-                            <video class="slide" autoplay muted loop playsinline preload="auto">
-                                <source src="https://video.aliexpress-media.com/play/u/ae_sg_item/3981944817/p/1/e/6/t/10301/1100164580615.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                        <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this,-1)">❮</button>
-                        <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this,1)">❯</button>
-                    </div>
-                    <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%2022inch%20Dreadlocks%20Crochet%20Hair%20Braids%20(K200.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
-                    <button class="btn-copy-link" onclick="copyProductLink('omnicare', '22inch-dreadlocks-crochet-hair-braids')">🔗 Copy Item Link for Facebook</button>
-                </div>
-                <div class="product-content">
-                    <div>
-                        <h3 class="product-title">22inch Dreadlocks Crochet Hair Braids</h3>
-                        <p class="product-description">22inch Dreadlocks Crochet Hair Braids Synthetic Ombre Braiding Wigs Extension Reggae Hip Hop Style.</p>
-                    </div>
-                    <div class="price-row">
-                        <span class="current-price">K200.00</span>
-                        <span class="original-price">K250.00</span>
-                    </div>
-                </div>
-            </div>
+        </details>
+    </div>
+
+    <!-- CATALOG: LOCAL PNG -->
+    <div class="catalog-section" id="local-png">
+        <div class="category-header"><h2>PNG Handcrafts & Produce</h2><span>Local PNG Products</span></div>
+        <div class="service-info-card">
+            <h3>PNG Local Market & Artisans</h3>
+            <p>Authentic local products, handcrafted bilums, organic coffee beans, and traditional items sourced directly from local Papua New Guinean creators.</p>
+            <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20inquire%20about%20Local%20PNG%20Products." class="btn-whatsapp" style="max-width:280px" target="_blank">Inquire via WhatsApp</a>
         </div>
-    </details>
+    </div>
 
-    <!-- SUB-CATEGORY 2: HAIR CARE PRODUCTS -->
-    <details class="subcategory-group" id="haircare">
-        <summary class="subcategory-heading">2. Hair Care Products</summary>
-        <div class="subcategory-content">
-            <div class="service-info-card" style="margin-bottom: 25px;">
-                <h3>Nourishing Oils, Shampoos & Edge Control</h3>
-                <p>Explore our upcoming line of premium hair serums, lace glue, leave-in conditioners, and scalp treatments designed for natural hair and extensions.</p>
-                <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20inquire%20about%20Hair%20Care%20Products." class="btn-whatsapp" style="max-width:280px" target="_blank">Inquire via WhatsApp</a>
-            </div>
-        </div>
-    </details>
-
-    <!-- SUB-CATEGORY 3: SKIN CARE PRODUCTS -->
-    <details class="subcategory-group" id="skincare">
-        <summary class="subcategory-heading">3. Skin Care Products</summary>
-        <div class="subcategory-content">
-            <div class="service-info-card" style="margin-bottom: 25px;">
-                <h3>Dermatology & Everyday Skincare Essentials</h3>
-                <p>Moisturizers, body lotions, sunscreens, and specialized skin glow formulas tailored for daily care.</p>
-                <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20inquire%20about%20Skin%20Care%20Products." class="btn-whatsapp" style="max-width:280px" target="_blank">Inquire via WhatsApp</a>
-            </div>
-        </div>
-    </details>
-
-    <!-- SUB-CATEGORY 4: COSMETICS & MAKE-UP -->
-    <details class="subcategory-group" id="cosmetics">
-        <summary class="subcategory-heading">4. Cosmetics & Make-Up</summary>
-        <div class="subcategory-content">
-            <div class="service-info-card">
-                <h3>Beauty Kits & Essentials</h3>
-                <p>Lipsticks, foundations, eye palettes, and complete makeup accessories arriving soon.</p>
-                <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20inquire%20about%20Cosmetics%20%26%20Make-Up%20items." class="btn-whatsapp" style="max-width:280px" target="_blank">Inquire via WhatsApp</a>
-            </div>
-        </div>
-    </details>
 </div>
 
-<!-- CATALOG: LOCAL PNG -->
-<div class="catalog-section" id="local-png">
-    <div class="category-header">
-        <h2>Local PNG Handcrafts & Products</h2>
-        <span>Local PNG Products</span>
-    </div>
+<!-- TOAST -->
+<div class="toast" id="toast">Link copied to clipboard!</div>
 
-    <!-- SUBCATEGORY 1: ARTS AND CRAFTS -->
-    <details class="subcategory-group" open>
-        <summary class="subcategory-heading">1. Arts and Crafts</summary>
-        <div class="subcategory-content">
-            
-            <div class="product-card" data-product="authentic-png-bilum">
-                <div class="media-column">
-                    <div class="image-container" onclick="copyProductLink('local-png', 'authentic-png-bilum')">
-                        <span class="badge badge-local">Local Stock</span>
-                        <div class="slider-wrapper">
-                            <img class="slide active" src="images/bilum-photo1.jpg" alt="Bilum" onerror="this.src='https://images.unsplash.com/photo-1590736704728-f4730bb30770?q=80&w=800&auto=format&fit=crop'">
-                            <img class="slide" src="images/bilum-photo2.jpg" alt="Bilum Detail" onerror="this.src='https://images.unsplash.com/photo-1590736704728-f4730bb30770?q=80&w=800&auto=format&fit=crop'">
-                            <video class="slide" src="videos/bilum-video.mp4" controls preload="metadata"></video>
-                        </div>
-                        <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this,-1)">❮</button>
-                        <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this,1)">❯</button>
-                    </div>
-                    <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Authentic%20PNG%20Handcrafted%20Bilum." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
-                    <button class="btn-copy-link" onclick="copyProductLink('local-png', 'authentic-png-bilum')">🔗 Copy Item Link for Facebook</button>
-                </div>
-                <div class="product-content">
-                    <div>
-                        <h3 class="product-title">Authentic PNG Handcrafted Bilum</h3>
-                        <p class="product-description">Handwoven Papua New Guinean bilum featuring durable local fiber patterns. Direct local delivery in Port Moresby or express freight across PNG provinces.</p>
-                    </div>
-                    <div class="price-row">
-                        <span class="current-price">K150.00</span>
-                        <span class="original-price">K180.00</span>
-                    </div>
-                </div> <!-- Added missing closing tag for .product-content -->
-            </div> <!-- Added missing closing tag for .product-card -->
-
-        </div> <!-- Added missing closing tag for .subcategory-content -->
-    </details> <!-- Added missing closing tag for details -->
-
-    <!-- SUBCATEGORY 2: ORGANIC PRODUCTS -->
-<details class="subcategory-group">
-    <summary class="subcategory-heading">2. Organic Products</summary>
-    <div class="subcategory-content">
-
-  <!-- PRODUCT CARD 1: Niugini Arabica Organic Coffee (Large) -->
-<div class="product-card" data-product="niugini-arabica-coffee-large">
-    <div class="media-column">
-        <div class="image-container" onclick="copyProductLink('local-png', 'niugini-arabica-coffee-large')">
-            <span class="badge badge-local">Local Stock</span>
-            
-            <div class="slider-wrapper">
-                <img class="slide active" 
-                     src="https://github.com/ckama4467-cyber/Trendinovia/blob/main/image/Niugini%20Arabica%20(Large).jpg?raw=true" 
-                     alt="Niugini Arabica Coffee Large"
-                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=800&auto=format&fit=crop';">
-            </div>
-
-            <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this, -1)">❮</button>
-            <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this, 1)">❯</button>
-        </div>
-
-        <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Niugini%20Arabica%20Coffee%20(Large)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
-        <button class="btn-copy-link" onclick="copyProductLink('local-png', 'niugini-arabica-coffee-large')">🔗 Copy Item Link for Facebook</button>
-    </div>
-
-    <div class="product-content">
-        <div>
-            <h3 class="product-title">Niugini Arabica Organic Coffee (Large)</h3>
-            <p class="product-description">Organically grown by village farming communities in the PNG Highlands. Slow-roasted for rich aromatic flavor.</p>
-        </div>
-        <div class="price-row">
-            <span class="current-price">K60.00</span>
-        </div>
-    </div>
-</div>
-
-<!-- PRODUCT CARD 2: Niugini Arabica Organic Coffee (Medium) -->
-<div class="product-card" data-product="niugini-arabica-coffee-medium">
-    <div class="media-column">
-        <div class="image-container" onclick="copyProductLink('local-png', 'niugini-arabica-coffee-medium')">
-            <span class="badge badge-local">Local Stock</span>
-            
-            <div class="slider-wrapper">
-                <img class="slide active" 
-                     src="https://github.com/ckama4467-cyber/Trendinovia/blob/main/image/Niuguni%20Arabica%20(Medium).png?raw=true" 
-                     alt="Niugini Arabica Coffee Medium"
-                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=800&auto=format&fit=crop';">
-            </div>
-
-            <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this, -1)">❮</button>
-            <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this, 1)">❯</button>
-        </div>
-
-        <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Niugini%20Arabica%20Coffee%20(Medium)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
-        <button class="btn-copy-link" onclick="copyProductLink('local-png', 'niugini-arabica-coffee-medium')">🔗 Copy Item Link for Facebook</button>
-    </div>
-
-    <div class="product-content">
-        <div>
-            <h3 class="product-title">Niugini Arabica Organic Coffee (Medium)</h3>
-            <p class="product-description">Organically grown by village farming communities in the PNG Highlands. Slow-roasted for rich aromatic flavor.</p>
-        </div>
-        <div class="price-row">
-            <span class="current-price">K33.00</span>
-        </div>
-    </div>
-</div>
-
-<!-- PRODUCT CARD 3: Nokondi Blend Coffee -->
-<div class="product-card" data-product="nokondi-blend-coffee">
-    <div class="media-column">
-        <div class="image-container" onclick="copyProductLink('local-png', 'nokondi-blend-coffee')">
-            <span class="badge badge-local">Local Stock</span>
-            
-            <div class="slider-wrapper">
-                <img class="slide active" 
-                     src="image/Okalu Meduim Roast.png" 
-                     alt="Okalu Medium Roast"
-                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=800&auto=format&fit=crop';">
-            </div>
-
-            <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this, -1)">❮</button>
-            <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this, 1)">❯</button>
-        </div>
-
-        <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Nokondi%20Blend%20Coffee." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
-        <button class="btn-copy-link" onclick="copyProductLink('local-png', 'nokondi-blend-coffee')">🔗 Copy Item Link for Facebook</button>
-    </div>
-
-    <div class="product-content">
-        <div>
-            <h3 class="product-title">Nokondi Blend Coffee</h3>
-            <p class="product-description">Papua New Guinea’s finest Arabica, sustainably grown in the mist-covered peaks of the Eastern Highlands. Hand-picked with pride by local village smallholders, this medium roast is crafted exclusively for the coffee connoisseur who appreciates smooth flavors, rich heritage, and authentic origin.</p>
-        </div>
-        <div class="price-row">
-            <span class="current-price">K45.00</span>
-        </div>
-    </div>
-</div>
-
-<!-- PRODUCT CARD: Okalu Medium Roast -->
-<div class="product-card" data-product="okalu-medium-roast">
-    <div class="media-column">
-        <div class="image-container" onclick="copyProductLink('local-png', 'okalu-medium-roast')">
-            <span class="badge badge-local">Local Stock</span>
-            
-            <div class="slider-wrapper">
-                <img class="slide active" 
-                     src="https://github.com/ckama4467-cyber/Trendinovia/blob/main/image/Okalu%20Meduim%20Roast.png?raw=true" 
-                     alt="Okalu Medium Roast"
-                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=800&auto=format&fit=crop';">
-            </div>
-
-            <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this, -1)">❮</button>
-            <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this, 1)">❯</button>
-        </div>
-
-        <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Okalu%20Medium%20Roast." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
-        <button class="btn-copy-link" onclick="copyProductLink('local-png', 'okalu-medium-roast')">🔗 Copy Item Link for Facebook</button>
-    </div>
-
-    <div class="product-content">
-        <div>
-            <h3 class="product-title">Okalu Medium Roast</h3>
-            <p class="product-description">Sourced from the pristine Lufa and Okapa districts of Papua New Guinea, Okalu Medium Roast is an authentic, naturally grown coffee crafted from prized Jamaican Blue Mountain lineages. Grown at volcanic high altitudes by smallholder farmers, each batch is meticulously hand-harvested and sun-dried to ensure peak purity and flavor preservation. Every cup delivers a beautifully smooth, full-bodied experience defined by a rich aroma of warm vanilla syrup, toasted nuts, and creamy milk chocolate.</p>
-        </div>
-        <div class="price-row">
-            <span class="current-price">K45.00</span>
-        </div>
-    </div>
-</div>
-
-        
 <script>
-    const META = {
-        'omnicare': { title: 'OmniCare - Brazilian Hair Wigs & Extensions', desc: 'Shop Brazilian Wigs, Crochet Dreadlocks, and Hair Extensions at TRENDINOVIA PNG!', image: 'https://ae-pic-a1.aliexpress-media.com/kf/Abf46df26d17e425b8a39a9fcb7ea2c3dj.png' },
-        'curi-apparels': { title: 'Curi Apparels - Designer Eyewear & Fashion', desc: 'Vintage Punk Sunglasses and Custom Urban Fashion Wear.', image: 'https://img.youtube.com/vi/4vrHH4LPTPE/hqdefault.jpg' },
-        'kraipa-tech': { title: 'Kraipa Tech - Smart Security Gadgets', desc: 'Mini 4K Wireless Wifi Security Nanny Cameras.', image: 'https://ae-pic-a1.aliexpress-media.com/kf/S67d51ca10bbe4ca4bcdac4ec38ac353bn.png' },
-        'local-png': { title: 'Local PNG Products & Handcrafts', desc: 'Authentic PNG Bilums, Crafts, and Local Apparel.', image: 'https://images.unsplash.com/photo-1590736704728-f4730bb30770?q=80&w=800&auto=format&fit=crop' },
-        'curly-bob-wig': { title: 'Curly Bob Wig Brazilian Hair - TRENDINOVIA', desc: 'Ombre Highlight P4/27 Color Short Bob Wigs. Human Hair. K400.', image: 'https://ae-pic-a1.aliexpress-media.com/kf/Abf46df26d17e425b8a39a9fcb7ea2c3dj.png' },
-        'debut-ombre-wig': { title: 'Debut Ombre Short Curly Human Hair Wigs - TRENDINOVIA', desc: '100% Human Hair Remy Short Bob Wigs. K290.', image: 'https://ae-pic-a1.aliexpress-media.com/kf/H402a12ad86534904942db9ac0cc25ac13.jpg' },
-        '22inch-dreadlocks-crochet-hair-braids': { title: '22inch Dreadlocks Crochet Hair Braids - TRENDINOVIA', desc: 'Synthetic Ombre Braiding Extensions. Reggae / Hip Hop Style. K200.', image: 'https://ae-pic-a1.aliexpress-media.com/kf/H32d29a09915f41deaac2529b8d5ba3b7Y.jpg' },
-        'mini-wifi-nanny-camera': { title: 'Mini Wifi Nanny Camera 4K - TRENDINOVIA', desc: 'Wireless 4K Security Camera with dual mode. K390.', image: 'https://ae-pic-a1.aliexpress-media.com/kf/S67d51ca10bbe4ca4bcdac4ec38ac353bn.png' },
-        'punk-sunglasses': { title: 'Punk Sunglasses Women Vintage Designer - TRENDINOVIA', desc: 'Vintage flat-top pilot sunglasses. K250.', image: 'https://img.youtube.com/vi/4vrHH4LPTPE/hqdefault.jpg' },
-        'authentic-png-bilum': { title: 'Authentic PNG Handcrafted Bilum - TRENDINOVIA', desc: 'Handwoven Papua New Guinean bilum. Local delivery available.', image: 'https://images.unsplash.com/photo-1590736704728-f4730bb30770?q=80&w=800&auto=format&fit=crop' }
-    };
+    // SLIDER ENGINE
+    function moveSlide(btn, direction) {
+        const container = btn.closest('.image-container');
+        const slides = container.querySelectorAll('.slide');
+        let activeIdx = -1;
 
-    function openSubcategoryFromHash() {
-    const hash = window.location.hash;
-    if (hash) {
-        const targetElement = document.querySelector(hash);
-        if (targetElement) {
-            if (targetElement.tagName.toLowerCase() === 'details') {
-                targetElement.open = true;
-                targetElement.scrollIntoView({ behavior: 'smooth' });
-            } else {
-                const parentDetails = targetElement.closest('details');
-                if (parentDetails) {
-                    parentDetails.open = true;
-                    targetElement.scrollIntoView({ behavior: 'smooth' });
-                }
-            }
-        }
-    }
-}
+        slides.forEach((slide, idx) => {
+            if (slide.classList.contains('active')) activeIdx = idx;
+            slide.classList.remove('active');
+        });
 
-// Trigger on initial page load and when hash changes
-window.addEventListener('DOMContentLoaded', openSubcategoryFromHash);
-window.addEventListener('hashchange', openSubcategoryFromHash);
+        let nextIdx = activeIdx + direction;
+        if (nextIdx >= slides.length) nextIdx = 0;
+        if (nextIdx < 0) nextIdx = slides.length - 1;
 
-    function updateMeta(key) {
-        if (!META[key]) return;
-        const m = META[key];
-        document.getElementById('og-title').content = m.title;
-        document.getElementById('og-desc').content = m.desc;
-        document.getElementById('og-image').content = m.image;
-        document.getElementById('og-url').content = window.location.href;
-        document.title = m.title;
+        slides[nextIdx].classList.add('active');
     }
 
-    function openCatalog(division, product = null) {
+    // CATALOG NAVIGATION
+    function openCatalog(catalogId, productId = null) {
         document.getElementById('divisions-grid').style.display = 'none';
         document.getElementById('subtitle-text').style.display = 'none';
         document.getElementById('back-nav').style.display = 'block';
 
-        document.querySelectorAll('.catalog-section').forEach(s => s.classList.remove('active'));
-        document.querySelectorAll('.product-card').forEach(c => c.classList.remove('highlight'));
+        const sections = document.querySelectorAll('.catalog-section');
+        sections.forEach(sec => sec.classList.remove('active'));
 
-        const section = document.getElementById(division);
-        if (!section) return;
-        section.classList.add('active');
-
-        // Update URL with query parameters
-        const url = new URL(window.location);
-        url.searchParams.set('division', division);
-        if (product) {
-            url.searchParams.set('product', product);
-            updateMeta(product);
-        } else {
-            url.searchParams.delete('product');
-            updateMeta(division);
+        const targetSection = document.getElementById(catalogId);
+        if (targetSection) {
+            targetSection.classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-        history.replaceState({}, '', url);
 
-        // Scroll to product if specified
-        if (product) {
+        if (productId) {
             setTimeout(() => {
-                const card = section.querySelector(`[data-product="${product}"]`);
-                if (card) {
-                    card.classList.add('highlight');
-                    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                const productEl = targetSection.querySelector(`[data-product="${productId}"]`);
+                if (productEl) {
+                    // Open parent details element if inside one
+                    const parentDetails = productEl.closest('details');
+                    if (parentDetails) parentDetails.open = true;
+
+                    productEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    productEl.classList.add('highlight');
+                    setTimeout(() => productEl.classList.remove('highlight'), 3000);
                 }
             }, 100);
-        } else {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     }
 
     function showDivisions() {
-        document.querySelectorAll('.catalog-section').forEach(s => s.classList.remove('active'));
-        document.querySelectorAll('.product-card').forEach(c => c.classList.remove('highlight'));
+        const sections = document.querySelectorAll('.catalog-section');
+        sections.forEach(sec => sec.classList.remove('active'));
+
         document.getElementById('divisions-grid').style.display = 'grid';
         document.getElementById('subtitle-text').style.display = 'block';
         document.getElementById('back-nav').style.display = 'none';
-
-        const url = new URL(window.location);
-        url.searchParams.delete('division');
-        url.searchParams.delete('product');
-        history.replaceState({}, '', url);
-
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    function moveSlide(btn, dir) {
-        const container = btn.closest('.image-container');
-        const slides = container.querySelectorAll('.slide');
-        let idx = [...slides].findIndex(s => s.classList.contains('active'));
-
-        if (slides[idx].tagName === 'IFRAME') slides[idx].src = slides[idx].src;
-        else if (slides[idx].tagName === 'VIDEO') slides[idx].pause();
-
-        slides[idx].classList.remove('active');
-        idx = (idx + dir + slides.length) % slides.length;
-        slides[idx].classList.add('active');
-    }
-
-    // COPY PRODUCT DIRECT LINK FOR FACEBOOK POSTS
-    function copyProductLink(division, product) {
-        const url = new URL(window.location.origin + window.location.pathname);
-        url.searchParams.set('division', division);
-        url.searchParams.set('product', product);
         
-        // Update URL bar and metadata immediately
-        history.replaceState({}, '', url);
-        updateMeta(product);
+        history.pushState(null, null, ' ');
+    }
 
-        // Copy URL to Clipboard
-        navigator.clipboard.writeText(url.toString()).then(() => {
-            showToast("🔗 Item link copied! Paste it on your Facebook post.");
+    // COPY PRODUCT DEEP-LINK
+    function copyProductLink(catalogId, productId) {
+        const baseUrl = window.location.origin + window.location.pathname;
+        const shareUrl = `${baseUrl}#${catalogId}?product=${encodeURIComponent(productId)}`;
+
+        navigator.clipboard.writeText(shareUrl).then(() => {
+            showToast('Link copied to clipboard!');
         }).catch(() => {
-            // Fallback for older devices
-            const dummy = document.createElement('input');
-            document.body.appendChild(dummy);
-            dummy.value = url.toString();
-            dummy.select();
-            document.execCommand('copy');
-            document.body.removeChild(dummy);
-            showToast("🔗 Item link copied! Paste it on your Facebook post.");
+            showToast('Failed to copy link.');
         });
     }
 
-    function showToast(message) {
+    function showToast(msg) {
         const toast = document.getElementById('toast');
-        toast.innerText = message;
+        toast.innerText = msg;
         toast.style.display = 'block';
-        setTimeout(() => { toast.style.display = 'none'; }, 3000);
+        setTimeout(() => { toast.style.display = 'none'; }, 2500);
     }
 
-    // Load from URL on page open
-    window.addEventListener('DOMContentLoaded', () => {
-        const params = new URLSearchParams(window.location.search);
-        const division = params.get('division');
-        const product = params.get('product');
-
-        if (division && document.getElementById(division)) {
-            openCatalog(division, product);
+    // ROUTE HANDLER (ON LOAD / HASH CHANGE)
+    function handleRoute() {
+        const hash = window.location.hash.replace('#', '');
+        if (!hash) {
+            showDivisions();
+            return;
         }
-    });
+
+        const [catalogId, queryStr] = hash.split('?');
+        let productId = null;
+
+        if (queryStr) {
+            const params = new URLSearchParams(queryStr);
+            productId = params.get('product');
+        }
+
+        if (catalogId) {
+            openCatalog(catalogId, productId);
+        }
+    }
+
+    window.addEventListener('load', handleRoute);
+    window.addEventListener('hashchange', handleRoute);
 </script>
 </body>
 </html>
