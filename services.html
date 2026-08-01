@@ -142,12 +142,6 @@
             padding: 20px 16px;
         }
 
-        .subcategory-content ul {
-            padding-left: 20px;
-            line-height: 1.8;
-            color: #4b5563;
-        }
-
         /* MOBILE RESPONSIVE MEDIA QUERIES */
         @media (max-width: 650px) {
             body { padding: 15px 10px; }
@@ -298,7 +292,6 @@
         </div>
         
         <div class="subcategory-list">
-            <!-- 1. EYEWEAR -->
             <details class="subcategory-group" open>
                 <summary class="subcategory-heading">Eyewear</summary>
                 <div class="subcategory-content">
@@ -334,13 +327,8 @@
                 </div>
             </details>
         
-            <!-- 2. BEACH WARE -->
-            <details class="subcategory-group">
-                <summary class="subcategory-heading">Beach Wear</summary>
-                <div class="subcategory-content"><p>Products coming soon.</p></div>
-            </details>
+            <details class="subcategory-group"><summary class="subcategory-heading">Beach Wear</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
         
-            <!-- 3. ADVENTURE WARE -->
             <details class="subcategory-group">
                 <summary class="subcategory-heading">Adventure Ware</summary>
                 <div class="subcategory-content">
@@ -575,30 +563,51 @@
                 <summary class="subcategory-heading">Organic Products</summary>
                 <div class="subcategory-content">
                     
-                    <!-- NESTED EXPANDABLE COFFEE SUB-SUBCATEGORY -->
+                    <!-- 1. COFFEE SUB-SUBCATEGORY (EXPANDABLE) -->
                     <details class="sub-subcategory-group" open>
-                        <summary class="sub-subcategory-heading">☕ Coffee (4 Organic PNG Varieties)</summary>
+                        <summary class="sub-subcategory-heading">☕ Organic Coffee (4 Varieties)</summary>
                         <div class="sub-subcategory-content">
                             
-                            <!-- 1. Arabica Roasted Beans -->
-                            <div class="product-card" data-product="png-arabica-coffee">
+                            <!-- Niugini Arabica (Large) -->
+                            <div class="product-card" data-product="niugini-arabica-large">
                                 <div class="media-column">
-                                    <div class="image-container" onclick="copyProductLink('local-png', 'png-arabica-coffee')">
+                                    <div class="image-container" onclick="copyProductLink('local-png', 'niugini-arabica-large')">
                                         <span class="badge">PNG Coffee</span>
                                         <div class="slider-wrapper">
-                                            <img class="slide active" src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=800&auto=format&fit=crop" alt="PNG Arabica Coffee Beans 1">
-                                            <img class="slide" src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=800&auto=format&fit=crop" alt="PNG Arabica Coffee Beans 2">
+                                            <img class="slide active" src="https://github.com/ckama4467-cyber/Trendinovia/blob/main/image/Niugini%20Arabica%20(Large).jpg?raw=true" alt="Niugini Arabica Large">
                                         </div>
-                                        <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this, -1)">❮</button>
-                                        <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this, 1)">❯</button>
                                     </div>
-                                    <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20PNG%20Organic%20Arabica%20Roasted%20Beans%20(K45.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
-                                    <button class="btn-copy-link" onclick="copyProductLink('local-png', 'png-arabica-coffee')">🔗 Copy Item Link for Facebook</button>
+                                    <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20Niugini%20Arabica%20(Large)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+                                    <button class="btn-copy-link" onclick="copyProductLink('local-png', 'niugini-arabica-large')">🔗 Copy Item Link for Facebook</button>
                                 </div>
                                 <div class="product-content">
                                     <div>
-                                        <h3 class="product-title">PNG Organic Arabica Roasted Beans (250g)</h3>
-                                        <p class="product-description">100% organic high-altitude PNG Highlands Arabica roasted whole beans with smooth chocolate and nutty undertones.</p>
+                                        <h3 class="product-title">Niugini Arabica (Large)</h3>
+                                        <p class="product-description">Premium organic PNG Arabica whole coffee beans harvested from the highlands. Packaged in a large bulk size.</p>
+                                    </div>
+                                    <div class="price-row">
+                                        <span class="current-price">K55.00</span>
+                                        <span class="original-price">K65.00</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Niuguni Arabica (Medium) -->
+                            <div class="product-card" data-product="niuguni-arabica-medium">
+                                <div class="media-column">
+                                    <div class="image-container" onclick="copyProductLink('local-png', 'niuguni-arabica-medium')">
+                                        <span class="badge">PNG Coffee</span>
+                                        <div class="slider-wrapper">
+                                            <img class="slide active" src="https://github.com/ckama4467-cyber/Trendinovia/blob/main/image/Niuguni%20Arabica%20(Medium).png?raw=true" alt="Niuguni Arabica Medium">
+                                        </div>
+                                    </div>
+                                    <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20Niuguni%20Arabica%20(Medium)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+                                    <button class="btn-copy-link" onclick="copyProductLink('local-png', 'niuguni-arabica-medium')">🔗 Copy Item Link for Facebook</button>
+                                </div>
+                                <div class="product-content">
+                                    <div>
+                                        <h3 class="product-title">Niuguni Arabica (Medium)</h3>
+                                        <p class="product-description">Balanced and rich organic PNG Arabica roast. Perfect daily brew available in a medium size pack.</p>
                                     </div>
                                     <div class="price-row">
                                         <span class="current-price">K45.00</span>
@@ -607,79 +616,46 @@
                                 </div>
                             </div>
 
-                            <!-- 2. Sigri Estate Fine Ground Coffee -->
-                            <div class="product-card" data-product="sigri-ground-coffee">
+                            <!-- Nokondi Blend -->
+                            <div class="product-card" data-product="nokondi-blend">
                                 <div class="media-column">
-                                    <div class="image-container" onclick="copyProductLink('local-png', 'sigri-ground-coffee')">
+                                    <div class="image-container" onclick="copyProductLink('local-png', 'nokondi-blend')">
                                         <span class="badge">PNG Coffee</span>
                                         <div class="slider-wrapper">
-                                            <img class="slide active" src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?q=80&w=800&auto=format&fit=crop" alt="Sigri Estate Ground Coffee 1">
-                                            <img class="slide" src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800&auto=format&fit=crop" alt="Sigri Estate Ground Coffee 2">
+                                            <img class="slide active" src="https://github.com/ckama4467-cyber/Trendinovia/blob/main/image/Nokondi%20Blend.png?raw=true" alt="Nokondi Blend">
                                         </div>
-                                        <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this, -1)">❮</button>
-                                        <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this, 1)">❯</button>
                                     </div>
-                                    <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20Sigri%20Estate%20Fine%20Ground%20Coffee%20(K50.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
-                                    <button class="btn-copy-link" onclick="copyProductLink('local-png', 'sigri-ground-coffee')">🔗 Copy Item Link for Facebook</button>
+                                    <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20Nokondi%20Blend." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+                                    <button class="btn-copy-link" onclick="copyProductLink('local-png', 'nokondi-blend')">🔗 Copy Item Link for Facebook</button>
                                 </div>
                                 <div class="product-content">
                                     <div>
-                                        <h3 class="product-title">Sigri Estate Fine Ground Coffee (500g)</h3>
-                                        <p class="product-description">Single-origin premium ground coffee harvested from the Waghi Valley. Medium-light roast with a sweet, floral aroma.</p>
+                                        <h3 class="product-title">Nokondi Blend</h3>
+                                        <p class="product-description">Signature organic PNG highland blend offering a rich aroma, intense flavor profile, and full-bodied taste.</p>
                                     </div>
                                     <div class="price-row">
                                         <span class="current-price">K50.00</span>
-                                        <span class="original-price">K65.00</span>
+                                        <span class="original-price">K60.00</span>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- 3. Organic Peaberry Specialty Roast -->
-                            <div class="product-card" data-product="peaberry-specialty-coffee">
+                            <!-- Okalu Medium Roast -->
+                            <div class="product-card" data-product="okalu-medium-roast">
                                 <div class="media-column">
-                                    <div class="image-container" onclick="copyProductLink('local-png', 'peaberry-specialty-coffee')">
+                                    <div class="image-container" onclick="copyProductLink('local-png', 'okalu-medium-roast')">
                                         <span class="badge">PNG Coffee</span>
                                         <div class="slider-wrapper">
-                                            <img class="slide active" src="https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?q=80&w=800&auto=format&fit=crop" alt="Organic Peaberry Specialty Roast 1">
-                                            <img class="slide" src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=800&auto=format&fit=crop" alt="Organic Peaberry Specialty Roast 2">
+                                            <img class="slide active" src="https://github.com/ckama4467-cyber/Trendinovia/blob/main/image/Okalu%20Medium%20Roast.png?raw=true" alt="Okalu Medium Roast">
                                         </div>
-                                        <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this, -1)">❮</button>
-                                        <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this, 1)">❯</button>
                                     </div>
-                                    <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20Organic%20Peaberry%20Specialty%20Roast%20(K60.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
-                                    <button class="btn-copy-link" onclick="copyProductLink('local-png', 'peaberry-specialty-coffee')">🔗 Copy Item Link for Facebook</button>
+                                    <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20Okalu%20Medium%20Roast." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+                                    <button class="btn-copy-link" onclick="copyProductLink('local-png', 'okalu-medium-roast')">🔗 Copy Item Link for Facebook</button>
                                 </div>
                                 <div class="product-content">
                                     <div>
-                                        <h3 class="product-title">Organic Peaberry Specialty Roast (250g)</h3>
-                                        <p class="product-description">Hand-selected rare single coffee cherry peaberry beans from Eastern Highlands. Rich flavor complexity with bright citrus notes.</p>
-                                    </div>
-                                    <div class="price-row">
-                                        <span class="current-price">K60.00</span>
-                                        <span class="original-price">K75.00</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- 4. Goroka Dark Roast Espresso Ground -->
-                            <div class="product-card" data-product="goroka-dark-roast-coffee">
-                                <div class="media-column">
-                                    <div class="image-container" onclick="copyProductLink('local-png', 'goroka-dark-roast-coffee')">
-                                        <span class="badge">PNG Coffee</span>
-                                        <div class="slider-wrapper">
-                                            <img class="slide active" src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=800&auto=format&fit=crop" alt="Goroka Dark Roast Espresso Ground 1">
-                                            <img class="slide" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop" alt="Goroka Dark Roast Espresso Ground 2">
-                                        </div>
-                                        <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this, -1)">❮</button>
-                                        <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this, 1)">❯</button>
-                                    </div>
-                                    <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20Goroka%20Dark%20Roast%20Espresso%20Ground%20(K40.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
-                                    <button class="btn-copy-link" onclick="copyProductLink('local-png', 'goroka-dark-roast-coffee')">🔗 Copy Item Link for Facebook</button>
-                                </div>
-                                <div class="product-content">
-                                    <div>
-                                        <h3 class="product-title">Goroka Dark Roast Espresso Ground (250g)</h3>
-                                        <p class="product-description">Bold dark roast tailored for espresso lovers. Deep earthy tones, full body, and a clean finish sourced directly from Goroka smallholders.</p>
+                                        <h3 class="product-title">Okalu Medium Roast</h3>
+                                        <p class="product-description">Smooth, medium-roasted organic PNG coffee featuring bright floral undertones and a clean, fresh finish.</p>
                                     </div>
                                     <div class="price-row">
                                         <span class="current-price">K40.00</span>
@@ -691,14 +667,54 @@
                         </div>
                     </details>
 
-                    <ul>
-                        <li>Cocoa</li>
-                        <li>Natural Honey</li>
-                        <li>Coconut</li>
-                        <li>Nuts</li>
-                        <li>Tea</li>
-                        <li>Vanilla</li>
-                    </ul>
+                    <!-- 2. COCOA SUB-SUBCATEGORY (EXPANDABLE) -->
+                    <details class="sub-subcategory-group">
+                        <summary class="sub-subcategory-heading">🍫 Cocoa</summary>
+                        <div class="sub-subcategory-content">
+                            <p style="color:#6b7280; font-size:14px;">Pure organic Papua New Guinea cocoa beans, butter, and raw cocoa powder. Product listings updating soon.</p>
+                        </div>
+                    </details>
+
+                    <!-- 3. NATURAL HONEY SUB-SUBCATEGORY (EXPANDABLE) -->
+                    <details class="sub-subcategory-group">
+                        <summary class="sub-subcategory-heading">🍯 Natural Honey</summary>
+                        <div class="sub-subcategory-content">
+                            <p style="color:#6b7280; font-size:14px;">100% pure raw honey harvested from Highland bee farms. Product listings updating soon.</p>
+                        </div>
+                    </details>
+
+                    <!-- 4. COCONUT SUB-SUBCATEGORY (EXPANDABLE) -->
+                    <details class="sub-subcategory-group">
+                        <summary class="sub-subcategory-heading">🥥 Coconut Products</summary>
+                        <div class="sub-subcategory-content">
+                            <p style="color:#6b7280; font-size:14px;">Organic cold-pressed virgin coconut oil and coconut flour. Product listings updating soon.</p>
+                        </div>
+                    </details>
+
+                    <!-- 5. NUTS SUB-SUBCATEGORY (EXPANDABLE) -->
+                    <details class="sub-subcategory-group">
+                        <summary class="sub-subcategory-heading">🌰 Nuts</summary>
+                        <div class="sub-subcategory-content">
+                            <p style="color:#6b7280; font-size:14px;">Local PNG roasted Galip nuts and Karuka nuts. Product listings updating soon.</p>
+                        </div>
+                    </details>
+
+                    <!-- 6. TEA SUB-SUBCATEGORY (EXPANDABLE) -->
+                    <details class="sub-subcategory-group">
+                        <summary class="sub-subcategory-heading">🍵 Tea</summary>
+                        <div class="sub-subcategory-content">
+                            <p style="color:#6b7280; font-size:14px;">Organic PNG black tea leaves and herbal tea infusions. Product listings updating soon.</p>
+                        </div>
+                    </details>
+
+                    <!-- 7. VANILLA SUB-SUBCATEGORY (EXPANDABLE) -->
+                    <details class="sub-subcategory-group">
+                        <summary class="sub-subcategory-heading">🌿 Vanilla</summary>
+                        <div class="sub-subcategory-content">
+                            <p style="color:#6b7280; font-size:14px;">Premium Grade-A PNG Tahitian and Bourbon organic vanilla beans and extracts. Product listings updating soon.</p>
+                        </div>
+                    </details>
+
                 </div>
             </details>
 
@@ -743,8 +759,9 @@
     function moveSlide(btn, direction) {
         const wrapper = btn.parentElement.querySelector('.slider-wrapper');
         const slides = wrapper.children;
+        if (slides.length <= 1) return;
+        
         let activeIndex = Array.from(slides).findIndex(s => s.classList.contains('active'));
-
         slides[activeIndex].classList.remove('active');
         activeIndex = (activeIndex + direction + slides.length) % slides.length;
         slides[activeIndex].classList.add('active');
@@ -781,8 +798,6 @@
                 setTimeout(() => {
                     const card = document.querySelector(`[data-product="${product}"]`);
                     if (card) {
-                        const detailsParents = card.querySelectorAll('details');
-                        detailsParents.forEach(d => d.open = true);
                         let p = card.parentElement;
                         while(p) {
                             if (p.tagName === 'DETAILS') p.open = true;
