@@ -27,12 +27,12 @@
         .division-icon { font-size: 38px; margin-bottom: 12px; }
         .division-title { font-size: 20px; font-weight: 700; color: #111827; margin-bottom: 8px; }
         .division-desc { font-size: 14px; color: #6b7280; line-height: 1.5; margin-bottom: 20px; }
-        .btn-division { background: #2563eb; color: #fff; padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; border: none; cursor: pointer; width: 100%; }
+        .btn-division { background: #2563eb; color: #fff; padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; border: none; cursor: pointer; width: 100%; text-decoration: none; display: inline-block; }
         .btn-division:hover { background: #1d4ed8; }
         
         /* NAVIGATION */
         .back-nav { display: none; margin-bottom: 25px; }
-        .btn-back { background: #e5e7eb; color: #374151; padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
+        .btn-back { background: #e5e7eb; color: #374151; padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; }
         .btn-back:hover { background: #d1d5db; }
         
         /* CATALOG SECTIONS */
@@ -129,6 +129,12 @@
             padding: 20px 16px;
         }
 
+        .subcategory-content ul {
+            padding-left: 20px;
+            line-height: 1.8;
+            color: #4b5563;
+        }
+
         /* MOBILE RESPONSIVE MEDIA QUERIES */
         @media (max-width: 650px) {
             body { padding: 15px 10px; }
@@ -150,16 +156,19 @@
         <button class="btn-back" onclick="showDivisions()">← Back to All Divisions</button>
     </div>
 
-    <!-- DIVISIONS GRID -->
+    <!-- MAIN BUSINESS DIVISIONS OVERVIEW -->
     <div class="divisions-grid" id="divisions-grid">
+        <!-- Mepel Facility Solution -->
         <div class="division-card" onclick="openCatalog('mepel-facility')">
             <div>
-                <div class="division-icon">🛠️</div>
+                <div class="division-icon">🔧</div>
                 <h2 class="division-title">Mepel Facility Solution</h2>
                 <p class="division-desc">Property maintenance, facility management, and commercial support services.</p>
             </div>
             <button class="btn-division">View Mepel Services</button>
         </div>
+
+        <!-- Kraipa Tech Gadgets -->
         <div class="division-card" onclick="openCatalog('kraipa-tech')">
             <div>
                 <div class="division-icon">📷</div>
@@ -168,6 +177,8 @@
             </div>
             <button class="btn-division">View Kraipa Tech Catalog</button>
         </div>
+
+        <!-- Curi Apparels -->
         <div class="division-card" onclick="openCatalog('curi-apparels')">
             <div>
                 <div class="division-icon">🕶️</div>
@@ -176,6 +187,8 @@
             </div>
             <button class="btn-division">View Curi Apparels</button>
         </div>
+
+        <!-- AgriVance Express -->
         <div class="division-card" onclick="openCatalog('agrivance-express')">
             <div>
                 <div class="division-icon">🌾</div>
@@ -184,6 +197,8 @@
             </div>
             <button class="btn-division">View AgriVance Services</button>
         </div>
+
+        <!-- OmniCare -->
         <div class="division-card" onclick="openCatalog('omnicare')">
             <div>
                 <div class="division-icon">💇‍♀️</div>
@@ -192,6 +207,8 @@
             </div>
             <button class="btn-division">View OmniCare Catalog</button>
         </div>
+
+        <!-- Local PNG Products -->
         <div class="division-card" onclick="openCatalog('local-png')">
             <div>
                 <div class="division-icon">🇵🇬</div>
@@ -202,7 +219,7 @@
         </div>
     </div>
 
-    <!-- CATALOG: MEPEL -->
+    <!-- CATALOG: MEPEL FACILITY SOLUTION -->
     <div class="catalog-section" id="mepel-facility">
         <div class="category-header"><h2>Facility Management</h2><span>Mepel Facility Solution</span></div>
         <div class="service-info-card">
@@ -212,50 +229,52 @@
         </div>
     </div>
 
-    <!-- CATALOG: KRAIPA TECH -->
+    <!-- CATALOG: KRAIPA TECH GADGETS -->
     <div class="catalog-section" id="kraipa-tech">
         <div class="category-header"><h2>Tech & Security Gadgets</h2><span>Kraipa Tech Gadgets</span></div>
         
-        <details class="subcategory-group">
-            <summary class="subcategory-heading">Cameras</summary>
-            <div class="subcategory-content">
-                <div class="product-card" data-product="mini-wifi-nanny-camera">
-                    <div class="media-column">
-                        <div class="image-container" onclick="copyProductLink('kraipa-tech', 'mini-wifi-nanny-camera')">
-                            <span class="badge">Security Camera</span>
-                            <div class="slider-wrapper">
-                                <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/S67d51ca10bbe4ca4bcdac4ec38ac353bn.png" alt="Camera 1">
-                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Sb8fd0054736c47a4992803d56aba9ecbu.png" alt="Camera 2">
-                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S2681645c3aa64e27bf8c1f785f2525bft.png" alt="Camera 3">
-                                <iframe class="slide" src="https://www.youtube.com/embed/rOB_rxp6cQE?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=rOB_rxp6cQE" allowfullscreen></iframe>
+        <div class="subcategory-list">
+            <details class="subcategory-group" open>
+                <summary class="subcategory-heading">Cameras</summary>
+                <div class="subcategory-content">
+                    <div class="product-card" data-product="mini-wifi-nanny-camera">
+                        <div class="media-column">
+                            <div class="image-container" onclick="copyProductLink('kraipa-tech', 'mini-wifi-nanny-camera')">
+                                <span class="badge">Security Camera</span>
+                                <div class="slider-wrapper">
+                                    <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/S67d51ca10bbe4ca4bcdac4ec38ac353bn.png" alt="Camera 1">
+                                    <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Sb8fd0054736c47a4992803d56aba9ecbu.png" alt="Camera 2">
+                                    <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S2681645c3aa64e27bf8c1f785f2525bft.png" alt="Camera 3">
+                                    <iframe class="slide" src="https://www.youtube.com/embed/rOB_rxp6cQE?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=rOB_rxp6cQE" allowfullscreen></iframe>
+                                </div>
+                                <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this,-1)">❮</button>
+                                <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this,1)">❯</button>
                             </div>
-                            <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this,-1)">❮</button>
-                            <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this,1)">❯</button>
+                            <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Mini%20Wifi%20Nanny%20Camera%20(K390.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+                            <button class="btn-copy-link" onclick="copyProductLink('kraipa-tech', 'mini-wifi-nanny-camera')">🔗 Copy Item Link for Facebook</button>
                         </div>
-                        <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Mini%20Wifi%20Nanny%20Camera%20(K390.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
-                        <button class="btn-copy-link" onclick="copyProductLink('kraipa-tech', 'mini-wifi-nanny-camera')">🔗 Copy Item Link for Facebook</button>
-                    </div>
-                    <div class="product-content">
-                        <div>
-                            <h3 class="product-title">Mini Wifi Nanny Camera Wireless 4K</h3>
-                            <p class="product-description">Mini Wifi Nanny Camera Wireless 4K Security Camera with WiFi/No WiFi dual mode, Cloud & SD storage support, and magnetic mounting base.</p>
-                        </div>
-                        <div class="price-row">
-                            <span class="current-price">K390.00</span>
-                            <span class="original-price">K450.00</span>
+                        <div class="product-content">
+                            <div>
+                                <h3 class="product-title">Mini Wifi Nanny Camera Wireless 4K</h3>
+                                <p class="product-description">Mini Wifi Nanny Camera Wireless 4K Security Camera with WiFi/No WiFi dual mode, Cloud & SD storage support, and magnetic mounting base.</p>
+                            </div>
+                            <div class="price-row">
+                                <span class="current-price">K390.00</span>
+                                <span class="original-price">K450.00</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </details>
+            </details>
 
-        <details class="subcategory-group"><summary class="subcategory-heading">Phones</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
-        <details class="subcategory-group"><summary class="subcategory-heading">Trackers</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
-        <details class="subcategory-group"><summary class="subcategory-heading">Laptops</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
-        <details class="subcategory-group"><summary class="subcategory-heading">Desktops</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
-        <details class="subcategory-group"><summary class="subcategory-heading">Wrist Watches</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
-        <details class="subcategory-group"><summary class="subcategory-heading">Robotics</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
-        <details class="subcategory-group"><summary class="subcategory-heading">High-Tech Equipments</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
+            <details class="subcategory-group"><summary class="subcategory-heading">Phones</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
+            <details class="subcategory-group"><summary class="subcategory-heading">Trackers</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
+            <details class="subcategory-group"><summary class="subcategory-heading">Laptops</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
+            <details class="subcategory-group"><summary class="subcategory-heading">Desktops</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
+            <details class="subcategory-group"><summary class="subcategory-heading">Wrist Watches</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
+            <details class="subcategory-group"><summary class="subcategory-heading">Robotics</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
+            <details class="subcategory-group"><summary class="subcategory-heading">High-Tech Equipments</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
+        </div>
     </div>
 
     <!-- CATALOG SECTION: CURI APPARELS -->
@@ -264,90 +283,92 @@
             <h2>Apparel & Eyewear</h2>
             <span>Curi Apparels</span>
         </div>
-    
-        <!-- 1. EYE WARE -->
-        <details class="subcategory-group>
-            <summary class="subcategory-heading">Eye Ware</summary>
-            <div class="subcategory-content">
-                <div class="product-card" data-product="punk-sunglasses">
-                    <div class="media-column">
-                        <div class="image-container" onclick="copyProductLink('curi-apparels', 'punk-sunglasses')">
-                            <span class="badge">Sunglasses</span>
-                            <div class="slider-wrapper">
-                                <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/Sa9e3a69c5c80484797c8bdaf59d0926f6.jpg" alt="Punk Sunglasses 1">
-                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S879c0c7d99fe48f9b049f49b160353bd3.jpg" alt="Punk Sunglasses 2">
-                                <video class="slide" autoplay muted loop playsinline preload="auto">
-                                    <source src="https://video.aliexpress-media.com/play/u/ae_sg_item/484979023/p/1/e/6/t/10301/5000458500554.mp4" type="video/mp4">  
-                                </video>
-                                <iframe class="slide" src="https://www.youtube.com/embed/4vrHH4LPTPE?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=4vrHH4LPTPE" allowfullscreen></iframe>
+        
+        <div class="subcategory-list">
+            <!-- 1. EYEWEAR -->
+            <details class="subcategory-group" open>
+                <summary class="subcategory-heading">Eyewear</summary>
+                <div class="subcategory-content">
+                    <div class="product-card" data-product="punk-sunglasses">
+                        <div class="media-column">
+                            <div class="image-container" onclick="copyProductLink('curi-apparels', 'punk-sunglasses')">
+                                <span class="badge">Sunglasses</span>
+                                <div class="slider-wrapper">
+                                    <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/Sa9e3a69c5c80484797c8bdaf59d0926f6.jpg" alt="Punk Sunglasses 1">
+                                    <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S879c0c7d99fe48f9b049f49b160353bd3.jpg" alt="Punk Sunglasses 2">
+                                    <video class="slide" autoplay muted loop playsinline preload="auto">
+                                        <source src="https://video.aliexpress-media.com/play/u/ae_sg_item/484979023/p/1/e/6/t/10301/5000458500554.mp4" type="video/mp4">  
+                                    </video>
+                                    <iframe class="slide" src="https://www.youtube.com/embed/4vrHH4LPTPE?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=4vrHH4LPTPE" allowfullscreen></iframe>
+                                </div>
+                                <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this, -1)">❮</button>
+                                <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this, 1)">❯</button>
                             </div>
-                            <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this, -1)">❮</button>
-                            <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this, 1)">❯</button>
+                            <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Punk%20Sunglasses%20Women%20Vintage%20Designer%20(K250.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+                            <button class="btn-copy-link" onclick="copyProductLink('curi-apparels', 'punk-sunglasses')">🔗 Copy Item Link for Facebook</button>
                         </div>
-                        <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Punk%20Sunglasses%20Women%20Vintage%20Designer%20(K250.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
-                        <button class="btn-copy-link" onclick="copyProductLink('curi-apparels', 'punk-sunglasses')">🔗 Copy Item Link for Facebook</button>
-                    </div>
-                    <div class="product-content">
-                        <div>
-                            <h3 class="product-title">Punk Sunglasses Women Vintage Designer</h3>
-                            <p class="product-description">Vintage flat-top pilot sunglasses featuring a bronze metal frame, brown lenses, and comfortable silicone nose pads.</p>
-                        </div>
-                        <div class="price-row">
-                            <span class="current-price">K250.00</span>
-                            <span class="original-price">K320.00</span>
+                        <div class="product-content">
+                            <div>
+                                <h3 class="product-title">Punk Sunglasses Women Vintage Designer</h3>
+                                <p class="product-description">Vintage flat-top pilot sunglasses featuring a bronze metal frame, brown lenses, and comfortable silicone nose pads.</p>
+                            </div>
+                            <div class="price-row">
+                                <span class="current-price">K250.00</span>
+                                <span class="original-price">K320.00</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </details>
-    
-        <!-- 2. BEACH WARE -->
-        <details class="subcategory-group">
-            <summary class="subcategory-heading">Beach Ware</summary>
-            <div class="subcategory-content"><p>Products coming soon.</p></div>
-        </details>
-    
-        <!-- 3. ADVENTURE WARE -->
-        <details class="subcategory-group">
-            <summary class="subcategory-heading">Adventure Ware</summary>
-            <div class="subcategory-content">
-                <div class="product-card" data-product="cargo-pants">
-                    <div class="media-column">
-                        <div class="image-container" onclick="copyProductLink('curi-apparels', 'cargo-pants')">
-                            <span class="badge">Cargo Pants</span>
-                            <div class="slider-wrapper">
-                                <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/S0a063a42ddcc40f2832b6bf4342fb6000.jpg" alt="Cargo Pants 1">
-                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S5cf48312930a404abd3e2288ae88b3eaj.jpg" alt="Cargo Pants 2">
-                                <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S7e92ab7a5bfb4f32a1156d9935b8ffabK.jpg" alt="Cargo Pants 3">
+            </details>
+        
+            <!-- 2. BEACH WARE -->
+            <details class="subcategory-group">
+                <summary class="subcategory-heading">Beach Wear</summary>
+                <div class="subcategory-content"><p>Products coming soon.</p></div>
+            </details>
+        
+            <!-- 3. ADVENTURE WARE -->
+            <details class="subcategory-group">
+                <summary class="subcategory-heading">Adventure Ware</summary>
+                <div class="subcategory-content">
+                    <div class="product-card" data-product="cargo-pants">
+                        <div class="media-column">
+                            <div class="image-container" onclick="copyProductLink('curi-apparels', 'cargo-pants')">
+                                <span class="badge">Cargo Pants</span>
+                                <div class="slider-wrapper">
+                                    <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/S0a063a42ddcc40f2832b6bf4342fb6000.jpg" alt="Cargo Pants 1">
+                                    <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S5cf48312930a404abd3e2288ae88b3eaj.jpg" alt="Cargo Pants 2">
+                                    <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S7e92ab7a5bfb4f32a1156d9935b8ffabK.jpg" alt="Cargo Pants 3">
+                                </div>
+                                <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this, -1)">❮</button>
+                                <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this, 1)">❯</button>
                             </div>
-                            <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this, -1)">❮</button>
-                            <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this, 1)">❯</button>
+                            <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Cuffed%20Cargo%20Pants%20Slim%20Fit%20Trousers%20(K850.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+                            <button class="btn-copy-link" onclick="copyProductLink('curi-apparels', 'cargo-pants')">🔗 Copy Item Link for Facebook</button>
                         </div>
-                        <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Cuffed%20Cargo%20Pants%20Slim%20Fit%20Trousers%20(K850.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
-                        <button class="btn-copy-link" onclick="copyProductLink('curi-apparels', 'cargo-pants')">🔗 Copy Item Link for Facebook</button>
-                    </div>
-                    <div class="product-content">
-                        <div>
-                            <h3 class="product-title">Cuffed Cargo Pants Slim Fit Trousers</h3>
-                            <p class="product-description">Women's Work Pants 2025 Summer High Waist Multiple Pockets Design Cuffed Cargo Pants Slim Fit Trousers Y2k Fashion Streetwear.</p>
-                        </div>
-                        <div class="price-row">
-                            <span class="current-price">K850.00</span>
-                            <span class="original-price">K1000.00</span>
+                        <div class="product-content">
+                            <div>
+                                <h3 class="product-title">Cuffed Cargo Pants Slim Fit Trousers</h3>
+                                <p class="product-description">Women's Work Pants 2025 Summer High Waist Multiple Pockets Design Cuffed Cargo Pants Slim Fit Trousers Y2k Fashion Streetwear.</p>
+                            </div>
+                            <div class="price-row">
+                                <span class="current-price">K850.00</span>
+                                <span class="original-price">K1000.00</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </details>
-    
-        <details class="subcategory-group"><summary class="subcategory-heading">Industrial Ware</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
-        <details class="subcategory-group"><summary class="subcategory-heading">Church Ware</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
-        <details class="subcategory-group"><summary class="subcategory-heading">Wedding Matchings</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
-        <details class="subcategory-group"><summary class="subcategory-heading">Sports Ware</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
-        <details class="subcategory-group"><summary class="subcategory-heading">Other Special Events Ware</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
+            </details>
+        
+            <details class="subcategory-group"><summary class="subcategory-heading">Industrial Ware</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
+            <details class="subcategory-group"><summary class="subcategory-heading">Church Ware</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
+            <details class="subcategory-group"><summary class="subcategory-heading">Wedding Matchings</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
+            <details class="subcategory-group"><summary class="subcategory-heading">Sports Ware</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
+            <details class="subcategory-group"><summary class="subcategory-heading">Other Special Events Ware</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
+        </div>
     </div>
 
-    <!-- CATALOG: AGRIVANCE -->
+    <!-- CATALOG: AGRIVANCE EXPRESS -->
     <div class="catalog-section" id="agrivance-express">
         <div class="category-header"><h2>Agricultural Logistics</h2><span>AgriVance Express</span></div>
         <div class="service-info-card">
@@ -358,325 +379,160 @@
     </div>
 
     <!-- CATALOG: OMNICARE -->
-<div class="catalog-section" id="omnicare">
-    <div class="category-header">
-        <h2>Hair & Beauty Care</h2>
-        <span>OmniCare</span>
+    <div class="catalog-section" id="omnicare">
+        <div class="category-header">
+            <h2>Hair & Beauty Care</h2>
+            <span>OmniCare</span>
+        </div>
+
+        <div class="subcategory-list">
+            <!-- SUB-CATEGORY 1: HAIR & WIGS -->
+            <details class="subcategory-group" open>
+                <summary class="subcategory-heading">Hair & Wigs</summary>
+                <div class="subcategory-content">
+                    
+                    <!-- Curly Bob Wig -->
+                    <div class="product-card" data-product="curly-bob-wig">
+                        <div class="media-column">
+                            <div class="image-container" onclick="copyProductLink('omnicare', 'curly-bob-wig')">
+                                <span class="badge">Wigs</span>
+                                <div class="slider-wrapper">
+                                    <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/Abf46df26d17e425b8a39a9fcb7ea2c3dj.png" alt="Curly Bob 1">
+                                    <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S940841e156d249f8a200db771804ef54b.jpg" alt="Curly Bob 2">
+                                    <video class="slide" autoplay muted loop playsinline preload="auto">
+                                        <source src="https://video.aliexpress-media.com/play/u/ae_sg_item/3000912434018/p/1/e/6/t/10301/5000212144994.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this,-1)">❮</button>
+                                <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this,1)">❯</button>
+                            </div>
+                            <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Curly%20Bob%20Wig%20(K400.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+                            <button class="btn-copy-link" onclick="copyProductLink('omnicare', 'curly-bob-wig')">🔗 Copy Item Link for Facebook</button>
+                        </div>
+                        <div class="product-content">
+                            <div>
+                                <h3 class="product-title">Curly Bob Wig Brazilian Hair</h3>
+                                <p class="product-description">Ombre Highlight P4/27 Color Short Bob Wigs Curly 13x4 Lace Frontal Wigs Human Hair Deep Curly Bob Wig Brazilian Hair.</p>
+                            </div>
+                            <div class="price-row">
+                                <span class="current-price">K400.00</span>
+                                <span class="original-price">K500.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Debut Ombre Wig -->
+                    <div class="product-card" data-product="debut-ombre-wig">
+                        <div class="media-column">
+                            <div class="image-container" onclick="copyProductLink('omnicare', 'debut-ombre-wig')">
+                                <span class="badge">Wigs</span>
+                                <div class="slider-wrapper">
+                                    <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/H402a12ad86534904942db9ac0cc25ac13.jpg" alt="Debut 1">
+                                    <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Hf0fb5685282a43ff9b224ee58ead8549y.jpg" alt="Debut 2">
+                                    <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Ha4d41e0098cb4ce6a9f7997050f61f96C.jpg" alt="Debut 3">
+                                    <iframe class="slide" src="https://www.youtube.com/embed/3KmA6dBEcVQ?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=3KmA6dBEcVQ" allowfullscreen></iframe>
+                                </div>
+                                <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this,-1)">❮</button>
+                                <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this,1)">❯</button>
+                            </div>
+                            <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Debut%20Ombre%20Human%20Hair%20Wig%20(K450.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+                            <button class="btn-copy-link" onclick="copyProductLink('omnicare', 'debut-ombre-wig')">🔗 Copy Item Link for Facebook</button>
+                        </div>
+                        <div class="product-content">
+                            <div>
+                                <h3 class="product-title">Debut Ombre Human Hair Wig</h3>
+                                <p class="product-description">Short Bob Lace Front Human Hair Wigs For Women Honey Blonde Ombre Brazilian Straight Hair Wig.</p>
+                            </div>
+                            <div class="price-row">
+                                <span class="current-price">K450.00</span>
+                                <span class="original-price">K550.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </details>
+
+            <!-- SUB-CATEGORY 2: SKIN CARE -->
+            <details class="subcategory-group">
+                <summary class="subcategory-heading">Skin Care</summary>
+                <div class="subcategory-content">
+
+                    <!-- Palmer's Lotion -->
+                    <div class="product-card" data-product="palmers-stretch-marks-lotion">
+                        <div class="media-column">
+                            <div class="image-container" onclick="copyProductLink('omnicare', 'palmers-stretch-marks-lotion')">
+                                <span class="badge">Body Lotion</span>
+                                <div class="slider-wrapper">
+                                    <img class="slide active" src="https://m.media-amazon.com/images/I/41mLyUceuCL._SL1500_.jpg" alt="Palmer's Stretch Marks Body Lotion 1">
+                                    <img class="slide" src="https://m.media-amazon.com/images/I/517MQkjy0aL._SL1500_.jpg" alt="Palmer's Stretch Marks Body Lotion 2">
+                                    <img class="slide" src="https://m.media-amazon.com/images/I/41aj5Ww-urL._SL1500_.jpg" alt="Palmer's Stretch Marks Body Lotion 3">
+                                    <img class="slide" src="https://m.media-amazon.com/images/I/51lUDBJRIBL._SL1500_.jpg" alt="Palmer's Stretch Marks Body Lotion 4">
+                                    <iframe class="slide" src="https://www.youtube.com/embed/PCDZsdaB0qk?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=PCDZsdaB0qk" allowfullscreen></iframe>
+                                </div>
+                                <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this, -1)">❮</button>
+                                <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this, 1)">❯</button>
+                            </div>
+                            <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20Palmer%27s%20Stretch%20Marks%20Body%20Lotion%20(K155.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+                            <button class="btn-copy-link" onclick="copyProductLink('omnicare', 'palmers-stretch-marks-lotion')">🔗 Copy Item Link for Facebook</button>
+                        </div>
+                        <div class="product-content">
+                            <div>
+                                <h3 class="product-title">Palmer's Stretch Marks Body Lotion</h3>
+                                <p class="product-description">Palmer's Cocoa Butter Formula Massage Lotion for Stretch Marks, specifically formulated for pregnancy, weight fluctuations, and skin hydration.</p>
+                            </div>
+                            <div class="price-row">
+                                <span class="current-price">K155.00</span>
+                                <span class="original-price">K180.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </details>
+
+            <details class="subcategory-group"><summary class="subcategory-heading">Cosmetics</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
+            <details class="subcategory-group"><summary class="subcategory-heading">Fragrances</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
+        </div>
     </div>
 
-    <!-- SUB-CATEGORY 1: HAIR & WIGS -->
-    <details class="subcategory-group" open>
-        <summary class="subcategory-heading">Hair & Wigs</summary>
-        <div class="subcategory-content">
-            
-            <!-- Curly Bob Wig -->
-            <div class="product-card" data-product="curly-bob-wig">
-                <div class="media-column">
-                    <div class="image-container" onclick="copyProductLink('omnicare', 'curly-bob-wig')">
-                        <span class="badge">Wigs</span>
-                        <div class="slider-wrapper">
-                            <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/Abf46df26d17e425b8a39a9fcb7ea2c3dj.png" alt="Curly Bob 1">
-                            <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S940841e156d249f8a200db771804ef54b.jpg" alt="Curly Bob 2">
-                            <video class="slide" autoplay muted loop playsinline preload="auto">
-                                <source src="https://video.aliexpress-media.com/play/u/ae_sg_item/3000912434018/p/1/e/6/t/10301/5000212144994.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                        <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this,-1)">❮</button>
-                        <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this,1)">❯</button>
-                    </div>
-                    <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Curly%20Bob%20Wig%20(K400.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
-                    <button class="btn-copy-link" onclick="copyProductLink('omnicare', 'curly-bob-wig')">🔗 Copy Item Link for Facebook</button>
-                </div>
-                <div class="product-content">
-                    <div>
-                        <h3 class="product-title">Curly Bob Wig Brazilian Hair</h3>
-                        <p class="product-description">Ombre Highlight P4/27 Color Short Bob Wigs Curly 13x4 Lace Frontal Wigs Human Hair Deep Curly Bob Wig Brazilian Hair.</p>
-                    </div>
-                    <div class="price-row">
-                        <span class="current-price">K400.00</span>
-                        <span class="original-price">K500.00</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Debut Ombre Wig -->
-            <div class="product-card" data-product="debut-ombre-wig">
-                <div class="media-column">
-                    <div class="image-container" onclick="copyProductLink('omnicare', 'debut-ombre-wig')">
-                        <span class="badge">Wigs</span>
-                        <div class="slider-wrapper">
-                            <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/H402a12ad86534904942db9ac0cc25ac13.jpg" alt="Debut 1">
-                            <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Hf0fb5685282a43ff9b224ee58ead8549y.jpg" alt="Debut 2">
-                            <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Ha4d41e0098cb4ce6a9f7997050f61f96C.jpg" alt="Debut 3">
-                            <iframe class="slide" src="https://www.youtube.com/embed/3KmA6dBEcVQ?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=3KmA6dBEcVQ" allowfullscreen></iframe>
-                        </div>
-                        <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this,-1)">❮</button>
-                        <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this,1)">❯</button>
-                    </div>
-                    <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Debut%20Ombre%20Human%20Hair%20Wig%20(K450.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
-                    <button class="btn-copy-link" onclick="copyProductLink('omnicare', 'debut-ombre-wig')">🔗 Copy Item Link for Facebook</button>
-                </div>
-                <div class="product-content">
-                    <div>
-                        <h3 class="product-title">Debut Ombre Human Hair Wig</h3>
-                        <p class="product-description">Short Bob Lace Front Human Hair Wigs For Women Honey Blonde Ombre Brazilian Straight Hair Wig.</p>
-                    </div>
-                    <div class="price-row">
-                        <span class="current-price">K450.00</span>
-                        <span class="original-price">K550.00</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </details>
-
-    <!-- SUB-CATEGORY 2: SKIN CARE (SEPARATE GROUP) -->
-    <details class="subcategory-group">
-        <summary class="subcategory-heading">Skin Care</summary>
-        <div class="subcategory-content">
-
-            <!-- Palmer's Lotion -->
-            <div class="product-card" data-product="palmers-stretch-marks-lotion">
-                <div class="media-column">
-                    <div class="image-container" onclick="copyProductLink('omnicare', 'palmers-stretch-marks-lotion')">
-                        <span class="badge">Body Lotion</span>
-                        <div class="slider-wrapper">
-                            <img class="slide active" src="https://m.media-amazon.com/images/I/41mLyUceuCL._SL1500_.jpg" alt="Palmer's Stretch Marks Body Lotion 1">
-                            <img class="slide" src="https://m.media-amazon.com/images/I/517MQkjy0aL._SL1500_.jpg" alt="Palmer's Stretch Marks Body Lotion 2">
-                            <img class="slide" src="https://m.media-amazon.com/images/I/41aj5Ww-urL._SL1500_.jpg" alt="Palmer's Stretch Marks Body Lotion 3">
-                            <img class="slide" src="https://m.media-amazon.com/images/I/51lUDBJRIBL._SL1500_.jpg" alt="Palmer's Stretch Marks Body Lotion 4">
-                            <iframe class="slide" src="https://www.youtube.com/embed/PCDZsdaB0qk?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=PCDZsdaB0qk" allowfullscreen></iframe>
-                        </div>
-                        <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this, -1)">❮</button>
-                        <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this, 1)">❯</button>
-                    </div>
-                    <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20Palmer%27s%20Stretch%20Marks%20Body%20Lotion%20(K155.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
-                    <button class="btn-copy-link" onclick="copyProductLink('omnicare', 'palmers-stretch-marks-lotion')">🔗 Copy Item Link for Facebook</button>
-                </div>
-                <div class="product-content">
-                    <div>
-                        <h3 class="product-title">Palmer's Stretch Marks Body Lotion</h3>
-                        <p class="product-description">Palmer's Cocoa Butter Formula Massage Lotion for Stretch Marks, specifically formulated for pregnancy and weight changes (8.5 fl oz).</p>
-                    </div>
-                    <div class="price-row">
-                        <span class="current-price">K155.00</span>
-                        <span class="original-price">K180.00</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </details>
-
-</div>
-        <details class="subcategory-group"><summary class="subcategory-heading">Hair Care</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
-        <details class="subcategory-group"><summary class="subcategory-heading">Make-up and Cosmetics</summary><div class="subcategory-content"><p>Products coming soon.</p></div></details>
-    </div>
-
-   <!-- CATALOG: LOCAL PNG PRODUCTS -->
+    <!-- CATALOG: LOCAL PNG PRODUCTS -->
     <div class="catalog-section" id="local-png">
-        <div class="category-header"><h2>Local PNG Handcrafts & Produce</h2><span>Local PNG Products</span></div>
-        
-        <!-- SUB-CATEGORY 1: ORGANIC PRODUCTS -->
-        <details class="subcategory-group">
-            <summary class="subcategory-heading">Organic Products</summary>
-            <div class="subcategory-content">
-        
-                <!-- SUB-SUB-CATEGORY: COFFEE -->
-                <details class="subsubcategory-group">
-                    <summary class="subsubcategory-heading">Coffee</summary>
-                    <div class="subcategory-content">
-        
-                        <!-- PRODUCT CARD 1: Niugini Arabica Organic Coffee (Large) -->
-                        <div class="product-card" data-product="niugini-arabica-coffee-large">
-                            <div class="media-column">
-                                <div class="image-container" onclick="copyProductLink('local-png', 'niugini-arabica-coffee-large')">
-                                    <span class="badge">Local Stock</span>
-                                    
-                                    <div class="slider-wrapper">
-                                        <img class="slide active" 
-                                             src="https://github.com/ckama4467-cyber/Trendinovia/blob/main/image/Niugini%20Arabica%20(Large).jpg?raw=true" 
-                                             alt="Niugini Arabica Coffee Large"
-                                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=800&auto=format&fit=crop';">
-                                    </div>
-        
-                                    <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this, -1)">❮</button>
-                                    <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this, 1)">❯</button>
-                                </div>
-        
-                                <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Niugini%20Arabica%20Coffee%20(Large)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
-                                <button class="btn-copy-link" onclick="copyProductLink('local-png', 'niugini-arabica-coffee-large')">🔗 Copy Item Link for Facebook</button>
-                            </div>
-        
-                            <div class="product-content">
-                                <div>
-                                    <h3 class="product-title">Niugini Arabica Organic Coffee (Large)</h3>
-                                    <p class="product-description">Organically grown by village farming communities in the PNG Highlands. Slow-roasted for rich aromatic flavor.</p>
-                                </div>
-                                <div class="price-row">
-                                    <span class="current-price">K60.00</span>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <!-- PRODUCT CARD 2: Niugini Arabica Organic Coffee (Medium) -->
-                        <div class="product-card" data-product="niugini-arabica-coffee-medium">
-                            <div class="media-column">
-                                <div class="image-container" onclick="copyProductLink('local-png', 'niugini-arabica-coffee-medium')">
-                                    <span class="badge">Local Stock</span>
-                                    
-                                    <div class="slider-wrapper">
-                                        <img class="slide active" 
-                                             src="https://github.com/ckama4467-cyber/Trendinovia/blob/main/image/Niuguni%20Arabica%20(Medium).png?raw=true" 
-                                             alt="Niugini Arabica Coffee Medium"
-                                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=800&auto=format&fit=crop';">
-                                    </div>
-        
-                                    <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this, -1)">❮</button>
-                                    <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this, 1)">❯</button>
-                                </div>
-        
-                                <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Niugini%20Arabica%20Coffee%20(Medium)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
-                                <button class="btn-copy-link" onclick="copyProductLink('local-png', 'niugini-arabica-coffee-medium')">🔗 Copy Item Link for Facebook</button>
-                            </div>
-        
-                            <div class="product-content">
-                                <div>
-                                    <h3 class="product-title">Niugini Arabica Organic Coffee (Medium)</h3>
-                                    <p class="product-description">Organically grown by village farming communities in the PNG Highlands. Slow-roasted for rich aromatic flavor.</p>
-                                </div>
-                                <div class="price-row">
-                                    <span class="current-price">K33.00</span>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <!-- PRODUCT CARD 3: Nokondi Blend Coffee -->
-                        <div class="product-card" data-product="nokondi-blend-coffee">
-                            <div class="media-column">
-                                <div class="image-container" onclick="copyProductLink('local-png', 'nokondi-blend-coffee')">
-                                    <span class="badge">Local Stock</span>
-                                    
-                                    <div class="slider-wrapper">
-                                        <img class="slide active" 
-                                             src="https://github.com/ckama4467-cyber/Trendinovia/blob/main/image/Nokondi%20Blend.png?raw=true" 
-                                             alt="Nokondi Blend Coffee"
-                                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=800&auto=format&fit=crop';">
-                                    </div>
-        
-                                    <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this, -1)">❮</button>
-                                    <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this, 1)">❯</button>
-                                </div>
-        
-                                <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Nokondi%20Blend%20Coffee." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
-                                <button class="btn-copy-link" onclick="copyProductLink('local-png', 'nokondi-blend-coffee')">🔗 Copy Item Link for Facebook</button>
-                            </div>
-        
-                            <div class="product-content">
-                                <div>
-                                    <h3 class="product-title">Nokondi Blend Coffee</h3>
-                                    <p class="product-description">Papua New Guinea’s finest Arabica, sustainably grown in the mist-covered peaks of the Eastern Highlands. Hand-picked with pride by local village smallholders, this medium roast is crafted exclusively for the coffee connoisseur who appreciates smooth flavors, rich heritage, and authentic origin.</p>
-                                </div>
-                                <div class="price-row">
-                                    <span class="current-price">K45.00</span>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <!-- PRODUCT CARD 5: Okalu Medium Roast -->
-                        <div class="product-card" data-product="okalu-medium-roast">
-                            <div class="media-column">
-                                <div class="image-container" onclick="copyProductLink('local-png', 'okalu-medium-roast')">
-                                    <span class="badge">Local Stock</span>
-                                    
-                                    <div class="slider-wrapper">
-                                        <img class="slide active" 
-                                             src="https://github.com/ckama4467-cyber/Trendinovia/blob/main/image/Okalu%20Medium%20Roast.png?raw=true" 
-                                             alt="Okalu Medium Roast"
-                                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=800&auto=format&fit=crop';">
-                                    </div>
-        
-                                    <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this, -1)">❮</button>
-                                    <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this, 1)">❯</button>
-                                </div>
-        
-                                <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20the%20Okalu%20Medium%20Roast." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
-                                <button class="btn-copy-link" onclick="copyProductLink('local-png', 'okalu-medium-roast')">🔗 Copy Item Link for Facebook</button>
-                            </div>
-        
-                            <div class="product-content">
-                                <div>
-                                    <h3 class="product-title">Okalu Medium Roast</h3>
-                                    <p class="product-description">Sourced from the pristine Lufa and Okapa districts of Papua New Guinea, Okalu Medium Roast is an authentic, naturally grown coffee crafted from prized Jamaican Blue Mountain lineages. Grown at volcanic high altitudes by smallholder farmers, each batch is meticulously hand-harvested and sun-dried to ensure peak purity and flavor preservation. Every cup delivers a beautifully smooth, full-bodied experience defined by a rich aroma of warm vanilla syrup, toasted nuts, and creamy milk chocolate.</p>
-                                </div>
-                                <div class="price-row">
-                                    <span class="current-price">K45.00</span>
-                                </div>
-                            </div>
-                        </div>
-        
-                    </div>
-                </details>
-        
-                <!-- OTHER SUB-SUB-CATEGORIES -->
-                <details class="subsubcategory-group">
-                    <summary class="subsubcategory-heading">Cocoa</summary>
-                    <div class="subcategory-content"><p>PNG Cocoa products coming soon.</p></div>
-                </details>
-                <details class="subsubcategory-group">
-                    <summary class="subsubcategory-heading">Natural Honey</summary>
-                    <div class="subcategory-content"><p>Natural Honey products coming soon.</p></div>
-                </details>
-                <details class="subsubcategory-group">
-                    <summary class="subsubcategory-heading">Coconut</summary>
-                    <div class="subcategory-content"><p>Coconut products coming soon.</p></div>
-                </details>
-                <details class="subsubcategory-group">
-                    <summary class="subsubcategory-heading">Nuts</summary>
-                    <div class="subcategory-content"><p>Local Nuts coming soon.</p></div>
-                </details>
-                <details class="subsubcategory-group">
-                    <summary class="subsubcategory-heading">Tea</summary>
-                    <div class="subcategory-content"><p>PNG Tea products coming soon.</p></div>
-                </details>
-                <details class="subsubcategory-group">
-                    <summary class="subsubcategory-heading">Vanilla</summary>
-                    <div class="subcategory-content"><p>PNG Organic Vanilla beans coming soon.</p></div>
-                </details>
-        
-            </div>
-        </details>
-        
-        <!-- SUB-CATEGORY 2: ARTS AND CRAFTS -->
-        <details class="subcategory-group">
-            <summary class="subcategory-heading">Arts and Crafts</summary>
-            <div class="subcategory-content">
-                <details class="subsubcategory-group">
-                    <summary class="subsubcategory-heading">Bilums</summary>
-                    <div class="subcategory-content"><p>Traditional PNG Bilums coming soon.</p></div>
-                </details>
-                <details class="subsubcategory-group">
-                    <summary class="subsubcategory-heading">Blouse</summary>
-                    <div class="subcategory-content"><p>PNG Meri Blouses coming soon.</p></div>
-                </details>
-                <details class="subsubcategory-group">
-                    <summary class="subsubcategory-heading">Arts</summary>
-                    <div class="subcategory-content"><p>PNG Paintings & Artwork coming soon.</p></div>
-                </details>
-                <details class="subsubcategory-group">
-                    <summary class="subsubcategory-heading">Hand Craft</summary>
-                    <div class="subcategory-content"><p>Wood carvings & Hand crafts coming soon.</p></div>
-                </details>
-            </div>
-        </details>
+        <div class="category-header">
+            <h2>Local PNG Handcrafts & Produce</h2>
+            <span>Local PNG Products</span>
+        </div>
 
-<<!-- TOAST NOTIFICATION -->
-<div class="toast" id="toast">Link copied to clipboard!</div>
-    
+        <div class="subcategory-list">
+            <details class="subcategory-group" open>
+                <summary class="subcategory-heading">Organic Products</summary>
+                <div class="subcategory-content">
+                    <ul>
+                        <li>Coffee</li>
+                        <li>Cocoa</li>
+                        <li>Natural Honey</li>
+                        <li>Coconut</li>
+                        <li>Nuts</li>
+                        <li>Tea</li>
+                        <li>Vanilla</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details class="subcategory-group">
+                <summary class="subcategory-heading">Arts and Crafts</summary>
+                <div class="subcategory-content"><p>Products coming soon.</p></div>
+            </details>
+        </div>
+    </div>
+
+</div><!-- /.container -->
+
+<div id="toast" class="toast">Link copied to clipboard!</div>
+
 <script>
-    // NAVIGATION & CATALOG SYSTEM
-    function openCatalog(divisionId) {
+    // Navigation Logic
+    function openCatalog(catalogId) {
         document.getElementById('divisions-grid').style.display = 'none';
         document.getElementById('subtitle-text').style.display = 'none';
         document.getElementById('back-nav').style.display = 'block';
@@ -684,11 +540,11 @@
         const sections = document.querySelectorAll('.catalog-section');
         sections.forEach(sec => sec.classList.remove('active'));
 
-        const target = document.getElementById(divisionId);
+        const target = document.getElementById(catalogId);
         if (target) {
             target.classList.add('active');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function showDivisions() {
@@ -698,77 +554,52 @@
         document.getElementById('divisions-grid').style.display = 'grid';
         document.getElementById('subtitle-text').style.display = 'block';
         document.getElementById('back-nav').style.display = 'none';
-        
-        // Pause active videos
-        pauseVideos();
     }
 
-    // MULTI-MEDIA SLIDER SYSTEM
+    // Image Slider Logic
     function moveSlide(btn, direction) {
-        const container = btn.parentElement;
-        const slides = container.querySelectorAll('.slide');
-        let activeIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+        const wrapper = btn.parentElement.querySelector('.slider-wrapper');
+        const slides = wrapper.children;
+        let activeIndex = Array.from(slides).findIndex(s => s.classList.contains('active'));
 
-        if (activeIndex !== -1) {
-            slides[activeIndex].classList.remove('active');
-            
-            // Pause HTML5 Video if active
-            if (slides[activeIndex].tagName === 'VIDEO') {
-                slides[activeIndex].pause();
-            }
-
-            let nextIndex = (activeIndex + direction + slides.length) % slides.length;
-            slides[nextIndex].classList.add('active');
-
-            // Auto-play HTML5 Video if newly activated
-            if (slides[nextIndex].tagName === 'VIDEO') {
-                slides[nextIndex].play();
-            }
-        }
+        slides[activeIndex].classList.remove('active');
+        activeIndex = (activeIndex + direction + slides.length) % slides.length;
+        slides[activeIndex].classList.add('active');
     }
 
-    function pauseVideos() {
-        document.querySelectorAll('video').forEach(v => v.pause());
-    }
-
-    // COPY PRODUCT LINK & TOAST
-    function copyProductLink(divisionId, productId) {
+    // Link Copy & Toast Notification
+    function copyProductLink(division, productId) {
         const baseUrl = window.location.origin + window.location.pathname;
-        const fullUrl = `${baseUrl}?division=${divisionId}&item=${productId}`;
-
+        const fullUrl = `${baseUrl}?division=${division}&product=${productId}`;
+        
         navigator.clipboard.writeText(fullUrl).then(() => {
-            showToast("🔗 Item link copied! Share it on Facebook or WhatsApp.");
-        }).catch(err => {
-            console.error('Failed to copy: ', err);
+            showToast("Item link copied for Facebook sharing!");
+        }).catch(() => {
+            showToast("Failed to copy link.");
         });
     }
 
     function showToast(message) {
         const toast = document.getElementById('toast');
-        toast.innerText = message;
+        toast.textContent = message;
         toast.style.display = 'block';
-        setTimeout(() => {
-            toast.style.display = 'none';
-        }, 3000);
+        setTimeout(() => { toast.style.display = 'none'; }, 3000);
     }
 
-    // DEEP LINKING SUPPORT (Handle ?division=...&item=...)
+    // Auto-open requested product via URL query parameters
     window.addEventListener('DOMContentLoaded', () => {
-        const urlParams = new URLSearchParams(window.location.search);
-        const divisionParam = urlParams.get('division');
-        const itemParam = urlParams.get('item');
+        const params = new URLSearchParams(window.location.search);
+        const division = params.get('division');
+        const product = params.get('product');
 
-        if (divisionParam) {
-            openCatalog(divisionParam);
-
-            if (itemParam) {
+        if (division) {
+            openCatalog(division);
+            if (product) {
                 setTimeout(() => {
-                    const card = document.querySelector(`.product-card[data-product="${itemParam}"]`);
+                    const card = document.querySelector(`[data-product="${product}"]`);
                     if (card) {
-                        // Expand parent details if closed
                         const detailsParent = card.closest('details');
                         if (detailsParent) detailsParent.open = true;
-
                         card.classList.add('highlight');
                         card.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     }
