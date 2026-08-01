@@ -83,7 +83,7 @@
         @keyframes fadeIn { from { opacity: 0; transform: translate(-50%, 10px); } to { opacity: 1; transform: translate(-50%, 0); } }
 
         /* HIERARCHICAL EXPANDABLE GROUPS */
-        .subcategory-group {
+        .subcategory-group, .sub-subcategory-group {
             border: 1px solid #e5e7eb;
             border-radius: 8px;
             margin-bottom: 14px;
@@ -91,7 +91,7 @@
             overflow: hidden;
         }
         
-        .subcategory-heading {
+        .subcategory-heading, .sub-subcategory-heading {
             font-size: 16px;
             font-weight: 700;
             color: #1f2937;
@@ -105,17 +105,24 @@
             justify-content: space-between;
             align-items: center;
         }
+
+        .sub-subcategory-heading {
+            font-size: 15px;
+            background-color: #f1f5f9;
+            color: #334155;
+            padding: 12px 16px;
+        }
         
-        .subcategory-heading::-webkit-details-marker { display: none; }
+        .subcategory-heading::-webkit-details-marker, .sub-subcategory-heading::-webkit-details-marker { display: none; }
         
-        .subcategory-heading::after {
+        .subcategory-heading::after, .sub-subcategory-heading::after {
             content: '❯';
             font-size: 14px;
             color: #2563eb;
             transition: transform 0.2s ease;
         }
         
-        details[open] > .subcategory-heading::after {
+        details[open] > .subcategory-heading::after, details[open] > .sub-subcategory-heading::after {
             transform: rotate(90deg);
         }
         
@@ -124,8 +131,14 @@
             background-color: #eff6ff;
             color: #1d4ed8;
         }
+
+        details[open] > .sub-subcategory-heading {
+            border-bottom: 1px solid #e5e7eb;
+            background-color: #e0f2fe;
+            color: #0369a1;
+        }
         
-        .subcategory-content {
+        .subcategory-content, .sub-subcategory-content {
             padding: 20px 16px;
         }
 
@@ -450,6 +463,60 @@
                         </div>
                     </div>
 
+                    <!-- Human Hair Extensions -->
+                    <div class="product-card" data-product="human-hair-extensions">
+                        <div class="media-column">
+                            <div class="image-container" onclick="copyProductLink('omnicare', 'human-hair-extensions')">
+                                <span class="badge">Extensions</span>
+                                <div class="slider-wrapper">
+                                    <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/S55c56a1b02b947c9b0e1234567890abc.jpg" alt="Extensions 1">
+                                    <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/S11c22a33b44c55d66e77889900112233.jpg" alt="Extensions 2">
+                                </div>
+                                <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this,-1)">❮</button>
+                                <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this,1)">❯</button>
+                            </div>
+                            <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20Human%20Hair%20Extensions%20(K280.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+                            <button class="btn-copy-link" onclick="copyProductLink('omnicare', 'human-hair-extensions')">🔗 Copy Item Link for Facebook</button>
+                        </div>
+                        <div class="product-content">
+                            <div>
+                                <h3 class="product-title">100% Virgin Brazilian Human Hair Extensions</h3>
+                                <p class="product-description">Premium quality body wave human hair extensions bundle. Tangle-free, soft, full volume, and suitable for dyeing or styling.</p>
+                            </div>
+                            <div class="price-row">
+                                <span class="current-price">K280.00</span>
+                                <span class="original-price">K350.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Crochet Dreadlocks -->
+                    <div class="product-card" data-product="crochet-dreadlocks">
+                        <div class="media-column">
+                            <div class="image-container" onclick="copyProductLink('omnicare', 'crochet-dreadlocks')">
+                                <span class="badge">Dreadlocks</span>
+                                <div class="slider-wrapper">
+                                    <img class="slide active" src="https://ae-pic-a1.aliexpress-media.com/kf/Sd1234567890ab1234567890abcdef.jpg" alt="Dreadlocks 1">
+                                    <img class="slide" src="https://ae-pic-a1.aliexpress-media.com/kf/Se0987654321ba0987654321fedcba.jpg" alt="Dreadlocks 2">
+                                </div>
+                                <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this,-1)">❮</button>
+                                <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this,1)">❯</button>
+                            </div>
+                            <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20Crochet%20Dreadlocks%20(K180.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+                            <button class="btn-copy-link" onclick="copyProductLink('omnicare', 'crochet-dreadlocks')">🔗 Copy Item Link for Facebook</button>
+                        </div>
+                        <div class="product-content">
+                            <div>
+                                <h3 class="product-title">Soft Synthetic Crochet Dreadlocks Extensions</h3>
+                                <p class="product-description">Handmade lightweight crochet dreadlocks. Natural texture, easy installation, long-lasting protective style available in natural black and ombré tones.</p>
+                            </div>
+                            <div class="price-row">
+                                <span class="current-price">K180.00</span>
+                                <span class="original-price">K230.00</span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </details>
 
@@ -507,8 +574,124 @@
             <details class="subcategory-group" open>
                 <summary class="subcategory-heading">Organic Products</summary>
                 <div class="subcategory-content">
+                    
+                    <!-- NESTED EXPANDABLE COFFEE SUB-SUBCATEGORY -->
+                    <details class="sub-subcategory-group" open>
+                        <summary class="sub-subcategory-heading">☕ Coffee (4 Organic PNG Varieties)</summary>
+                        <div class="sub-subcategory-content">
+                            
+                            <!-- 1. Arabica Roasted Beans -->
+                            <div class="product-card" data-product="png-arabica-coffee">
+                                <div class="media-column">
+                                    <div class="image-container" onclick="copyProductLink('local-png', 'png-arabica-coffee')">
+                                        <span class="badge">PNG Coffee</span>
+                                        <div class="slider-wrapper">
+                                            <img class="slide active" src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=800&auto=format&fit=crop" alt="PNG Arabica Coffee Beans 1">
+                                            <img class="slide" src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=800&auto=format&fit=crop" alt="PNG Arabica Coffee Beans 2">
+                                        </div>
+                                        <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this, -1)">❮</button>
+                                        <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this, 1)">❯</button>
+                                    </div>
+                                    <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20PNG%20Organic%20Arabica%20Roasted%20Beans%20(K45.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+                                    <button class="btn-copy-link" onclick="copyProductLink('local-png', 'png-arabica-coffee')">🔗 Copy Item Link for Facebook</button>
+                                </div>
+                                <div class="product-content">
+                                    <div>
+                                        <h3 class="product-title">PNG Organic Arabica Roasted Beans (250g)</h3>
+                                        <p class="product-description">100% organic high-altitude PNG Highlands Arabica roasted whole beans with smooth chocolate and nutty undertones.</p>
+                                    </div>
+                                    <div class="price-row">
+                                        <span class="current-price">K45.00</span>
+                                        <span class="original-price">K55.00</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 2. Sigri Estate Fine Ground Coffee -->
+                            <div class="product-card" data-product="sigri-ground-coffee">
+                                <div class="media-column">
+                                    <div class="image-container" onclick="copyProductLink('local-png', 'sigri-ground-coffee')">
+                                        <span class="badge">PNG Coffee</span>
+                                        <div class="slider-wrapper">
+                                            <img class="slide active" src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?q=80&w=800&auto=format&fit=crop" alt="Sigri Estate Ground Coffee 1">
+                                            <img class="slide" src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=800&auto=format&fit=crop" alt="Sigri Estate Ground Coffee 2">
+                                        </div>
+                                        <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this, -1)">❮</button>
+                                        <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this, 1)">❯</button>
+                                    </div>
+                                    <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20Sigri%20Estate%20Fine%20Ground%20Coffee%20(K50.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+                                    <button class="btn-copy-link" onclick="copyProductLink('local-png', 'sigri-ground-coffee')">🔗 Copy Item Link for Facebook</button>
+                                </div>
+                                <div class="product-content">
+                                    <div>
+                                        <h3 class="product-title">Sigri Estate Fine Ground Coffee (500g)</h3>
+                                        <p class="product-description">Single-origin premium ground coffee harvested from the Waghi Valley. Medium-light roast with a sweet, floral aroma.</p>
+                                    </div>
+                                    <div class="price-row">
+                                        <span class="current-price">K50.00</span>
+                                        <span class="original-price">K65.00</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 3. Organic Peaberry Specialty Roast -->
+                            <div class="product-card" data-product="peaberry-specialty-coffee">
+                                <div class="media-column">
+                                    <div class="image-container" onclick="copyProductLink('local-png', 'peaberry-specialty-coffee')">
+                                        <span class="badge">PNG Coffee</span>
+                                        <div class="slider-wrapper">
+                                            <img class="slide active" src="https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?q=80&w=800&auto=format&fit=crop" alt="Organic Peaberry Specialty Roast 1">
+                                            <img class="slide" src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=800&auto=format&fit=crop" alt="Organic Peaberry Specialty Roast 2">
+                                        </div>
+                                        <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this, -1)">❮</button>
+                                        <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this, 1)">❯</button>
+                                    </div>
+                                    <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20Organic%20Peaberry%20Specialty%20Roast%20(K60.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+                                    <button class="btn-copy-link" onclick="copyProductLink('local-png', 'peaberry-specialty-coffee')">🔗 Copy Item Link for Facebook</button>
+                                </div>
+                                <div class="product-content">
+                                    <div>
+                                        <h3 class="product-title">Organic Peaberry Specialty Roast (250g)</h3>
+                                        <p class="product-description">Hand-selected rare single coffee cherry peaberry beans from Eastern Highlands. Rich flavor complexity with bright citrus notes.</p>
+                                    </div>
+                                    <div class="price-row">
+                                        <span class="current-price">K60.00</span>
+                                        <span class="original-price">K75.00</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 4. Goroka Dark Roast Espresso Ground -->
+                            <div class="product-card" data-product="goroka-dark-roast-coffee">
+                                <div class="media-column">
+                                    <div class="image-container" onclick="copyProductLink('local-png', 'goroka-dark-roast-coffee')">
+                                        <span class="badge">PNG Coffee</span>
+                                        <div class="slider-wrapper">
+                                            <img class="slide active" src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=800&auto=format&fit=crop" alt="Goroka Dark Roast Espresso Ground 1">
+                                            <img class="slide" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop" alt="Goroka Dark Roast Espresso Ground 2">
+                                        </div>
+                                        <button class="slider-btn prev-btn" onclick="event.stopPropagation(); moveSlide(this, -1)">❮</button>
+                                        <button class="slider-btn next-btn" onclick="event.stopPropagation(); moveSlide(this, 1)">❯</button>
+                                    </div>
+                                    <a href="https://wa.me/67578887968?text=Hello,%20I%20would%20like%20to%20order%20Goroka%20Dark%20Roast%20Espresso%20Ground%20(K40.00)." class="btn-whatsapp" target="_blank">Order via WhatsApp</a>
+                                    <button class="btn-copy-link" onclick="copyProductLink('local-png', 'goroka-dark-roast-coffee')">🔗 Copy Item Link for Facebook</button>
+                                </div>
+                                <div class="product-content">
+                                    <div>
+                                        <h3 class="product-title">Goroka Dark Roast Espresso Ground (250g)</h3>
+                                        <p class="product-description">Bold dark roast tailored for espresso lovers. Deep earthy tones, full body, and a clean finish sourced directly from Goroka smallholders.</p>
+                                    </div>
+                                    <div class="price-row">
+                                        <span class="current-price">K40.00</span>
+                                        <span class="original-price">K50.00</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </details>
+
                     <ul>
-                        <li>Coffee</li>
                         <li>Cocoa</li>
                         <li>Natural Honey</li>
                         <li>Coconut</li>
@@ -598,8 +781,13 @@
                 setTimeout(() => {
                     const card = document.querySelector(`[data-product="${product}"]`);
                     if (card) {
-                        const detailsParent = card.closest('details');
-                        if (detailsParent) detailsParent.open = true;
+                        const detailsParents = card.querySelectorAll('details');
+                        detailsParents.forEach(d => d.open = true);
+                        let p = card.parentElement;
+                        while(p) {
+                            if (p.tagName === 'DETAILS') p.open = true;
+                            p = p.parentElement;
+                        }
                         card.classList.add('highlight');
                         card.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     }
